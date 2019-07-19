@@ -9,7 +9,12 @@ import '../styles/main.scss'
 
 
 // JS
-import $ from 'JQuery'
+import $ from 'jquery'
+
+global.jQuery = $;
+global.$ = $;
 
 import '../blocks/dropdown/dropdown-select/dropdown-select.js'
+import '../blocks/toggle-button/toggle-btn.js'
+import '../blocks/like-button/like-btn.js'
 

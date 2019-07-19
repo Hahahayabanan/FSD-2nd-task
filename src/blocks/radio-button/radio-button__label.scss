@@ -4,6 +4,7 @@
     line-height: 24px;
     color: $dark-shade-50;
     margin-right: 20px;
+    position: relative;
 
     &::before{
         content: '';
@@ -17,11 +18,27 @@
         vertical-align: middle;
         margin-right: 9px;
     }
+    &::after{
+        content: '';
+        width: 12px;
+        height: 12px;
+        background: transparent;
+        border-radius: 10px;
+        display: inline-block;
+        position: absolute;
+        z-index: 9;
+        left: 4px;
+        top: 4px;
+    }
 }
 
 
-.radio-button__input:checked + .radio-button__label::before {
-    content: url("/../img/radio-circle.svg");
-    text-align: center;
-    border: 1px solid $purple;
+.radio-button__input:checked {
+    & + .radio-button__label::before{
+        text-align: center;
+        border: 1px solid $purple;
+    }
+    & + .radio-button__label::after{
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
 }
