@@ -8,7 +8,8 @@ import '../pages/cards-page.pug'
 import '../styles/main.scss'
 
 
+// JS
+import $ from 'JQuery'
 
-
-import '../blocks/dropdown/dropdown-select/dropdown-select'
+import '../blocks/dropdown/dropdown-select/dropdown-select.js'
 
