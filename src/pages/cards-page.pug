@@ -4,4 +4,16 @@ block variables
     - var pageTitle = 'ui kit'
 
 block content
-    
+    .container
+        .input
+            p(class="input__label") default email
+            input(type="email", name="input-email", class="input__field", value="Email") 
+        
+        .dropdown
+            p.dropdown__label.input__label Select a title
+            select(name="salutation" class="dropdown-select input__field")
+                option(disabled selected class=".dropdown-select__option") Please pick one
+                option.dropdown-select__option HEY
+                option.dropdown-select__option HOW
+
+            </select>

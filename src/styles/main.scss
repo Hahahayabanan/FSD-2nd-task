@@ -1,4 +1,11 @@
+// Main
 @import "main-presets.scss";
-
 @import "fonts.scss";
 
+
+// Blocks
+@import "../blocks/input/input.scss";
+@import "../blocks/input/__field/__field.scss";
+@import "../blocks/input/__label/__label.scss";
+@import "../blocks/dropdown/dropdown-select/dropdown-select.scss";
+//@import "../blocks/dropdown/__select/"

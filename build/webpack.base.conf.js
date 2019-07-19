@@ -62,18 +62,21 @@ module.exports = {
       }
     }, {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      loader: 'file-loader',
-      options: {
-        name: '[name].[ext]',
-        outputPath: 'images'
-      }
-    
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[name].[ext]',
+            outputPath: 'fonts/'
+          }
+        }
+      ]
     }, {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: 'images'
+        outputPath: 'images/'
       }
     }, 
     {
@@ -114,7 +117,7 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { from: `${PATHS.src}/img`, to: `img` },
-      // { from: `${PATHS.src}/fonts`, to: `fonts` },
+      { from: `${PATHS.src}/fonts`, to: `fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
 
@@ -124,6 +127,16 @@ module.exports = {
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
-    }))
+    })),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/index.pug`,
+      filename: './index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/cards-page.pug`,
+      filename: './cards-page.html',
+      inject: true
+    }),
   ],
 }
