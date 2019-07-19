@@ -1,5 +1,14 @@
 extends index
 
+mixin option(title)
+    .option.input__label=title
+        .option__inner
+            .option__item.option__item_circle.option__item_circle_minus -
+            .option__item.option__item_number 0
+            .option__item.option__item_circle.option__item_circle_plus +
+        
+        
+
 block variables
     - var pageTitle = 'ui kit'
 
@@ -9,11 +18,28 @@ block content
             p(class="input__label") default email
             input(type="email", name="input-email", class="input__field", value="Email") 
         
-        .dropdown
-            p.dropdown__label.input__label Select a title
-            select(name="salutation" class="dropdown-select input__field")
-                option(disabled selected class=".dropdown-select__option") Please pick one
-                option.dropdown-select__option HEY
-                option.dropdown-select__option HOW
 
-            </select>
+
+        .dropdown.dropdown_guests
+            p.dropdown__label.input__label Select a title
+            .keyboard-arrow
+                i.material-icons.keyboard-arrow__down keyboard_arrow_down
+            .dropdown-select.input__field Pick the one
+            .dropdown-option
+                +option('first')
+                +option('Second')
+                +option('Third')
+                .option-button
+                    .button.option-button__clear Очистить
+                    .button.option-button__apply Применить
+        
+        
+        .checkbox-button
+            input(type="checkbox" name="checkbox" id="checkbox" class="checkbox-button__input")
+            label(for="checkbox" class="checkbox-button__label") New York
+        .checkbox-button
+            input(type="checkbox" name="checkbox2" id="checkbox2" class="checkbox-button__input")
+            label(for="checkbox2" class="checkbox-button__label") Можно пригласить гостей <br> (до 10 человек)
+
+
+
