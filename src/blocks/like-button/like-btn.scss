@@ -3,7 +3,6 @@
 }
 
 .like-btn{
-    top: 50px;
     display: inline-block;
     position: relative;
     cursor: pointer;
@@ -19,12 +18,16 @@
         border: 1px solid $purple;
     }
 }
-
+.label-button__label{
+    position: absolute;
+    top: -20px;
+    width: 100px;
+}
 .like-btn__label{
     position: absolute;
     color: $dark-shade-25;
     left: 19px;
-    top: -2px;
+    top: -3px;
     pointer-events: none;
     &.active{
         color: $purple;
@@ -39,6 +42,6 @@
     left: 4px;
     top: 4px;
     &.active{
-        color: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        color: $purple;
     }
 }

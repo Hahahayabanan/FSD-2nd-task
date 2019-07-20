@@ -1,0 +1,15 @@
+.rate-button{
+    align-items: center;
+    display: inline-block;
+}
+
+.rate-button__label{}
+
+.rate-button__star{
+    font-size: 24px;
+    line-height: 20px;
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+}

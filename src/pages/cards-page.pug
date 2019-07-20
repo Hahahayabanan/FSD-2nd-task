@@ -52,12 +52,28 @@ block content
             label(for="togglewoggle" class="toggle-btn__label") Получать&nbspспецпредложения
             span.toggle-btn__round
         
-
+        
         .like-btn
-            span.material-icons.like-btn__heart  favorite_border
-            input(type="checkbox" id="like" name="like" value="" class="like-btn__input")
-            label(for="like" class="like-btn__label") 12
+            span.label-button__label.input__label like button
+            span.material-icons.like-btn__heart favorite_border
+            span.like-btn__label 12
             
 
+        .rate-button
+            span.rate-button__label.input__label rate button <br>
+            span.material-icons.rate-button__star star star star star star_border
 
 
+        .range-slider
+            .range-slider__inner1
+                label(class="range-slider__label input__label") Range slider
+                input(type="text" id="amount" readonly class="range-slider__price")
+            .range-slider__inner2
+                div.range-slider__slider#slider-range
+
+
+
+        button(href="#" class="button button_simple") click me
+        button(href="#" class="button button_faint") click me
+        button(href="#" class="button button_no-frame") click me
+        button(href="#" class="button button_long") click me

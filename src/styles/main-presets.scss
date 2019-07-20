@@ -35,3 +35,9 @@ h3{
     text-transform: uppercase;
 }
 
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 800px;
+}

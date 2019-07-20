@@ -2,6 +2,12 @@
 @import "main-presets.scss";
 @import "fonts.scss";
 
+// jquery-ui
+
+@import '../blocks/jquery-ui/jquery-ui.min.css';
+@import '../blocks/jquery-ui/jquery-ui.structure.min.css';
+@import '../blocks/jquery-ui/jquery-ui.theme.min.css';
+
 
 // Blocks
 @import "../blocks/input/input.scss";
@@ -39,3 +45,12 @@
 
 @import "../blocks/like-button/like-btn";
 
+@import "../blocks/rate-button/rate-button";
+
+@import "../blocks/range-slider/range-slider";
+
+@import "../blocks/button/button.scss";
+@import "../blocks/button/_faint/button_faint.scss";
+@import "../blocks/button/_long/button_long.scss";
+@import "../blocks/button/_no-frame/button_no-frame.scss";
+@import "../blocks/button/_simple/button_simple.scss";
