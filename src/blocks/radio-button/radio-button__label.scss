@@ -5,6 +5,7 @@
     color: $dark-shade-50;
     margin-right: 20px;
     position: relative;
+    height: 24px;
 
     &::before{
         content: '';
@@ -28,8 +29,7 @@
         position: absolute;
         z-index: 9;
         left: 4px;
-        //top: 8px;
-        bottom: 4px;
+        top: 7px;
     }
 }
 
