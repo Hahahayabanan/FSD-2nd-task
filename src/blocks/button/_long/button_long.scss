@@ -1,0 +1,13 @@
+.button_long{
+    width: 320px;
+    height: 44px;
+    color: #fff;
+    position: relative;
+}
+
+.button_long__arrow{
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+}

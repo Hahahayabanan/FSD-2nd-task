@@ -77,3 +77,24 @@ block content
         button(href="#" class="button button_faint") click me
         button(href="#" class="button button_no-frame") click me
         button(href="#" class="button button_long") click me
+            span.material-icons.button_long__arrow arrow_forward
+
+        .pagination-wrapper
+            p.pagination-wrapper__label.input__label pagination
+            ul.pagination
+                li.pagination__item.active
+                    a.pagination__link(href='#') 1
+                li.pagination__item
+                    a.pagination__link(href='#') 2
+                li.pagination__item
+                    a.pagination__link(href='#') 3
+                li.pagination__item
+                    a.pagination__link(href='#') ...
+                li.pagination__item
+                    a.pagination__link(href='#') 15
+                li.pagination__item.pagination__item--next
+                    a.pagination__link(href='#')
+                        span.material-icons.pagination__arrow arrow_forward
+                p.pagination__descr 1 – 12 из 100+ вариантов аренды
+
+

@@ -1,0 +1,12 @@
+.button_no-frame{
+    display: inline-block;
+    background: none;
+    color: $purple;
+    max-width: 75px;
+    height: auto;
+
+    &:hover{
+        color: $dark-shade-50;
+    }
+}
+
