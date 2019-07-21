@@ -1,8 +1,7 @@
-dropdown = document.querySelector('.dropdown-select');
-dropdownOption = document.querySelector('.dropdown-option');
+let dropdown_guests = document.querySelector('.dropdown-select_guests');
+let dropdownOption_guests = document.querySelector('.dropdown-option_guests');
 
-dropdown.addEventListener('click', function() {
-    dropdown.classList.toggle('dropdown-select_active');
-    dropdownOption.style.visibility = (dropdownOption.style.visibility == 'visible') ? 'hidden' : 'visible';
-    
+dropdown_guests.addEventListener('click', function() {
+    dropdown_guests.classList.toggle('dropdown-select_active');
+    dropdownOption_guests.style.visibility = (dropdownOption_guests.style.visibility == 'visible') ? 'hidden' : 'visible';
 });

@@ -34,7 +34,7 @@ $accent : green;
 	margin-left: -1px;
 	color: $dark-shade-50;
 	text-decoration: none;
-	&:hover, &:focus, &:active{
+	&:hover{
 		text-decoration: none;
 		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
 		border-radius: 22px;

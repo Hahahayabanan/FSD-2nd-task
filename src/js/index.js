@@ -24,3 +24,5 @@ import '../blocks/toggle-button/toggle-btn.js'
 import '../blocks/like-button/like-btn.js'
 
 import '../blocks/range-slider/range-slider.js'
+
+import '../blocks/expandable-checkbox/expandable-checkbox'

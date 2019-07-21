@@ -7,7 +7,13 @@ mixin option(title)
             .option__item.option__item_number 0
             .option__item.option__item_circle.option__item_circle_plus +
         
-        
+mixin checkbox(name_id, text)
+    .checkbox-button
+            input(type="checkbox" name=name_id id=name_id class="checkbox-button__input")
+            label(for=name_id class="checkbox-button__label")=text
+
+
+
 
 block variables
     - var pageTitle = 'ui kit'
@@ -24,8 +30,8 @@ block content
             p.dropdown__label.input__label Select a title
             .keyboard-arrow
                 i.material-icons.keyboard-arrow__down keyboard_arrow_down
-            .dropdown-select.input__field Pick the one
-            .dropdown-option
+            .dropdown-select.dropdown-select_guests.input__field Pick the one
+            .dropdown-option.dropdown-option_guests
                 +option('first')
                 +option('Second')
                 +option('Third')
@@ -34,13 +40,11 @@ block content
                     .option-button__apply Применить
         
         
-        .checkbox-button
-            input(type="checkbox" name="checkbox" id="checkbox" class="checkbox-button__input")
-            label(for="checkbox" class="checkbox-button__label") New York
-        .checkbox-button
-            input(type="checkbox" name="checkbox2" id="checkbox2" class="checkbox-button__input")
-            label(for="checkbox2" class="checkbox-button__label") Можно пригласить гостей <br> (до 10 человек)
+        +checkbox('checkbox0', 'Можно курить')
+        +checkbox('checkbox1', 'Можно с питомцами')
+        +checkbox('checkbox2', 'Можно пригласить гостей (до 10 человек)')
 
+        
         .radio-button
             input(type="radio" id="contactChoice1" name="contact" value="" class="radio-button__input")
             label(for="contactChoice1" class="radio-button__label") Мужчина
@@ -98,3 +102,22 @@ block content
                 p.pagination__descr 1 – 12 из 100+ вариантов аренды
 
 
+        .expandable-checkbox.dropdown
+            .keyboard-arrow
+                i.material-icons.keyboard-arrow__down.expandable-checkbox__arrow keyboard_arrow_down
+            .dropdown-select.input__label.expandable-checkbox-select expandable checkbox list
+            .dropdown-option.expandable-checkbox-option
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox3', 'Завтрак')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox4', 'Письменный стол')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox5', 'Стул для кормления')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox6', 'Кроватка')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox7', 'Телевизор')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox8', 'Шампунь')
+                .option.expandable-checkbox-button
+                    +checkbox('checkbox9', 'Шампунь')
