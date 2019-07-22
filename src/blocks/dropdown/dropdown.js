@@ -13,11 +13,11 @@ dropdown_guests.addEventListener('click', function() {
 
 
 option_array_guests.forEach(function(elem, item){
-    let text = elem.firstChild;     // name of option element
-    let option = elem.lastChild;    // control element
-    let minus = option.firstChild;  // minus button
-    let number = minus.nextSibling; // control number that user inputs
-    let plus = option.lastChild;    // plus button
+    let text = elem.querySelector('.option')     // name of option element
+    let option = elem.querySelector('.option__inner')    // control element
+    let minus = option.querySelector('.option__item_circle_minus')  // minus button
+    let number = option.querySelector('.option__item_number') // control number that user inputs
+    let plus = option.querySelector('.option__item_circle_plus')  // plus button
     
     minus_unactive(number, minus);
 

@@ -1,11 +1,18 @@
-likeBtn = document.querySelector('.like-btn');
-likeBtnHeart = document.querySelector('.like-btn__heart');
-likeBtnLabel = document.querySelector('.like-btn__label');
+let likeBtn_list = document.querySelectorAll('.like-btn');
 
-likeBtn.addEventListener('click', function() {
-    likeBtn.classList.toggle('active');
-    likeBtnHeart.classList.toggle('active');
-    likeBtnHeart.innerHTML = (likeBtnHeart.className.includes('active')) ? "favorite" : "favorite_border";
-    likeBtnLabel.classList.toggle('active');
 
+let likeBtn = Array.prototype.slice.call(likeBtn_list);
+
+likeBtn.forEach(element => {
+    element.addEventListener('click', function() {
+        element.classList.toggle('active');
+
+        let likeBtnHeart = element.querySelector('.like-btn__heart');
+        let likeBtnLabel = element.querySelector('.like-btn__label');
+
+        likeBtnHeart.classList.toggle('active');
+        likeBtnHeart.innerHTML = (likeBtnHeart.className.includes('active')) ? "favorite" : "favorite_border";
+        likeBtnLabel.classList.toggle('active');
+    });
 });
+

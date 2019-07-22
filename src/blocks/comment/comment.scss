@@ -1,0 +1,43 @@
+.comment{
+    display: flex;
+    flex-direction: row;
+    max-width: 711px;
+}
+.comment__inner1{
+    max-width: 48px;
+    display: flex;
+    flex-direction: column;
+}
+
+.comment__avatar{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+}
+
+.comment__like{
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.comment__inner2{
+    display: flex;
+    flex-direction: column;
+    margin-left: 14px;
+}
+
+.comment__name{
+    font-family: 'Montserrat-Bold';
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-75;
+}
+
+.comment__date{}
+
+.comment__text{
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 24px;
+}
