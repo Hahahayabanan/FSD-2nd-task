@@ -1,9 +1,9 @@
 extends index
 
 mixin option(title)
-    .option.input__label=title
-        .option__inner
-            .option__item.option__item_circle.option__item_circle_minus -
+    .option.option_guests.input__label=title
+        .option__inner.option__inner.option__inner
+            .option__item.option__item_circle.option__item_circle_minus.option__item_circle_unactive -
             .option__item.option__item_number 0
             .option__item.option__item_circle.option__item_circle_plus +
         
@@ -27,14 +27,14 @@ block content
 
 
         .dropdown.dropdown_guests
-            p.dropdown__label.input__label Select a title
+            p.dropdown__label.input__label Dropdown
             .keyboard-arrow
                 i.material-icons.keyboard-arrow__down keyboard_arrow_down
-            .dropdown-select.dropdown-select_guests.input__field Pick the one
+            .dropdown-select.dropdown-select_guests.input__field Сколько гостей
             .dropdown-option.dropdown-option_guests
-                +option('first')
-                +option('Second')
-                +option('Third')
+                +option('взрослые')
+                +option('дети')
+                +option('младенцы')
                 .option-button
                     .option-button__clear Очистить
                     .option-button__apply Применить

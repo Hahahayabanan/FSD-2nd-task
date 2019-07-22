@@ -6,5 +6,11 @@
     border-radius: 22px;
     font-family: "Montserrat";
     font-size: 18px;
-    color: $dark-shade-50;
+    color: $dark-shade-25;
+    cursor: pointer;
+}
+
+.option__item_circle_unactive{
+    opacity: .5;
+    pointer-events: none;
 }

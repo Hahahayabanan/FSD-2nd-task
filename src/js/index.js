@@ -19,7 +19,7 @@ import '../blocks/jquery-ui/jquery-ui.min'
 
 
 
-import '../blocks/dropdown/dropdown-select/dropdown-select.js'
+import '../blocks/dropdown/dropdown.js'
 import '../blocks/toggle-button/toggle-btn.js'
 import '../blocks/like-button/like-btn.js'
 
