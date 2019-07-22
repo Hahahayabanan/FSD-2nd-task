@@ -28,3 +28,8 @@ import '../blocks/range-slider/range-slider.js'
 import '../blocks/expandable-checkbox/expandable-checkbox'
 
 import '../blocks/dropdown-furniture/dropdown-furniture'
+
+import '../js/jquery.inputmask'
+
+import '../blocks/masked-text-field/masked-text-field'
+

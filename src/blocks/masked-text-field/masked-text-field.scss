@@ -1,0 +1,6 @@
+.masked-text-field__input{
+    
+    &::placeholder{
+        color: $dark-shade-25;
+    }
+}

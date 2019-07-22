@@ -1,5 +1,6 @@
 let dropdown_guests = document.querySelector('.dropdown-select_guests');
 let dropdownOption_guests = document.querySelector('.dropdown-option_guests');
+let option_button_clear = document.querySelector('.option-button__clear');
 let option_guests = dropdownOption_guests.querySelectorAll('.option')
 let option_array_guests = Array.prototype.slice.call(option_guests);
 let summ = 0;
@@ -26,6 +27,7 @@ option_array_guests.forEach(function(elem, item){
         number.innerHTML = tmp + Number('1');
         minus_unactive(number, minus);
         get_sum(number.innerHTML, text.innerHTML, '+');
+        option_button_clear.style.visibility = 'visible';
     });
     
     minus.addEventListener('click', function(){
@@ -35,6 +37,11 @@ option_array_guests.forEach(function(elem, item){
             minus_unactive(number, minus);
             get_sum(number.innerHTML, text.innerHTML, '-');
         }
+    });
+
+    option_button_clear.addEventListener('click', function(){
+        clear_all();
+        option_button_clear.style.visibility = 'hidden';
     });
 });
 
@@ -93,3 +100,22 @@ function check_pad(num){
     return tmp;
 }
 
+
+
+function clear_all(){
+    option_array_guests.forEach(function(elem, item){
+        let option = elem.querySelector('.option__inner')               // control element
+        let number = option.querySelector('.option__item_number')
+
+        number.innerHTML = 0;
+        
+    });
+
+    summ = 0;
+
+    guests_num.innerHTML = 'Cколько '
+    guests_text.innerHTML = 'гостей'
+    baby_num.innerHTML = '';
+    baby_text.innerHTML = '';
+    
+}
