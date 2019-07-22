@@ -1,7 +1,8 @@
 extends index
 
 mixin option(title)
-    .option.option_guests.input__label=title
+    .option.input__label
+        p.option__title=title
         .option__inner
             .option__item.option__item_circle.option__item_circle_minus.option__item_circle_unactive -
             .option__item.option__item_number 0
@@ -30,7 +31,11 @@ block content
             p.dropdown__label.input__label Dropdown
             .keyboard-arrow
                 i.material-icons.keyboard-arrow__down keyboard_arrow_down
-            .dropdown-select.dropdown-select_guests.input__field Сколько гостей
+            .dropdown-select.dropdown-select_guests.input__field
+                span.guests-num Сколько 
+                span.guests-text гостей
+                span.baby-num
+                span.baby-text
             .dropdown-option.dropdown-option_guests
                 +option('взрослые')
                 +option('дети')
@@ -174,3 +179,21 @@ block content
                 .comment__date 5 дней назад
                 .comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
 
+
+        .dropdown.dropdown_furniture
+            p.dropdown__label.input__label Dropdown
+            .keyboard-arrow
+                i.material-icons.keyboard-arrow__down keyboard_arrow_down
+            .dropdown-select.dropdown-select_furniture.input__field 
+                p.dropdown-select__title_furniture
+                    span.bedroom-num  0 
+                    span.bedroom-text спален, 
+                    span.bed-num  0 
+                    span.bed-text кроватей, 
+                    span.bathroom-num  0 
+                    span.bathroom-text ванных комнат
+            .dropdown-option.dropdown-option_furniture
+                +option('спальни')
+                +option('кровати')
+                +option('ванные комнаты')
+                

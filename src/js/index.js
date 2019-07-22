@@ -26,3 +26,5 @@ import '../blocks/like-button/like-btn.js'
 import '../blocks/range-slider/range-slider.js'
 
 import '../blocks/expandable-checkbox/expandable-checkbox'
+
+import '../blocks/dropdown-furniture/dropdown-furniture'
