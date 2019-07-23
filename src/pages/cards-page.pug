@@ -227,16 +227,31 @@ block content
                 .keyboard-arrow
                     i.material-icons.keyboard-arrow__down.dropdown-date__arrow keyboard_arrow_down    
                 input(type="text" name='endDate' class="endDate masked-text-field__input input__field dropdown_date__input" placeholder="ДД.ММ.ГГГГ")
-        .dropdown-calendar
-            span.material-icons.arrow_back arrow_back
-            span.material-icons.arrow_forward arrow_forward
-            .dropdown-calendar-buttons
-                    span.dropdown-calendar-buttons__clear.option-button__clear Очистить
+            .dropdown-calendar
+                span.material-icons.arrow_back arrow_back
+                span.material-icons.arrow_forward arrow_forward
+                .dropdown-calendar-buttons
+                        span.dropdown-calendar-buttons__clear.option-button__clear Очистить
+                        span.dropdown-calendar-buttons__apply.option-button__apply Применить
+            
+            
+
+
+
+
+
+        .dropdown-filter-date_wrapper
+            .dropdown.dropdown-filter
+                p.dropdown__label.input__label dropdown filter date
+                .keyboard-arrow
+                    i.material-icons.keyboard-arrow__down keyboard_arrow_down
+                input(type="text" name='main-date' class="input__field dropdown-filter__input")
+
+            .dropdown-filter-date-calendar
+                span.material-icons.arrow_back arrow_back
+                span.material-icons.arrow_forward arrow_forward
+                .dropdown-calendar-buttons
+                    span.option-button__clear.dropdown-filter-calendar-buttons__clear Очистить
                     span.dropdown-calendar-buttons__apply.option-button__apply Применить
-            
-            
-
-
-
 
 

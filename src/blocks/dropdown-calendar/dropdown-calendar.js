@@ -24,10 +24,9 @@ $(function() {
     });
   
 
-    $('.dropdown-calendar').datepicker('setDate', ['-4d', '+0d']);
+    $('.dropdown-calendar').datepicker('setDate', ['+1d', '+5d']);
     
-    
-    
+      
     
   
     // объект расширения (хранит состояние календаря)
@@ -37,8 +36,8 @@ $(function() {
 
     $('.dropdown-calendar-buttons__clear').on('click', function() {
       $('.dropdown-calendar').datepicker('setDate', [null, null]);
-      $('[name=startDate]').val(extensionRange.startDateText);
-      $('[name=endDate]').val(extensionRange.endDateText);
+      $('[name=startDate]').val(null);
+      $('[name=endDate]').val(null);
       $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
     });
 

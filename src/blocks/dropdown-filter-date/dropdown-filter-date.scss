@@ -1,0 +1,19 @@
+.dropdown-filter-date_wrapper{
+    max-width: 266px;
+    position: relative;
+}
+
+.dropdown-filter{
+    max-width: 266px;
+}
+
+.dropdown-filter__input{
+    max-width: 266px;
+    color: $dark-shade-75;
+}
+
+.dropdown-filter-date-calendar{
+    top: 90px;
+    visibility: hidden;
+    position: absolute;
+}
