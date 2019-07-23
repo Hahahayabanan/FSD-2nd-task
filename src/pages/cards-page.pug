@@ -24,11 +24,11 @@ block content
 
         .input
             p(class="input__label") default email
-            input(type="email", name="input-email", class="input__field", value="Email") 
+            input(type="email", name="input-email", class="input__field", placeholder="Email") 
         
         .input.subscription-text-field
             p(class="input__label") subscription text field
-            input(type="email", name="input-email", class="input__field subscription-text-field__field", value="Email")
+            input(type="email", name="input-email", class="input__field subscription-text-field__field", placeholder="Email")
             span.material-icons.subscription-text-field__arrow arrow_forward
 
 
@@ -209,3 +209,34 @@ block content
                 +option('кровати')
                 +option('ванные комнаты')
                 
+
+
+        
+
+
+        
+        .dropdown-date_wrapper
+            .dropdown.dropdown_date
+                p.dropdown__label.input__label Dropdown
+                .keyboard-arrow
+                    i.material-icons.keyboard-arrow__down.dropdown-date__arrow keyboard_arrow_down
+                input(type="text" name='startDate' class="startDate masked-text-field__input input__field dropdown_date__input" placeholder="ДД.ММ.ГГГГ")
+
+            .dropdown.dropdown_date
+                p.dropdown__label.input__label Dropdown
+                .keyboard-arrow
+                    i.material-icons.keyboard-arrow__down.dropdown-date__arrow keyboard_arrow_down    
+                input(type="text" name='endDate' class="endDate masked-text-field__input input__field dropdown_date__input" placeholder="ДД.ММ.ГГГГ")
+        .dropdown-calendar
+            span.material-icons.arrow_back arrow_back
+            span.material-icons.arrow_forward arrow_forward
+            .dropdown-calendar-buttons
+                    span.dropdown-calendar-buttons__clear.option-button__clear Очистить
+                    span.dropdown-calendar-buttons__apply.option-button__apply Применить
+            
+            
+
+
+
+
+

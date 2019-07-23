@@ -1,0 +1,19 @@
+.dropdown-date_wrapper{
+    max-width: 320px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5px;
+}
+
+.dropdown-date__arrow{
+    z-index: 10;
+}
+
+.dropdown_date{
+    max-width: 150px;
+}
+
+.dropdown_date__input{
+    max-width: 150px;
+}

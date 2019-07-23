@@ -33,3 +33,8 @@ import '../js/jquery.inputmask'
 
 import '../blocks/masked-text-field/masked-text-field'
 
+import '../blocks/dropdown-date/dropdown-date'
+
+import '../blocks/dropdown-calendar/dropdown-calendar'
+
+import '../js/jquery.datepicker.extension.range.min'
