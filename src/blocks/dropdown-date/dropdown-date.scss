@@ -1,4 +1,4 @@
-.dropdown-date_wrapper{
+.dropdown-date_input_wrapper{
     max-width: 320px;
     position: relative;
     display: flex;
@@ -17,4 +17,7 @@
 .dropdown_date__input{
     max-width: 150px;
     color: $dark-shade-75;
+    &::placeholder{
+        color: $dark-shade-75;
+    }
 }
