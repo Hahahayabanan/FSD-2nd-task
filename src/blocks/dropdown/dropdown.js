@@ -5,8 +5,7 @@ if(document.querySelector('.dropdown_guests')!= null){
 
 dropdown_guests_all.forEach(function(dropdown_guests,item){
 
-    console.log(dropdown_guests);
-
+    
     let dropdownOption_guests = dropdown_guests.querySelector('.dropdown-option_guests');
     let option_button_clear = dropdown_guests.querySelector('.option-button__clear');
     let option_button_apply = dropdown_guests.querySelector('.option-button__apply');
@@ -19,7 +18,7 @@ dropdown_guests_all.forEach(function(dropdown_guests,item){
     let baby_num = dropdown_guests.querySelector('.baby-num');
     let baby_text = dropdown_guests.querySelector('.baby-text');
 
-    
+
     let summ = 0;
 
     dropdown_guests.querySelector('.dropdown-select_guests').addEventListener('click', function() {

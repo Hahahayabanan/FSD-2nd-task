@@ -1,0 +1,13 @@
+.form-find-hotel-room
+    h1.form-find-hotel-room__label Найдём номера под ваши пожелания
+    
+    .dropdown-date_wrapper
+        include dropdown-date_for_form-find-hotel.pug
+        include ../dropdown-calendar/dropdown-calendar.pug
+
+    div
+        h3(class="") гости
+        include ../dropdown/dropdown.pug
+
+    button(href="#" class="button button_long") Перейти к оплате
+        span.material-icons.button_long__arrow arrow_forward
