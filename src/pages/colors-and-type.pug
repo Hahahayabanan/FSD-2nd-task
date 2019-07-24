@@ -1,11 +1,11 @@
 extends index
 
-mixin color-block(text, descr, color)
+mixin color-block(text, descr, col)
     .color
-        div(background-color=color class="color__rect")
-        .color__title=text
-        .color__descr=descr
-
+        div(style=`background: ${col}` class="color__rect")
+        .color-text
+            p.color__title=text
+            p.color__descr=descr
 
 
 block variables
@@ -13,10 +13,31 @@ block variables
 
 
 block content
+    img(class="logouikit" src="../img/logotypeuikit.svg") 
+    .container-colors-and-type__wrapper
+        .container-colors-and-type
+            .group-colors
+                +color-block('Dark Shade 100%', '#1F2041', 'rgba(31, 32, 65, 1)')
+                +color-block('Dark Shade 75%', '#1F2041', 'rgba(31, 32, 65, .75)')
+                +color-block('Dark Shade 50%', '#1F2041', 'rgba(31, 32, 65, .5)')
+                +color-block('Dark Shade 25%', '#1F2041', 'rgba(31, 32, 65, .25)')
+                +color-block('Dark Shade 5%', '#1F2041', 'rgba(31, 32, 65, .05)')
+                +color-block('Purple', '#BC9CFF', '#BC9CFF')
+                +color-block('Green', '#6FCF97', '#6FCF97')
 
-    .container-colors-and-type
-        .group-colors
-            +color-block('Dark Shade 100%', '#1F2041', 'rgba(31, 32, 65, 0.75)')
+            .group-headers
+                .group-headers__item
+                    h1.group-headers__h H1
+                    h1.group-headers__text This one is the sub-section or widget title
+                .group-headers__item
+                    h2.group-headers__h H2
+                    h2.group-headers__text Next one is the item title inside widgets
+                .group-headers__item
+                    h3.group-headers__h H3
+                    h3.group-headers__text This is a label or CTA text
+                .group-headers__item
+                    p.group-headers__h Body
+                    p.group-headers__text This is the body text which is used for most of the design, like paragraphs, lists, etc.
 
 
 
