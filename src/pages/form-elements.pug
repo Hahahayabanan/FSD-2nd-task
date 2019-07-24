@@ -1,0 +1,97 @@
+extends index
+
+include ../blocks/mixins/mixins.pug
+
+
+block variables
+    - var pageTitle = 'Form Elements'
+
+block content
+
+    .form-elements-container_wrapper
+        .form-elements-container
+
+            .form-elements-fields
+                .wrapper
+                    h3(class="") text field
+                    include ../blocks/input/input.pug
+                .wrapper
+                    h3(class="") dropdown
+                    include ../blocks/dropdown/dropdown.pug
+                .wrapper
+                    h3(class="") masked text field
+                    include ../blocks/masked-text-field/masked-text-field.pug
+                .wrapper
+                    include ../blocks/dropdown-calendar/dropdown-calendar.pug
+                .wrapper
+                    h3(class="") filter date dropdown
+                    include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
+                .wrapper
+                    h3(class="") subscription text field
+                    include ../blocks/subscription-text-field/subscription-text-field.pug
+
+            .form-elements-check-buttons
+                .wrapper
+                    p(class="input__label") checkbox buttons
+                    include ../blocks/checkbox-button/checkbox-button.pug
+                .wrapper
+                    p(class="input__label") radio button
+                    include ../blocks/radio-button/radio-button.pug
+                .wrapper
+                    p(class="input__label") toggle button
+                    include ../blocks/toggle-button/toggle-button.pug
+                .wrapper
+                    p(class="input__label") like button
+                    include ../blocks/like-button/like-button.pug
+                .wrapper
+                    p(class="input__label") rate button
+                    include ../blocks/rate-button/rate-button.pug
+
+            .form-elements-buttons
+                .wrapper
+                    include ../blocks/range-slider/range-slider.pug
+                .wrapper
+                    p(class="input__label") buttons
+                    button(href="#" class="button button_simple") click me
+                    br
+                    br
+                    button(href="#" class="button button_faint") click me
+                    br
+                    button(href="#" class="button button_no-frame") click me
+                    br 
+                    br
+                    button(href="#" class="button button_long") click me
+                        span.material-icons.button_long__arrow arrow_forward
+                .wrapper
+                    p(class="input__label") pagination
+                    include ../blocks/pagination/pagination.pug
+
+
+            .form-elements-left-dropdown
+                .wrapper
+                    h3(class="") dropdown
+                    include ../blocks/dropdown-furniture/dropdown-furniture.pug
+                .wrapper
+                    include ../blocks/expandable-checkbox/expandable-checkbox.pug
+            
+            .form-elements-left-comments
+                .wrapper
+                    include ../blocks/icon-text/icon-text.pug
+
+            .form-elements-middle-dropdown
+                .wrapper
+                    p(class="input__label") rich-checkbox
+                    include ../blocks/rich-checkbox/rich-checkbox.pug
+
+
+            .form-elements-right-dropdown
+                .wrapper
+                    p(class="input__label") bullet-list
+                    include ../blocks/bullet-list/bullet-list.pug
+
+
+            .form-elements-comments
+                .wrapper
+                    include ../blocks/comment/comment.pug
+
+
