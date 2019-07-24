@@ -3,11 +3,43 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
-    grid-template-areas: "fields check-buttons buttons" "left-dropdown middle-dropdown right-dropdown" "left-comments comments comments";
+    grid-template-areas:  "fields         check-buttons     buttons" 
+                          "left-dropdown  middle-dropdown   right-dropdown" 
+                          "left-comments  comments          comments";
     grid-row-gap: 100px;
+    grid-column-gap: 10px;
+    grid-auto-flow: column;
+    @media (max-width: 918px) {
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto auto auto;
+
+        grid-template-areas:    "fields check-buttons" 
+                                "buttons left-dropdown"
+                                "buttons left-comments"
+                                "middle-dropdown right-dropdown"
+                                "comments comments"
+                    
+                                ;
+        grid-row-gap: 0px;
+    }
+    @media (max-width: 618px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto auto auto auto;
+
+        grid-template-areas:    "fields" 
+                                "check-buttons" 
+                                "buttons"
+                                "left-dropdown"
+                                "middle-dropdown"
+                                "right-dropdown"
+                                "left-comments"
+                                "comments"
+                                ;
+        grid-row-gap: 0px;
+    }
   }
   
-  .form-elements-fields { grid-area: fields; }
+  .form-elements-fields { grid-area: fields;}
   
   .form-elements-check-buttons { grid-area: check-buttons; }
   
@@ -29,13 +61,14 @@
 
   .wrapper{
       margin-bottom: 40px;
+     
   }
 
 
 .form-elements-container_wrapper{
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  padding-top: 140px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
 }
