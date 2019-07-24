@@ -1,4 +1,4 @@
-
+if(document.querySelector('.dropdown-calendar')){
 
 $(function() {
     $('.dropdown-calendar').datepicker({
@@ -11,7 +11,7 @@ $(function() {
       dayNamesMin: [ "Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс" ],
       dayNamesShort: [ "Пон", "Втр", "Срд", "Чтв", "Птн", "Суб", "Вос" ],
       monthNames: [ "Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь" ],
-      monthNamesShort: [ "Янв", "Фев", "Мар", "Апр", "Май", "Инь", "Иль", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
+      monthNamesShort: [ "Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек" ],
       
       onSelect: function(dateText, inst, extensionRange) {
         // extensionRange - объект расширения
@@ -61,6 +61,7 @@ document.querySelectorAll('.dropdown_date__input').forEach(function(elem) {
 
 });
 
+}
 
   
   // Метод "setDate" теперь может принимать массив: 2 элемента при range="period" или более элементов при range="multiple" 

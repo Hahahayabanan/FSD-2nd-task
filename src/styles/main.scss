@@ -82,3 +82,18 @@
 @import "../blocks/dropdown-calendar-buttons/dropdown-calendar-buttons";
 
 @import "../blocks/dropdown-filter-date/dropdown-filter-date";
+
+
+
+// PAGES
+
+@import "../styles/UI-kit/colors-and-type";
+@import "../styles/UI-kit/cards.scss";
+@import "../styles/UI-kit/form-elements";
+@import "../styles/UI-kit/headers-and-footers";
+
+@import "../styles/Website-pages/landing-page";
+@import "../styles/Website-pages/sign-in.scss";
+@import "../styles/Website-pages/search-room";
+@import "../styles/Website-pages/room-details";
+@import "../styles/Website-pages/registration";

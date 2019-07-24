@@ -2,6 +2,7 @@
 
 import '../pages/index.pug'
 import '../pages/cards-page.pug'
+import '../pages/colors-and-type.pug'
 
 // SCSS
 

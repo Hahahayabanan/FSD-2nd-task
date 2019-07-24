@@ -1,0 +1,22 @@
+extends index
+
+mixin color-block(text, descr, color)
+    .color
+        div(background-color=color class="color__rect")
+        .color__title=text
+        .color__descr=descr
+
+
+
+block variables
+    - var pageTitle = 'Colors & Type'
+
+
+block content
+
+    .container-colors-and-type
+        .group-colors
+            +color-block('Dark Shade 100%', '#1F2041', 'rgba(31, 32, 65, 0.75)')
+
+
+
