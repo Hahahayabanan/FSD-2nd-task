@@ -1,14 +1,28 @@
+if(document.querySelector('.dropdown_guests')!= null){
 
+    let dropdown_guests_list = document.querySelectorAll('.dropdown_guests');
+    let dropdown_guests_all = Array.prototype.slice.call(dropdown_guests_list);
 
-if(document.querySelector('.dropdown-select_guests')!= null){
-    let dropdown_guests = document.querySelector('.dropdown-select_guests');
-    let dropdownOption_guests = document.querySelector('.dropdown-option_guests');
-    let option_button_clear = document.querySelector('.option-button__clear');
-    let option_guests = dropdownOption_guests.querySelectorAll('.option')
+dropdown_guests_all.forEach(function(dropdown_guests,item){
+
+    console.log(dropdown_guests);
+
+    let dropdownOption_guests = dropdown_guests.querySelector('.dropdown-option_guests');
+    let option_button_clear = dropdown_guests.querySelector('.option-button__clear');
+    let option_button_apply = dropdown_guests.querySelector('.option-button__apply');
+    let option_guests = dropdown_guests.querySelectorAll('.option')
     let option_array_guests = Array.prototype.slice.call(option_guests);
+
+
+    let guests_num = dropdown_guests.querySelector('.guests-num');
+    let guests_text = dropdown_guests.querySelector('.guests-text');
+    let baby_num = dropdown_guests.querySelector('.baby-num');
+    let baby_text = dropdown_guests.querySelector('.baby-text');
+
+    
     let summ = 0;
 
-    dropdown_guests.addEventListener('click', function() {
+    dropdown_guests.querySelector('.dropdown-select_guests').addEventListener('click', function() {
         dropdown_guests.classList.toggle('dropdown-select_active');
         dropdownOption_guests.style.visibility = (dropdownOption_guests.style.visibility == 'visible') ? 'hidden' : 'visible';
     });
@@ -46,6 +60,9 @@ if(document.querySelector('.dropdown-select_guests')!= null){
             clear_all();
             option_button_clear.style.visibility = 'hidden';
         });
+        option_button_apply.addEventListener('click', function(){
+            dropdownOption_guests.style.visibility = 'hidden';
+        });
     });
 
 
@@ -61,11 +78,7 @@ if(document.querySelector('.dropdown-select_guests')!= null){
 
 
 
-
-    let guests_num = document.querySelector('.guests-num');
-    let guests_text = document.querySelector('.guests-text');
-    let baby_num = document.querySelector('.baby-num');
-    let baby_text = document.querySelector('.baby-text');
+    
 
 
 
@@ -122,4 +135,9 @@ if(document.querySelector('.dropdown-select_guests')!= null){
         baby_text.innerHTML = '';
         
     }
+
+
+
+
+});
 }

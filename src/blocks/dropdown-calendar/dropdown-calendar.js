@@ -1,7 +1,12 @@
 if(document.querySelector('.dropdown-calendar')){
 
+const calendar = $('.dropdown-calendar');
+
 $(function() {
-    $('.dropdown-calendar').datepicker({
+    calendar.each(function(){
+     
+      
+    calendar.datepicker({
       range: 'period', // режим - выбор периода
       numberOfMonths: 1,
       selectOtherMonths: true,
@@ -24,44 +29,90 @@ $(function() {
     });
   
 
-    $('.dropdown-calendar').datepicker('setDate', ['+1d', '+5d']);
+    calendar.datepicker('setDate', ['+1d', '+5d']);
     
       
     
   
     // объект расширения (хранит состояние календаря)
-    var extensionRange = $('.dropdown-calendar').datepicker('widget').data('datepickerExtensionRange');
+    var extensionRange = calendar.datepicker('widget').data('datepickerExtensionRange');
     if(extensionRange.startDateText) $('[name=startDate]').val(extensionRange.startDateText);
     if(extensionRange.endDateText) $('[name=endDate]').val(extensionRange.endDateText);
 
     $('.dropdown-calendar-buttons__clear').on('click', function() {
-      $('.dropdown-calendar').datepicker('setDate', [null, null]);
+      calendar.datepicker('setDate', [null, null]);
       $('[name=startDate]').val(null);
       $('[name=endDate]').val(null);
       $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
     });
 
     
+});
 
 });
 
+
 document.querySelectorAll('.dropdown_date__input').forEach(function(elem) {
   elem.addEventListener("click", function() {
-    if(document.querySelector('.dropdown-calendar').style.visibility== 'visible'){
-      document.querySelector('.dropdown-calendar').style.visibility = 'hidden';
+    
+    if(calendar.css('visibility') == 'visible'){
+      calendar.css('visibility', 'hidden');
       $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
     } else {
-      document.querySelector('.dropdown-calendar').style.visibility = 'visible';
+      calendar.css('visibility', 'visible');
       $('.dropdown-calendar-buttons__clear').css('visibility', 'visible');
     }
 
     
   }, true);
-
-
 });
 
+document.querySelectorAll('.option-button__apply').forEach(function(elem) {
+  elem.addEventListener("click", function() {
+        
+      calendar.css('visibility', 'hidden');
+      $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
+       
+  }, true);
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
 
   
   // Метод "setDate" теперь может принимать массив: 2 элемента при range="period" или более элементов при range="multiple" 
