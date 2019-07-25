@@ -1,0 +1,50 @@
+mixin room-preview(number, src, price, rate, reviews, islucs)
+    .room-preview
+        img(class="room-preview__image" src=`${src}`)
+        .room-preview__icons
+            .room-preview__circle.room-preview__circle_full
+            .room-preview__circle
+            .room-preview__circle
+            .room-preview__circle
+        .room-preview__arrows
+        .room-preview__descr
+            .form-book-a-room-title.row.room-preview_row
+                p.form-book-a-room__row
+                    span.form-book-a-room-title__n № 
+                    span.form-book-a-room-title__number=number
+                    if islucs
+                        span.form-book-a-room-title__type  люкс
+                p.form-book-a-room__row
+                    span.form-book-a-room-title__price=price
+                    span.form-book-a-room-title__price ₽
+                    span.form-book-a-room-title__in-time  в сутки
+            
+            .room-preview__underline
+
+            .rate-button.row
+
+                case rate
+                    when 0
+                        span.material-icons.rate-button__star.room-preview__stars star_border star_border star_border star_border star_border
+                    when 1
+                        span.material-icons.rate-button__star.room-preview__stars star star_border star_border star_border star_border
+                    when 2
+                        span.material-icons.rate-button__star.room-preview__stars star star star_border star_border star_border
+                    when 3
+                        span.material-icons.rate-button__star.room-preview__stars star star star star_border star_border
+                    when 4
+                        span.material-icons.rate-button__star.room-preview__stars star star star star star_border
+                    when 5
+                        span.material-icons.rate-button__star.room-preview__stars star star star star star
+                    default
+                        span.material-icons.rate-button__star.room-preview__stars star_border star_border star_border star_border star_border
+                
+
+                p.room-preview-p
+                    span.room-preview__review_num=reviews
+                    span.room-preview__review_rev  Отзывов
+
+
+
++room-preview(888, "/../../img/room888.svg", '9 990', 5, 145, true)
++room-preview(840, "/../../img/room840.svg", '9 900', 4, 65, false)
