@@ -1,0 +1,33 @@
+.form-regitration
+    h1.form-find-hotel-room__label Регистрация аккаунта
+
+    .input.margin-t-20
+        input(type="text", name="input-email", class="input__field", placeholder="Имя") 
+    .input.margin-t-10
+        input(type="text", name="input-email", class="input__field", placeholder="Фамилия") 
+
+    .radio-button.margin-t-10
+        input(type="radio" id="contactChoice3" name="contact3" value="" class="radio-button__input" checked)
+        label(for="contactChoice3" class="radio-button__label") Мужчина
+        input(type="radio" id="contactChoice4" name="contact3" value="" class="radio-button__input")
+        label(for="contactChoice4" class="radio-button__label") Женщина
+
+    h3.margin-t-20 Дата рождения
+    include ../masked-text-field/masked-text-field.pug
+
+    h3.margin-t-20 Данные для входа в сервис
+    .input
+        input(type="email", name="input-email", class="input__field", placeholder="Email") 
+    .input.margin-t-10
+        input(type="password", name="input-email", class="input__field", placeholder="Пароль") 
+
+    .margin-t-10
+        include ../toggle-button/toggle-button.pug
+
+    .margin-t-20
+        button(href="#" class="button button_long") click me
+            span.material-icons.button_long__arrow arrow_forward
+
+    .sign-in-link.margin-t-30
+        span Уже есть аккаунт на Toxin
+        button(href="#" class="button button_faint") click me
