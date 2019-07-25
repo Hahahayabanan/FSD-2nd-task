@@ -10,6 +10,8 @@
     font-family: "Montserrat";
     position: relative;
     padding-left: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
 
     &:focus, &:hover{
         border: 1px solid $dark-shade-50;
