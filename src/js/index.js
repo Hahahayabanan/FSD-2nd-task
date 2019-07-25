@@ -20,6 +20,7 @@ import '../blocks/jquery-ui/jquery-ui.min'
 
 
 
+
 import '../blocks/dropdown/dropdown.js'
 import '../blocks/toggle-button/toggle-btn.js'
 import '../blocks/like-button/like-btn.js'
@@ -39,3 +40,6 @@ import '../blocks/dropdown-calendar/dropdown-calendar'
 import '../js/jquery.datepicker.extension.range.min'
 
 import '../blocks/dropdown-filter-date/dropdown-filter-date'
+
+import '../blocks/form-book-a-room/form-book-a-room'
+

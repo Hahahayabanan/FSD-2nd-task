@@ -1,14 +1,14 @@
-.form-find-hotel-room
+form(class="form-find-hotel-room" name="form-find-hotel-room" action="#")
     h1.form-find-hotel-room__label Найдём номера под ваши пожелания
     
-    .dropdown-date_wrapper.margin-t-10
+    .dropdown-date_wrapper.margin-t-20
         include dropdown-date_for_form-find-hotel.pug
         include ../dropdown-calendar/dropdown-calendar.pug
 
-    .margin-t-10
+    .margin-t-20
         h3(class="") гости
         include ../dropdown/dropdown.pug
 
     .margin-t-30
-        button(href="#" class="button button_long") Перейти к оплате
+        button(type="submit" class="button button_long") Подобрать номер
             span.material-icons.button_long__arrow arrow_forward

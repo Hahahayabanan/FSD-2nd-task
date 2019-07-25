@@ -1,12 +1,17 @@
 if(document.querySelector('.dropdown-calendar')){
 
-const calendar = $('.dropdown-calendar');
+const calendar = $('.dropdown-date_wrapper');
+
+
 
 $(function() {
-    calendar.each(function(){
+    calendar.each(function(index, each_calendar_old){
+
+      each_calendar = $(each_calendar_old).find('.dropdown-calendar');
+
      
       
-    calendar.datepicker({
+    $(each_calendar).datepicker({
       range: 'period', // режим - выбор периода
       numberOfMonths: 1,
       selectOtherMonths: true,
@@ -20,8 +25,8 @@ $(function() {
       
       onSelect: function(dateText, inst, extensionRange) {
         // extensionRange - объект расширения
-        $('[name=startDate]').val(extensionRange.startDateText);
-        $('[name=endDate]').val(extensionRange.endDateText);
+        $(each_calendar_old).find('[name=startDate]').val(extensionRange.startDateText);
+        $(each_calendar_old).find('[name=endDate]').val(extensionRange.endDateText);
         
         
       }
@@ -29,21 +34,45 @@ $(function() {
     });
   
 
-    calendar.datepicker('setDate', ['+1d', '+5d']);
+    $(each_calendar).datepicker('setDate', ['+1d', '+5d']);
     
-      
-    
-  
+        
     // объект расширения (хранит состояние календаря)
-    var extensionRange = calendar.datepicker('widget').data('datepickerExtensionRange');
-    if(extensionRange.startDateText) $('[name=startDate]').val(extensionRange.startDateText);
-    if(extensionRange.endDateText) $('[name=endDate]').val(extensionRange.endDateText);
+    var extensionRange = $(each_calendar).datepicker('widget').data('datepickerExtensionRange');
+    if(extensionRange.startDateText) $(each_calendar).find('[name=startDate]').val(extensionRange.startDateText);
+    if(extensionRange.endDateText) $(each_calendar).find('[name=endDate]').val(extensionRange.endDateText);
 
-    $('.dropdown-calendar-buttons__clear').on('click', function() {
-      calendar.datepicker('setDate', [null, null]);
-      $('[name=startDate]').val(null);
-      $('[name=endDate]').val(null);
-      $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
+    $(each_calendar_old).find('.dropdown-calendar-buttons__clear').on('click', function() {
+      $(each_calendar).datepicker('setDate', [null, null]);
+      $(each_calendar).find('[name=startDate]').val(null);
+      $(each_calendar).find('[name=endDate]').val(null);
+      $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
+    });
+
+
+  
+
+    $(each_calendar_old).find('.dropdown_date__input').each(function(index, elem) {
+      $(elem).on('click', function() {
+          if($(each_calendar).css('visibility') == 'visible'){
+            $(each_calendar).css('visibility', 'hidden');
+            $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
+          } else {
+   
+            $(each_calendar).css('visibility', 'visible');
+            $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'visible');
+          }
+    
+        
+      });
+    });
+    
+    $(each_calendar_old).find('.option-button__apply').each(function(index, elem) {
+      $(elem).on('click', function() {
+          $(each_calendar).css('visibility', 'hidden');
+          $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
+           
+      });
     });
 
     
@@ -52,29 +81,7 @@ $(function() {
 });
 
 
-document.querySelectorAll('.dropdown_date__input').forEach(function(elem) {
-  elem.addEventListener("click", function() {
-    
-    if(calendar.css('visibility') == 'visible'){
-      calendar.css('visibility', 'hidden');
-      $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
-    } else {
-      calendar.css('visibility', 'visible');
-      $('.dropdown-calendar-buttons__clear').css('visibility', 'visible');
-    }
 
-    
-  }, true);
-});
-
-document.querySelectorAll('.option-button__apply').forEach(function(elem) {
-  elem.addEventListener("click", function() {
-        
-      calendar.css('visibility', 'hidden');
-      $('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
-       
-  }, true);
-});
 
 
 
