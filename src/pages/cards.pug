@@ -1,0 +1,28 @@
+extends index
+
+
+        
+include ../blocks/mixins/mixins.pug
+            
+
+block variables
+    - var pageTitle = 'Cards'
+
+block content
+    img(class="logouikit" src="../img/logotypeuikit.svg")
+
+    .cards
+        .cards__inner
+            .cards__column
+                .cards__row
+                    include ../blocks/form-find-hotel-room/form-find-hotel-room.pug
+                .cards__row
+                    include ../blocks/form-registration/form-registration.pug
+            .cards__column
+                .cards__row
+                    include ../blocks/form-book-a-room/form-book-a-room.pug
+                .cards__row
+                    include ../blocks/form-sign-in/form-sign-in.pug
+            .cards__column
+                .cards__row
+                    include ../blocks/room-preview/room-preview.pug
