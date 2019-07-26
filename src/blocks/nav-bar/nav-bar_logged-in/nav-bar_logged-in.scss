@@ -1,0 +1,16 @@
+.nav-bar__vertical-line{
+    width: 1px;
+    height: 30px;
+    background: rgba(31, 32, 65, 0.1);
+    @media (max-width: 760px) {
+        margin: 5px 0;
+    }
+}
+
+.nav-bar__user-name{
+    margin-left: 30px;
+    @media (max-width: 760px) {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}

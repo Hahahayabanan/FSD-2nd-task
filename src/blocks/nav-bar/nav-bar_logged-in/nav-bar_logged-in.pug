@@ -1,0 +1,23 @@
+.nav-bar.nav-bar_logged-in
+    .nav-bar-container
+        .nav-bar__icon
+            img(class="nav-bar__icon-image" src="../../../img/nav-bar-icon.svg")
+            img(class="nav-bar__icon-text" src="../../../img/nav-bar-icon-text.svg")
+        
+        .nav-bar__blocks_wrapper
+            ul.nav-bar__list
+                li.nav-bar__item
+                    a.nav-bar__link.nav-bar__link_active(href="#") Home
+                li.nav-bar__item
+                    a.nav-bar__link(href="#") About Us
+                li.nav-bar__item.nav-bar__item_dropdown
+                    a.nav-bar__link(href="#") Services
+                        span.material-icons.nav-bar-keyboard-arrow__down keyboard_arrow_down
+                li.nav-bar__item
+                    a.nav-bar__link(href="#") Careers
+                li.nav-bar__item
+                    a.nav-bar__link(href="#") News
+                li.nav-bar__item
+                    a.nav-bar__link(href="#") Documentation
+            .nav-bar__vertical-line
+            .nav-bar__user-name.nav-bar__link Cosmin Negoita
