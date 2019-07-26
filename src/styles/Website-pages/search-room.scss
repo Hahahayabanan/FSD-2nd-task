@@ -1,7 +1,7 @@
 .search-room-grid-container {
     max-width: 1160px;
     display: grid;
-    grid-template-columns: 322px auto;
+    grid-template-columns: 325px auto;
     grid-template-rows: auto auto auto;
     grid-template-areas: "side-bar title" "side-bar elements" "side-bar pagination";
     margin-bottom: 1px;
@@ -74,6 +74,37 @@
 
   .search-room-underline{
     width: 100%;
-    height: 0px;
-    border: 1px solid $dark-shade-25;
+    height: 2px;
+    background: $dark-shade-25;
+    //border: 1px solid $dark-shade-25;
+  }
+
+  .search-room-title__h1{
+      margin: 0;
+      padding-bottom: 20px;
+  }
+
+  .search-room-grid-container{
+      h3{
+        line-height: 135%;
+        margin-bottom: 2px;
+      }
+      .rich-checkbox{
+          margin-top: 0;
+      }
+      .expandable-checkbox .keyboard-arrow{
+        top: -15px;
+      }
+
+      .range__label{
+          margin-bottom: 0;
+          line-height: 171%;
+      }
+      .margin-t-23{
+          margin-top: 23px;
+      }
+  }
+
+  .expandable-checkbox-option{
+    margin-top: 15px;
   }

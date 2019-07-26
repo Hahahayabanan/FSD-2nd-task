@@ -11,7 +11,7 @@ block content
             div
                 h3(class="") даты пребывания в отеле
                 include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
-            .margin-t-20
+            .margin-t-23
                 h3(class="") Гости
                 .dropdown.dropdown_guests.search-room-dropdown_guests
                     .keyboard-arrow
@@ -42,10 +42,10 @@ block content
             .margin-t-30
                 p(class="input__label") Доступность
                 include ../blocks/rich-checkbox/rich-checkbox.pug
-            .margin-t-20
+            .margin-t-15
                 h3(class="") Удобства номера
                 include ../blocks/dropdown-furniture/dropdown-furniture.pug
-            .margin-t-15
+            .margin-t-20
                 .expandable-checkbox.dropdown
                     .keyboard-arrow
                         i.material-icons.keyboard-arrow__down.expandable-checkbox__arrow keyboard_arrow_down
@@ -67,7 +67,7 @@ block content
                             +checkbox('checkbox9', 'Шампунь')
 
         .search-room-title
-            h1 Номера, которые мы для вас подобрали
+            h1.search-room-title__h1 Номера, которые мы для вас подобрали
 
 
         .search-room-elements

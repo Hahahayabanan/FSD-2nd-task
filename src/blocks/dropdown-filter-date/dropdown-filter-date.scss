@@ -13,8 +13,10 @@
 }
 
 .dropdown-filter-date-calendar{
-    //top: 90px;
+    margin-top: 5px;
     z-index: 12;
     visibility: hidden;
     position: absolute;
+    transform-origin: 0 0;
+    transform: scale(0.83);
 }

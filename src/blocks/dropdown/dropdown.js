@@ -22,7 +22,9 @@ dropdown_guests_all.forEach(function(dropdown_guests,item){
     let summ = 0;
 
     dropdown_guests.querySelector('.dropdown-select_guests').addEventListener('click', function() {
-        dropdown_guests.classList.toggle('dropdown-select_active');
+        // dropdown_guests.classList.toggle('dropdown-select_active');
+        dropdown_guests.querySelector('.dropdown-select_guests').classList.toggle('dropdown-select_active');
+        
         dropdownOption_guests.style.visibility = (dropdownOption_guests.style.visibility == 'visible') ? 'hidden' : 'visible';
         
         if(guests_num.innerHTML > 0 || baby_num.innerHTML) option_button_clear.style.visibility = (option_button_clear.style.visibility == 'visible') ? 'hidden' : 'visible';
