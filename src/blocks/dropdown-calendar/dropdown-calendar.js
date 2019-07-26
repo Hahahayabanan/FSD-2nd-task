@@ -9,7 +9,7 @@ $(function() {
 
       each_calendar = $(each_calendar_old).find('.dropdown-calendar');
 
-     
+      
       
     $(each_calendar).datepicker({
       range: 'period', // режим - выбор периода
@@ -49,16 +49,15 @@ $(function() {
       $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
     });
 
-
-  
+    
 
     $(each_calendar_old).find('.dropdown_date__input').each(function(index, elem) {
       $(elem).on('click', function() {
+        each_calendar = $(each_calendar_old).find('.dropdown-calendar');
           if($(each_calendar).css('visibility') == 'visible'){
             $(each_calendar).css('visibility', 'hidden');
             $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'hidden');
           } else {
-   
             $(each_calendar).css('visibility', 'visible');
             $(each_calendar).find('.dropdown-calendar-buttons__clear').css('visibility', 'visible');
           }
@@ -67,6 +66,9 @@ $(function() {
       });
     });
     
+
+
+
     $(each_calendar_old).find('.option-button__apply').each(function(index, elem) {
       $(elem).on('click', function() {
           $(each_calendar).css('visibility', 'hidden');

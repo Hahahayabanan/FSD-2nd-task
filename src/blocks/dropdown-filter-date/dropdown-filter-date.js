@@ -55,7 +55,7 @@ document.querySelectorAll('.dropdown-filter__input').forEach(function(elem) {
       $('.dropdown-filter-calendar-buttons__clear').css('visibility', 'visible');
     }
    
-  }, true);
+  });
 
 
   $('.main-date').on('keypress', function(event){
