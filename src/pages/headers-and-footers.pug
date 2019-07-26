@@ -7,8 +7,14 @@ block variables
     - var pageTitle = 'Headers & footers'
 
 block content
-    include ../blocks/nav-bar/nav-bar_logged-out/nav-bar_logged-out.pug
-    include ../blocks/nav-bar/nav-bar_logged-in/nav-bar_logged-in.pug
 
-    include ../blocks/footer-widgets/footer-widgets.pug
-    include ../blocks/footer-creative/footer-creative.pug
+    .headers-and-footers
+        img(class="logouikit" src="../img/logotypeuikit.svg" alt="logo")
+        .headers-and-footers__item
+            include ../blocks/nav-bar/nav-bar_logged-out/nav-bar_logged-out.pug
+        .headers-and-footers__item
+            include ../blocks/nav-bar/nav-bar_logged-in/nav-bar_logged-in.pug
+        .headers-and-footers__item
+            include ../blocks/footer-widgets/footer-widgets.pug
+        .headers-and-footers__item
+            include ../blocks/footer-creative/footer-creative.pug

@@ -33,7 +33,7 @@ $max-width-pad : 760px;
 .nav-bar__item{
     list-style: none;
     display: inline;
-    margin-right: 30px;
+    margin-right: 20px;
     @media (max-width: $max-width-pad) {
         display: block;
         margin-right: 0;
