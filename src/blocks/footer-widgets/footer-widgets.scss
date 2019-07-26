@@ -1,12 +1,14 @@
-
-
 .footer-widgets-container{
     display: flex;
     justify-content: space-between;
     width: 1160px;
     height: 100%;
-}
+    flex-direction: row;
 
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
 
 .footer-widgets__item{
     display: block;
@@ -18,13 +20,26 @@
 }
 
 .footer-widgets__descr{
-    max-width: 260px;
+    width: 260px;
+    text-align: left;
+    @media (max-width: 880px) {
+        max-width: 260px;
+        min-width: 180px;
+        width: unset;
+    }
+    @media (max-width: 768px) {
+        text-align: center;
+    }
 }
 
 .footer-widgets-column{
     display: flex;
     flex-direction: column;
     padding: 100px 0;
+    @media (max-width: 768px) {
+        padding: 0;
+        align-items: center;
+    }
 }
 
 .footer-widgets{
@@ -34,21 +49,37 @@
     height: 372px;
     background: #FFFFFF;
     box-shadow: 0px 1px 0px rgba(31, 32, 65, 0.1);
+    @media (max-width: 768px) {
+        height: 520px;
+        padding: 30px 0;
+    }
 }
+
 
 .footer-widgets__icon{
     justify-content: flex-start;
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 }
 
 .footer-widgets__subs-text{
     max-width: 196px;
+    @media (max-width: 768px) {
+        max-width: 267px;
+        text-align: center;
+    }
 }
 
 .footer-widgets__subscription-text-field{
     margin-right: 0;
 }
 
-
+.footer-widgets__links{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
 
 
 
