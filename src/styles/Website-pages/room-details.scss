@@ -1,0 +1,71 @@
+.room-details-photos{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+}
+.room-details{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.room-details-content{
+    padding-top: 70px;
+    padding-bottom: 70px;
+    max-width: 1160px;
+}
+
+.room-details-photos__column{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.room-details-content-cancel__text{
+    max-width: 341px;
+    max-height: 96px;
+}
+
+.room-details-content-review__amount{
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    color: $dark-shade-50;
+}
+.room-details-content-review{
+    position: relative;
+}
+
+
+
+.room-details-content-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-areas: "info diagramm get_it" "review review get_it" "rules cancel get_it";
+    grid-column-gap: 10px;
+    //grid-row-gap: 20px;
+  }
+  
+  .room-details-content-info { grid-area: info; }
+  
+  .room-details-content-diagramm { grid-area: diagramm; }
+  
+  .room-details-content-get_it { grid-area: get_it; }
+  
+  .room-details-content-review { grid-area: review; }
+  
+  .room-details-content-rules { grid-area: rules; }
+  
+  .room-details-content-cancel { grid-area: cancel; }
+
+
+
+
+
+
+
+
+
+
+

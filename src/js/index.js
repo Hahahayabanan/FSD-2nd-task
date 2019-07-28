@@ -1,8 +1,7 @@
 // PUG
 
 import '../pages/index.pug'
-import '../pages/cards-page.pug'
-import '../pages/colors-and-type.pug'
+
 
 // SCSS
 
@@ -42,4 +41,6 @@ import '../js/jquery.datepicker.extension.range.min'
 import '../blocks/dropdown-filter-date/dropdown-filter-date'
 
 import '../blocks/form-book-a-room/form-book-a-room'
+
+import '../blocks/donut-chart/dunut-chart'
 
