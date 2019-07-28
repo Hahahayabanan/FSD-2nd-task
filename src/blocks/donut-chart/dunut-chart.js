@@ -1,3 +1,8 @@
+if(document.querySelector('#chart')){
+
+
+
+
 var data = [
     {name: "голосов", value: 260},
     {name: "голосов", value: 260},
@@ -188,3 +193,5 @@ var purple_gradient = defs.append("svg:linearGradient")
     .style('fill', 'url(#gradient1)');
 
     
+
+}

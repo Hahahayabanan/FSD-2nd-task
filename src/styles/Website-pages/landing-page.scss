@@ -12,6 +12,9 @@
     max-width: 380px;
     left: 140px;
     top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     @media (max-width: 760px) {
         left: auto;
         margin: 0 auto;

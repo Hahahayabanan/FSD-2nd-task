@@ -27,14 +27,14 @@ block content
                                 p.icon-text__descr  Шумопоглощающие стены
                         .icon-text__underline
                     .icon-text
-                        .icon-text-row
+                        .icon-text-row.margin-t-20
                             i.material-icons.icon-text__image location_city
                             .icon-text__inner            
                                 p.icon-text__title  Удобство 
                                 p.icon-text__descr  Окно в каждой из спален
                         .icon-text__underline
                     .icon-text
-                        .icon-text-row
+                        .icon-text-row.margin-t-20
                             i.material-icons.icon-text__image whatshot
                             .icon-text__inner            
                                 p.icon-text__title  Уют 
@@ -44,6 +44,12 @@ block content
                 .room-details-content-diagramm
                     h2 Впечатления от номера
                     #chart
+                    .bullet-list.room-details-bullet-list
+                        ul.bullet-list__list
+                            li.bullet-list__item.bullet-list__item_great Великолепно
+                            li.bullet-list__item.bullet-list__item_good Хорошо
+                            li.bullet-list__item.bullet-list__item_ok Удовлетворительно
+                            li.bullet-list__item.bullet-list__item_bad Разочарован
 
                 .room-details-content-get_it
                     include ../blocks/form-book-a-room/form-book-a-room.pug
@@ -61,16 +67,17 @@ block content
                             .comment__name Мурад Сарафанов 
                             .comment__date 5 дней назад
                             .comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
-                    .comment
-                        .comment__inner1
-                            img(class="comment__avatar" src="../img/avatar2.png")
-                            .like-btn.comment__like
-                                span.material-icons.like-btn__heart favorite_border
-                                span.like-btn__label 2
-                        .comment__inner2
-                            .comment__name Патисия Стёклышкова
-                            .comment__date Неделю назад
-                            .comment__text Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
+                    .comment-wrapper      
+                        .comment
+                            .comment__inner1
+                                img(class="comment__avatar" src="../img/avatar2.png")
+                                .like-btn.comment__like
+                                    span.material-icons.like-btn__heart favorite_border
+                                    span.like-btn__label 2
+                            .comment__inner2
+                                .comment__name Патисия Стёклышкова
+                                .comment__date Неделю назад
+                                .comment__text Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент
 
                 .room-details-content-rules
                     h2 Правила
