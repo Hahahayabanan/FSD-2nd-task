@@ -6,16 +6,16 @@ form(class="form-registration" action="#" name="form-registration" method="post"
     .input.margin-t-10
         input(type="text", name="input-email", class="input__field", placeholder="Фамилия") 
 
-    .radio-button.margin-t-10
+    .radio-button.margin-t-8
         input(type="radio" id="contactChoice3" name="contact3" value="" class="radio-button__input" checked)
         label(for="contactChoice3" class="radio-button__label") Мужчина
         input(type="radio" id="contactChoice4" name="contact3" value="" class="radio-button__input")
         label(for="contactChoice4" class="radio-button__label") Женщина
 
-    h3.margin-t-20 Дата рождения
+    h3.margin-t-18 Дата рождения
     include ../masked-text-field/masked-text-field.pug
 
-    h3.margin-t-20 Данные для входа в сервис
+    h3.margin-t-18 Данные для входа в сервис
     .input
         input(type="email", name="input-email", class="input__field", placeholder="Email") 
     .input.margin-t-10
@@ -24,7 +24,7 @@ form(class="form-registration" action="#" name="form-registration" method="post"
     .margin-t-10
         include ../toggle-button/toggle-button.pug
 
-    .margin-t-20
+    .margin-t-18
         button(type="submit" class="button button_long") Перейти к оплате
             span.material-icons.button_long__arrow arrow_forward
 

@@ -1,0 +1,10 @@
+.registration-back{
+    max-height: 700px;
+}
+
+
+@media (max-width: 380px) {
+    .form-registration{
+        transform: scale(.84);
+    }
+}

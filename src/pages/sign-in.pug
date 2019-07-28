@@ -1,0 +1,12 @@
+extends blocks/template
+
+include ../blocks/mixins/mixins.pug
+
+block variables
+    - var pageTitle = 'Sign in'
+
+block content
+
+    div(class="land-page-back sign-in-back" style="background-image: url('/../img/sign-background.png')")
+        .sign-in-container
+            include ../blocks/form-sign-in/form-sign-in.pug
