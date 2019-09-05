@@ -1,10 +1,24 @@
-.comment
-    .comment__inner1
-        img(class="comment__avatar" src="../img/avatar1.svg")
-        .like-btn.comment__like
-            span.material-icons.like-btn__heart favorite_border
-            span.like-btn__label 12
-    .comment__inner2
-        .comment__name Мурад Сарафанов 
-        .comment__date 5 дней назад
-        .comment__text Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.
+include ../like-button/like-button.pug
+
+mixin comment(srcAvatar, numOfLikes, aName, date, text)
+  .comment
+    .comment__avatar-like-container
+      img(class="comment__avatar" src=srcAvatar)
+      .comment__like-button
+        +like-button(numOfLikes)
+    .comment__body-container
+      .comment__name=aName
+      .comment__date=date +' дней назад'
+      .comment__text=text
+
+
+
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//-  
+//- +comment('../img/avatar1.png', 11, 'Мурад Сарафанов', 5, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+//-  
+//- ***************
