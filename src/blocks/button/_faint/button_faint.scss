@@ -1,36 +1,37 @@
 $border: 2px;
 
 .button_faint{
-    color: $purple;
-    background: #fff;
-    width: 99px;
-    height: 44px;
+  color: $purple;
+  background: #fff;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    box-sizing: border-box;
-    z-index: 1;
-    background-clip: padding-box; /* !importanté */
-    border: solid $border transparent; /* !importanté */
-    border-radius: 22px;
-    transform-style: preserve-3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-sizing: border-box;
+  z-index: 1;
+  background-clip: padding-box; 
+  border: solid $border transparent; 
+  border-radius: 22px;
+  transform-style: preserve-3d;
 }
 
 .button_faint::after{
-    content: '';
-    width: 99px;
-    height: 44px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    transform: translateZ(-1px);
-    margin: -$border; /* !importanté */
-    border-radius: inherit; /* !importanté */
+  content: '';
+  width: 99px;
+  height: 44px;
+  background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  position: absolute;
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+  transform: translateZ(-1px);
+  margin: -$border; 
+  border-radius: inherit; 
 }
 
 
 .button_faint:hover:after{
-    opacity: .5;
+  opacity: .5;
 }

@@ -1,15 +1,27 @@
-.icon-text
-    .icon-text-row
-        i.material-icons.icon-text__image insert_emoticon
-        .icon-text__inner            
-            p.icon-text__title  Комфорт 
-            p.icon-text__descr  Шумопоглощающие стены
+mixin icon-text(image, title, descr)
+  .icon-text
+    .icon-text__row
+      .icon-text__image
+        +material-icons(image, {
+          'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
+          '-webkit-background-clip': 'text',
+          '-webkit-text-fill-color': 'transparent',
+          'font-size': '48px'
+        })
+      .icon-text__text-container            
+        p.icon-text__title=title
+        p.icon-text__descr=descr
     .icon-text__underline
 
-.icon-text
-    .icon-text-row
-        i.material-icons.icon-text__image location_city
-        .icon-text__inner            
-            p.icon-text__title  Удобство 
-            p.icon-text__descr  Окно в каждой из спален
-    .icon-text__underline
+
+
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+//- +icon-text('location_city', 'Удобство', 'Окно в каждой из спален')
+//- 
+//- ***************

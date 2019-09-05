@@ -1,18 +1,7 @@
+@import './__descr/rich-checkbox__descr';
+@import './__label/rich-checkbox__label';
+@import './__input/rich-checkbox__input';
+
 .rich-checkbox{
     max-width: 266px;
-}
-.rich-checkbox__label{
-    font-family: 'Montserrat-Bold';
-    font-size: 14px;
-    line-height: 18px;
-    color: $dark-shade-75;
-    width: 100%;
-}
-
-.rich-checkbox__descr{
-    font-family: 'Montserrat';
-    font-size: 12px;
-    line-height: 14px;
-    color: $dark-shade-50;
-    margin-top: 5px;
 }

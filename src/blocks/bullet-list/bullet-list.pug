@@ -1,5 +1,16 @@
-.bullet-list
+mixin bullet-list(values)
+  .bullet-list
     ul.bullet-list__list
-        li.bullet-list__item Нельзя с питомцами
-        li.bullet-list__item Без вечеринок и мероприятий
-        li.bullet-list__item Время прибытия — после 13:00, а выезд до 12:00
+      each val in values
+        li.bullet-list__item= val
+      else
+        li.bullet-list__item There are no values
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+//- 
+//- ***************

@@ -1,2 +1,39 @@
-.rate-button
-    span.material-icons.rate-button__star star star star star star_border
+include ../material-icons/material-icons.pug
+
+mixin rate-button(name, check_num)
+  - var i = 0;
+  span.rate-button.js-rate-button
+    while i < 5
+      if check_num==i
+        label.rate-button__label
+          +material-icons('star_border', {
+            'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
+            '-webkit-background-clip': 'text',
+            '-webkit-text-fill-color': 'transparent'
+          }) 
+          input.rate-button__input(type="radio" name=name value=i++ checked='checked')
+      else
+        label.rate-button__label
+          +material-icons('star_border', {
+            'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
+            '-webkit-background-clip': 'text',
+            '-webkit-text-fill-color': 'transparent'
+          }) 
+          input.rate-button__input(type="radio" name=name value=i++)
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +rate-button('rate01', 3)
+//- +rate-button('rate02', 2)
+//- 
+//- ***************
+
+
+
+
+
+
+    

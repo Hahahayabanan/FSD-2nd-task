@@ -1,15 +1,56 @@
-.dropdown.dropdown_guests
-    .keyboard-arrow
-        i.material-icons.keyboard-arrow__down keyboard_arrow_down
-    .dropdown-select.dropdown-select_guests.input__field
-        span.guests-num Сколько 
-        span.guests-text гостей
-        span.baby-num
-        span.baby-text
-    .dropdown-option.dropdown-option_guests
-        +option('взрослые')
-        +option('дети')
-        +option('младенцы')
-        .option-button
-            .option-button__clear Очистить
-            .option-button__apply Применить
+include ../dropdown-option/dropdown-option.pug
+include ../option-button/option-button.pug
+include ../material-icons/material-icons.pug
+
+mixin dropdown(type)
+  if type == 'guests'
+    .dropdown.js-dropdown
+      .dropdown__arrow
+        +material-icons('keyboard_arrow_down', {
+          'color': 'rgba(31, 32, 65, 0.75)'
+        })
+      .dropdown__select
+        span.dropdown__guests-num Сколько 
+        span.dropdown__guests-text гостей
+        span.dropdown__baby-num
+        span.dropdown__baby-text
+      .dropdown__options
+        .dropdown__option
+          +dropdown-option('взрослые')
+        .dropdown__option
+          +dropdown-option('дети')
+        .dropdown__option
+          +dropdown-option('младенцы')
+        .dropdown__option-button
+          +option-button('clear', 'Очистить')
+          +option-button('apply', 'Применить')
+
+  else if type == 'furniture'
+
+    .dropdown.dropdown_furniture.js-dropdown_furniture
+      .dropdown__arrow
+        +material-icons('keyboard_arrow_down', {
+          'color': 'rgba(31, 32, 65, 0.75)'
+        })
+      .dropdown__select
+        .dropdown__select_furniture
+          span.dropdown__bedroom-num  0 
+          span.dropdown__bedroom-text спален, 
+          span.dropdown__bed-num  0 
+          span.dropdown__bed-text кроватей, 
+          span.dropdown__bathroom-num  0 
+          span.dropdown__bathroom-text ванных комнат
+      .dropdown__options.dropdown__options_furniture
+        .dropdown__option
+          +dropdown-option('спальни')
+        .dropdown__option
+          +dropdown-option('кровати')
+        .dropdown__option
+          +dropdown-option('ванные комнаты')
+
+
+
+
+
+
+//- +dropdown()

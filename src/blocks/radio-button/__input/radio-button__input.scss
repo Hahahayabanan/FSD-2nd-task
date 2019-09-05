@@ -1,0 +1,13 @@
+.radio-button__input{
+  display: none;
+}
+
+.radio-button__input:checked {
+  & + .radio-button__label::before{
+    text-align: center;
+    border: 1px solid $purple;
+  }
+  & + .radio-button__label::after{
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+}

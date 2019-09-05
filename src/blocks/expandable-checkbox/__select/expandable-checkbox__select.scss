@@ -1,0 +1,15 @@
+.expandable-checkbox__select{
+  position: relative;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  // font-size: 12px;
+  font-size: .8rem;
+  line-height: 44px;
+  text-transform: uppercase;
+  color: $dark-shade-75;
+}

@@ -1,5 +1,13 @@
-.radio-button
-    input(type="radio" id="contactChoice1" name="contact" value="" class="radio-button__input" checked)
-    label(for="contactChoice1" class="radio-button__label") Мужчина
-    input(type="radio" id="contactChoice2" name="contact" value="" class="radio-button__input")
-    label(for="contactChoice2" class="radio-button__label") Женщина
+mixin radio-button(id, name, value, text, checked)
+  input(type="radio" id=id name=name value=value class="radio-button__input" checked=checked)
+  label(for=id class="radio-button__label")=text
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- .radio-button
+//-     +radio-button('contactChoice1', 'contact', 'man', 'Мужчина', 'checked')
+//-     +radio-button('contactChoice2', 'contact', 'woman', 'Женщина')
+//- 
+//- ***************

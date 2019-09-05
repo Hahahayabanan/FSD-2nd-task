@@ -1,41 +1,12 @@
+@import './__descr/icon-text__descr';
+@import './__image/icon-text__image';
+@import './__row/icon-text__row';
+@import './__title/icon-text__title';
+@import './__underline/icon-text__underline';
+
 .icon-text{
-    max-width: 291px;
-    display: flex;
-    flex-direction: column;
-    margin: 0;
-}
-
-.icon-text-row{
-    display: flex;
-    height: 48px;
-}
-
-.icon-text__image{
-    display: inline;
-    font-size: 48px;
-    line-height: 41px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    padding-right: 10px;
-}
-
-.icon-text__inner{}
-
-.icon-text__title{
-    margin: 0;
-}
-
-.icon-text__descr{
-    margin: 0;
-}
-
-.icon-text__underline{
-    margin-top: 20px;
-    width: 280px;
-    height: 1px;
-    background: rgba(31, 32, 65, 0.1);
+  max-width: 291px;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 }

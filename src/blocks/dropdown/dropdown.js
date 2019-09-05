@@ -1,146 +1,232 @@
-if(document.querySelector('.dropdown_guests')!= null){
 
-    let dropdown_guests_list = document.querySelectorAll('.dropdown_guests');
-    let dropdown_guests_all = Array.prototype.slice.call(dropdown_guests_list);
+class DropdownGuests{
+  constructor(htmlElem){
+    this.dropdown = htmlElem;
+    this.minusButtons = [];
+    this.plusButtons = [];
+    this.guestsNumber = 0;
+    this.childrenNumber = 0;
+    this.babiesNumber = 0;
+    this.clearButton = this.getClearButton();
+    this.getMinusAndPlusButtons();
+    this.bindEventListeners();
+  }
 
-dropdown_guests_all.forEach(function(dropdown_guests,item){
+  bindEventListeners(){
+    const select = this.dropdown.querySelector('.dropdown__select');
+    select.addEventListener('click', this.showHideDropdown.bind(this));  
 
-    
-    let dropdownOption_guests = dropdown_guests.querySelector('.dropdown-option_guests');
-    let option_button_clear = dropdown_guests.querySelector('.option-button__clear');
-    let option_button_apply = dropdown_guests.querySelector('.option-button__apply');
-    let option_guests = dropdown_guests.querySelectorAll('.option')
-    let option_array_guests = Array.prototype.slice.call(option_guests);
-
-
-    let guests_num = dropdown_guests.querySelector('.guests-num');
-    let guests_text = dropdown_guests.querySelector('.guests-text');
-    let baby_num = dropdown_guests.querySelector('.baby-num');
-    let baby_text = dropdown_guests.querySelector('.baby-text');
-
-
-    let summ = 0;
-
-    dropdown_guests.querySelector('.dropdown-select_guests').addEventListener('click', function() {
-        // dropdown_guests.classList.toggle('dropdown-select_active');
-        dropdown_guests.querySelector('.dropdown-select_guests').classList.toggle('dropdown-select_active');
-        
-        dropdownOption_guests.style.visibility = (dropdownOption_guests.style.visibility == 'visible') ? 'hidden' : 'visible';
-        
-        if(guests_num.innerHTML > 0 || baby_num.innerHTML) option_button_clear.style.visibility = (option_button_clear.style.visibility == 'visible') ? 'hidden' : 'visible';
+    this.minusButtons.map((item)=>{
+      item.addEventListener('click', this.calcMinus.bind(this));
     });
-
-
-
-
-    option_array_guests.forEach(function(elem, item){
-        let text = elem.querySelector('.option__title')                 // name of option element
-        let option = elem.querySelector('.option__inner')               // control element
-        let minus = option.querySelector('.option__item_circle_minus')  // minus button
-        let number = option.querySelector('.option__item_number')       // control number that user inputs
-        let plus = option.querySelector('.option__item_circle_plus')    // plus button
-        
-        minus_unactive(number, minus);
-
-        plus.addEventListener('click', function(){
-            let tmp = Number(number.innerHTML);
-            number.innerHTML = tmp + Number('1');
-            minus_unactive(number, minus);
-            get_sum(number.innerHTML, text.innerHTML, '+');
-            option_button_clear.style.visibility = 'visible';
-        });
-        
-        minus.addEventListener('click', function(){
-            if(Number(number.innerHTML) > 0){
-                let tmp = Number(number.innerHTML);
-                number.innerHTML = tmp - Number('1');
-                minus_unactive(number, minus);
-                get_sum(number.innerHTML, text.innerHTML, '-');
-            }
-        });
-
-        option_button_clear.addEventListener('click', function(){
-            clear_all();
-            option_button_clear.style.visibility = 'hidden';
-        });
-        option_button_apply.addEventListener('click', function(){
-            dropdownOption_guests.style.visibility = 'hidden';
-        });
+    this.plusButtons.map((item)=>{
+      item.addEventListener('click', this.calcPlus.bind(this));
     });
+    if(this.clearButton) this.clearButton.addEventListener('click', this.clearOptions.bind(this));
+  }
+
+  showHideDropdown(event){
+    event.stopPropagation();
+    const select = this.dropdown.querySelector('.dropdown__select');
+    select.classList.toggle('dropdown__select_active');
+    const dropdown = select.parentNode;
+    const selectOptions = dropdown.querySelector('.dropdown__options');
+    selectOptions.classList.toggle('dropdown__options_active');
+
+    document.addEventListener('click', this.outsideClickListener.bind(this));
+    /** в макете стрелка не переворачивается, но должна же, наверное
+    const selectArrow = dropdown.querySelector('.dropdown__arrow'); 
+    const materialIconArrow = selectArrow.querySelector('.material-icons');
+    materialIconArrow.innerHTML = (materialIconArrow.innerHTML == 'keyboard_arrow_down' ) ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+    */
+  }
 
 
-    function minus_unactive(number, minus){
-        if(number.innerHTML != 0){
-            minus.classList.remove('option__item_circle_unactive');
-        }
-        if(number.innerHTML == 0){
-            minus.classList.add('option__item_circle_unactive');
-        }
+  outsideClickListener(event) {
+    const target = event.target;
+    const its_menu = target === this.dropdown || this.dropdown.contains(target);
+    if (!its_menu) {
+      this.showHideDropdown(event);
+      document.removeEventListener('click' ,this.outsideClickListener);
+    }
+  }
+
+  calcMinus(event){
+    const minusButton = event.currentTarget;
+    const optionContainer = minusButton.parentNode;
+    const currentValueElem = optionContainer.querySelector('.dropdown-option__item_number');
+    let currentValue = currentValueElem.textContent;
+
+    if(parseInt(currentValue, 10) > 0){
+      currentValue = Number(currentValue) - Number(1);
+    }
+    if(parseInt(currentValue, 10) === 0){
+      this.deactivateMinus(minusButton);
+    }
+    currentValueElem.textContent = currentValue;
+    this.setSelectTexts(minusButton, currentValue)
+  }
+
+  calcPlus(event){
+    const plusButton = event.currentTarget;
+    const optionContainer = plusButton.parentNode;
+    const currentValueElem = optionContainer.querySelector('.dropdown-option__item_number');
+    const minusButton = currentValueElem.previousElementSibling;
+    let currentValue = currentValueElem.textContent;
+
+    if(parseInt(currentValue, 10) === 0){
+      this.activateMinus(minusButton);
+      this.activateClear();
+    }
+    currentValue = Number(currentValue) + Number(1);
+
+    currentValueElem.textContent = currentValue;
+    this.setSelectTexts(plusButton, currentValue);
+  }
+
+  activateMinus(minusButton){
+    minusButton.classList.remove('dropdown-option__item_un-active');
+  }
+  deactivateMinus(minusButton){
+    minusButton.classList.add('dropdown-option__item_un-active');
+  }
+  getMinusAndPlusButtons(){
+    Array.from(this.dropdown.querySelectorAll('.dropdown-option__item_circle'), (val)=>{
+      if(val.textContent === '-'){
+        this.minusButtons.push(val);
+      }
+      if(val.textContent === '+'){
+        this.plusButtons.push(val);
+      }
+    });
+  }
+
+  activateClear(){
+    if(this.clearButton) this.clearButton.classList.remove('option-button_hidden');
+  }
+  deactivateClear(){
+    if(this.clearButton) this.clearButton.classList.add('option-button_hidden');
+  }
+  getClearButton(){
+    console.log(this)
+    return this.dropdown.querySelector('.option-button_clear');
+  }
+  
+
+  clearOptions(){
+    this.deactivateClear();
+
+    const guestsNumber = this.dropdown.querySelector('.dropdown__guests-num');
+    const guestsText = this.dropdown.querySelector('.dropdown__guests-text');
+    const babyNumber = this.dropdown.querySelector('.dropdown__baby-num');
+    const babyText = this.dropdown.querySelector('.dropdown__baby-text');
+
+    guestsNumber.innerHTML = 'Cколько '
+    guestsText.innerHTML = 'гостей'
+    babyNumber.innerHTML = '';
+    babyText.innerHTML = '';
+
+    Array.from(this.dropdown.querySelectorAll('.dropdown-option__item_number'), (val)=>{
+      val.textContent = 0;
+    });
+  }
+
+
+  setSelectTexts(target, number){
+    const guestsNumber = this.dropdown.querySelector('.dropdown__guests-num');
+    const guestsText = this.dropdown.querySelector('.dropdown__guests-text');
+    const babyNumber = this.dropdown.querySelector('.dropdown__baby-num');
+    const babyText = this.dropdown.querySelector('.dropdown__baby-text');
+
+    const titles = {
+      'гостей' : ['гость', 'гостя', 'гостей' ],
+      'младенцев' : ['младенец', 'младенца', 'младенцев'],
     }
 
+    const typeOfGuest = target.parentNode.previousElementSibling;
 
-
-
-    
-
-
-
-    function get_sum(num, title, sign){
+    if(typeOfGuest.textContent.toLowerCase() === 'младенцы'){
+      this.babiesNumber = number;
+      babyNumber.textContent = ', ' + this.babiesNumber + ' ';
+      babyText.textContent = titles['младенцев'][this.checkPad(number)];
+    }else{
+      if(typeOfGuest.textContent.toLowerCase() === 'взрослые') this.guestsNumber = number;
+      if(typeOfGuest.textContent.toLowerCase() === 'дети') this.childrenNumber = number;
+      guestsNumber.textContent = +this.childrenNumber + +this.guestsNumber + ' ';
+      guestsText.textContent = titles['гостей'][this.checkPad(number)];
+    }
         
-        titles = {
-            'гостей' : ['гость', 'гостя', 'гостей' ],
-            'младенцев' : ['младенец', 'младенца', 'младенцев'],
-        }
+  }
 
-        if(title.toLowerCase() == 'младенцы'){
-            baby_num.innerHTML = ', ' + num + ' ';
-            baby_text.innerHTML = titles['младенцев'][check_pad(num)];
-        }else{
-            if(sign == '+') summ += Number(1);
-            if(sign == '-') summ -= Number(1);
-            
-            guests_num.innerHTML = summ + ' ';
-            guests_text.innerHTML = titles['гостей'][check_pad(summ)];
-        }
+  checkPad(num){
+    let lastOne = num.toString().split('').pop();
+    let tmp;
+    if(Number(lastOne) == 1) tmp = 0;
+        else if (Number(lastOne) > 1 && Number(lastOne) < 5) tmp = 1;
+        else tmp = 2;
+    if(Number(num) > 9 && Number(num) < 21){
+        tmp = 2;
+    }
+    return tmp;
+  }
+}
 
-        
+
+
+
+class DropdownFurniture extends DropdownGuests{
+  constructor(htmlElem){
+    super(htmlElem);
+  }
+
+  setSelectTexts(target, number){
+    const bedroomNumber = this.dropdown.querySelector('.dropdown__bedroom-num');
+    const bedroomText = this.dropdown.querySelector('.dropdown__bedroom-text');
+    const bedNumber = this.dropdown.querySelector('.dropdown__bed-num');
+    const bedText = this.dropdown.querySelector('.dropdown__bed-text');
+    const bathroomNumber = this.dropdown.querySelector('.dropdown__bathroom-num ');
+    const bathroomText = this.dropdown.querySelector('.dropdown__bathroom-text');
+
+    const titles = {
+      'спальни' : ['спальня, ', 'спальни, ', 'спален, ' ],
+      'кровати' : ['кровать, ', 'кровати, ', 'кроватей, '],
+      'ванные комнаты' : ['ванная комната ', 'ванные комнаты ', 'ванных комнат ']
     }
 
-
-    function check_pad(num){
-        let lastone = num.toString().split('').pop();
-        let tmp;
-        if(Number(lastone) == 1) tmp = 0;
-            else if (Number(lastone) > 1 && Number(lastone) < 5) tmp = 1;
-            else tmp = 2;
-        if(Number(num) > 9 && Number(num) < 21){
-            tmp = 2;
-        }
-        return tmp;
-    }
-
-
-
-    function clear_all(){
-        option_array_guests.forEach(function(elem, item){
-            let option = elem.querySelector('.option__inner')               // control element
-            let number = option.querySelector('.option__item_number')
-
-            number.innerHTML = 0;
-            
-        });
-
-        summ = 0;
-
-        guests_num.innerHTML = 'Cколько '
-        guests_text.innerHTML = 'гостей'
-        baby_num.innerHTML = '';
-        baby_text.innerHTML = '';
-        
-    }
+    const typeOfGuest = target.parentNode.previousElementSibling;
+    switch(typeOfGuest.textContent.toLowerCase()){
+      case 'спальни': 
+        bedroomNumber.textContent = number + ' ';
+        bedroomText.textContent = titles['спальни'][this.checkPad(number)];
+        break;
+      case 'кровати': 
+        bedNumber.textContent = number + ' ';
+        bedText.textContent = titles['кровати'][this.checkPad(number)];
+        break;
+      case 'ванные комнаты': 
+        bathroomNumber.textContent = number + ' ';
+        bathroomText.textContent = titles['ванные комнаты'][this.checkPad(number)];
+        break;
+      default:
+    }    
+  }
+}
 
 
 
 
-});
+const dropdownGuests = document.querySelectorAll('.js-dropdown');
+
+if(dropdownGuests){
+  const dropdownGuestsArray = Array.from(dropdownGuests, (val)=>{
+    return new DropdownGuests(val);
+  });
+}
+
+const dropdownFurniture = document.querySelectorAll('.js-dropdown_furniture');
+
+if(dropdownFurniture){
+  const dropdownFurnitureArray = Array.from(dropdownFurniture, (val)=>{
+    return new DropdownFurniture(val);
+  });
 }

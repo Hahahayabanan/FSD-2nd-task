@@ -1,25 +1,3 @@
-mixin option(title)
-    .option
-        h3.option__title=title
-        .option__inner
-            .option__item.option__item_circle.option__item_circle_minus.option__item_circle_unactive -
-            .option__item.option__item_number 0
-            .option__item.option__item_circle.option__item_circle_plus +
-
-
-
-
-
-mixin checkbox(name_id, text)
-    .checkbox-button
-        input(type="checkbox" name=name_id id=name_id class="checkbox-button__input")
-        label(for=name_id class="checkbox-button__label")=text
-
-
-
-
-
-
 
 mixin room-preview(number, src, price, rate, reviews, islucs)
     .room-preview

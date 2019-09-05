@@ -1,26 +1,7 @@
+@import './__arrow/subscription-text-field__arrow';
+@import './__field/subscription-text-field__field';
+
 .subscription-text-field{
-    max-width: 267px;
+  max-width: 267px;
+  position: relative;
 }
-
-.subscription-text-field__field{
-    max-width: 267px;
-    position: relative;
-}
-
-.subscription-text-field__arrow{
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 44px;
-    height: 44px;
-    font-size: 24px;
-    line-height: 24px;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    cursor: pointer;
-}
-

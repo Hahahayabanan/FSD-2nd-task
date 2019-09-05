@@ -1,0 +1,15 @@
+.like-button__label{
+    position: absolute;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    // font-size: 10px;
+    font-size: .6rem;
+    line-height: 12px;
+    color: $dark-shade-25;
+    left: 19px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+

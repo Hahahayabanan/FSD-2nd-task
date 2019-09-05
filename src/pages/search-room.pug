@@ -6,88 +6,88 @@ block variables
     - var pageTitle = 'Search room'
 
 block content
-    .search-room-grid-container
-        .search-room-side-bar
-            div
-                h3(class="") даты пребывания в отеле
-                include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
-            .margin-t-23
-                h3(class="") Гости
-                .dropdown.dropdown_guests.search-room-dropdown_guests
-                    .keyboard-arrow
-                        i.material-icons.keyboard-arrow__down keyboard_arrow_down
-                    .dropdown-select.dropdown-select_guests.input__field.search-room-dropdown_guests
-                        span.guests-num Сколько 
-                        span.guests-text гостей
-                        span.baby-num
-                        span.baby-text
-                    .dropdown-option.dropdown-option_guests.search-room-dropdown_guests
-                        +option('взрослые')
-                        +option('дети')
-                        +option('младенцы')
-                        .option-button
-                            .option-button__clear Очистить
-                            .option-button__apply Применить
-            .margin-t-30
-                .range-slider
-                    .range-slider__inner1
-                        h3.range__label Диапазан цены
-                        input(type="text" id="amount" readonly class="range-slider__price")
-                    .range-slider__inner2
-                        div.range-slider__slider#slider-range
-                p.range-slider-descr Стоимость за сутки пребывания в номере
-            .margin-t-30
-                p(class="input__label") checkbox buttons
-                include ../blocks/checkbox-button/checkbox-button.pug
-            .margin-t-30
-                p(class="input__label") Доступность
-                include ../blocks/rich-checkbox/rich-checkbox.pug
-            .margin-t-15
-                h3(class="") Удобства номера
-                include ../blocks/dropdown-furniture/dropdown-furniture.pug
-            .margin-t-20
-                .expandable-checkbox.dropdown
-                    .keyboard-arrow
-                        i.material-icons.keyboard-arrow__down.expandable-checkbox__arrow keyboard_arrow_down
-                    h3.dropdown-select.expandable-checkbox-select.search-room-input Дополнительные удобства
-                    .dropdown-option.expandable-checkbox-option
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox3', 'Завтрак')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox4', 'Письменный стол')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox5', 'Стул для кормления')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox6', 'Кроватка')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox7', 'Телевизор')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox8', 'Шампунь')
-                        .option.expandable-checkbox-button
-                            +checkbox('checkbox9', 'Шампунь')
+    //- .search-room-grid-container
+    //-     .search-room-side-bar
+    //-         div
+    //-             h3(class="") даты пребывания в отеле
+    //-             include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
+    //-         .margin-t-23
+    //-             h3(class="") Гости
+    //-             .dropdown.dropdown_guests.search-room-dropdown_guests
+    //-                 .keyboard-arrow
+    //-                     i.material-icons.keyboard-arrow__down keyboard_arrow_down
+    //-                 .dropdown-select.dropdown-select_guests.input__field.search-room-dropdown_guests
+    //-                     span.guests-num Сколько 
+    //-                     span.guests-text гостей
+    //-                     span.baby-num
+    //-                     span.baby-text
+    //-                 .dropdown-option.dropdown-option_guests.search-room-dropdown_guests
+    //-                     //- +option('взрослые')
+    //-                     //- +option('дети')
+    //-                     //- +option('младенцы')
+    //-                     .option-button
+    //-                         .option-button__clear Очистить
+    //-                         .option-button__apply Применить
+    //-         .margin-t-30
+    //-             .range-slider
+    //-                 .range-slider__inner1
+    //-                     h3.range__label Диапазан цены
+    //-                     input(type="text" id="amount" readonly class="range-slider__price")
+    //-                 .range-slider__inner2
+    //-                     div.range-slider__slider#slider-range
+    //-             p.range-slider-descr Стоимость за сутки пребывания в номере
+    //-         .margin-t-30
+    //-             p(class="input__label") checkbox buttons
+    //-             include ../blocks/checkbox-button/checkbox-button.pug
+    //-         .margin-t-30
+    //-             p(class="input__label") Доступность
+    //-             include ../blocks/rich-checkbox/rich-checkbox.pug
+    //-         .margin-t-15
+    //-             h3(class="") Удобства номера
+    //-             include ../blocks/dropdown-furniture/dropdown-furniture.pug
+    //-         .margin-t-20
+    //-             .expandable-checkbox.dropdown
+    //-                 .keyboard-arrow
+    //-                     i.material-icons.keyboard-arrow__down.expandable-checkbox__arrow keyboard_arrow_down
+    //-                 h3.dropdown-select.expandable-checkbox-select.search-room-input Дополнительные удобства
+    //-                 .dropdown-option.expandable-checkbox-option
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox3', 'Завтрак')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox4', 'Письменный стол')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox5', 'Стул для кормления')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox6', 'Кроватка')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox7', 'Телевизор')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox8', 'Шампунь')
+    //-                     .option.expandable-checkbox-button
+    //-                         +checkbox-button('checkbox9', 'Шампунь')
 
-        .search-room-title
-            h1.search-room-title__h1 Номера, которые мы для вас подобрали
-
-
-        .search-room-elements
-            +room-preview(888, "../img/rooms/room888.svg", '9 990', 5, 145, true)
-            +room-preview(840, "../img/rooms/room840.svg", '9 900', 4, 65, false)
-            +room-preview(980, "../img/rooms/room980.svg", '8 500', 3, 35, true)
-            +room-preview(856, "../img/rooms/room856.svg", '7 300', 5, 19, false)
-            +room-preview(740, "../img/rooms/room740.svg", '6 000', 4, 44, false)
-            +room-preview(982, "../img/rooms/room982.svg", '5 800', 3, 56, false)
-            +room-preview(678, "../img/rooms/room678.svg", '5 500', 5, 45, false)
-            +room-preview(450, "../img/rooms/room450.svg", '5 300', 4, 39, false)
-            +room-preview(350, "../img/rooms/room350.svg", '5 000', 3, 77, false)
-            +room-preview(666, "../img/rooms/room666.svg", '5 000', 5, 25, false)
-            +room-preview(444, "../img/rooms/room444.svg", '5 000', 3, 15, false)
-            +room-preview(352, "../img/rooms/room352.svg", '5 000', 3, 55, false)
+    //-     .search-room-title
+    //-         h1.search-room-title__h1 Номера, которые мы для вас подобрали
 
 
-        .search-room-pagination
-            .wrapper
-                include ../blocks/pagination/pagination.pug
+    //-     .search-room-elements
+    //-         +room-preview(888, "../img/rooms/room888.svg", '9 990', 5, 145, true)
+    //-         +room-preview(840, "../img/rooms/room840.svg", '9 900', 4, 65, false)
+    //-         +room-preview(980, "../img/rooms/room980.svg", '8 500', 3, 35, true)
+    //-         +room-preview(856, "../img/rooms/room856.svg", '7 300', 5, 19, false)
+    //-         +room-preview(740, "../img/rooms/room740.svg", '6 000', 4, 44, false)
+    //-         +room-preview(982, "../img/rooms/room982.svg", '5 800', 3, 56, false)
+    //-         +room-preview(678, "../img/rooms/room678.svg", '5 500', 5, 45, false)
+    //-         +room-preview(450, "../img/rooms/room450.svg", '5 300', 4, 39, false)
+    //-         +room-preview(350, "../img/rooms/room350.svg", '5 000', 3, 77, false)
+    //-         +room-preview(666, "../img/rooms/room666.svg", '5 000', 5, 25, false)
+    //-         +room-preview(444, "../img/rooms/room444.svg", '5 000', 3, 15, false)
+    //-         +room-preview(352, "../img/rooms/room352.svg", '5 000', 3, 55, false)
 
 
-    .search-room-underline
+    //-     .search-room-pagination
+    //-         .wrapper
+    //-             include ../blocks/pagination/pagination.pug
+
+
+    //- .search-room-underline

@@ -1,0 +1,29 @@
+.bullet-list__item{
+	font-family: 'Montserrat', Arial, sans-serif;
+	font-weight: normal;
+	line-height: 24px;
+	// font-size: 14px;
+	font-size: .9rem;
+	color: $dark-shade-75;
+	list-style-type: none;
+	position: relative;
+	margin-top: 10px;
+	padding-left: 20px;
+
+	&::before{
+		content: '';
+		display: inline-block;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background-color: $dark-shade-25;
+		box-sizing: border-box;
+		position: absolute;
+		left: 0;
+		top: 7px;
+	}
+
+	&:first-of-type{
+		margin-top: 0;
+	}
+}

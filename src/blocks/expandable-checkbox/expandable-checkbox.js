@@ -1,13 +1,15 @@
-if(document.querySelector('.expandable-checkbox-select')){
+const checkboxesList = document.querySelectorAll('.expandable-checkbox');
 
-    let dropdown_exp = document.querySelector('.expandable-checkbox-select');
-    let dropdownOption_exp = document.querySelector('.expandable-checkbox-option');
-    let keyboard_arrow_exp = document.querySelector('.expandable-checkbox__arrow');
-
-    dropdown_exp.addEventListener('click', function() {
-        dropdown_exp.classList.toggle('dropdown-select_active');
-        dropdownOption_exp.style.visibility = (dropdownOption_exp.style.visibility == 'visible') ? 'hidden' : 'visible';
-        keyboard_arrow_exp.innerHTML = (keyboard_arrow_exp.innerHTML == 'keyboard_arrow_down' ) ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
-    });
-
+if(checkboxesList){
+    const checkboxes = Array.from(checkboxesList, (val)=>{
+      
+      const dropdownOption_exp = val.querySelector('.expandable-checkbox__option');
+      const keyboard_arrow_exp = val.querySelector('.expandable-checkbox__keyboard-arrow');
+      const materialIcons =  keyboard_arrow_exp.querySelector('.material-icons');
+      val.addEventListener('click', function() {
+        dropdownOption_exp.classList.toggle('expandable-checkbox__option_unvisible');
+        materialIcons.innerHTML = (materialIcons.innerHTML == 'keyboard_arrow_down' ) ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+      });
+  });
 }
+

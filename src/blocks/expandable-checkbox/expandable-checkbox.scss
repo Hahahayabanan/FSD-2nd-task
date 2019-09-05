@@ -1,21 +1,11 @@
+@import './__button/expandable-checkbox__button';
+@import './__keyboard-arrow/expandable-checkbox__keyboard-arrow';
+@import './__option/expandable-checkbox__option';
+@import './__option/expandable-checkbox__option_unvisible';
+@import './__select/expandable-checkbox__select';
+
+
 .expandable-checkbox{
-    max-width: 266px;
-}
-
-.expandable-checkbox-select{
-    border: none;
-    width: 266px;
-}
-
-.expandable-checkbox-option{
-    border: none;
-    padding: 0;
-    box-shadow: none;
-    height: auto;
-    max-width: 266px;
-}
-
-.expandable-checkbox-button{
-    margin-bottom: 10px;
-    max-width: 266px;
+  max-width: 266px;
+  position: relative;
 }

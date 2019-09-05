@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { VueLoaderPlugin } = require('vue-loader')
+const webpack = require('webpack');
 
 // Main const
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
@@ -76,7 +77,7 @@ module.exports = {
       loader: 'file-loader',
       options: {
         name: '[name].[ext]',
-        outputPath: 'images/'
+        outputPath: 'img/'
       }
     }, 
     {
@@ -120,6 +121,11 @@ module.exports = {
       { from: `${PATHS.src}/fonts`, to: `fonts` },
       { from: `${PATHS.src}/static`, to: '' },
     ]),
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
 
     // Automatic creation any html pages (Don't forget to RERUN dev server)
     // see more: https://github.com/vedees/webpack-template/blob/master/README.md#create-another-html-files
@@ -128,6 +134,7 @@ module.exports = {
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`
     })),
+
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/index.pug`,
       filename: './index.html',
@@ -138,5 +145,55 @@ module.exports = {
       filename: './cards-page.html',
       inject: true
     }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/colors-and-type.pug`,
+      filename: './colors-and-type.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/cards.pug`,
+      filename: './cards.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/form-elements.pug`,
+      filename: './form-elements.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/headers-and-footers.pug`,
+      filename: './headers-and-footers.html',
+      inject: true
+    }),
+
+
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/landing-page.pug`,
+      filename: './landing-page.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/registration.pug`,
+      filename: './registration.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/room-details.pug`,
+      filename: './room-details.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/search-room.pug`,
+      filename: './search-room.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/sign-in.pug`,
+      filename: './sign-in.html',
+      inject: true
+    }),
+ 
+    
+    
   ],
 }

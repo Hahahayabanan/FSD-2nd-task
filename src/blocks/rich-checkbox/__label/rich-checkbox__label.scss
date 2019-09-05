@@ -1,0 +1,31 @@
+.rich-checkbox__label{
+  display: inline-block;
+  height: 20px;
+  font-family: 'Montserrat', Arial, sans-serif;
+  // font-size: 14px;
+  font-size: .9rem;
+  font-weight: bold;
+  line-height: 20px;
+  color: $dark-shade-75;
+  width: 100%;
+
+  &::before{
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    vertical-align: middle;
+    margin-right: 9px;
+  }
+}
+
+
+.rich-checkbox__input:checked + .rich-checkbox__label::before {
+  content: url("/../img/check-box.svg");
+  text-align: center;
+  border: 1px solid $purple;
+}

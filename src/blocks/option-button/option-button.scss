@@ -1,0 +1,12 @@
+@import './_apply/option-button_apply';
+@import './_clear/option-button_clear';
+@import './_hidden/option-button_hidden';
+
+.option-button{
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  // font-size: 12px;
+  font-size: .8rem;
+}

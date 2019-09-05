@@ -1,3 +1,20 @@
-.input.subscription-text-field
-    input(type="email", name="input-email", class="input__field subscription-text-field__field", placeholder="Email")
-    span.material-icons.subscription-text-field__arrow arrow_forward
+include ../material-icons/material-icons.pug
+
+mixin subscription-text-field(placeholder)
+  .subscription-text-field
+    input(type="email", name="input-email", class="subscription-text-field__field", placeholder="Email")
+    .subscription-text-field__arrow
+      +material-icons('arrow_forward', {
+        'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
+        '-webkit-background-clip': 'text',
+        '-webkit-text-fill-color': 'transparent'
+      })
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +subscription-text-field('Email')
+//- 
+//- ***************

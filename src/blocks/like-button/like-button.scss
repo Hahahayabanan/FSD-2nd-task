@@ -1,0 +1,21 @@
+@import './__label/like-button__label';
+@import './__heart/like-button__heart';
+@import './__label/_active/like-button__label_active';
+@import './_active/like-button_active.scss';
+
+.like-button{
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    width: 40px;
+    height: 20px;
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 10px;
+    font-size: 10px;   
+}
+
+
+
+

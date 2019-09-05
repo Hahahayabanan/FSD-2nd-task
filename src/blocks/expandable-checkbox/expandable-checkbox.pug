@@ -1,19 +1,36 @@
-.expandable-checkbox.dropdown
-    .keyboard-arrow
-        i.material-icons.keyboard-arrow__down.expandable-checkbox__arrow keyboard_arrow_down
-    .dropdown-select.input__label.expandable-checkbox-select expandable checkbox list
-    .dropdown-option.expandable-checkbox-option
-        .option.expandable-checkbox-button
-            +checkbox('checkbox3', 'Завтрак')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox4', 'Письменный стол')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox5', 'Стул для кормления')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox6', 'Кроватка')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox7', 'Телевизор')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox8', 'Шампунь')
-        .option.expandable-checkbox-button
-            +checkbox('checkbox9', 'Шампунь')
+include ../checkbox-button/checkbox-button.pug
+
+mixin expandable-checkbox(title, values)
+  .expandable-checkbox
+    .expandable-checkbox__keyboard-arrow
+      +material-icons('keyboard_arrow_down', {
+        'color': 'rgba(31, 32, 65, 0.5)'
+      })
+    .expandable-checkbox__select=title
+    .expandable-checkbox__option.expandable-checkbox__option_unvisible
+      each val in values
+        .expandable-checkbox__button
+          +checkbox-button(val[0], val[1])
+      else
+        .p There is no value
+
+        
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +expandable-checkbox(
+//-   'expandable checkbox list',
+//-   [
+//-     ['checkbox3', 'Завтрак'],
+//-     ['checkbox4', 'Письменный стол'],
+//-     ['checkbox5', 'Стул для кормления'],
+//-     ['checkbox6', 'Кроватка'],
+//-     ['checkbox7', 'Телевизор'],
+//-     ['checkbox8', 'Шампунь'],
+//-     ['checkbox9', 'Телевизор'],
+//-     ['checkbox10', 'Шампунь']
+//-   ]
+//- )
+//- 
+//- ***************

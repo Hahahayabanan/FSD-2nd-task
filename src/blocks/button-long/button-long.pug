@@ -1,0 +1,16 @@
+include ../material-icons/material-icons.pug
+
+mixin button-long(href, text)
+  button(href=href class="button-long")=text
+    .button-long__arrow
+      +material-icons('arrow_forward', {
+        'color': '#FFF'
+      })
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +button-long('/mock-address/change-me', 'click me')
+//- 
+//- ***************

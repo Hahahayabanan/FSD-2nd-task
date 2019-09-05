@@ -1,4 +1,15 @@
-.checkbox-buttons
-    +checkbox('checkbox0', 'Можно курить')
-    +checkbox('checkbox1', 'Можно с питомцами')
-    +checkbox('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+mixin checkbox-button(name_id, text)
+  .checkbox-button
+    input(type="checkbox" name=name_id id=name_id class="checkbox-button__input")
+    label(for=name_id class="checkbox-button__label")=text
+
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//-   +checkbox('checkbox0', 'Можно курить')
+//-   +checkbox('checkbox1', 'Можно с питомцами')
+//-   +checkbox('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+//- 
+//- ***************

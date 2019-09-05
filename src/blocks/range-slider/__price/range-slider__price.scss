@@ -1,0 +1,12 @@
+.range-slider__price{
+  width: auto;
+  text-align: end;
+  border: none;
+  pointer-events: none;
+  font-family: "Montserrat";
+  // font-size: 12px;
+  font-size: .8rem;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark-shade-50;
+}

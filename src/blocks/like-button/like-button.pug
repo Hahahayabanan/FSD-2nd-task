@@ -1,3 +1,17 @@
-.like-btn
-    span.material-icons.like-btn__heart favorite_border
-    span.like-btn__label 12
+include ../material-icons/material-icons.pug
+
+mixin like-button(number)
+  .like-button
+    .like-button__heart
+      +material-icons('favorite_border', {
+        'font-size': '10px'
+      }, 'material-icons_color_gray')
+    span.like-button__label=number
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +like-button(12)
+//- 
+//- ***************

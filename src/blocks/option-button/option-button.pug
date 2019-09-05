@@ -1,0 +1,15 @@
+mixin option-button(type, text)
+  if type=='apply'
+    .option-button.option-button_apply=text
+  if type=='clear'
+    .option-button.option-button_clear.option-button_hidden=text
+
+
+
+
+//- ****** EXAMPLE *****
+//- 
+//- +option-button('apply', 'Применить')
+//- +option-button('clear', 'Очистить')
+//- 
+//- ********************
