@@ -1,0 +1,23 @@
+@import './__cb/toggle-button__cb';
+@import './__label/toggle-button__label';
+@import './__round/toggle-button__round';
+
+.toggle-button{
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  width: 40px;
+  height: 20px;
+  background: #FFFFFF;
+  border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+
+  &.toggle-button_active{
+    border: 1px solid #BC9CFF;
+    .toggle-button__round{
+      left: 23px;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+    }
+  }
+}

@@ -1,4 +1,13 @@
-.toggle-btn.active
-    input(type="checkbox" id="togglewoggle" checked class="toggle-btn__cb")
-    label(for="togglewoggle" class="toggle-btn__label") Получать спецпредложения
-    span.toggle-btn__round
+mixin toggle-button(id, text)
+  .toggle-button.toggle-button_active
+    input(type="checkbox" id=id checked class="toggle-button__cb")
+    label(for=id class="toggle-button__label")=text
+    span.toggle-button__round
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +toggle-button('togglewoggle', 'Получать спецпредложения')
+//- 
+//- ***************
