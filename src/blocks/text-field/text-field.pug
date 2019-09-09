@@ -1,0 +1,23 @@
+mixin text-field(options)
+  input(
+    type=options.type, 
+    name=options.name, 
+    id=options.id,
+    class="text-field", 
+    class=options.class,
+    placeholder=options.placeholder 
+    disabled=options.disabled 
+    readonly=options.readonly 
+  ) 
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +text-field({
+      type: "email",
+      name: "input-email",
+      placeholder: "Email"
+    })
+//- 
+//- ***************
+

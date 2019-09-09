@@ -1,6 +1,18 @@
+include ../text-field/text-field.pug
+
+mixin masked-text-field(options)
+  +text-field({
+    type: "text",
+    class: "masked-text-field",
+    name: options.name,
+    placeholder: "ДД.ММ.ГГГГ"
+  })
+
+
+
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- input(type="text" class="masked-text-field" placeholder="ДД.ММ.ГГГГ")
+//- +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
 //- 
 //- ***************

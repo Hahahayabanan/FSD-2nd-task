@@ -1,22 +1,30 @@
-.dropdown-filter-date_wrapper{
-    max-width: 266px;
-    position: relative;
+.dropdown-filter-date{
+  max-width: 266px;
+  position: relative;
 }
 
-.dropdown-filter{
-    max-width: 266px;
+.dropdown-filter-date__input{
+  min-width: 266px;
+  max-width: 266px;
+  color: $dark-shade-75;
 }
 
-.dropdown-filter__input{
-    max-width: 266px;
-    color: $dark-shade-75;
+.dropdown-filter-date__dropdown-calendar{
+  transform-origin: 0 0;
+  transform: scale(0.83);
+  position: absolute;
+  top: 49px;
 }
 
-.dropdown-filter-date-calendar{
-    margin-top: 5px;
-    z-index: 12;
-    visibility: hidden;
-    position: absolute;
-    transform-origin: 0 0;
-    transform: scale(0.83);
+.dropdown-filter-date__keyboard-arrow{
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 44px;
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $dark-shade-50;
+  z-index: 9;
 }

@@ -1,23 +1,41 @@
-.dropdown-date_input_wrapper{
-    max-width: 320px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 5px;
+.dropdown-date{
+  position: relative;
+  width: 320px;
 }
 
-.dropdown-date__arrow{
-    z-index: 10;
+.dropdown-date__inputs{
+  display: flex;
+  justify-content: space-between;
 }
 
-.dropdown_date{
-    max-width: 150px;
+.dropdown-date__keyboard-arrow{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  color: $dark-shade-50;
 }
 
-.dropdown_date__input{
-    max-width: 150px;
+.dropdown-date__input{
+  max-width: 150px;
+  position: relative;
+}
+
+.dropdown-date__input-start-date,
+.dropdown-date__input-end-date{
+  width: 100%;
+  color: $dark-shade-75;
+  &::placeholder{
     color: $dark-shade-75;
-    &::placeholder{
-        color: $dark-shade-75;
-    }
+  }
+}
+
+.dropdown-date__dropdown-calendar{
+  position: absolute;
+  top: 49px;
 }

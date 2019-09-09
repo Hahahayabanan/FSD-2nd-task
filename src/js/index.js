@@ -29,6 +29,8 @@ import '../blocks/rate-button/rate-button.js'
 import '../blocks/range-slider/range-slider.js'
 import '../blocks/expandable-checkbox/expandable-checkbox'
 import '../blocks/masked-text-field/masked-text-field'
+import '../blocks/dropdown-filter-date/dropdown-filter-date'
+import '../blocks/dropdown-date/dropdown-date'
 
 
 
@@ -39,7 +41,6 @@ import '../blocks/masked-text-field/masked-text-field'
 import '../blocks/dropdown-calendar/dropdown-calendar'
 
 
-import '../blocks/dropdown-filter-date/dropdown-filter-date'
 
 import '../blocks/form-book-a-room/form-book-a-room'
 

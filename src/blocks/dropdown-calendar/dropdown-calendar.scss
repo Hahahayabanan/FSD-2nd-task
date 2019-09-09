@@ -1,16 +1,4 @@
 
-.dropdown-date_wrapper{
-  position: relative;
-}
-
-.dropdown-calendar{
-  visibility: hidden;
-  z-index: 11;
-  max-width: 320px;
-  position: absolute;
-  top: 75px;
-}
-
 #ui-datepicker-div{
   display: none;
 }
@@ -25,62 +13,10 @@
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  
   align-items: center;
-  
-  td .ui-priority-secondary{
-    color: $dark-shade-25;
-    width: 40px ;
-    height: 40px ;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  .ui-state-default{
-    width: 40px;
-    height: 40px;
-    border: none;
-    padding: 0;
-    margin: 0;
-    background: none;
-    box-sizing: border-box;
-
-    font-family: 'Montserrat';
-    font-size: 12px;
-    line-height: 15px;
-    color: $dark-shade-50;
-  }
 
 
-  tr{
-    height: 40px;
-  }
-
-  
-
-  td a{
-    width: 40px ;
-    height: 40px ;
-    border: none;
-    padding: 0 ;
-    margin: 0 ;
-    display: flex ;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .ui-state-highlight{
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 50%;
-    color: #fff;
-  }
-
-  .ui-datepicker-calendar{
-    width: 280px;
-    height: 240px;
-    font-size: 12px;
-  }
-
+  // Заголовок с месяцем
   .ui-datepicker-header{
     background: #fff;
     border: none;
@@ -89,8 +25,9 @@
     width: 100%;
   }
   .ui-datepicker-title{
-    font-family: 'Quicksand-Bold';
-    font-size: 19px;
+    font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
+    // font-size: 19px;
+    font-size: 1.2rem;
     line-height: 24px;
     text-align: center;
     color: $dark-shade-100;
@@ -118,20 +55,75 @@
 
 
 
+  // Таблица с календарем
+  .ui-datepicker-calendar{
+    max-width: 280px;
+    max-height: 240px;
+    margin: 0 auto;
+  }
 
+  // Названия дней недели (шапка)
+  thead span{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    // font-size: 12px;
+    font-size: .8rem;
+    line-height: 15px;
+    color: $purple;
+  }
+
+  // Все дни недели
+  td a{
+    width: 40px ;
+    height: 40px ;
+    border: none;
+    padding: 0 ;
+    margin: 0 ;
+    display: flex ;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    // font-size: 12px;
+    font-size: .8rem;
+    line-height: 15px;
+  }
+
+  // Простой день недели
+  .ui-state-default{
+    color: $dark-shade-50;
+    border: none;
+    background: none;
+  }
+  
+  // Простой день недели другого месяца
+  .ui-priority-secondary{
+    color: $dark-shade-25;
+  }
+
+  // Строка в таблице
+  tr{
+    height: 40px;
+  }
+
+  // Текущий день
+  .ui-state-highlight{
+    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+    border-radius: 50%;
+    color: #fff;
+  }
+
+    
 
   /* первая дата периода */
-  .selected-start .ui-state-active, .selected-end .ui-state-active{
-    width: 40px;
-    height: 40px;
+  .selected-start .ui-state-active, 
+  .selected-end .ui-state-active{
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     border-radius: 50%;
-    color: #fff !important;
+    color: #fff;
   } 
 
   .selected{
-    position: relative !important;
-
+    position: relative;
   }
   .selected a{
     color: $dark-shade-50;
@@ -154,37 +146,8 @@
   }
   .selected-start::after{
     border-radius: 50% 0 0 50%;
-  }
-
-
-
-
-  .ui-datepicker-calendar thead span{
-    font-family: 'Montserrat-Bold';
-    font-size: 12px;
-    line-height: 15px;
-    color: $purple;
-  }
+  } 
   
-
-
-
-
-}
-
-.arrow_back, .arrow_forward{
-  position: absolute;
-  color: $purple;
-  font-size: 24px;
-  top: 22px;
-  z-index: 11;
-  pointer-events: none;
-}
-.arrow_back{
-  left: 20px;
-}
-.arrow_forward{
-  right: 20px;
 }
 
 .ui-datepicker,
@@ -197,3 +160,46 @@
  border: none;
  border-spacing: 0;
 }
+
+.dropdown-calendar{
+  display: none;
+  height: 0;
+  z-index: 11;
+  max-width: 320px;
+}
+
+.dropdown-calendar_active{
+  display: block;
+  height: auto;
+}
+
+.dropdown-calendar-buttons{
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  padding: 20px;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.dropdown-date_wrapper{
+  position: relative;
+}
+
+.dropdown-calendar__arrow_back, 
+.dropdown-calendar__arrow_forward{
+  position: absolute;
+  color: $purple;
+  font-size: 24px;
+  top: 22px;
+  z-index: 11;
+  pointer-events: none;
+}
+.dropdown-calendar__arrow_back{
+  left: 20px;
+}
+.dropdown-calendar__arrow_forward{
+  right: 20px;
+}
+

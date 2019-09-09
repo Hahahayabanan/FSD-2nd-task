@@ -57,10 +57,15 @@ block content
         +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
         +icon-text('location_city', 'Удобство', 'Окно в каждой из спален')
 
+        include ../blocks/text-field/text-field.pug
+        +text-field({
+            type: "email",
+            name: "input-email",
+            placeholder: "Email"
+        })
 
-        input(type="email", name="input-email", class="input", placeholder="Email") 
-
-        input(type="text" class="masked-text-field" placeholder="ДД.ММ.ГГГГ")
+        include ../blocks/masked-text-field/masked-text-field.pug
+        +masked-text-field({})
 
         include ../blocks/radio-button/radio-button.pug
         .radio-button
@@ -94,9 +99,10 @@ block content
         +dropdown('guests')
         +dropdown('furniture')
 
+        
+        include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
 
-
-
+        include ../blocks/dropdown-date/dropdown-date.pug
 
 
         
@@ -113,13 +119,9 @@ block content
 
 
 
-        //- include ../blocks/dropdown-furniture/dropdown-furniture.pug
 
-        //- include ../blocks/dropdown-calendar/dropdown-calendar.pug
         
-        //- include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
             
-        //- include ../blocks/dropdown-date/dropdown-date.pug
             
             
         //- include ../blocks/form-find-hotel-room/form-find-hotel-room.pug

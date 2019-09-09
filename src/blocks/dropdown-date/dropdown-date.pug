@@ -1,15 +1,28 @@
-.dropdown-date_input_wrapper
-    .dropdown.dropdown_date
-        h3.dropdown__label Dropdown
-        .keyboard-arrow
-            i.material-icons.keyboard-arrow__down.dropdown-date__arrow keyboard_arrow_down
-        input(type="text" name='startDate' class="startDate masked-text-field__input input__field dropdown_date__input" placeholder="ДД.ММ.ГГГГ" readonly)
-    
-    .dropdown.dropdown_date
-        h3.dropdown__label Dropdown
-        .keyboard-arrow
-            i.material-icons.keyboard-arrow__down.dropdown-date__arrow keyboard_arrow_down    
-        input(type="text" name='endDate' class="endDate masked-text-field__input input__field dropdown_date__input" placeholder="ДД.ММ.ГГГГ" readonly)
+include ../dropdown-calendar/dropdown-calendar.pug
+
+.dropdown-date.js-dropdown-date
+  .dropdown-date__inputs
+    .dropdown-date__input
+      .dropdown-date__keyboard-arrow
+        +material-icons('keyboard_arrow_down')
+      +text-field({
+        type: 'text',
+        placeholder: 'ДД.ММ.ГГГГ',
+        readonly: 'readonly',
+        class: 'dropdown-date__input-start-date'
+      })
+    .dropdown-date__input
+      .dropdown-date__keyboard-arrow
+        +material-icons('keyboard_arrow_down')
+      +text-field({
+        type: 'text',
+        placeholder: 'ДД.ММ.ГГГГ',
+        readonly: 'readonly',
+        class: 'dropdown-date__input-end-date'
+      })
+  .dropdown-date__dropdown-calendar
+    +dropdown-calendar()
+
 
 
         

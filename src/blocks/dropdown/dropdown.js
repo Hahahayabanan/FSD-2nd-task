@@ -108,7 +108,6 @@ class DropdownGuests{
     if(this.clearButton) this.clearButton.classList.add('option-button_hidden');
   }
   getClearButton(){
-    console.log(this)
     return this.dropdown.querySelector('.option-button_clear');
   }
   
