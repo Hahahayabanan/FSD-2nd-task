@@ -1,0 +1,10 @@
+.dropdown-date__input-end-date{
+  width: 100%;
+  color: $dark-shade-75;
+  &::placeholder{
+    color: $dark-shade-75;
+  }
+  &:focus{
+    border: 1px solid $dark-shade-25;
+  }
+}

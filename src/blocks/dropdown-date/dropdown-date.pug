@@ -1,27 +1,27 @@
 include ../dropdown-calendar/dropdown-calendar.pug
-
-.dropdown-date.js-dropdown-date
-  .dropdown-date__inputs
-    .dropdown-date__input
-      .dropdown-date__keyboard-arrow
-        +material-icons('keyboard_arrow_down')
-      +text-field({
-        type: 'text',
-        placeholder: 'ДД.ММ.ГГГГ',
-        readonly: 'readonly',
-        class: 'dropdown-date__input-start-date'
-      })
-    .dropdown-date__input
-      .dropdown-date__keyboard-arrow
-        +material-icons('keyboard_arrow_down')
-      +text-field({
-        type: 'text',
-        placeholder: 'ДД.ММ.ГГГГ',
-        readonly: 'readonly',
-        class: 'dropdown-date__input-end-date'
-      })
-  .dropdown-date__dropdown-calendar
-    +dropdown-calendar()
+mixin dropdown-date()
+  .dropdown-date.js-dropdown-date
+    .dropdown-date__inputs
+      .dropdown-date__input
+        .dropdown-date__keyboard-arrow
+          +material-icons('keyboard_arrow_down')
+        +text-field({
+          type: 'text',
+          placeholder: 'ДД.ММ.ГГГГ',
+          readonly: 'readonly',
+          class: 'dropdown-date__input-start-date'
+        })
+      .dropdown-date__input
+        .dropdown-date__keyboard-arrow
+          +material-icons('keyboard_arrow_down')
+        +text-field({
+          type: 'text',
+          placeholder: 'ДД.ММ.ГГГГ',
+          readonly: 'readonly',
+          class: 'dropdown-date__input-end-date'
+        })
+    .dropdown-date__dropdown-calendar
+      +dropdown-calendar()
 
 
 

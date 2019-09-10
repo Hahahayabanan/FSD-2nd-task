@@ -1,41 +1,12 @@
+@import './__dropdown-calendar/dropdown-date__dropdown-calendar';
+@import './__input-end-date/dropdown-date__input-end-date';
+@import './__input-start-date/dropdown-date__input-start-date';
+@import './__input/dropdown-date__input';
+@import './__inputs/dropdown-date__inputs';
+@import './__keyboard-arrow/dropdown-date__keyboard-arrow';
+
 .dropdown-date{
   position: relative;
   width: 320px;
-}
-
-.dropdown-date__inputs{
-  display: flex;
-  justify-content: space-between;
-}
-
-.dropdown-date__keyboard-arrow{
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10;
-  color: $dark-shade-50;
-}
-
-.dropdown-date__input{
-  max-width: 150px;
-  position: relative;
-}
-
-.dropdown-date__input-start-date,
-.dropdown-date__input-end-date{
-  width: 100%;
-  color: $dark-shade-75;
-  &::placeholder{
-    color: $dark-shade-75;
-  }
-}
-
-.dropdown-date__dropdown-calendar{
-  position: absolute;
-  top: 49px;
+  cursor: pointer;
 }

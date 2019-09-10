@@ -3,10 +3,10 @@ include ../material-icons/material-icons.pug
 
 mixin dropdown-calendar()
   .dropdown-calendar
-    span.dropdown-calendar__arrow_back 
+    .dropdown-calendar__arrow.dropdown-calendar__arrow_back 
       +material-icons('arrow_back')
-    span.dropdown-calendar__arrow_forward 
+    .dropdown-calendar__arrow.dropdown-calendar__arrow_forward 
       +material-icons('arrow_forward')
-    .dropdown-calendar-buttons
+    .dropdown-calendar__buttons
       +option-button('clear', 'Очистить')
       +option-button('apply', 'Применить')

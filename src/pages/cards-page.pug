@@ -101,19 +101,13 @@ block content
 
         
         include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
-
-        include ../blocks/dropdown-date/dropdown-date.pug
-
-
+        +dropdown-filter-date()
         
-        
-        
-        
-
-        
+        include ../blocks/dropdown-date/dropdown-date.pug        
+        +dropdown-date()
         
         include ../blocks/pagination/pagination.pug
-        
+        +pagination()
 
         
 

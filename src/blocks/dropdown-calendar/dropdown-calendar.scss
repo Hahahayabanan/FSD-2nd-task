@@ -1,3 +1,27 @@
+@import './__arrow/_back/dropdown-calendar__arrow_back';
+@import './__arrow/_forward/dropdown-calendar__arrow_forward';
+@import './__arrow/dropdown-calendar__arrow';
+@import './__buttons/dropdown-calendar__buttons';
+@import './_active/dropdown-calendar_active';
+@import './_wrapper/dropdown-date_wrapper';
+
+.dropdown-calendar{
+  display: none;
+  height: 0;
+  z-index: 11;
+  max-width: 320px;
+}
+
+.ui-datepicker,
+.ui-datepicker table,
+.ui-datepicker tr,
+.ui-datepicker td,
+.ui-datepicker th {
+ margin: 0;
+ padding: 0;
+ border: none;
+ border-spacing: 0;
+}
 
 #ui-datepicker-div{
   display: none;
@@ -38,6 +62,11 @@
     margin-top: 20px;
     width: 24px;
     height: 24px;
+    cursor: pointer;
+    &.ui-state-hover{
+      background: none;
+      border: none;
+    }
   }
 
   .ui-datepicker-prev{
@@ -52,8 +81,6 @@
     display: none;
     background: none;
   }
-
-
 
   // Таблица с календарем
   .ui-datepicker-calendar{
@@ -111,7 +138,6 @@
     border-radius: 50%;
     color: #fff;
   }
-
     
 
   /* первая дата периода */
@@ -147,59 +173,9 @@
   .selected-start::after{
     border-radius: 50% 0 0 50%;
   } 
+
+
   
 }
 
-.ui-datepicker,
-.ui-datepicker table,
-.ui-datepicker tr,
-.ui-datepicker td,
-.ui-datepicker th {
- margin: 0;
- padding: 0;
- border: none;
- border-spacing: 0;
-}
-
-.dropdown-calendar{
-  display: none;
-  height: 0;
-  z-index: 11;
-  max-width: 320px;
-}
-
-.dropdown-calendar_active{
-  display: block;
-  height: auto;
-}
-
-.dropdown-calendar-buttons{
-  position: absolute;
-  bottom: 0;
-  display: flex;
-  width: 100%;
-  padding: 20px;
-  justify-content: space-between;
-  box-sizing: border-box;
-}
-
-.dropdown-date_wrapper{
-  position: relative;
-}
-
-.dropdown-calendar__arrow_back, 
-.dropdown-calendar__arrow_forward{
-  position: absolute;
-  color: $purple;
-  font-size: 24px;
-  top: 22px;
-  z-index: 11;
-  pointer-events: none;
-}
-.dropdown-calendar__arrow_back{
-  left: 20px;
-}
-.dropdown-calendar__arrow_forward{
-  right: 20px;
-}
 

@@ -25,29 +25,38 @@ class DropdownGuests{
     if(this.clearButton) this.clearButton.addEventListener('click', this.clearOptions.bind(this));
   }
 
-  showHideDropdown(event){
-    event.stopPropagation();
+  showHideDropdown(){
     const select = this.dropdown.querySelector('.dropdown__select');
-    select.classList.toggle('dropdown__select_active');
+    if(select.classList.contains('dropdown__select_active')){
+      this.hideDropdown();
+    }else{
+      this.showDropdown();
+    }
+  } 
+
+  showDropdown(){
+    const select = this.dropdown.querySelector('.dropdown__select');
+    select.classList.add('dropdown__select_active');
     const dropdown = select.parentNode;
     const selectOptions = dropdown.querySelector('.dropdown__options');
-    selectOptions.classList.toggle('dropdown__options_active');
-
-    document.addEventListener('click', this.outsideClickListener.bind(this));
-    /** в макете стрелка не переворачивается, но должна же, наверное
-    const selectArrow = dropdown.querySelector('.dropdown__arrow'); 
-    const materialIconArrow = selectArrow.querySelector('.material-icons');
-    materialIconArrow.innerHTML = (materialIconArrow.innerHTML == 'keyboard_arrow_down' ) ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
-    */
+    selectOptions.classList.add('dropdown__options_active');  
+    $(document).on('click', this.outsideClickListener.bind(this));      
   }
 
+  hideDropdown(){
+    const select = this.dropdown.querySelector('.dropdown__select');
+    select.classList.remove('dropdown__select_active');
+    const dropdown = select.parentNode;
+    const selectOptions = dropdown.querySelector('.dropdown__options');
+    selectOptions.classList.remove('dropdown__options_active');  
+    $(document).off('click');
+  }
 
   outsideClickListener(event) {
     const target = event.target;
-    const its_menu = target === this.dropdown || this.dropdown.contains(target);
-    if (!its_menu) {
-      this.showHideDropdown(event);
-      document.removeEventListener('click' ,this.outsideClickListener);
+    const itsMenu = target === this.dropdown || this.dropdown.contains(target);
+    if (!itsMenu) {
+      this.hideDropdown(event);
     }
   }
 

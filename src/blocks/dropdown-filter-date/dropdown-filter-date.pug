@@ -1,13 +1,14 @@
 include ../dropdown-calendar/dropdown-calendar.pug
 
-.dropdown-filter-date.js-dropdown-filter-date
-  .dropdown-filter-date__keyboard-arrow
-    +material-icons('keyboard_arrow_down')
-  +text-field({
-    type: 'text',
-    placeholder: 'ДД МЕС - ДД МЕС',
-    readonly: 'readonly',
-    class: 'dropdown-filter-date__input'
-  })
-  .dropdown-filter-date__dropdown-calendar
-    +dropdown-calendar()
+mixin dropdown-filter-date()
+  .dropdown-filter-date.js-dropdown-filter-date
+    .dropdown-filter-date__keyboard-arrow
+      +material-icons('keyboard_arrow_down')
+    +text-field({
+      type: 'text',
+      placeholder: 'ДД МЕС - ДД МЕС',
+      readonly: 'readonly',
+      class: 'dropdown-filter-date__input'
+    })
+    .dropdown-filter-date__dropdown-calendar
+      +dropdown-calendar()
