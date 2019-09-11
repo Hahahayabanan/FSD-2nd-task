@@ -1,45 +1,22 @@
+@import './__button-long/form-find-hotel-room__button-long';
+@import './__dropdown-container/form-find-hotel-room__dropdown-container';
+@import './__dropdown-date/form-find-hotel-room__dropdown-date';
+@import './__dropdown/form-find-hotel-room__dropdown';
+
 .form-find-hotel-room{
-    width: 380px;
-    height: 374px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 30px 30px 30px;
+  width: 380px;
+  height: 374px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 30px 30px;
 
-    @media (max-width: 380px) {
-        left: 50%;
-        transform: scale(.84);
-        
-    }
-}
-
-.form-find-hotel-room__label{
-    margin: 0;
-}
-
-.dropdown_date__input{
-
-}
-.button_long{
-
-}
-
-.dropdown-select_guests{
-
-}
-
-.dropdown-option{
-
-}
-
-.ui-datepicker{
-
-}
-
-.dropdown_date:last-of-type{
-
+  @media (max-width: 380px) {
+    left: 50%;
+    transform: scale(.84);
+  }
 }

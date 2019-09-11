@@ -112,20 +112,21 @@ block content
         //- include ../blocks/footer-creative/footer-creative.pug
         //- +footer-creative()
 
-        include ../blocks/footer-widgets/footer-widgets.pug
-        +footer-widgets()
+        //- include ../blocks/footer-widgets/footer-widgets.pug
+        //- +footer-widgets()
         
-        include ../blocks/nav-bar/nav-bar.pug
-        +nav-bar(false)
-        +nav-bar(true)
-            
-            
+        //- include ../blocks/nav-bar/nav-bar.pug
+        //- +nav-bar(false)
+        //- +nav-bar(true)
             
         //- include ../blocks/form-find-hotel-room/form-find-hotel-room.pug
-
-        //- include ../blocks/form-registration/form-registration.pug
+        //- +form-find-hotel-room()
 
         //- include ../blocks/form-book-a-room/form-book-a-room.pug
+        //- +form-book-a-room()
+            
+        include ../blocks/form-registration/form-registration.pug
+
 
         //- include ../blocks/form-sign-in/form-sign-in.pug
         //- .margin-t-30

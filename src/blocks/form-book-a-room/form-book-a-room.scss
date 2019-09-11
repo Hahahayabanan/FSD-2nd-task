@@ -1,100 +1,27 @@
+@import './__button-long/form-book-a-room__button-long';
+@import './__dropdown-container/form-book-a-room__dropdown-container';
+@import './__dropdown-date/form-book-a-room__dropdown-date';
+@import './__dropdown/form-book-a-room__dropdown';
+@import './__in-time/form-book-a-room__in-time';
+@import './__info-table/form-book-a-room__info-table';
+@import './__no/form-book-a-room__no';
+@import './__number/form-book-a-room__number';
+@import './__price/form-book-a-room__price';
+@import './__row/form-book-a-room__row';
+@import './__title/form-book-a-room__title';
+@import './__type/form-book-a-room__type';
+
+
 .form-book-a-room{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    width: 380px;
-    height: 511px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    padding: 40px 30px 30px 30px;
-}
-
-.row{
-    display: flex;
-    justify-content: space-between;
-    position: relative;
-}
-
-.form-book-a-room__row{
-    margin: 0;
-    position: relative;
-}
-
-.form-book-a-room__result{
-    margin: 0 !important;
-}
-
-.form-book-a-room-info__icon{
-    width: 20px;
-    height: 20px;
-    border: 1px solid $dark-shade-25;
-    border-radius: 50%;
-    box-sizing: border-box;
-    font-family: 'Montserrat-Bold';
-    font-size: 12px;
-    line-height: 14px;
-    color: $dark-shade-25;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: -25px;
-    top: 0;
-}
-
-.form-book-a-room__row_additional{
-    max-width: 214px;
-}
-
-.form-book-a-room__row_additional_price{
-    width: auto;
-    text-align: end;
-}
-
-
-.form-book-a-room-title__type{
-    font-family: 'Montserrat-Bold';
-    font-size: 12px;
-    text-transform: uppercase;
-    color: $purple;
-}
-
-.form-book-a-room-title__number{
-    font-family: 'Quicksand-Bold';
-    font-size: 21px;
-    color: $dark-shade-100;
-}
-
-.form-book-a-room-title__n{
-    font-family: 'Quicksand-Bold';
-    font-size: 12px;
-    color: $dark-shade-100;
-}
-
-
-.form-book-a-room-title__price {
-    font-family: 'Montserrat-Bold';
-    font-size: 14px;
-    color: $dark-shade-50;
-}
-.form-book-a-room-title__in-time {
-    font-family: 'Montserrat';
-    font-size: 12px;
-    color: $dark-shade-50;
-}   
-
-
-.form-book-a-room__row_underline{
-    width: 182px;
-    height: 1px;
-    border-top: 1px dotted $dark-shade-25;
-    box-sizing: border-box;
-    position: absolute;
-    bottom: 0;
-    left: 48%;
-    transform: translateX(-50%);
-
+  width: 380px;
+  height: 511px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  padding: 40px 30px 30px 30px;
 }

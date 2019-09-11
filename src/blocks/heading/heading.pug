@@ -1,0 +1,12 @@
+mixin heading(type, text)
+  case type
+    when 'h3'
+      p.heading.heading_h3=text
+    when 'h2'
+      p.heading.heading_h2=text
+    when 'h1'
+      p.heading.heading_h1=text
+
+
+      //- 
+        +heading('h3', 'hello world')

@@ -1,25 +1,32 @@
 include ../dropdown-calendar/dropdown-calendar.pug
-mixin dropdown-date()
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+
+mixin dropdown-date(firstHeader, secondHeader)
   .dropdown-date.js-dropdown-date
     .dropdown-date__inputs
-      .dropdown-date__input
-        .dropdown-date__keyboard-arrow
-          +material-icons('keyboard_arrow_down')
-        +text-field({
-          type: 'text',
-          placeholder: 'ДД.ММ.ГГГГ',
-          readonly: 'readonly',
-          class: 'dropdown-date__input-start-date'
-        })
-      .dropdown-date__input
-        .dropdown-date__keyboard-arrow
-          +material-icons('keyboard_arrow_down')
-        +text-field({
-          type: 'text',
-          placeholder: 'ДД.ММ.ГГГГ',
-          readonly: 'readonly',
-          class: 'dropdown-date__input-end-date'
-        })
+      .dropdown-date__item
+        +heading('h3', firstHeader)
+        .dropdown-date__input
+          .dropdown-date__keyboard-arrow
+            +material-icons('keyboard_arrow_down')
+          +text-field({
+            type: 'text',
+            placeholder: 'ДД.ММ.ГГГГ',
+            readonly: 'readonly',
+            class: 'dropdown-date__input-start-date'
+          })
+      .dropdown-date__item
+        +heading('h3', secondHeader)
+        .dropdown-date__input
+          .dropdown-date__keyboard-arrow
+            +material-icons('keyboard_arrow_down')
+          +text-field({
+            type: 'text',
+            placeholder: 'ДД.ММ.ГГГГ',
+            readonly: 'readonly',
+            class: 'dropdown-date__input-end-date'
+          })
     .dropdown-date__dropdown-calendar
       +dropdown-calendar()
 

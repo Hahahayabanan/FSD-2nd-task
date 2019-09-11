@@ -1,54 +1,35 @@
-form.form-book-a-room
-    .form-book-a-room-title.row
-        p.form-book-a-room__row
-            span.form-book-a-room-title__n № 
-            span.form-book-a-room-title__number 888
-            span.form-book-a-room-title__type  люкс
-        p.form-book-a-room__row
-            span.form-book-a-room-title__price 9 990
-            span.form-book-a-room-title__price ₽
-            span.form-book-a-room-title__in-time  в сутки
-   
-    .dropdown-date_wrapper.margin-t-20
-        include ../form-find-hotel-room/dropdown-date_for_form-find-hotel.pug
-        include ../dropdown-calendar/dropdown-calendar.pug
+include ../heading/heading.pug
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown/dropdown.pug
+include ../button-long/button-long.pug
+include ../info-table/info-table.pug
 
-    .margin-t-10
-        h3(class="") гости
-        include ../dropdown/dropdown.pug
+mixin form-book-a-room()
+  form.form-book-a-room
+    .form-book-a-room__title
+      p.form-book-a-room__row
+        span.form-book-a-room__no № 
+        span.form-book-a-room__number 888
+        span.form-book-a-room__type  люкс
+      p.form-book-a-room__row
+        span.form-book-a-room__price 9 990
+        span.form-book-a-room__price ₽
+        span.form-book-a-room__in-time  в сутки
 
-    .form-book-a-room-info
-        .row.margin-t-20
-            p.form-book-a-room__row.form-book-a-room__row_additional_price
-                span 9 990
-                span ₽ x 
-                span 4
-                span  суток
-            p.form-book-a-room__row.form-book-a-room__row_additional_price
-                span 39 960
-                span ₽
-        .row.margin-t-10
-            p.form-book-a-room__row.form-book-a-room__row_additional Сбор за услуги: 
-                span скидка 
-                    span 2 179
-                    span ₽
-                span.form-book-a-room-info__icon i
-            p.form-book-a-room__row.form-book-a-room__row_additional_price
-                span 0
-                span ₽
-        .row.margin-t-10
-            p.form-book-a-room__row.form-book-a-room__row_additional Сбор за дополнителные услуги
-                span.form-book-a-room-info__icon i
-            p.form-book-a-room__row.form-book-a-room__row_additional_price
-                span 300
-                span ₽
-        .row.margin-t-25
-            h2.form-book-a-room__result Итого
-            .form-book-a-room__row.form-book-a-room__row_underline
-            h2.form-book-a-room__result
-                    span 38 081
-                    span ₽
+    .form-book-a-room__dropdown-date
+      +dropdown-date('Прибытие', 'Выезд')
+    .form-book-a-room__dropdown
+      +heading('h3', 'Гости')
+      .form-book-a-room__dropdown-container
+        +dropdown('guests')
 
-    .margin-t-20
-        button(type="submit" class="button button_long") Подобрать номер
-            span.material-icons.button_long__arrow arrow_forward
+    .form-book-a-room__info-table
+      +info-table()
+
+    .form-book-a-room__button-long
+      +button-long({
+        href: '/mock-address/change-me', 
+        text: 'Забронировать',
+        type: 'sumbit',
+      })
+

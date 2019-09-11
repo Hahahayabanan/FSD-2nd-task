@@ -1,14 +1,21 @@
-//- form(class="form-find-hotel-room" name="form-find-hotel-room" action="#")
-//-     h1.form-find-hotel-room__label Найдём номера под ваши пожелания
-    
-//-     .dropdown-date_wrapper.margin-t-15
-//-         include dropdown-date_for_form-find-hotel.pug
-//-         include ../dropdown-calendar/dropdown-calendar.pug
+include ../heading/heading.pug
+include ../dropdown-date/dropdown-date.pug
+include ../dropdown/dropdown.pug
+include ../button-long/button-long.pug
 
-//-     .margin-t-15
-//-         h3(class="") гости
-//-         include ../dropdown-guests/dropdown-guests.pug
-
-//-     .margin-t-30
-//-         button(type="submit" class="button button_long") Подобрать номер
-//-             span.material-icons.button_long__arrow arrow_forward
+mixin form-find-hotel-room()
+  form.form-find-hotel-room(name="form-find-hotel-room" action='/mock-address/change-me')
+    .form-find-hotel-room__heading
+      +heading('h1', 'Найдём номера под ваши пожелания')
+    .form-find-hotel-room__dropdown-date
+      +dropdown-date('Прибытие', 'Выезд')
+    .form-find-hotel-room__dropdown
+      +heading('h3', 'Гости')
+      .form-find-hotel-room__dropdown-container
+        +dropdown('guests')
+    .form-find-hotel-room__button-long
+      +button-long({
+        href: '/mock-address/change-me', 
+        text: 'Подобрать номер',
+        type: 'sumbit',
+      })

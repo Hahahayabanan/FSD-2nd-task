@@ -2,11 +2,12 @@ include ../material-icons/material-icons.pug
 include ../subscription-text-field/subscription-text-field.pug
 include ../logotype/logotype.pug
 include ../copying-bar/copying-bar.pug
+include ../heading/heading.pug
 
 mixin vertical-menu(header, links)
   ul.footer-widgets__list
     li.footer-widgets__item
-      h3=header
+      +heading('h3', header)
     each link in links
       li.footer-widgets__item
         a.footer-widgets__link(href=link.href)=link.text 
@@ -46,7 +47,7 @@ mixin footer-widgets()
 
       ul.footer-widgets__list
         li.footer-widgets__item
-          h3 Subscribe to our newsletter
+          +heading('h3', 'Subscribe to our newsletter')
         li.footer-widgets__item
           p.footer-widgets__description Receive our latest news and promotions in your inbox!
         li.footer-widgets__item
