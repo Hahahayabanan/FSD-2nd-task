@@ -1,0 +1,9 @@
+mixin button(type, href, text, style)
+  case type
+    when 'simple'
+      button(href=href class='button button_simple' style=style)=text
+    when 'no-frame'
+      button(href=href class='button button_no-frame' style=style)=text
+    when 'faint'
+      .button_faint_wrap(style=style)
+        button(href=href class='button button_faint')=text

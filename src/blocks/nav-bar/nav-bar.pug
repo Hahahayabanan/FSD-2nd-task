@@ -1,0 +1,41 @@
+include ../logotype/logotype.pug
+include ../button/button.pug
+include ../button-long/button-long.pug
+include ../material-icons/material-icons.pug
+
+mixin nav-bar(isLoggedIn)
+  .nav-bar
+    .nav-bar__inner
+      +logotype()
+      .nav-bar__menu
+        ul.nav-bar__list
+          li.nav-bar__item
+            a.nav-bar__link.nav-bar__link_active(href='/mock-address/change-me') Home
+          li.nav-bar__item
+            a.nav-bar__link(href='/mock-address/change-me') About Us
+          li.nav-bar__item.nav-bar__item_dropdown
+            a.nav-bar__link(href='/mock-address/change-me') Services
+            +material-icons('keyboard_arrow_down', {
+              'color': 'rgba(31, 32, 65, 0.5)'
+            })
+          li.nav-bar__item
+            a.nav-bar__link(href='/mock-address/change-me') Careers
+          li.nav-bar__item
+            a.nav-bar__link(href='/mock-address/change-me') News
+          li.nav-bar__item
+            a.nav-bar__link(href='/mock-address/change-me') Documentation
+        if isLoggedIn
+          .nav-bar__login
+            +button('faint', '/mock-address/change-me', 'Login', {
+              'min-width': '79px',
+              'height': '34px'
+            })
+          .nav-bar__register
+            +button('simple', '/mock-address/change-me', 'Register', {
+              'min-width': '101px',
+              'height': '34px'
+            })
+        else
+          .nav-bar__vertical-line
+          .nav-bar__user-name.nav-bar__link Cosmin Negoita
+      

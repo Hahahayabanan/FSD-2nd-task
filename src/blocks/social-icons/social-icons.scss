@@ -1,0 +1,9 @@
+@import './__link/social-icons__link';
+@import './__img/social-icons__img';
+
+.social-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 112px;
+}

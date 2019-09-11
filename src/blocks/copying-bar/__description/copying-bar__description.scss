@@ -1,0 +1,16 @@
+.copying-bar__description{
+  margin: 0;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  // font-size: 14px;
+  font-size: .9rem;
+  line-height: 24px;
+  color: $dark-shade-75;
+  text-align: left;
+  @media (max-width: 768px) {
+    text-align: center;
+  }
+  display: flex;
+  align-items: center;
+}

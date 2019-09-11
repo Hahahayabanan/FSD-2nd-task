@@ -1,0 +1,10 @@
+.footer-widgets__inner{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 1160px;
+  height: 100%;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

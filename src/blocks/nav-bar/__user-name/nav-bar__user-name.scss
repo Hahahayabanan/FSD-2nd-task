@@ -1,0 +1,7 @@
+.nav-bar__user-name{
+  margin-left: 30px;
+  @media (max-width: $max-width-pad) {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+}

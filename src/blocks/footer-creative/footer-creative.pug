@@ -1,15 +1,11 @@
-.footer-creative
-    .nav-bar__icon.footer-widgets__icon
-        img(class="nav-bar__icon-image" src="../../../img/nav-bar-icon.svg")
-        img(class="nav-bar__icon-text" src="../../../img/nav-bar-icon-text.svg")
-    p.footer-creative__descr Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-    .footer-widgets-copyring__social-icons
-        a(class="twitter" href="#")
-            img(src="../../img/twitter-icon.svg", alt="twitter-icon")
-        a(class="facebook" href="#")
-            img(src="../../img/facebook-icon.svg", alt="facebook-icon")
-        a(class="instagramm" href="#")
-            img(src="../../img/instagramm-icon.svg", alt="instagramm-icon")
+include ../logotype/logotype.pug
+include ../social-icons/social-icons
+
+mixin footer-creative()
+  .footer-creative
+    +logotype()
+    p.footer-creative__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    +social-icons()
 
 
 

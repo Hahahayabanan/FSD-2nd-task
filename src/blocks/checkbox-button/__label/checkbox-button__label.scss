@@ -1,6 +1,7 @@
 .checkbox-button__label{
-  font-family: "Montserrat";
-  font-size: 14px;
+  font-family: "Montserrat", Arial, Helvetica, sans-serif;
+  // font-size: 14px;
+  font-size: .9rem;
   line-height: 18px;
   color: $dark-shade-50;
   padding-left: 30px;
@@ -23,7 +24,7 @@
 
 
 .checkbox-button__input:checked + .checkbox-button__label::before {
-  content: url("/../img/check-box.svg");
+  content: url("/img/check-box.svg");
   text-align: center;
   border: 1px solid $purple;
 }

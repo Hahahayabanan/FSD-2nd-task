@@ -14,107 +14,110 @@ block content
     .container
 
 
-        include ../blocks/bullet-list/bullet-list.pug
-        +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+        //- include ../blocks/bullet-list/bullet-list.pug
+        //- +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
 
 
-        include ../blocks/button-long/button-long.pug
-        +button-long('/mock-address/change-me', 'click me')
+        //- include ../blocks/button-long/button-long.pug
+        //- +button-long('/mock-address/change-me', 'click me')
 
 
-        include ../blocks/checkbox-button/checkbox-button.pug
-        .checkbox-buttons
-            +checkbox-button('checkbox0', 'Можно курить')
-            +checkbox-button('checkbox1', 'Можно с питомцами')
-            +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+        //- include ../blocks/checkbox-button/checkbox-button.pug
+        //- .checkbox-buttons
+        //-     +checkbox-button('checkbox0', 'Можно курить')
+        //-     +checkbox-button('checkbox1', 'Можно с питомцами')
+        //-     +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
 
 
-        include ../blocks/like-button/like-button.pug
-        +like-button(12)
+        //- include ../blocks/like-button/like-button.pug
+        //- +like-button(12)
 
 
-        include ../blocks/comment/comment.pug
-        +comment('../img/avatar1.png', 11, 'Мурад Сарафанов', 5, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+        //- include ../blocks/comment/comment.pug
+        //- +comment('../img/avatar1.png', 11, 'Мурад Сарафанов', 5, 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
 
 
-        include ../blocks/expandable-checkbox/expandable-checkbox.pug
-        +expandable-checkbox(
-            'expandable checkbox list',
-            [
-                ['checkbox3', 'Завтрак'],
-                ['checkbox4', 'Письменный стол'],
-                ['checkbox5', 'Стул для кормления'],
-                ['checkbox6', 'Кроватка'],
-                ['checkbox7', 'Телевизор'],
-                ['checkbox8', 'Шампунь'],
-                ['checkbox9', 'Телевизор'],
-                ['checkbox10', 'Шампунь']
-            ]
-        )
+        //- include ../blocks/expandable-checkbox/expandable-checkbox.pug
+        //- +expandable-checkbox(
+        //-     'expandable checkbox list',
+        //-     [
+        //-         ['checkbox3', 'Завтрак'],
+        //-         ['checkbox4', 'Письменный стол'],
+        //-         ['checkbox5', 'Стул для кормления'],
+        //-         ['checkbox6', 'Кроватка'],
+        //-         ['checkbox7', 'Телевизор'],
+        //-         ['checkbox8', 'Шампунь'],
+        //-         ['checkbox9', 'Телевизор'],
+        //-         ['checkbox10', 'Шампунь']
+        //-     ]
+        //- )
 
 
-        include ../blocks/icon-text/icon-text.pug
-        +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
-        +icon-text('location_city', 'Удобство', 'Окно в каждой из спален')
+        //- include ../blocks/icon-text/icon-text.pug
+        //- +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
+        //- +icon-text('location_city', 'Удобство', 'Окно в каждой из спален')
 
-        include ../blocks/text-field/text-field.pug
-        +text-field({
-            type: "email",
-            name: "input-email",
-            placeholder: "Email"
-        })
+        //- include ../blocks/text-field/text-field.pug
+        //- +text-field({
+        //-     type: "email",
+        //-     name: "input-email",
+        //-     placeholder: "Email"
+        //- })
 
-        include ../blocks/masked-text-field/masked-text-field.pug
-        +masked-text-field({})
+        //- include ../blocks/masked-text-field/masked-text-field.pug
+        //- +masked-text-field({})
 
-        include ../blocks/radio-button/radio-button.pug
-        .radio-button
-            +radio-button('contactChoice1', 'contact', 'man', 'Мужчина', 'checked')
-            +radio-button('contactChoice2', 'contact', 'woman', 'Женщина')
-
-
-        include ../blocks/toggle-button/toggle-button.pug
-        +toggle-button('toggle01', 'Получать спецпредложения')
+        //- include ../blocks/radio-button/radio-button.pug
+        //- .radio-button
+        //-     +radio-button('contactChoice1', 'contact', 'man', 'Мужчина', 'checked')
+        //-     +radio-button('contactChoice2', 'contact', 'woman', 'Женщина')
 
 
-        include ../blocks/subscription-text-field/subscription-text-field.pug
-        +subscription-text-field('Email')
-
-        include ../blocks/rich-checkbox/rich-checkbox.pug
-        +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-        +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+        //- include ../blocks/toggle-button/toggle-button.pug
+        //- +toggle-button('toggle01', 'Получать спецпредложения')
 
 
-        include ../blocks/rate-button/rate-button.pug
-        +rate-button('rate01', 3)
-        +rate-button('rate02', 1)
+        //- include ../blocks/subscription-text-field/subscription-text-field.pug
+        //- +subscription-text-field('Email')
+
+        //- include ../blocks/rich-checkbox/rich-checkbox.pug
+        //- +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+        //- +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
 
 
-        
-        include ../blocks/range-slider/range-slider.pug
-        +range-slider('range slider')
-
-
-        include ../blocks/dropdown/dropdown.pug
-        +dropdown('guests')
-        +dropdown('furniture')
-
-        
-        include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
-        +dropdown-filter-date()
-        
-        include ../blocks/dropdown-date/dropdown-date.pug        
-        +dropdown-date()
-        
-        include ../blocks/pagination/pagination.pug
-        +pagination()
-
-        
-
-
+        //- include ../blocks/rate-button/rate-button.pug
+        //- +rate-button('rate01', 3)
+        //- +rate-button('rate02', 1)
 
 
         
+        //- include ../blocks/range-slider/range-slider.pug
+        //- +range-slider('range slider')
+
+
+        //- include ../blocks/dropdown/dropdown.pug
+        //- +dropdown('guests')
+        //- +dropdown('furniture')
+
+        
+        //- include ../blocks/dropdown-filter-date/dropdown-filter-date.pug
+        //- +dropdown-filter-date()
+        
+        //- include ../blocks/dropdown-date/dropdown-date.pug        
+        //- +dropdown-date()
+        
+        //- include ../blocks/pagination/pagination.pug
+        //- +pagination()
+
+        //- include ../blocks/footer-creative/footer-creative.pug
+        //- +footer-creative()
+
+        include ../blocks/footer-widgets/footer-widgets.pug
+        +footer-widgets()
+        
+        include ../blocks/nav-bar/nav-bar.pug
+        +nav-bar(false)
+        +nav-bar(true)
             
             
             

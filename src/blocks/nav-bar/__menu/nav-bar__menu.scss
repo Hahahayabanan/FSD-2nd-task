@@ -1,0 +1,9 @@
+.nav-bar__menu{
+  display: flex;
+  height: 100%;
+  align-items: center;
+  @media (max-width: $max-width-pad) {
+    flex-direction: column;
+    height: auto;
+  }
+}

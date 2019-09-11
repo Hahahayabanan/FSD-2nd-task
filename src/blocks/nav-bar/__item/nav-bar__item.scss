@@ -1,0 +1,14 @@
+.nav-bar__item{
+  list-style: none;
+  display: inline;
+  margin-right: 28px;
+  @media (max-width: $max-width-pad) {
+    display: block;
+    margin-right: 0;
+    text-align: center;
+    margin-top: 5px;
+  }
+  @media (min-width:$max-width-pad) and (max-width: 880px) {
+    margin-right: 10px;
+  }
+}

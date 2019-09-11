@@ -1,0 +1,11 @@
+@import './__social-icons/copying-bar__social-icons';
+@import './__inner/copying-bar__inner';
+@import './__description/copying-bar__description';
+
+.copying-bar{
+  height: 70px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  display: flex;
+  justify-content: center;
+}

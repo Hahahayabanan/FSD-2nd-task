@@ -1,72 +1,56 @@
-.footer-widgets__wrapper
-    .footer-widgets
-        .footer-widgets-container
-            
-            .footer-widgets-column
-                ul.nav-bar__list.footer-widgets__list
-                    li.nav-bar__item.footer-widgets__item
-                        .nav-bar__icon.footer-widgets__icon
-                            img(class="nav-bar__icon-image" src="../../../img/nav-bar-icon.svg")
-                            img(class="nav-bar__icon-text" src="../../../img/nav-bar-icon-text.svg")
-                    li.nav-bar__item.footer-widgets__item
-                        p.footer-widgets__descr Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-            .footer-widgets__links
-                .footer-widgets-column
-                    ul.nav-bar__list.footer-widgets__list
-                        li.nav-bar__item.footer-widgets__item
-                            h3 Navigation
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") About us
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") News
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Support
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Products
+include ../material-icons/material-icons.pug
+include ../subscription-text-field/subscription-text-field.pug
+include ../logotype/logotype.pug
+include ../copying-bar/copying-bar.pug
 
-                .footer-widgets-column
-                    ul.nav-bar__list
-                        li.nav-bar__item.footer-widgets__item
-                            h3 About us
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Who we are
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Our tean
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Careers
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Investors
-
-                .footer-widgets-column
-                    ul.nav-bar__list
-                        li.nav-bar__item.footer-widgets__item
-                            h3 Support
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Documentation
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Community
-                        li.nav-bar__item.footer-widgets__item
-                            a.nav-bar__link(href="#") Get in Touch
-
-            .footer-widgets-column
-                ul.nav-bar__list
-                    li.nav-bar__item.footer-widgets__item
-                        h3 Subscribe to our newsletter
-                    li.nav-bar__item.footer-widgets__item
-                        p.footer-widgets__subs-text Receive our latest news and promotions in your inbox!
-                    li.nav-bar__item.footer-widgets__item
-                        .input.subscription-text-field.footer-widgets__subscription-text-field
-                            input(type="email", name="input-email", class="input__field subscription-text-field__field", placeholder="Your email address")
-                            span.material-icons.subscription-text-field__arrow arrow_forward
+mixin vertical-menu(header, links)
+  ul.footer-widgets__list
+    li.footer-widgets__item
+      h3=header
+    each link in links
+      li.footer-widgets__item
+        a.footer-widgets__link(href=link.href)=link.text 
 
 
-    .footer-widgets-copyring
-        .footer-widgets-copyring__inner
-            .footer-widgets-copyring__descr Copyright © 2018 Toxin UI Kit. All rights reserved.
-            .footer-widgets-copyring__social-icons
-                a(class="twitter" href="#")
-                    img(src="../../img/twitter-icon.svg", alt="twitter-icon")
-                a(class="facebook" href="#")
-                    img(src="../../img/facebook-icon.svg", alt="facebook-icon")
-                a(class="instagramm" href="#")
-                    img(src="../../img/instagramm-icon.svg", alt="instagramm-icon")
+mixin footer-widgets()
+  .footer-widgets
+    .footer-widgets__inner
+      ul.footer-widgets__list
+        li.footer-widgets__item
+          .footer-widgets__logotype
+            +logotype()
+        li.footer-widgets__item
+          p.footer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      
+      .footer-widgets__menu
+        +vertical-menu('Navigation', 
+        [
+          {href: '/mock-address/change-me', text: 'About us'},
+          {href: '/mock-address/change-me', text: 'News'},
+          {href: '/mock-address/change-me', text: 'Support'},
+          {href: '/mock-address/change-me', text: 'Products'},
+        ])
+        +vertical-menu('About us', 
+        [
+          {href: '/mock-address/change-me', text: 'Who we are'},
+          {href: '/mock-address/change-me', text: 'Our team'},
+          {href: '/mock-address/change-me', text: 'Careers'},
+          {href: '/mock-address/change-me', text: 'Investors'},
+        ])
+        +vertical-menu('Support', 
+        [
+          {href: '/mock-address/change-me', text: 'Documentation'},
+          {href: '/mock-address/change-me', text: 'Community'},
+          {href: '/mock-address/change-me', text: 'Get in Touch'},
+        ])
+
+      ul.footer-widgets__list
+        li.footer-widgets__item
+          h3 Subscribe to our newsletter
+        li.footer-widgets__item
+          p.footer-widgets__description Receive our latest news and promotions in your inbox!
+        li.footer-widgets__item
+          .footer-widgets__subscription-text-field
+            +subscription-text-field('Your email address')
+  .footer-widgets__copying-bar      
+    +copying-bar('Copyright © 2018 Toxin UI Kit. All rights reserved.')

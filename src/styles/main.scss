@@ -30,42 +30,40 @@
 @import "../blocks/dropdown-option/dropdown-option";
 @import '../blocks/option-button/option-button.scss';
 @import '../blocks/material-icons/material-icons';
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@import '../blocks/logotype/logotype';
 @import "../blocks/pagination/pagination.scss";
-
-
-
-
-
-
-
 @import "../blocks/subscription-text-field/subscription-text-field";
-
-
 @import "../blocks/dropdown-date/dropdown-date";
-
 @import "../blocks/dropdown-calendar/dropdown-calendar";
-
-
 @import "../blocks/dropdown-filter-date/dropdown-filter-date";
+@import "../blocks/social-icons/social-icons";
+
+@import "../blocks/footer-creative/footer-creative";
+@import "../blocks/footer-widgets/footer-widgets";
+
+@import "../blocks/nav-bar/nav-bar";
+@import "../blocks/copying-bar/copying-bar";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @import "../blocks/form-find-hotel-room/form-find-hotel-room";
 
@@ -78,12 +76,8 @@
 @import "../blocks/room-preview/room-preview";
 
 
-@import "../blocks/nav-bar/nav-bar_logged-in/nav-bar_logged-in";
-@import "../blocks/nav-bar/nav-bar_logged-out/nav-bar_logged-out";
-@import "../blocks/nav-bar/nav-bar";
 
-@import "../blocks/footer-widgets/footer-widgets";
-@import "../blocks/footer-creative/footer-creative";
+
 
 @import "../pages/blocks/header";
 
