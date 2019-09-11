@@ -1,15 +1,43 @@
-form(class="form-sign-in form-registration" action="#" name="form-sign-in" method="post")
-    h1.form-find-hotel-room__label Войти
+include ../heading/heading.pug
+include ../text-field/text-field.pug
+include ../button/button.pug
+include ../button-long/button-long.pug
 
-    .input.margin-t-20
-        input(type="email", name="input-email", class="input__field", placeholder="Email") 
-    .input.margin-t-10
-        input(type="password", name="input-email", class="input__field", placeholder="Пароль") 
+mixin form-sign-in()
+  form.form-sign-in(action='/mock-address/change-me' name="form-sign-in" method="post")
+    .form-sign-in__heading
+      +heading('h1', 'Войти')
 
-    .margin-t-20
-        button(type="submit" class="button button_long") Войти
-            span.material-icons.button_long__arrow arrow_forward
+    .form-sign-in__text-field-email
+      +text-field({
+        type: "email",
+        name: "input-email",
+        placeholder: "Email",
+        style: 'width: 100%'
+      })
+    .form-sign-in__text-field-password
+      +text-field({
+        type: "password",
+        name: "input-email",
+        placeholder: "Пароль",
+        style: 'width: 100%'
+      })
 
-    .sign-in-link.margin-t-30
-        span Нет аккаунта на Toxin
-        button(href="#" class="button button_faint") Создать
+    .form-sign-in__button-long
+      +button-long({
+          href: '/mock-address/change-me', 
+          text: 'Войти',
+          type: 'submit',
+        })
+
+    .form-sign-in__login
+      p.form-sign-in__login-text Нет аккаунта на Toxin?
+      +button({
+        'type': 'faint', 
+        'href':'/mock-address/change-me', 
+        'text': 'Создать', 
+        'style': {
+          'width': '99px',
+          'height': '44px'
+        }
+      })

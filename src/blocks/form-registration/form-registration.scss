@@ -1,27 +1,25 @@
+@import './__button-long/form-registration__button-long';
+@import './__heading-birthday/form-registration__heading-birthday';
+@import './__heading-login-data/form-registration__heading-login-data';
+@import './__login-text/form-registration__login-text';
+@import './__login/form-registration__login';
+@import './__masked-text-field-birthday/form-registration__masked-text-field-birthday';
+@import './__radio-button/form-registration__radio-button';
+@import './__text-field-email/form-registration__text-field-email';
+@import './__text-field-first-name/form-registration__text-field-first-name';
+@import './__text-field-password/form-registration__text-field-password';
+@import './__text-field-second-name/form-registration__text-field-second-name';
+@import './__toggle-button/form-registration__toggle-button';
+
 .form-registration{
-    width: 380px;
-    height: 646px;
-    background: #FFFFFF;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    box-sizing: border-box;
-    box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    display: flex;
-    flex-direction: column;
-    padding: 40px 30px 30px 30px;
-    margin-top: 3px;
-}
-
-.sign-in-link{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: #000;
-}
-
-.margin-t-18{
-    margin-top: 18px;
-}
-.margin-t-8{
-    margin-top: 8px;
+  width: 380px;
+  height: 646px;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 40px 30px 30px 30px;
 }

@@ -69,8 +69,8 @@ block content
 
         //- include ../blocks/radio-button/radio-button.pug
         //- .radio-button
-        //-     +radio-button('contactChoice1', 'contact', 'man', 'Мужчина', 'checked')
-        //-     +radio-button('contactChoice2', 'contact', 'woman', 'Женщина')
+        //-   +radio-button({id:'contactChoice1', name:'contact', value:'man', text:'Мужчина', checked:'true'})
+        //-   +radio-button({id:'contactChoice2', name:'contact', value:'woman', text:'Женщина'})
 
 
         //- include ../blocks/toggle-button/toggle-button.pug
@@ -126,9 +126,10 @@ block content
         //- +form-book-a-room()
             
         include ../blocks/form-registration/form-registration.pug
+        +form-registration()
 
-
-        //- include ../blocks/form-sign-in/form-sign-in.pug
+        include ../blocks/form-sign-in/form-sign-in.pug
+        +form-sign-in()
         //- .margin-t-30
         //-     include ../blocks/room-preview/room-preview.pug
         

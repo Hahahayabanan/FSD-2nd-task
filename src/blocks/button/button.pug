@@ -1,9 +1,22 @@
-mixin button(type, href, text, style)
-  case type
+mixin button(options)
+  case options.type
     when 'simple'
-      button(href=href class='button button_simple' style=style)=text
+      button(href=options.href class='button button_simple' style=options.style)=options.text
     when 'no-frame'
-      button(href=href class='button button_no-frame' style=style)=text
+      button(href=options.href class='button button_no-frame' style=options.style)=options.text
     when 'faint'
-      .button_faint_wrap(style=style)
-        button(href=href class='button button_faint')=text
+      .button_faint_wrap(style=options.style)
+        button(href=options.href class='button button_faint')=options.text
+
+//- **********
+//- 
+//- 
+//-   +button({
+        'type': 'faint', 
+        'href':'/mock-address/change-me', 
+        'text': 'Войти', 
+        'style': {
+          'width': '99px',
+          'height': '44px'
+        }
+      })

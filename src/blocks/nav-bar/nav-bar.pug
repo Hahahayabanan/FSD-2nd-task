@@ -26,9 +26,14 @@ mixin nav-bar(isLoggedIn)
             a.nav-bar__link(href='/mock-address/change-me') Documentation
         if isLoggedIn
           .nav-bar__login
-            +button('faint', '/mock-address/change-me', 'Login', {
-              'min-width': '79px',
-              'height': '34px'
+            +button({
+              'type': 'faint', 
+              'href':'/mock-address/change-me', 
+              'text': 'Login', 
+              'style': {
+                'width': '79px',
+                'height': '34px'
+              }
             })
           .nav-bar__register
             +button('simple', '/mock-address/change-me', 'Register', {

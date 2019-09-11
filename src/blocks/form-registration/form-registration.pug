@@ -1,33 +1,77 @@
-form(class="form-registration" action="#" name="form-registration" method="post")
-    h1.form-find-hotel-room__label Регистрация аккаунта
+include ../radio-button/radio-button.pug
+include ../heading/heading.pug
+include ../text-field/text-field.pug
+include ../masked-text-field/masked-text-field.pug
+include ../toggle-button/toggle-button.pug
+include ../button/button.pug
+include ../button-long/button-long.pug
 
-    .input.margin-t-20
-        input(type="text", name="input-email", class="input__field", placeholder="Имя") 
-    .input.margin-t-10
-        input(type="text", name="input-email", class="input__field", placeholder="Фамилия") 
+mixin form-registration()
+  form.form-registration(action='/mock-address/change-me' name="form-registration" method="post")
+    .form-registration__heading
+      +heading('h1', 'Регистрация аккаунта')
 
-    .radio-button.margin-t-8
-        input(type="radio" id="contactChoice3" name="contact3" value="" class="radio-button__input" checked)
-        label(for="contactChoice3" class="radio-button__label") Мужчина
-        input(type="radio" id="contactChoice4" name="contact3" value="" class="radio-button__input")
-        label(for="contactChoice4" class="radio-button__label") Женщина
+    .form-registration__text-field-first-name
+      +text-field({
+        type: "text",
+        name: "input-email",
+        placeholder: "Имя",
+        style: 'width: 100%'
+      })
+    .form-registration__text-field-second-name
+      +text-field({
+        type: "text",
+        name: "input-email",
+        placeholder: "Фамилия",
+        style: 'width: 100%'
+      })
 
-    h3.margin-t-18 Дата рождения
-    include ../masked-text-field/masked-text-field.pug
+    .form-registration__radio-button
+      +radio-button({id:'form-registration1', name:'form-registration', value:'man', text:'Мужчина', checked:'true'})
+      +radio-button({id:'form-registration2', name:'form-registration', value:'woman', text:'Женщина'})
 
-    h3.margin-t-18 Данные для входа в сервис
-    .input
-        input(type="email", name="input-email", class="input__field", placeholder="Email") 
-    .input.margin-t-10
-        input(type="password", name="input-email", class="input__field", placeholder="Пароль") 
+    .form-registration__heading-birthday
+      +heading('h3', 'Дата рождения')
+    
+    .form-registration__masked-text-field-birthday
+      +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
 
-    .margin-t-10
-        include ../toggle-button/toggle-button.pug
+    .form-registration__heading-login-data
+      +heading('h3', 'Данные для входа в сервис')
 
-    .margin-t-18
-        button(type="submit" class="button button_long") Перейти к оплате
-            span.material-icons.button_long__arrow arrow_forward
+    .form-registration__text-field-email
+      +text-field({
+        type: "email",
+        name: "input-email",
+        placeholder: "Email",
+        style: 'width: 100%'
+      })
+    .form-registration__text-field-password
+      +text-field({
+        type: "password",
+        name: "input-email",
+        placeholder: "Пароль",
+        style: 'width: 100%'
+      })
 
-    .sign-in-link.margin-t-30
-        span Уже есть аккаунт на Toxin
-        button(href="#" class="button button_faint") Войти
+    .form-registration__toggle-button
+      +toggle-button('togglewoggle', 'Получать спецпредложения')
+
+    .form-registration__button-long
+      +button-long({
+          href: '/mock-address/change-me', 
+          text: 'Перейти к оплате',
+          type: 'submit',
+        })    
+
+    .form-registration__login
+      p.form-registration__login-text Уже есть аккаунт на Toxin
+      +button({
+        'type': 'faint', 
+        'href':'/mock-address/change-me', 
+        'text': 'Войти', 
+        'style': {
+          'width': '99px',
+          'height': '44px'
+        }
+      })
