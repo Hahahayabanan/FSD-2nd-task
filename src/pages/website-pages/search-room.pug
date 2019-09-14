@@ -26,10 +26,10 @@ block content
             +heading('h3', 'даты пребывания в отеле')
           .search-room__filter-date
             +dropdown-filter-date()
-        .search-room__dropdown_guests-container
-          .search-room__dropdown_guests-heading
+        .search-room__dropdown-guests-container
+          .search-room__dropdown-guests-heading
             +heading('h3', 'Гости')
-          .search-room__dropdown_guests
+          .search-room__dropdown-guests
             +dropdown('guests')
         .search-room__range-slider
           +range-slider('диапазаон цены')
@@ -46,11 +46,12 @@ block content
             +heading('h3', 'Доступность')
           .search-room__rich-checkbox
             +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+          .search-room__rich-checkbox-second
             +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
-        .search-room__rich-checkbox-container
-          .search-room__rich-checkbox-heading
+        .search-room__dropdown-furniture-container
+          .search-room__dropdown-furniture-heading
             +heading('h3', 'Удобства номера')
-          .search-room__rich-checkbox
+          .search-room__dropdown-furniture
             +dropdown('furniture')
 
         .search-room__rich-expandable-checkbox
