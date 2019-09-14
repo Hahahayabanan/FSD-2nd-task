@@ -1,50 +1,57 @@
-mixin room-preview(number, src, price, rate, reviews, islucs)
+include ../rate-button/rate-button.pug
+
+mixin room-preview(options)
     .room-preview
-        img(class="room-preview__image" src=`${src}`)
+        img(class="room-preview__image" src=options.src alt=options.name)
         .room-preview__icons
-            .room-preview__circle.room-preview__circle_full
-            .room-preview__circle
-            .room-preview__circle
-            .room-preview__circle
+          .room-preview__circle.room-preview__circle_full
+          .room-preview__circle
+          .room-preview__circle
+          .room-preview__circle
         .room-preview__arrows
+
         .room-preview__descr
-            .form-book-a-room-title.row.room-preview_row
-                p.form-book-a-room__row
-                    span.form-book-a-room-title__n № 
-                    span.form-book-a-room-title__number=number
-                    if islucs
-                        span.form-book-a-room-title__type  люкс
-                p.form-book-a-room__row
-                    span.form-book-a-room-title__price=price
-                    span.form-book-a-room-title__price ₽
-                    span.form-book-a-room-title__in-time  в сутки
-            
+          .room-preview__row
+            .room-preview__paragraph
+              span.room-preview__no № 
+              span.room-preview__number=options.number
+              if options.islucs
+                span.room-preview__islucs  люкс
+
+            .room-preview__paragraph
+              span.room-preview__price=options.price
+              span.room-preview__price ₽
+              span.room-preview__in-time  в сутки
+
+          .room-preview__row
             .room-preview__underline
 
-            .rate-button.row
+          .room-preview__row
+            .room-preview__paragraph
+              .room-preview__rate-button
+                +rate-button(options.name, options.rate)
 
-                case rate
-                    when 0
-                        span.material-icons.rate-button__star.room-preview__stars star_border star_border star_border star_border star_border
-                    when 1
-                        span.material-icons.rate-button__star.room-preview__stars star star_border star_border star_border star_border
-                    when 2
-                        span.material-icons.rate-button__star.room-preview__stars star star star_border star_border star_border
-                    when 3
-                        span.material-icons.rate-button__star.room-preview__stars star star star star_border star_border
-                    when 4
-                        span.material-icons.rate-button__star.room-preview__stars star star star star star_border
-                    when 5
-                        span.material-icons.rate-button__star.room-preview__stars star star star star star
-                    default
-                        span.material-icons.rate-button__star.room-preview__stars star_border star_border star_border star_border star_border
-                
+            .room-preview__paragraph
+              span.room-preview__reviews-num=options.reviews
+              span.room-preview__reviews-rev  Отзывов
 
-                p.room-preview-p
-                    span.room-preview__review_num=reviews
-                    span.room-preview__review_rev  Отзывов
-
-
-
-+room-preview(888, "/../../img/room888.svg", '9 990', 5, 145, true)
-+room-preview(840, "/../../img/room840.svg", '9 900', 4, 65, false)
+//- ******************
+//- 
+//- +room-preview({
+//-   number: '888',
+//-   src: "/../../img/rooms/room888.svg",
+//-   price: '9 990',
+//-   name: 'room888',
+//-   rate: 5,
+//-   reviews: '145',
+//-   islucs: true
+//- })
+//- +room-preview({
+//-   number: '840',
+//-   src: "/../../img/rooms/room840.svg",
+//-   price: '9 900',
+//-   name: 'room840',
+//-   rate: 4,
+//-   reviews: '65',
+//-   islucs: false
+//- })

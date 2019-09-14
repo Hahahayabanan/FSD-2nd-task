@@ -14,7 +14,6 @@ const PATHS = {
 
 // Pages const for HtmlWebpackPlugin
 // see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
-// const PAGES_DIR = PATHS.src
 const PAGES_DIR = `${PATHS.src}/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
 
@@ -32,7 +31,8 @@ module.exports = {
     // module: `${PATHS.src}/your-module.js`,
   },
   output: {
-    filename: `js/[name].[hash].js`,
+    // filename: `js/[name].[hash].js`,
+    filename: `js/app.js`,
     path: PATHS.dist,
     publicPath: ''
   },
@@ -111,13 +111,10 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./css/[name].[hash].css"
+      // filename: "./css/[name].[hash].css"
+      filename: "./css/app.css"
     }),
-    // new CopyWebpackPlugin([
-    //   { from: `${PATHS.src}/img`, to: `img` },
-    //   { from: `${PATHS.src}/fonts`, to: `fonts` },
-    //   { from: `${PATHS.src}/static`, to: '' },
-    // ]),
+
     new webpack.ProvidePlugin({
       $: 'jquery',
       jQuery: 'jquery',
@@ -137,66 +134,67 @@ module.exports = {
     ...PAGES.map(page => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
       filename: `./${page.replace(/\.pug/,'.html')}`,
-      inject: true
+      inject: false
     })),
 
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/index.pug`,
-    //   filename: './index.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/cards-page.pug`,
-    //   filename: './cards-page.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/colors-and-type.pug`,
-    //   filename: './colors-and-type.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/cards.pug`,
-    //   filename: './cards.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/form-elements.pug`,
-    //   filename: './form-elements.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/headers-and-footers.pug`,
-    //   filename: './headers-and-footers.html',
-    //   inject: true
-    // }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/index.pug`,
+      filename: './index.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/cards-page.pug`,
+      filename: './cards-page.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/ui-kit/colors-and-type.pug`,
+      filename: './colors-and-type.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/ui-kit/cards.pug`,
+      filename: './cards.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/ui-kit/form-elements.pug`,
+      filename: './form-elements.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/ui-kit/headers-and-footers.pug`,
+      filename: './headers-and-footers.html',
+      inject: true
+    }),
 
 
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/landing-page.pug`,
-    //   filename: './landing-page.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/registration.pug`,
-    //   filename: './registration.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/room-details.pug`,
-    //   filename: './room-details.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/search-room.pug`,
-    //   filename: './search-room.html',
-    //   inject: true
-    // }),
-    // new HtmlWebpackPlugin({
-    //   template: `${PAGES_DIR}/sign-in.pug`,
-    //   filename: './sign-in.html',
-    //   inject: true
-    // }),
+    
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/website-pages/landing-page.pug`,
+      filename: './landing-page.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/website-pages/registration.pug`,
+      filename: './registration.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/website-pages/room-details.pug`,
+      filename: './room-details.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/website-pages/search-room.pug`,
+      filename: './search-room.html',
+      inject: true
+    }),
+    new HtmlWebpackPlugin({
+      template: `${PAGES_DIR}/website-pages/sign-in.pug`,
+      filename: './sign-in.html',
+      inject: true
+    }),
  
     
     

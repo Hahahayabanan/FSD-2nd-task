@@ -1,4 +1,4 @@
-mixin icon-text(image, title, descr)
+mixin icon-text(image, title, descr, hasUnderline)
   .icon-text
     .icon-text__row
       .icon-text__image
@@ -11,7 +11,8 @@ mixin icon-text(image, title, descr)
       .icon-text__text-container            
         p.icon-text__title=title
         p.icon-text__descr=descr
-    .icon-text__underline
+    if hasUnderline 
+      .icon-text__underline
 
 
 

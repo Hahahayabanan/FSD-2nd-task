@@ -12,5 +12,7 @@
 .dropdown{
   position: relative;
   display: inline-block;
-  width: 320px;
+  width: 100%;
+  min-width: 266px;
+  max-width: 320px;
 }

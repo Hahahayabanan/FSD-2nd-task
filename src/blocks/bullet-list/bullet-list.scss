@@ -1,6 +1,9 @@
 @import './__list/bullet-list__list';
 @import './__item/bullet-list__item';
-
+@import './__item/_bad/bullet-list__item_bad';
+@import './__item/_good/bullet-list__item_good';
+@import './__item/_great/bullet-list__item_great';
+@import './__item/_ok/bullet-list__item_ok';
 
 .bullet-list{
   max-width: 282px;

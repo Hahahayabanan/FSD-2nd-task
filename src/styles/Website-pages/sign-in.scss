@@ -1,16 +1,29 @@
-.sign-in-back{
-    max-height: 684px;
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-.sign-in-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
 
-    @media (max-width: 380px) {
-        .form-sign-in{
-            transform: scale(.84);
-        }
+.sign-in__back{
+  height: 830px - 15px;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  position: relative;
+}
+
+.sign-in__container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  @media (max-width: 380px) {
+    .form-sign-in{
+      transform: scale(.84);
     }
+  }
     
 }

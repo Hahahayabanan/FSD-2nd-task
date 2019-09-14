@@ -4,7 +4,7 @@ mixin rate-button(name, check_num)
   - var i = 0;
   span.rate-button.js-rate-button
     while i < 5
-      if check_num==i
+      if check_num-1==i
         label.rate-button__label
           +material-icons('star_border', {
             'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',

@@ -1,0 +1,32 @@
+extends ../index
+
+            
+
+block variables
+    - var pageTitle = 'Cards'
+
+block content
+  include ../../blocks/room-preview/room-preview.pug
+  include ../../blocks/form-sign-in/form-sign-in.pug
+  include ../../blocks/form-book-a-room/form-book-a-room.pug
+  include ../../blocks/form-registration/form-registration.pug
+  include ../../blocks/form-find-hotel-room/form-find-hotel-room.pug
+  include ../../blocks/logo-ui-kit/logo-ui-kit.pug
+
+  +logo-ui-kit()
+  .cards
+    .cards__inner
+      .cards__column
+        .cards__row
+          +form-find-hotel-room()
+        .cards__row
+          +form-registration()
+      .cards__column
+        .cards__row
+          +form-book-a-room()
+        .cards__row
+          +form-sign-in()
+      .cards__column
+        .cards__row
+          +room-preview({number: '888',src: "/../../img/rooms/room888.jpg",price: '9 990',name: 'room888',rate: 5,reviews: '145',islucs: true})
+          +room-preview({number: '840',src: "/../../img/rooms/room840.jpg",price: '9 900',name: 'room840',rate: 4,reviews: '65',islucs: false})

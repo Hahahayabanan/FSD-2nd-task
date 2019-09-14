@@ -14,9 +14,10 @@ import $ from 'jquery'
 global.jQuery = $;
 global.$ = $;
 
-import '../blocks/jquery-ui/jquery-ui.min'
-import '../js/jquery.inputmask'
-import '../js/jquery.datepicker.extension.range.min'
+// import './d3.min.js'
+import '../blocks/jquery-ui/jquery-ui.min.js'
+import './jquery.inputmask'
+import './jquery.datepicker.extension.range.min.js'
 
 
 
@@ -33,6 +34,4 @@ import '../blocks/dropdown-filter-date/dropdown-filter-date'
 import '../blocks/dropdown-date/dropdown-date'
 import '../blocks/dropdown-calendar/dropdown-calendar'
 
-
 import '../blocks/donut-chart/dunut-chart'
-

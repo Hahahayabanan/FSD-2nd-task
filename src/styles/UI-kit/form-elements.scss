@@ -1,65 +1,85 @@
-.form-elements-container {
-    width: 1440px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
-    grid-template-areas:  "fields         check-buttons     buttons" 
-                          "left-dropdown  middle-dropdown   right-dropdown" 
-                          "left-comments  comments          comments";
-    grid-row-gap: 100px;
-    grid-column-gap: 10px;
-    @media (max-width: 918px) {
-        grid-template-columns: auto auto;
-        grid-template-rows: auto auto auto auto auto;
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+.form-elements{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-top: 140px;
+}
 
-        grid-template-areas:    "fields check-buttons" 
-                                "buttons left-dropdown"
-                                "buttons left-comments"
-                                "middle-dropdown right-dropdown"
-                                "comments comments"
-                                ;
-        grid-row-gap: 0px;
-    }
-    @media (max-width: 618px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto auto auto auto auto auto;
+.form-elements__container {
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:  "fields         check-buttons     buttons" 
+                        "left-dropdown  middle-dropdown   right-dropdown" 
+                        "left-comments  comments          comments";
+  grid-row-gap: 100px;
+  grid-column-gap: 10px;
+  @media (max-width: 918px) {
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto auto auto;
 
-        grid-template-areas:    "fields" 
-                                "check-buttons" 
-                                "buttons"
-                                "left-dropdown"
-                                "middle-dropdown"
-                                "right-dropdown"
-                                "left-comments"
-                                "comments"
-                                ;
-        grid-row-gap: 0px;
-    }
+    grid-template-areas:    "fields check-buttons" 
+                            "buttons left-dropdown"
+                            "buttons left-comments"
+                            "middle-dropdown right-dropdown"
+                            "comments comments"
+                            ;
+    grid-row-gap: 0px;
   }
-  
-  .form-elements-fields { grid-area: fields;}
-  
-  .form-elements-check-buttons { grid-area: check-buttons; }
-  
-  .form-elements-buttons { grid-area: buttons; }
-  
-  .form-elements-left-dropdown { grid-area: left-dropdown; }
-  
-  .form-elements-left-comments { grid-area: left-comments; }
+  @media (max-width: 618px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto;
 
-  
-  .form-elements-comments { grid-area: comments; }
-
-  .wrapper{
-      margin-bottom: 40px;
-     
+    grid-template-areas:    "fields" 
+                            "check-buttons" 
+                            "buttons"
+                            "left-dropdown"
+                            "middle-dropdown"
+                            "right-dropdown"
+                            "left-comments"
+                            "comments"
+                            ;
+    grid-row-gap: 0px;
   }
+}
+  
+.form-elements__fields { grid-area: fields;}
+
+.form-elements__check-buttons { grid-area: check-buttons; }
+.form-elements__like-button{
+  display: inline-block;
+  margin-left: 10px;
+}
+.form-elements__rate-button{
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.form-elements__buttons { grid-area: buttons; }
+.form-elements__button{
+  margin-top: 16px;
+}
+
+.form-elements__left-dropdown { grid-area: left-dropdown; }
+
+.form-elements__left-comments { grid-area: left-comments; }
 
 
-.form-elements-container_wrapper{
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 140px;
+.form-elements__comments { grid-area: comments; }
+
+
+.form-elements__wrapper{
+  margin-bottom: 40px;     
+}
+
+.form-elements__heading{
+  margin-bottom: 5px;
 }

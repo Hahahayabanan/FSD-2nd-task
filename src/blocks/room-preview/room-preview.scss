@@ -1,68 +1,23 @@
+@import './__circle/room-preview__circle';
+@import './__circle/_full/room-preview__circle_full';
+@import './__descr/room-preview__descr';
+@import './__icons/room-preview__icons';
+@import './__image/room-preview__image';
+@import './__in-time/room-preview__in-time';
+@import './__inderline/room-preview__underline';
+@import './__islucs/room-preview__islucs';
+@import './__no/room-preview__no';
+@import './__number/room-preview__number';
+@import './__price/room-preview__price';
+@import './__reviews-num/room-preview__reviews-num';
+@import './__reviews-rev/room-preview__reviews-rev';
+@import './__row/room-preview__row';
+
 .room-preview{
-    width: 270px;
-    height: 257px;
-    background: #FFFFFF;
-    box-shadow: 0px 10px 20px $dark-shade-5;
-    border-radius: 4px;
-    position: relative;
-}
-
-.room-preview__underline{
-    width: 230px;
-    height: 1px;
-    background: rgba(31, 32, 65, 0.1);
-    margin-top: 10px;
-    margin-bottom: 8px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.room-preview__image{
-    border-radius: 4px 4px 0 0;
-}
-.room-preview__descr{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 105px;
-    padding: 0 20px;
-}
-
-.room-preview_row{
-    display: flex;
-    justify-content: space-between;
-}
-
-.room-preview__review_rev{
-    color: $dark-shade-50;
-}
-
-.room-preview__review_num{
-    color: $dark-shade-50;
-    font-family: 'Montserrat-Bold';
-}
-.room-preview-p{
-    margin: 0;
-}
-
-.room-preview__stars{
-    word-spacing: -7px;
-}
-
-.room-preview__icons{
-    position: absolute;
-    right: 15px;
-    top: 129px;
-    display: flex;
-}
-.room-preview__circle{
-    width: 7px;
-    height: 7px;
-    border: 1px solid #FFFFFF;
-    box-sizing: border-box;
-    border-radius: 50%;
-    margin-left: 3.5px;
-}
-.room-preview__circle_full{
-    background: #FFF;
-    margin-left: 0;
+  width: 270px;
+  height: 257px;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  border-radius: 4px;
+  position: relative;
 }

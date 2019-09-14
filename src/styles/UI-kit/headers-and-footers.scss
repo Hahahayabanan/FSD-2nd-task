@@ -1,12 +1,19 @@
+body, html{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 .headers-and-footers{
-    padding-top: 150px;
-    padding-bottom: 130px;
-    background: #F4F4F6;
+  padding-top: 150px;
+  padding-bottom: 130px;
+  background: #F4F4F6;
 }
 
 .headers-and-footers__item{
-    margin-bottom: 40px;
-    &:last-of-type{
-        margin-bottom: 0;
-    }
+  margin-bottom: 40px;
+  &:last-of-type{
+    margin-bottom: 0;
+  }
 }

@@ -1,0 +1,13 @@
+extends template
+
+block variables
+  - var pageTitle = 'Landing page'
+
+block content
+
+  include ../../blocks/form-find-hotel-room/form-find-hotel-room.pug
+
+  .land-page__back(style="background-image: url('/../img/land-page-back.jpg')")
+    .landing-page__form-find-hotel-room
+      +form-find-hotel-room()
+    p.landing-page__citate Лучшие номера для вашей работы, отдыха и просто вдохновения

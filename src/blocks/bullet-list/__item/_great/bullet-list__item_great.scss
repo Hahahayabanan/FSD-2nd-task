@@ -1,0 +1,5 @@
+.bullet-list__item_great{
+  &::before{
+    background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+  }
+}

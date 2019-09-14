@@ -1,0 +1,25 @@
+extends ../index
+
+
+
+
+block variables
+    - var pageTitle = 'Headers & footers'
+
+block content
+  include ../../blocks/logo-ui-kit/logo-ui-kit.pug
+  include ../../blocks/nav-bar/nav-bar.pug
+  include ../../blocks/footer-widgets/footer-widgets.pug
+  include ../../blocks/footer-creative/footer-creative.pug
+
+
+  .headers-and-footers
+    +logo-ui-kit()
+    .headers-and-footers__item
+      +nav-bar({'page': 'ui-kit', 'isLoggedIn': false})
+    .headers-and-footers__item
+      +nav-bar({'page': 'ui-kit', 'isLoggedIn': true})
+    .headers-and-footers__item
+      +footer-widgets({page: 'ui-kit'})
+    .headers-and-footers__item
+      +footer-creative()

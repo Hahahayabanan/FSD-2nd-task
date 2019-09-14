@@ -1,9 +1,5 @@
 extends index
-
-
-        
-include ../blocks/mixins/mixins.pug
-            
+         
 
 
 
@@ -85,9 +81,9 @@ block content
         //- +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
 
 
-        //- include ../blocks/rate-button/rate-button.pug
-        //- +rate-button('rate01', 3)
-        //- +rate-button('rate02', 1)
+        include ../blocks/rate-button/rate-button.pug
+        +rate-button('rate01', 3)
+        +rate-button('rate02', 1)
 
 
         
@@ -130,8 +126,25 @@ block content
 
         include ../blocks/form-sign-in/form-sign-in.pug
         +form-sign-in()
-        //- .margin-t-30
-        //-     include ../blocks/room-preview/room-preview.pug
-        
+
+        include ../blocks/room-preview/room-preview.pug
+        +room-preview({
+            number: '888',
+            src: "/../../img/rooms/room888.svg",
+            price: '9 990',
+            name: 'room888',
+            rate: 5,
+            reviews: '145',
+            islucs: true
+            })
+            +room-preview({
+            number: '840',
+            src: "/../../img/rooms/room840.svg",
+            price: '9 900',
+            name: 'room840',
+            rate: 4,
+            reviews: '65',
+            islucs: false
+        })
 
 
