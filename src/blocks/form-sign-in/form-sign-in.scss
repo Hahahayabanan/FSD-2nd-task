@@ -12,7 +12,7 @@
   border-radius: 4px;
   width: 380px;
   height: 358px;
-  padding: 40px 30px 30px 30px;
+  padding: (40px - 1px) (30px - 1px) (30px - 1px) (30px - 1px);
   display: flex;
   flex-direction: column;
 }
