@@ -13,23 +13,27 @@ mixin info-table()
         span ₽
     tr.info-table__row
       td.info-table__first-p
-        span Сбор за услуги: 
-        span скидка 
-        span 2 179
-        span ₽
-        span.info-table__icon i
+        .info-table__discount
+          span Сбор за услуги: 
+          span скидка 
+          span 2 179
+          span ₽
+          span.info-table__icon i
       td.info-table__second-p
-        span 0
-        span ₽
+        .info-table__discount
+          span 0
+          span ₽
     tr.info-table__row
       td.info-table__first-p
-        span Сбор за дополнительные
-        span.info-table__icon i
-        br
-        span услуги
+        .info-table__advanced
+          span Сбор за дополнительные
+          span.info-table__icon i
+          br
+          span услуги
       td.info-table__second-p
-        span 300
-        span ₽
+        .info-table__advanced
+          span 300
+          span ₽
     tr.info-table__row
       td.info-table__first-p.info-table__first-p_result
         +heading('h2', 'Итого') 

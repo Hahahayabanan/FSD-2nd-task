@@ -46,9 +46,6 @@ body, html{
     margin-top: 0;
     margin-bottom: 21px;
   }
-  .comment{
-    margin-bottom: 25px;
-  }
   @media (max-width: 415px){
     .room-details__form-book-a-room{
       transform: scale(.85);
@@ -60,7 +57,7 @@ body, html{
 }
 .room-details__content{
   padding-top: 70px;
-  padding-bottom: 70px;
+  padding-bottom: 72px;
   max-width: 1160px;
 }
 
@@ -141,6 +138,7 @@ body, html{
   font-size: .88rem;
   line-height: 24px;
   color: $dark-shade-75;
+  margin-top: 17px;
 }
 
 .room-details__reviews-amount{
@@ -159,39 +157,41 @@ body, html{
     margin-top: 12px;
   }
 }
-
+.room-details__reviews-heading{
+  margin-top: 33px;
+  margin-bottom: 20px;
+  position: relative;
+}
 
 .room-details__review-list{
   max-width: 266px;
   display: inline-block;
   margin-left: 30px;
   position: relative;
+  top: -4px;
   li{
     margin-top: 0;
     padding-left: 15px;
   }
 }
-  
+.room-details__comment{
+  margin-bottom: 23px;
+}
   
 .room-details__form-book-a-room{ 
-  margin-top: 30px;
   grid-area: get-it; 
   @media (max-width: 876px) {
     display: flex;
     justify-content: center;
   }
 }
-
-.room-details__bullet-list{
-  margin-top: 20px;
+.room-details__rules-heading{
+  margin-left: 20px;
 }
-
+.room-details__bullet-list{
+  margin-top: 17px;
+}
 .room-details__donut-chart{
   margin-top: 20px;
 }
 
-.room-details__reviews-heading{
-  margin-top: 30px;
-  margin-bottom: 20px;
-  position: relative;
-}

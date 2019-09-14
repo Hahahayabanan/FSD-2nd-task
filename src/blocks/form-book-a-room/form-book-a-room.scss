@@ -10,6 +10,7 @@
 @import './__row/form-book-a-room__row';
 @import './__title/form-book-a-room__title';
 @import './__type/form-book-a-room__type';
+@import './__row/_price-margin/form-book-a-room__row_price-margin';
 
 
 .form-book-a-room{
@@ -23,5 +24,6 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  padding: 40px 30px 30px 30px;
+  // border-box dont consider border
+  padding: (40px - 1px) (30px - 1px) (30px - 1px) (30px - 1px);
 }
