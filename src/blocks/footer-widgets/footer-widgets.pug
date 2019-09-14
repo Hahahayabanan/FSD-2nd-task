@@ -76,13 +76,14 @@ mixin footer-widgets(options)
               {href: '/mock-address/change-me', text: 'Служба поддержки'},
               {href: '/mock-address/change-me', text: 'Услуги'},
             ])
-            +vertical-menu('О нас', 
-            [
-              {href: '/mock-address/change-me', text: 'О сервисе'},
-              {href: '/mock-address/change-me', text: 'Наша команда'},
-              {href: '/mock-address/change-me', text: 'Вакансии'},
-              {href: '/mock-address/change-me', text: 'Инвесторы'},
-            ])
+            .footer-widgets__about-us
+              +vertical-menu('О нас', 
+              [
+                {href: '/mock-address/change-me', text: 'О сервисе'},
+                {href: '/mock-address/change-me', text: 'Наша команда'},
+                {href: '/mock-address/change-me', text: 'Вакансии'},
+                {href: '/mock-address/change-me', text: 'Инвесторы'},
+              ])
             +vertical-menu('Служба поддержки', 
             [
               {href: '/mock-address/change-me', text: 'Соглашения'},

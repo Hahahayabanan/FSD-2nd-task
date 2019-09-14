@@ -3,8 +3,12 @@
   display: flex;
   justify-content: space-around;
   margin-top: 4px;
-  padding-right: 13px;
+  padding-right: 25px;
+  padding-left: 10px;
   @media (max-width: 370px){
     flex-direction: column;
+  }
+  @media (max-width: 768px) {
+    padding: 0;
   }
 }
