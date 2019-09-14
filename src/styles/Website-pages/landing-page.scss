@@ -31,12 +31,13 @@ body, html{
 .landing-page__citate{
   width: 297px;
   height: 48px;
-  font-family: 'Montserrat';
-  font-size: 14px;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  // font-size: 14px;
+  font-size: .88rem;
   line-height: 24px;
   text-align: right;
   color: $dark-shade-75;
-  bottom: 10px;
+  bottom: 8px;
   right: 134px;
   position: absolute;
   @media (max-width: 760px) {

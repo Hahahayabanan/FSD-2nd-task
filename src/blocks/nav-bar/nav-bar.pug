@@ -61,18 +61,20 @@ mixin nav-bar(options)
                 a.nav-bar__link(href='/mock-address/change-me') О нас
               li.nav-bar__item.nav-bar__item_dropdown
                 a.nav-bar__link(href='/mock-address/change-me') Услуги
-                +material-icons('keyboard_arrow_down', {
-                  'color': 'rgba(31, 32, 65, 0.5)'
-                })
+                .nav-bar__arrow-down
+                  +material-icons('keyboard_arrow_down', {
+                    'color': 'rgba(31, 32, 65, 0.5)'
+                  })
               li.nav-bar__item
                 a.nav-bar__link(href='/mock-address/change-me') Вакансии
               li.nav-bar__item
                 a.nav-bar__link(href='/mock-address/change-me') Новости
               li.nav-bar__item.nav-bar__item_dropdown
                 a.nav-bar__link(href='/mock-address/change-me') Соглашения
-                +material-icons('keyboard_arrow_down', {
-                  'color': 'rgba(31, 32, 65, 0.5)'
-                })
+                .nav-bar__arrow-down
+                  +material-icons('keyboard_arrow_down', {
+                    'color': 'rgba(31, 32, 65, 0.5)'
+                  })
             if !options.isLoggedIn
               .nav-bar__login
                 +button({

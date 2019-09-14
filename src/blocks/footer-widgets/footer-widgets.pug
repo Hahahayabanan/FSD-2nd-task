@@ -62,7 +62,7 @@ mixin footer-widgets(options)
       .footer-widgets
         .footer-widgets__inner
           ul.footer-widgets__list
-            li.footer-widgets__item
+            li.footer-widgets__item.footer-widgets__item_logo
               .footer-widgets__logotype
                 +logotype()
             li.footer-widgets__item
@@ -91,13 +91,14 @@ mixin footer-widgets(options)
             ])
 
           ul.footer-widgets__list
-            li.footer-widgets__item
-              +heading('h3', 'Подписка')
-            li.footer-widgets__item
-              p.footer-widgets__description Получайте специальные предложения и новости сервиса
-            li.footer-widgets__item
-              .footer-widgets__subscription-text-field
-                +subscription-text-field('Email')
+            .footer-widgets__subscription
+              li.footer-widgets__item
+                +heading('h3', 'Подписка')
+              li.footer-widgets__item
+                p.footer-widgets__description Получайте специальные предложения и новости сервиса
+              li.footer-widgets__item
+                .footer-widgets__subscription-text-field
+                  +subscription-text-field('Email')
       .footer-widgets__copying-bar      
         +copying-bar('Copyright © 2018 Toxin отель. Все права зачищены.')
 

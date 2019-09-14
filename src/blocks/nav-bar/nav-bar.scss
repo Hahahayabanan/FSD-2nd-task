@@ -11,6 +11,7 @@ $max-width-pad : 804px;
 @import './__register/nav-bar__register';
 @import './__user-name/nav-bar__user-name';
 @import './__vertical-line/nav-bar__vertical-line';
+@import './__arrow-down/nav-bar__arrow-down';
 
 .nav-bar{
   height: 70px;
@@ -21,3 +22,4 @@ $max-width-pad : 804px;
     height: auto;
   }
 }
+
