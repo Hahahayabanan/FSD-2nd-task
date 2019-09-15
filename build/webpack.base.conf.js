@@ -34,7 +34,7 @@ module.exports = {
     // filename: `js/[name].[hash].js`,
     filename: `js/app.js`,
     path: PATHS.dist,
-    publicPath: ''
+    // publicPath: PATHS.dist
   },
   optimization: {
     splitChunks: {
@@ -56,7 +56,8 @@ module.exports = {
       test: /\.js$/,
       loader: 'babel-loader',
       exclude: '/node_modules/'
-    }, {
+    }, 
+    {
       test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
       use: [
         {
@@ -142,11 +143,7 @@ module.exports = {
       filename: './index.html',
       inject: true
     }),
-    new HtmlWebpackPlugin({
-      template: `${PAGES_DIR}/cards-page.pug`,
-      filename: './cards-page.html',
-      inject: true
-    }),
+
     new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/ui-kit/colors-and-type.pug`,
       filename: './colors-and-type.html',
