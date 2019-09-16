@@ -1,7 +1,6 @@
 .comment__name{
   font-family: 'Montserrat', sans-serif;
-  // font-size: 14px;
-  font-size: .9rem;
+  font-size: rem(14px);
   line-height: 24px;
   color: $dark-shade-75;
   font-weight: bold;

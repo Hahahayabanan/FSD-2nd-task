@@ -1,7 +1,6 @@
 .form-book-a-room__price {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: bold;
-  // font-size: 14px;
-  font-size: .88rem;
+  font-size: rem(14px);
   color: $dark-shade-50;
 }

@@ -69,15 +69,13 @@ body, html{
   margin: 0;
   font-family: 'Quicksand', 'Open Sans';
   font-weight: bold;
-  // font-size: 19px;
-  font-size: 1.19rem;
+  font-size: rem(19px);
   line-height: 29px;
 }
 .color__descr{
   margin: 0;
   font-family: 'Quicksand', 'Open Sans';
-  // font-size: 19px;
-  font-size: 1.19rem;
+  font-size: rem(19px);
   line-height: 29px;
 }
 
@@ -118,8 +116,7 @@ body, html{
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
-  // font-size: 14px;
-  font-size: .89rem;
+  font-size: rem(14px);
   line-height: 24px;
   color: $dark-shade-25;
 }
@@ -127,8 +124,7 @@ body, html{
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
-  // font-size: 14px;
-  font-size: .89rem;
+  font-size: rem(14px);
   line-height: 24px;
   color: $dark-shade-75;
 }

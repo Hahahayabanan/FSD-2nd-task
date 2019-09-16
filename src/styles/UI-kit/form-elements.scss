@@ -17,20 +17,20 @@ body, html{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto auto;
-  grid-template-areas:  "fields         check-buttons     buttons" 
-                        "left-dropdown  middle-dropdown   right-dropdown" 
-                        "left-comments  comments          comments";
+  grid-template-areas:  'fields         check-buttons     buttons' 
+                        'left-dropdown  middle-dropdown   right-dropdown' 
+                        'left-comments  comments          comments';
   grid-row-gap: 100px;
   grid-column-gap: 10px;
   @media (max-width: 918px) {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto auto auto;
 
-    grid-template-areas:    "fields check-buttons" 
-                            "buttons left-dropdown"
-                            "buttons left-comments"
-                            "middle-dropdown right-dropdown"
-                            "comments comments"
+    grid-template-areas:    'fields check-buttons' 
+                            'buttons left-dropdown'
+                            'buttons left-comments'
+                            'middle-dropdown right-dropdown'
+                            'comments comments'
                             ;
     grid-row-gap: 0px;
   }
@@ -38,14 +38,14 @@ body, html{
     grid-template-columns: 1fr;
     grid-template-rows: auto auto auto auto auto auto auto;
 
-    grid-template-areas:    "fields" 
-                            "check-buttons" 
-                            "buttons"
-                            "left-dropdown"
-                            "middle-dropdown"
-                            "right-dropdown"
-                            "left-comments"
-                            "comments"
+    grid-template-areas:    'fields' 
+                            'check-buttons' 
+                            'buttons'
+                            'left-dropdown'
+                            'middle-dropdown'
+                            'right-dropdown'
+                            'left-comments'
+                            'comments'
                             ;
     grid-row-gap: 0px;
   }

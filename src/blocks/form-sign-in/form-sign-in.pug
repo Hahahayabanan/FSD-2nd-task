@@ -4,22 +4,22 @@ include ../button/button.pug
 include ../button-long/button-long.pug
 
 mixin form-sign-in()
-  form.form-sign-in(action='/mock-address/change-me' name="form-sign-in" method="post")
+  form.form-sign-in(action='/mock-address/change-me' name='form-sign-in' method='post')
     .form-sign-in__heading
       +heading('h1', 'Войти')
 
     .form-sign-in__text-field-email
       +text-field({
-        type: "email",
-        name: "input-email",
-        placeholder: "Email",
+        type: 'email',
+        name: 'input-email',
+        placeholder: 'Email',
         style: 'width: 100%'
       })
     .form-sign-in__text-field-password
       +text-field({
-        type: "password",
-        name: "input-email",
-        placeholder: "Пароль",
+        type: 'password',
+        name: 'input-email',
+        placeholder: 'Пароль',
         style: 'width: 100%'
       })
 

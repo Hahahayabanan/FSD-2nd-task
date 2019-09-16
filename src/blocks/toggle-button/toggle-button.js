@@ -1,4 +1,4 @@
-//$('input.cb-value').prop("checked", true);
+//$('input.cb-value').prop('checked', true);
 $('.toggle-button__cb').click(function() {
     var mainParent = $(this).parent('.toggle-button');
     if($(mainParent).find('input.toggle-button__cb').is(':checked')) {

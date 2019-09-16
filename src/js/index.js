@@ -22,7 +22,6 @@ import './jquery.datepicker.extension.range.min.js'
 
 
 
-
 import '../blocks/dropdown/dropdown.js'
 import '../blocks/toggle-button/toggle-button.js'
 import '../blocks/like-button/like-button.js'
@@ -33,5 +32,4 @@ import '../blocks/masked-text-field/masked-text-field'
 import '../blocks/dropdown-filter-date/dropdown-filter-date'
 import '../blocks/dropdown-date/dropdown-date'
 import '../blocks/dropdown-calendar/dropdown-calendar'
-
 import '../blocks/donut-chart/dunut-chart'

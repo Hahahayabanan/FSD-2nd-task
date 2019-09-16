@@ -2,8 +2,7 @@
   display: inline-block;
   height: 20px;
   font-family: 'Montserrat', Arial, sans-serif;
-  // font-size: 14px;
-  font-size: .9rem;
+  font-size: rem(14px);
   font-weight: bold;
   line-height: 20px;
   color: $dark-shade-75;
@@ -25,7 +24,7 @@
 
 
 .rich-checkbox__input:checked + .rich-checkbox__label::before {
-  content: url("/../img/check-box.svg");
+  content: url('/../img/check-box.svg');
   text-align: center;
   border: 1px solid $purple;
 }

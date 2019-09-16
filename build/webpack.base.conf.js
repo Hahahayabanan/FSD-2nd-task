@@ -58,20 +58,20 @@ module.exports = {
       exclude: '/node_modules/'
     }, 
     {
-      test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            name: '[name].[ext]',
-            outputPath: 'fonts/'
-          }
-        }
-      ]
-    }, 
+      test: /\.(eot|svg|ttf|woff|woff2)$/,
+      use: {
+        loader: "url-loader",
+        options: {
+          limit: 50000,
+          name: "./fonts/[name].[ext]", // Output below ./fonts
+          publicPath: "../", // Take the directory into account
+        },
+      },
+    },
     {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
+      exclude: /fonts/,
       options: {
         name: '[name].[ext]',
         outputPath: 'img/',
@@ -123,7 +123,6 @@ module.exports = {
     }),
     new CopyWebpackPlugin([
       { context: `${PATHS.src}/img`, from: '**/*', to: './img' },
-      { context: `${PATHS.src}/fonts`, from: '**/*', to: './fonts' },
       ...IMAGES.map((item) => {
         return { context: `./src/blocks/${item}/img`, from: '**/*', to: './img' };
       })

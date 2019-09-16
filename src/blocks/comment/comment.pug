@@ -3,7 +3,7 @@ include ../like-button/like-button.pug
 mixin comment(srcAvatar, numOfLikes, aName, date, text)
   .comment
     .comment__avatar-like-container
-      img(class="comment__avatar" src=srcAvatar)
+      img(class='comment__avatar' src=srcAvatar)
       .comment__like-button
         +like-button(numOfLikes)
     .comment__body-container

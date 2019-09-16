@@ -4,9 +4,8 @@
   border: 1px solid $dark-shade-25;
   box-sizing: border-box;
   border-radius: 22px;
-  font-family: "Montserrat", Arial, Helvetica, sans-serif;
-  // font-size: 18px;
-  font-size: 1.2rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+  font-size: rem(18px);
   color: $dark-shade-25;
   cursor: pointer;
 }

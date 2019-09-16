@@ -7,22 +7,22 @@ include ../button/button.pug
 include ../button-long/button-long.pug
 
 mixin form-registration()
-  form.form-registration(action='/mock-address/change-me' name="form-registration" method="post")
+  form.form-registration(action='/mock-address/change-me' name='form-registration' method='post')
     .form-registration__heading
       +heading('h1', 'Регистрация аккаунта')
 
     .form-registration__text-field-first-name
       +text-field({
-        type: "text",
-        name: "input-email",
-        placeholder: "Имя",
+        type: 'text',
+        name: 'input-email',
+        placeholder: 'Имя',
         style: 'width: 100%'
       })
     .form-registration__text-field-second-name
       +text-field({
-        type: "text",
-        name: "input-email",
-        placeholder: "Фамилия",
+        type: 'text',
+        name: 'input-email',
+        placeholder: 'Фамилия',
         style: 'width: 100%'
       })
 
@@ -34,23 +34,23 @@ mixin form-registration()
       +heading('h3', 'Дата рождения')
     
     .form-registration__masked-text-field-birthday
-      +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
+      +masked-text-field({placeholder: 'ДД.ММ.ГГГГ'})
 
     .form-registration__heading-login-data
       +heading('h3', 'Данные для входа в сервис')
 
     .form-registration__text-field-email
       +text-field({
-        type: "email",
-        name: "input-email",
-        placeholder: "Email",
+        type: 'email',
+        name: 'input-email',
+        placeholder: 'Email',
         style: 'width: 100%'
       })
     .form-registration__text-field-password
       +text-field({
-        type: "password",
-        name: "input-email",
-        placeholder: "Пароль",
+        type: 'password',
+        name: 'input-email',
+        placeholder: 'Пароль',
         style: 'width: 100%'
       })
 

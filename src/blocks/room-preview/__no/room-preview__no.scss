@@ -1,9 +1,8 @@
 .room-preview__no{
-  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand','Open Sans', sans-serif;
   font-style: normal;
   font-weight: bold;
-  // font-size: 14px;
-  font-size: .88rem;
+  font-size: rem(14px);
   line-height: 17px;
   color: $dark-shade-100;
 }

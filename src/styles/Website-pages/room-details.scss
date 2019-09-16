@@ -65,18 +65,18 @@ body, html{
   display: grid;
   grid-template-columns: 0.92fr 1.08fr 1fr;
   grid-template-rows: auto 1fr auto;
-  grid-template-areas: "info diagramm get-it" "review review get-it" "rules cancel get-it";
+  grid-template-areas: 'info diagramm get-it' 'review review get-it' 'rules cancel get-it';
   grid-column-gap: 10px;
 
   @media (max-width: 876px) {
     grid-template-columns: auto auto;
     grid-template-rows: auto auto auto auto;
-    grid-template-areas: "info diagramm" "review review" "rules cancel" "get-it get-it";
+    grid-template-areas: 'info diagramm' 'review review' 'rules cancel' 'get-it get-it';
   }
   @media (max-width: 545px) {
     grid-template-columns: auto;
     grid-template-rows: auto auto auto auto auto auto;
-    grid-template-areas: "info" "diagramm" "review" "rules" "cancel" "get-it";
+    grid-template-areas: 'info' 'diagramm' 'review' 'rules' 'cancel' 'get-it';
   }
   @media (max-width: 380px) {
     grid-template-columns: 320px;
@@ -134,8 +134,7 @@ body, html{
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-style: normal;
   font-weight: normal;
-  // font-size: 14px;
-  font-size: .88rem;
+  font-size: rem(14px);
   line-height: 24px;
   color: $dark-shade-75;
   margin-top: 17px;

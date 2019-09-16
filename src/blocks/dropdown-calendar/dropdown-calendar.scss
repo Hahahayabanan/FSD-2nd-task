@@ -51,8 +51,7 @@
   }
   .ui-datepicker-title{
     font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
-    // font-size: 19px;
-    font-size: 1.2rem;
+    font-size: rem(19px);
     line-height: 24px;
     text-align: center;
     color: $dark-shade-100;
@@ -93,8 +92,7 @@
   // Названия дней недели (шапка)
   thead span{
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    // font-size: 12px;
-    font-size: .8rem;
+    font-size: rem(12px);
     line-height: 15px;
     color: $purple;
   }
@@ -111,8 +109,7 @@
     align-items: center;
     box-sizing: border-box;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    // font-size: 12px;
-    font-size: .8rem;
+    font-size: rem(12px);
     line-height: 15px;
   }
 

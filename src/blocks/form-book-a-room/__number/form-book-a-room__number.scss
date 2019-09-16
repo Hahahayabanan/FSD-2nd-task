@@ -1,7 +1,6 @@
 .form-book-a-room__number{
   font-family: 'Quicksand', 'Open Sans', Arial, sans-serif;
   font-weight: bold;
-  // font-size: 21px;
-  font-size: 1.5rem;
+  font-size: rem(21px);
   color: $dark-shade-100;
 }

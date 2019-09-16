@@ -1,7 +1,6 @@
 .radio-button__label{
-  font-family: "Montserrat", Arial, sans-serif;
-  // font-size: 14px;
-  font-size: .9rem;
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: rem(14px);
   line-height: 24px;
   color: $dark-shade-50;
   margin-right: 20px;

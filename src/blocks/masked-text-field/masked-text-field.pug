@@ -2,10 +2,10 @@ include ../text-field/text-field.pug
 
 mixin masked-text-field(options)
   +text-field({
-    type: "text",
-    class: "masked-text-field",
+    type: 'text',
+    class: 'masked-text-field',
     name: options.name,
-    placeholder: "ДД.ММ.ГГГГ"
+    placeholder: 'ДД.ММ.ГГГГ'
   })
 
 
@@ -13,6 +13,6 @@ mixin masked-text-field(options)
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +masked-text-field({placeholder: "ДД.ММ.ГГГГ"})
+//- +masked-text-field({placeholder: 'ДД.ММ.ГГГГ'})
 //- 
 //- ***************
