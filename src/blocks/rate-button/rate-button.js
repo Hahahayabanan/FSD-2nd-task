@@ -22,8 +22,6 @@ class RateButton{
 
     this.inputs = Array.from(this.labels, this.initFullStars);
   }
-  
-
 }
 
 

@@ -17,7 +17,9 @@ likeBtn.map(element => {
       likeBtnLabel.textContent=Number(likeBtnLabel.textContent)+Number(1);
     }else{
       materialIcon.textContent = 'favorite_border';
-      if(likeBtnLabel.textContent >= 0)likeBtnLabel.textContent=Number(likeBtnLabel.textContent)-Number(1);
+      if(likeBtnLabel.textContent >= 0){
+        likeBtnLabel.textContent=Number(likeBtnLabel.textContent)-Number(1);
+      }
     }
     likeBtnLabel.classList.toggle('like-button__label_active');
   });

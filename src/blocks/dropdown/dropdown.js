@@ -1,4 +1,3 @@
-
 class DropdownGuests{
   constructor(htmlElem){
     this.dropdown = htmlElem;
@@ -100,11 +99,15 @@ class DropdownGuests{
     minusButton.classList.add('dropdown-option__item_un-active');
   }
   getMinusAndPlusButtons(){
+    let signs = {
+      PLUS: '+',
+      MINUS: '-'
+    }
     Array.from(this.dropdown.querySelectorAll('.dropdown-option__item_circle'), (val)=>{
-      if(val.textContent === '-'){
+      if(val.textContent === signs.MINUS){
         this.minusButtons.push(val);
       }
-      if(val.textContent === '+'){
+      if(val.textContent === signs.PLUS){
         this.plusButtons.push(val);
       }
     });
@@ -129,7 +132,7 @@ class DropdownGuests{
     const babyNumber = this.dropdown.querySelector('.dropdown__baby-num');
     const babyText = this.dropdown.querySelector('.dropdown__baby-text');
 
-    guestsNumber.innerHTML = 'Cколько '
+    guestsNumber.innerHTML = 'Сколько '
     guestsText.innerHTML = 'гостей'
     babyNumber.innerHTML = '';
     babyText.innerHTML = '';
@@ -152,14 +155,19 @@ class DropdownGuests{
     }
 
     const typeOfGuest = target.parentNode.previousElementSibling;
+    let guestsList = {
+      BABIES: 'младенцы',
+      ADULT: 'взрослые',
+      CHILDREN: 'дети'
+    }
 
-    if(typeOfGuest.textContent.toLowerCase() === 'младенцы'){
+    if(typeOfGuest.textContent.toLowerCase() === guestsList.BABIES){
       this.babiesNumber = number;
       babyNumber.textContent = ', ' + this.babiesNumber + ' ';
       babyText.textContent = titles['младенцев'][this.checkPad(number)];
     }else{
-      if(typeOfGuest.textContent.toLowerCase() === 'взрослые') this.guestsNumber = number;
-      if(typeOfGuest.textContent.toLowerCase() === 'дети') this.childrenNumber = number;
+      if(typeOfGuest.textContent.toLowerCase() === guestsList.ADULT) this.guestsNumber = number;
+      if(typeOfGuest.textContent.toLowerCase() === guestsList.CHILDREN) this.childrenNumber = number;
       guestsNumber.textContent = +this.childrenNumber + +this.guestsNumber + ' ';
       guestsText.textContent = titles['гостей'][this.checkPad(number)];
     }
@@ -168,12 +176,14 @@ class DropdownGuests{
 
   checkPad(num){
     let lastOne = num.toString().split('').pop();
+    let isNumBetweenOneAndFive = Number(lastOne) > 1 && Number(lastOne) < 5;
+    let isNumBetweenNineAndTwentyOne = Number(num) > 9 && Number(num) < 21;
     let tmp;
     if(Number(lastOne) == 1) tmp = 0;
-        else if (Number(lastOne) > 1 && Number(lastOne) < 5) tmp = 1;
-        else tmp = 2;
-    if(Number(num) > 9 && Number(num) < 21){
-        tmp = 2;
+      else if (isNumBetweenOneAndFive) tmp = 1;
+      else tmp = 2;
+    if(isNumBetweenNineAndTwentyOne){
+      tmp = 2;
     }
     return tmp;
   }
@@ -200,22 +210,26 @@ class DropdownFurniture extends DropdownGuests{
       'кровати' : ['кровать, ', 'кровати, ', 'кроватей, '],
       'ванные комнаты' : ['ванная комната ', 'ванные комнаты ', 'ванных комнат ']
     }
+    let furniture = {
+      BEDROOMS: 'спальни',
+      BEDS: 'кровати',
+      BATHROOMS: 'ванные комнаты'
+    }
 
     const typeOfGuest = target.parentNode.previousElementSibling;
     switch(typeOfGuest.textContent.toLowerCase()){
-      case 'спальни': 
+      case furniture.BEDROOMS: 
         bedroomNumber.textContent = number + ' ';
-        bedroomText.textContent = titles['спальни'][this.checkPad(number)];
+        bedroomText.textContent = titles[furniture.BEDROOMS][this.checkPad(number)];
         break;
-      case 'кровати': 
+      case furniture.BEDS: 
         bedNumber.textContent = number + ' ';
-        bedText.textContent = titles['кровати'][this.checkPad(number)];
+        bedText.textContent = titles[furniture.BEDS][this.checkPad(number)];
         break;
-      case 'ванные комнаты': 
+      case furniture.BATHROOMS: 
         bathroomNumber.textContent = number + ' ';
-        bathroomText.textContent = titles['ванные комнаты'][this.checkPad(number)];
+        bathroomText.textContent = titles[furniture.BATHROOMS][this.checkPad(number)];
         break;
-      default:
     }    
   }
 }
