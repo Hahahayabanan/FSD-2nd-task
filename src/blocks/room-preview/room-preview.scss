@@ -1,7 +1,4 @@
-@import './__circle/room-preview__circle';
-@import './__circle/_full/room-preview__circle_full';
 @import './__descr/room-preview__descr';
-@import './__icons/room-preview__icons';
 @import './__image/room-preview__image';
 @import './__in-time/room-preview__in-time';
 @import './__inderline/room-preview__underline';
@@ -12,6 +9,10 @@
 @import './__reviews-num/room-preview__reviews-num';
 @import './__reviews-rev/room-preview__reviews-rev';
 @import './__row/room-preview__row';
+@import './__rate-button/room-preview__rate-button';
+@import './__slider/_with-arrows/room-preview__slider_with-arrows';
+@import './__slider/room-preview__slider';
+
 
 .room-preview{
   width: 270px;
@@ -20,8 +21,4 @@
   box-shadow: 0px 10px 20px $dark-shade-5;
   border-radius: 4px;
   position: relative;
-}
-
-.room-preview__rate-button{
-  margin-top: 1px;
 }

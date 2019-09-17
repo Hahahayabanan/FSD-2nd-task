@@ -2,7 +2,6 @@
 
 import '../pages/index.pug'
 
-
 // SCSS
 
 import '../styles/main.scss'
@@ -14,12 +13,9 @@ import $ from 'jquery'
 global.jQuery = $;
 global.$ = $;
 
-// import './d3.min.js'
 import '../blocks/jquery-ui/jquery-ui.min.js'
 import './jquery.inputmask'
 import './jquery.datepicker.extension.range.min.js'
-
-
 
 
 import '../blocks/dropdown/dropdown.js'
@@ -33,3 +29,5 @@ import '../blocks/dropdown-filter-date/dropdown-filter-date'
 import '../blocks/dropdown-date/dropdown-date'
 import '../blocks/dropdown-calendar/dropdown-calendar'
 import '../blocks/donut-chart/dunut-chart'
+import '../blocks/room-preview/room-preview'
+

@@ -55,6 +55,7 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "d3": "^5.12.0"
+    "d3": "^5.12.0",
+    "slick-carousel": "^1.8.1"
   }
 }

@@ -2,13 +2,11 @@ include ../rate-button/rate-button.pug
 
 mixin room-preview(options)
     .room-preview
-        img(class='room-preview__image' src=options.src alt=options.name)
-        .room-preview__icons
-          .room-preview__circle.room-preview__circle_full
-          .room-preview__circle
-          .room-preview__circle
-          .room-preview__circle
-        .room-preview__arrows
+        .room-preview__slider.js-room-preview__slider(class=options.isArrows ? 'room-preview__slider_with-arrows' : '')
+          img(class='room-preview__image' src=options.src alt=options.name)
+          img(class='room-preview__image' src=options.src alt=options.name)
+          img(class='room-preview__image' src=options.src alt=options.name)
+          img(class='room-preview__image' src=options.src alt=options.name)
 
         .room-preview__descr
           .room-preview__row
