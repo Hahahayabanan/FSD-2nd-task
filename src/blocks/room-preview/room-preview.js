@@ -2,13 +2,13 @@ import 'slick-carousel'
 import 'slick-carousel/slick/slick-theme.scss'
 import 'slick-carousel/slick/slick.scss'
 
-$(document).ready(function(){
-
+$(document).ready(() => {
   const $slider = $('.js-room-preview__slider');
 
-  $slider.map((i, val)=>{
+  // eslint-disable-next-line array-callback-return
+  $slider.map((i, val) => {
     let isArrows = false;
-    if($(val).hasClass('room-preview__slider_with-arrows')){
+    if ($(val).hasClass('room-preview__slider_with-arrows')) {
       isArrows = true;
     }
     $(val).slick({
@@ -20,5 +20,4 @@ $(document).ready(function(){
       useCSS: false,
     });
   })
-  
 })
