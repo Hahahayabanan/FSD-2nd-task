@@ -10,7 +10,6 @@
 ---
 ## Website pages
 
-### [Headers and footers](https://hahahayabanan.github.io/FSD-2nd-task/dist/headers-and-footers.html)
 ### [Landing page](https://hahahayabanan.github.io/FSD-2nd-task/dist/landing-page.html)
 ### [Registration](https://hahahayabanan.github.io/FSD-2nd-task/dist/registration.html)
 ### [Room details](https://hahahayabanan.github.io/FSD-2nd-task/dist/room-details.html)
