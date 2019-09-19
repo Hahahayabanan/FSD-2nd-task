@@ -4,7 +4,7 @@ include ../material-icons/material-icons.pug
 
 mixin dropdown(type)
   if type == 'guests'
-    aside.dropdown.js-dropdown
+    section.dropdown.js-dropdown
       .dropdown__arrow
         +material-icons('keyboard_arrow_down', {
           'color': 'rgba(31, 32, 65, 0.75)'
@@ -27,7 +27,7 @@ mixin dropdown(type)
 
   else if type == 'furniture'
 
-    aside.dropdown.dropdown_furniture.js-dropdown_furniture
+    section.dropdown.dropdown_furniture.js-dropdown_furniture
       .dropdown__arrow
         +material-icons('keyboard_arrow_down', {
           'color': 'rgba(31, 32, 65, 0.75)'
