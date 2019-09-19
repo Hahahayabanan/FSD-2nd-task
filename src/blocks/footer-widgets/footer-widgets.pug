@@ -16,7 +16,7 @@ mixin vertical-menu(header, links)
 mixin footer-widgets(options)
   case options.page
     when 'ui-kit'
-      .footer-widgets
+      footer.footer-widgets
         .footer-widgets__inner
           ul.footer-widgets__list
             li.footer-widgets__item
@@ -25,7 +25,7 @@ mixin footer-widgets(options)
             li.footer-widgets__item
               p.footer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
           
-          .footer-widgets__menu
+          section.footer-widgets__menu
             +vertical-menu('Navigation', 
             [
               {href: '/mock-address/change-me', text: 'About us'},
@@ -55,11 +55,11 @@ mixin footer-widgets(options)
             li.footer-widgets__item
               .footer-widgets__subscription-text-field
                 +subscription-text-field('Your email address')
-      .footer-widgets__copying-bar      
+      section.footer-widgets__copying-bar      
         +copying-bar('Copyright © 2018 Toxin UI Kit. All rights reserved.')
 
     when 'website-pages'
-      .footer-widgets
+      footer.footer-widgets
         .footer-widgets__inner
           ul.footer-widgets__list
             li.footer-widgets__item.footer-widgets__item_logo
@@ -68,7 +68,7 @@ mixin footer-widgets(options)
             li.footer-widgets__item
               p.footer-widgets__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           
-          .footer-widgets__menu
+          section.footer-widgets__menu
             +vertical-menu('Навигация', 
             [
               {href: '/mock-address/change-me', text: 'О нас'},
@@ -100,7 +100,7 @@ mixin footer-widgets(options)
               li.footer-widgets__item
                 .footer-widgets__subscription-text-field
                   +subscription-text-field('Email')
-      .footer-widgets__copying-bar      
+      section.footer-widgets__copying-bar      
         +copying-bar('Copyright © 2018 Toxin отель. Все права зачищены.')
 
 

@@ -1,37 +1,37 @@
 include ../rate-button/rate-button.pug
 
 mixin room-preview(options)
-    .room-preview
-        .room-preview__slider.js-room-preview__slider(class=options.isArrows ? 'room-preview__slider_with-arrows' : '')
-          img(class='room-preview__image' src=options.src alt=options.name)
-          img(class='room-preview__image' src=options.src alt=options.name)
-          img(class='room-preview__image' src=options.src alt=options.name)
-          img(class='room-preview__image' src=options.src alt=options.name)
+  aside.room-preview
+    figure.room-preview__slider.js-room-preview__slider(class=options.isArrows ? 'room-preview__slider_with-arrows' : '')
+      img(class='room-preview__image' src=options.src alt=options.name)
+      img(class='room-preview__image' src=options.src alt=options.name)
+      img(class='room-preview__image' src=options.src alt=options.name)
+      img(class='room-preview__image' src=options.src alt=options.name)
 
-        .room-preview__descr
-          .room-preview__row
-            .room-preview__paragraph
-              span.room-preview__no № 
-              span.room-preview__number=options.number
-              if options.islucs
-                span.room-preview__islucs  люкс
+    .room-preview__descr
+      .room-preview__row
+        .room-preview__paragraph
+          span.room-preview__no № 
+          span.room-preview__number=options.number
+          if options.islucs
+            span.room-preview__islucs  люкс
 
-            .room-preview__paragraph
-              span.room-preview__price=options.price
-              span.room-preview__price ₽
-              span.room-preview__in-time  в сутки
+        .room-preview__paragraph
+          span.room-preview__price=options.price
+          span.room-preview__price ₽
+          span.room-preview__in-time  в сутки
 
-          .room-preview__row
-            .room-preview__underline
+      .room-preview__row
+        .room-preview__underline
 
-          .room-preview__row
-            .room-preview__paragraph
-              .room-preview__rate-button
-                +rate-button(options.name, options.rate)
+      .room-preview__row
+        .room-preview__paragraph
+          .room-preview__rate-button
+            +rate-button(options.name, options.rate)
 
-            .room-preview__paragraph
-              span.room-preview__reviews-num=options.reviews
-              span.room-preview__reviews-rev  Отзывов
+        .room-preview__paragraph
+          span.room-preview__reviews-num=options.reviews
+          span.room-preview__reviews-rev  Отзывов
 
 //- ******************
 //- 

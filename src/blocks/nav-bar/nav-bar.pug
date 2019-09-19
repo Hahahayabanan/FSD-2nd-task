@@ -6,7 +6,7 @@ include ../material-icons/material-icons.pug
 mixin nav-bar(options)
   case options.page
     when 'ui-kit'
-      .nav-bar
+      nav.nav-bar
         .nav-bar__inner
           +logotype()
           .nav-bar__menu
@@ -52,7 +52,7 @@ mixin nav-bar(options)
               .nav-bar__user-name.nav-bar__link Cosmin Negoita
 
     when 'website-pages'
-      .nav-bar
+      nav.nav-bar
         .nav-bar__inner
           +logotype()
           .nav-bar__menu
