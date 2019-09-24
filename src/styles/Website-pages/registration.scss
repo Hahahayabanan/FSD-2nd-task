@@ -13,18 +13,16 @@ body, html{
   background-size: cover;
   background-position-y: bottom;
   position: relative;
-}
-
-
-.registration__form-registration{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  padding-top: 3px;
-
-  @media (max-width: 380px) {
-    transform: scale(.84);
-  }
+  &__form-registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    padding-top: 3px;
   
+    @media (max-width: 380px) {
+      transform: scale(.84);
+    }
+    
+  }
 }

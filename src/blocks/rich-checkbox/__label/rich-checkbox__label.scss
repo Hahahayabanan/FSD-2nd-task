@@ -21,10 +21,3 @@
     margin-right: 9px;
   }
 }
-
-
-.rich-checkbox__input:checked + .rich-checkbox__label::before {
-  content: url('/../img/check-box.svg');
-  text-align: center;
-  border: 1px solid $purple;
-}

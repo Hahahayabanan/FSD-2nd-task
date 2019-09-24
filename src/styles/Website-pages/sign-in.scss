@@ -12,18 +12,19 @@ body, html{
   background-size: cover;
   background-position-y: bottom;
   position: relative;
-}
-
-.sign-in__container{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-
-  @media (max-width: 380px) {
-    .form-sign-in{
-      transform: scale(.84);
+  &__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  
+    @media (max-width: 380px) {
+      .form-sign-in{
+        transform: scale(.84);
+      }
     }
+      
   }
-    
 }
+
+

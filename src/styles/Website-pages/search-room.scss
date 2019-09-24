@@ -27,91 +27,92 @@ body, html{
     grid-template-areas: 'side-bar' 'side-bar' 'side-bar' 'title' 'elements' 'pagination';
     justify-content: center;
   }
+
+  &__side-bar { 
+    grid-area: side-bar; 
+  }
+  &__side-bar-inner{
+    max-width: 266px;
+  }
+  &__dropdown_guests{
+    width: 266px;
+  }
+  &__range-slider-descr{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: rem(12px);
+    line-height: 14px;
+    color: $dark-shade-50;
+    margin-top: 14px;
+  }
+  
+  &__title{ 
+    grid-area: title; 
+  }
+  
+  &__elements{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr;
+      grid-area: elements;
+      grid-column-gap: 12px;
+      grid-row-gap: 20px;
+      padding-top: 20px;
+  
+      @media (max-width: 1112px) {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+      @media (max-width: 834px) {
+          grid-template-columns: 1fr;
+          grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      }
+  }
+  
+  &__pagination { 
+    grid-area: pagination; 
+    justify-self: center;
+    padding-top: 44px;
+    margin-left: -14px;
+  }
+  
+  &__filter-date{
+    margin-top: 5px;
+  }
+  &__dropdown-guests-heading{
+    margin-top: 20px;
+  }
+  &__dropdown-guests{
+    margin-top: 5px;
+  }
+  &__range-slider{
+    margin-top: 31px;
+  }
+  &__checkbox-buttons-heading{
+    margin-top: 30px;
+  }
+  &__checkbox-buttons{
+    margin-top: 16px;
+  }
+  &__rich-checkbox-heading{
+    margin-top: 30px;
+  }
+  &__rich-checkbox{
+    margin-top: 15px;
+  }
+  &__rich-checkbox-second{
+    margin-top: 7px;
+  }
+  &__rich-checkbox-heading{
+    margin-top: 30px;
+  }
+  &__dropdown-furniture-heading{
+    margin-top: 29px;
+  }
+  &__dropdown-furniture{
+    margin-top: 5px;
+  }
+  &__rich-expandable-checkbox{
+    margin-top: 11px;
+  }
 }
   
-.search-room__side-bar { 
-  grid-area: side-bar; 
-}
-.search-room__side-bar-inner{
-  max-width: 266px;
-}
-.search-room__dropdown_guests{
-  width: 266px;
-}
-.search-room__range-slider-descr{
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-size: rem(12px);
-  line-height: 14px;
-  color: $dark-shade-50;
-  margin-top: 14px;
-}
-
-.search-room__title{ 
-  grid-area: title; 
-}
-
-.search-room__elements{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-area: elements;
-    grid-column-gap: 12px;
-    grid-row-gap: 20px;
-    padding-top: 20px;
-
-    @media (max-width: 1112px) {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-    @media (max-width: 834px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-}
-
-.search-room__pagination { 
-  grid-area: pagination; 
-  justify-self: center;
-  padding-top: 44px;
-  margin-left: -14px;
-}
-
-.search-room__filter-date{
-  margin-top: 5px;
-}
-.search-room__dropdown-guests-heading{
-  margin-top: 20px;
-}
-.search-room__dropdown-guests{
-  margin-top: 5px;
-}
-.search-room__range-slider{
-  margin-top: 31px;
-}
-.search-room__checkbox-buttons-heading{
-  margin-top: 30px;
-}
-.search-room__checkbox-buttons{
-  margin-top: 16px;
-}
-.search-room__rich-checkbox-heading{
-  margin-top: 30px;
-}
-.search-room__rich-checkbox{
-  margin-top: 15px;
-}
-.search-room__rich-checkbox-second{
-  margin-top: 7px;
-}
-.search-room__rich-checkbox-heading{
-  margin-top: 30px;
-}
-.search-room__dropdown-furniture-heading{
-  margin-top: 29px;
-}
-.search-room__dropdown-furniture{
-  margin-top: 5px;
-}
-.search-room__rich-expandable-checkbox{
-  margin-top: 11px;
-}

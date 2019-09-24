@@ -6,25 +6,23 @@
 
 .pie {
   margin: 20px;
+  & .name-text{
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: rem(12px);
+    font-weight: bold;
+    line-height: 15px;
+    text-transform: uppercase;
+  }
+  & .value-text{
+    font-family: 'Quicksand', 'Open Sans';
+    font-size: rem(24px);
+    font-style: normal;
+    font-weight: bold;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
 }
 
 svg.pie{
   margin: 0;
-}
-
-.pie .name-text{
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-size: rem(12px);
-  font-weight: bold;
-  line-height: 15px;
-  text-transform: uppercase;
-}
-
-.pie .value-text{
-  font-family: 'Quicksand', 'Open Sans';
-  font-size: rem(24px);
-  font-style: normal;
-  font-weight: bold;
-  line-height: 30px;
-  text-transform: uppercase;
 }

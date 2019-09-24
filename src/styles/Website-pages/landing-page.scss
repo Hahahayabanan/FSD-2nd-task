@@ -12,35 +12,36 @@ body, html{
   background-size: cover;
   background-position-y: bottom;
   position: relative;
-}
-
-.landing-page__form-find-hotel-room{
-  position: relative;
-  max-width: 380px;
-  left: 140px;
-  top: 70px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  @media (max-width: 760px) {
-    left: auto;
-    margin: 0 auto;
+  
+  &__form-find-hotel-room{
+    position: relative;
+    max-width: 380px;
+    left: 140px;
+    top: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media (max-width: 760px) {
+      left: auto;
+      margin: 0 auto;
+    }
+  }
+  
+  &__citate{
+    width: 297px;
+    height: 48px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: rem(14px);
+    line-height: 24px;
+    text-align: right;
+    color: $dark-shade-75;
+    bottom: 8px;
+    right: 134px;
+    position: absolute;
+    @media (max-width: 760px) {
+      left: auto;        
+      right: auto;
+    }
   }
 }
 
-.landing-page__citate{
-  width: 297px;
-  height: 48px;
-  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-  font-size: rem(14px);
-  line-height: 24px;
-  text-align: right;
-  color: $dark-shade-75;
-  bottom: 8px;
-  right: 134px;
-  position: absolute;
-  @media (max-width: 760px) {
-    left: auto;        
-    right: auto;
-  }
-}

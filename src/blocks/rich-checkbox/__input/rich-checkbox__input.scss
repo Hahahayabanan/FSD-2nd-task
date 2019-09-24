@@ -1,3 +1,9 @@
 .rich-checkbox__input{
   display: none;
+
+  &:checked + .rich-checkbox__label::before {
+    content: url('/../img/check-box.svg');
+    text-align: center;
+    border: 1px solid $purple;
+  }
 }
