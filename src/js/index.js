@@ -1,6 +1,9 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable import/extensions */
-// eslint-disable-next-line import/no-extraneous-dependencies
 import $ from 'jquery';
+
+import 'jquery-ui-dist/jquery-ui.min.js';
+import 'jquery-ui-dist/jquery-ui.min.css';
 
 global.jQuery = $;
 global.$ = $;
@@ -8,9 +11,6 @@ global.$ = $;
 function importAll(resolve) {
   resolve.keys().forEach(resolve);
 }
-
-require('../../node_modules/jquery-ui-dist/jquery-ui.min.js');
-require('../../node_modules/jquery-ui-dist/jquery-ui.min.css');
 
 importAll(require.context('../styles', true, /\.(css|scss)$/));
 importAll(
