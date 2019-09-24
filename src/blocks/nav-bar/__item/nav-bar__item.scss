@@ -2,13 +2,13 @@
   list-style: none;
   display: inline;
   margin-right: 20px;
-  @media (max-width: $max-width-pad) {
+  @media (max-width: 804px) {
     display: block;
     margin-right: 0;
     text-align: center;
     margin-top: 5px;
   }
-  @media (min-width:$max-width-pad) and (max-width: 880px) {
+  @media (min-width:804px) and (max-width: 880px) {
     margin-right: 10px;
   }
 }

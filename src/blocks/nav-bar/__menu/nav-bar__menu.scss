@@ -2,7 +2,7 @@
   display: flex;
   height: 100%;
   align-items: center;
-  @media (max-width: $max-width-pad) {
+  @media (max-width: 804px) {
     flex-direction: column;
     height: auto;
   }

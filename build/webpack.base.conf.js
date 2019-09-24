@@ -38,7 +38,6 @@ const IMAGES = fs
   .readdirSync(`${PATHS.src}/blocks`)
   .filter((dirName) => fs.lstatSync(`${PATHS.src}/blocks/${dirName}`).isDirectory());
 
-
 module.exports = {
   // BASE config
   externals: {
@@ -85,36 +84,38 @@ module.exports = {
       },
     },
     {
-      test: /\.scss$/,
+      test: /\.(png|jpg|gif|svg)$/,
+      loader: 'file-loader',
+      exclude: /fonts/,
+      options: {
+        name: '[name].[ext]', // Output below ./fonts
+        outputPath: 'img/',
+      },
+    },
+
+    {
+      test: /\.(sa|sc|c)ss$/,
       use: [
-        'style-loader',
-        MiniCssExtractPlugin.loader,
         {
-          loader: 'css-loader',
-          options: { sourceMap: true },
-        }, {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: './postcss.config.js' } },
-        }, {
-          loader: 'sass-loader',
-          options: { sourceMap: true },
+          loader: MiniCssExtractPlugin.loader,
         },
-      ],
-    }, {
-      test: /\.css$/,
-      use: [
-        'style-loader',
-        MiniCssExtractPlugin.loader,
         {
           loader: 'css-loader',
-          options: { sourceMap: true },
-        }, {
-          loader: 'postcss-loader',
-          options: { sourceMap: true, config: { path: './postcss.config.js' } },
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true,
+            data: '@import "./src/styles/main-presets";',
+            includePaths: [path.join(__dirname, 'src')],
+          },
         },
       ],
     },
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.jsx', '.scss'],
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -127,10 +128,10 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
-    new CopyWebpackPlugin([
-      { context: `${PATHS.src}/img`, from: '**/*', to: './img' },
-      ...IMAGES.map((item) => ({ context: `./src/blocks/${item}/img`, from: '**/*', to: './img' })),
-    ]),
+    // new CopyWebpackPlugin([
+    //   { context: `${PATHS.src}/img`, from: '**/*', to: './img' },
+    //   ...IMAGES.map((item) => ({ context: `./src/blocks/${item}/img`, from: '**/*', to: './img' })),
+    // ]),
 
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
