@@ -1,14 +1,3 @@
-@import './__arrow/dropdown__arrow.scss';
-@import './__option-button/dropdown__option-button.scss';
-@import './__option/dropdown__option.scss';
-@import './__options/_furniture/dropdown__options_furniture.scss';
-@import './__options/dropdown__options.scss';
-@import './__options/_active/dropdown__options_active.scss';
-@import './__select/_active/dropdown__select_active.scss';
-@import './__select/_furniture/dropdown__select_furniture.scss';
-@import './__select/dropdown__select.scss';
-@import './_furniture/dropdown_furniture.scss';
-
 .dropdown{
   position: relative;
   display: inline-block;

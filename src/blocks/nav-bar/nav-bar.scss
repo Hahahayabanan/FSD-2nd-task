@@ -1,16 +1,3 @@
-@import './__inner/nav-bar__inner';
-@import './__item/_dropdown/nav-bar__item_dropdown';
-@import './__item/nav-bar__item';
-@import './__link/_active/nav-bar__link_active';
-@import './__link/nav-bar__link';
-@import './__list/nav-bar__list';
-@import './__login/nav-bar__login.scss';
-@import './__menu/nav-bar__menu';
-@import './__register/nav-bar__register';
-@import './__user-name/nav-bar__user-name';
-@import './__vertical-line/nav-bar__vertical-line';
-@import './__arrow-down/nav-bar__arrow-down';
-
 .nav-bar{
   height: 70px;
   background: #FFFFFF;

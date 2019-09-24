@@ -1,11 +1,3 @@
-@import './__avatar-like-container/comment__avatar-like-container';
-@import './__avatar/comment__avatar';
-@import './__body-container/comment__body-container';
-@import './__like-button/comment__like-button';
-@import './__name/comment__name';
-@import './__text/comment__text';
-@import './__date/comment__date';
-
 .comment{
   display: flex;
   flex-direction: row;
