@@ -199,10 +199,6 @@ class DropdownGuests {
 
 class DropdownFurniture extends DropdownGuests {
   // eslint-disable-next-line no-useless-constructor
-  constructor(htmlElem) {
-    super(htmlElem);
-  }
-
   setSelectTexts(target, number) {
     const bedroomNumber = this.dropdown.querySelector('.dropdown__bedroom-num');
     const bedroomText = this.dropdown.querySelector('.dropdown__bedroom-text');
@@ -241,6 +237,10 @@ class DropdownFurniture extends DropdownGuests {
   }
 }
 
+export {
+  DropdownGuests,
+  DropdownFurniture,
+}
 
 const dropdownGuests = document.querySelectorAll('.js-dropdown');
 

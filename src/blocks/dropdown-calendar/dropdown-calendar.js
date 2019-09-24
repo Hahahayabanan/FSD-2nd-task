@@ -99,4 +99,7 @@ class DropdownCalendar {
   }
 }
 
+export {
+  DropdownCalendar,
+}
 export default DropdownCalendar;
