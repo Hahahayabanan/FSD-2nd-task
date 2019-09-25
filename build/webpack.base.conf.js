@@ -34,10 +34,6 @@ function getFiles(dir, files_, folder = '') {
 }
 const PAGES = getFiles(PAGES_DIR);
 
-const IMAGES = fs
-  .readdirSync(`${PATHS.src}/blocks`)
-  .filter((dirName) => fs.lstatSync(`${PATHS.src}/blocks/${dirName}`).isDirectory());
-
 module.exports = {
   // BASE config
   externals: {
@@ -92,7 +88,16 @@ module.exports = {
         outputPath: 'img/',
       },
     },
-
+    {
+      test: /\.ico$/,
+      use: [{
+        loader: 'file-loader',
+        options: {
+          name: '[name].[ext]',
+          outputPath: 'static/',
+        },
+      }],
+    },
     {
       test: /\.(sa|sc|c)ss$/,
       use: [
@@ -128,10 +133,6 @@ module.exports = {
       jQuery: 'jquery',
       'window.jQuery': 'jquery',
     }),
-    // new CopyWebpackPlugin([
-    //   { context: `${PATHS.src}/img`, from: '**/*', to: './img' },
-    //   ...IMAGES.map((item) => ({ context: `./src/blocks/${item}/img`, from: '**/*', to: './img' })),
-    // ]),
 
     ...PAGES.map((page) => new HtmlWebpackPlugin({
       template: `${PAGES_DIR}/${page}`,
