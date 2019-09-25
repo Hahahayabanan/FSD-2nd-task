@@ -2,7 +2,7 @@ include ../dropdown-option/dropdown-option.pug
 include ../option-button/option-button.pug
 include ../material-icons/material-icons.pug
 
-mixin dropdown(type)
+mixin dropdown( type = 'guests' )
   if type == 'guests'
     section.dropdown.js-dropdown
       .dropdown__arrow

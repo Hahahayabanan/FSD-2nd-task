@@ -1,6 +1,6 @@
-mixin radio-button(options)
-  input(type='radio' id=options.id name=options.name value=options.value class='radio-button__input' checked=options.checked)
-  label(for=options.id class='radio-button__label')=options.text
+mixin radio-button({ id = 'radio-button', name = 'radio-button' , value = '', text = 'radio-button', checked = '' } = {})
+  input(type='radio' id=id name=name value=value class='radio-button__input' checked=checked)
+  label(for=id class='radio-button__label')=text
 
 
 //- ***************

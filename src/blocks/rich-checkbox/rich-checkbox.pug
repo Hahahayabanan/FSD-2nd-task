@@ -1,16 +1,27 @@
-mixin rich-checkbox(id, name, head_text, descr)
-    section.rich-checkbox
-      input(type='checkbox' name=name id=id class='rich-checkbox__input')
-      label(for=id class='rich-checkbox__label')
-        span.rich-checkbox__head-text=head_text
-        p.rich-checkbox__descr=descr
+mixin rich-checkbox( { id = 'rich-checkbox', name = 'rich-checkbox', head_text = 'rich-checkbox', descr = 'rich-checkbox' } = {})
+  section.rich-checkbox
+    input(type='checkbox' name=name id=id class='rich-checkbox__input')
+    label(for=id class='rich-checkbox__label')
+      span.rich-checkbox__head-text=head_text
+      p.rich-checkbox__descr=descr
 
 
 
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-//- +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+//- +rich-checkbox({ 
+      id: 'checkbox13', 
+      name: 'checkbox13', 
+      head_text: 'Широкий коридор', 
+      descr: 'Ширина коридоров в номере не менее 91 см.'
+    })
+    +rich-checkbox({ 
+      id: 'checkbox14', 
+      name: 'checkbox14', 
+      head_text: 'Помощник для инвалидов', 
+      descr: 'На 1 этаже вас встретит специалист и проводит до номера.'
+    })
+//- 
 //- 
 //- ***************

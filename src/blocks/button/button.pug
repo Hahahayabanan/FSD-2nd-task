@@ -1,12 +1,10 @@
-mixin button(options)
-  case options.type
-    when 'simple'
-      button(href=options.href class='button button_simple' style=options.style)=options.text
-    when 'no-frame'
-      button(href=options.href class='button button_no-frame' style=options.style)=options.text
-    when 'faint'
-      .button_faint-wrap(style=options.style)
-        button(href=options.href class='button button_faint')=options.text
+mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style = '', text = 'click me' } = {})
+  if typeOfStyle == 'faint'
+    .button_faint-wrap(style=style)
+      button(href=href class='button button_faint')=text
+  else
+    button(href=href class=`button button_${typeOfStyle}` style=style)=text
+
 
 //- **********
 //- 

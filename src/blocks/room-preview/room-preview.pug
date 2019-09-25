@@ -1,23 +1,23 @@
 include ../rate-button/rate-button.pug
 
-mixin room-preview(options)
+mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 888, name = 'room photo', islucs = true, price = '9 900', rate = 5, reviews = 145} = {} )
   section.room-preview
-    figure.room-preview__slider.js-room-preview__slider(class=options.isArrows ? 'room-preview__slider_with-arrows' : '')
-      img(class='room-preview__image' src=options.src alt=options.name)
-      img(class='room-preview__image' src=options.src alt=options.name)
-      img(class='room-preview__image' src=options.src alt=options.name)
-      img(class='room-preview__image' src=options.src alt=options.name)
+    figure.room-preview__slider.js-room-preview__slider(class=isArrows ? 'room-preview__slider_with-arrows' : '')
+      img(class='room-preview__image' src=src alt=name)
+      img(class='room-preview__image' src=src alt=name)
+      img(class='room-preview__image' src=src alt=name)
+      img(class='room-preview__image' src=src alt=name)
 
     .room-preview__descr
       .room-preview__row
         .room-preview__paragraph
           span.room-preview__no № 
-          span.room-preview__number=options.number
-          if options.islucs
+          span.room-preview__number=number
+          if islucs
             span.room-preview__islucs  люкс
 
         .room-preview__paragraph
-          span.room-preview__price=options.price
+          span.room-preview__price=price
           span.room-preview__price ₽
           span.room-preview__in-time  в сутки
 
@@ -27,17 +27,17 @@ mixin room-preview(options)
       .room-preview__row
         .room-preview__paragraph
           .room-preview__rate-button
-            +rate-button(options.name, options.rate)
+            +rate-button(name, rate)
 
         .room-preview__paragraph
-          span.room-preview__reviews-num=options.reviews
+          span.room-preview__reviews-num=reviews
           span.room-preview__reviews-rev  Отзывов
 
 //- ******************
 //- 
 //- +room-preview({
 //-   number: '888',
-//-   src: '/../../img/rooms/room888.svg',
+//-   src: 'img/rooms/room888.svg',
 //-   price: '9 990',
 //-   name: 'room888',
 //-   rate: 5,
@@ -46,7 +46,7 @@ mixin room-preview(options)
 //- })
 //- +room-preview({
 //-   number: '840',
-//-   src: '/../../img/rooms/room840.svg',
+//-   src: 'img/rooms/room840.svg',
 //-   price: '9 900',
 //-   name: 'room840',
 //-   rate: 4,

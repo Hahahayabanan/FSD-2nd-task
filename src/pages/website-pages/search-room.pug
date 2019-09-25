@@ -45,9 +45,19 @@ block content
           .search-room__rich-checkbox-heading
             +heading('h3', 'Доступность')
           .search-room__rich-checkbox
-            +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+            +rich-checkbox({ 
+            id: 'checkbox13', 
+            name: 'checkbox13', 
+            head_text: 'Широкий коридор', 
+            descr: 'Ширина коридоров в номере не менее 91 см.'
+          })
           .search-room__rich-checkbox-second
-            +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+            +rich-checkbox({ 
+              id: 'checkbox14', 
+              name: 'checkbox14', 
+              head_text: 'Помощник для инвалидов', 
+              descr: 'На 1 этаже вас встретит специалист и проводит до номера.'
+            })
         section.search-room__dropdown-furniture-container
           .search-room__dropdown-furniture-heading
             +heading('h3', 'Удобства номера')

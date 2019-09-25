@@ -1,7 +1,7 @@
 include ../material-icons/material-icons.pug
 
-mixin button-long(options)
-  button(href=options.href class='button-long' style=options.style type=options.type)=options.text
+mixin button-long({ type = '', href = '/mock-address/change-me', style = '', text = 'click me' } = {})
+  button(href=href class='button-long' style=style type=type)=text
     .button-long__arrow
       +material-icons('arrow_forward', {
         'color': '#FFF'

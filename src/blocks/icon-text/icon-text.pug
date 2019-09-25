@@ -1,4 +1,4 @@
-mixin icon-text(image, title, descr, hasUnderline)
+mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', descr = 'Шумопоглощающие стены', hasUnderline = false } = {})
   section.icon-text
     .icon-text__row
       .icon-text__image
@@ -22,7 +22,12 @@ mixin icon-text(image, title, descr, hasUnderline)
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены')
-//- +icon-text('location_city', 'Удобство', 'Окно в каждой из спален')
+//- +icon-text({
+      image: 'insert_emoticon', 
+      title: 'Комфорт', 
+      descr: 'Шумопоглощающие стены', 
+      hasUnderline: true
+    })
+//- 
 //- 
 //- ***************

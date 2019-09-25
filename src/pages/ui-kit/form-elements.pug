@@ -131,8 +131,7 @@ block content
             +button-long({
               href: '/mock-address/change-me', 
               text: 'click me',
-              type: 'sumbit',
-              style: {}
+              type: 'submit'
             })
         .form-elements__wrapper
           .form-elements__heading
@@ -161,16 +160,36 @@ block content
       
       article.form-elements__left-comments
         .form-elements__wrapper
-          +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены', true)
+          +icon-text({
+            image: 'insert_emoticon', 
+            title: 'Комфорт', 
+            descr: 'Шумопоглощающие стены', 
+            hasUnderline: true
+          })
         .form-elements__wrapper
-          +icon-text('location_city', 'Удобство', 'Окно в каждой из спален', true)
+          +icon-text({
+            image: 'location_city', 
+            title: 'Удобство', 
+            descr: 'Окно в каждой из спален', 
+            hasUnderline: true
+          })
 
       article.form-elements__middle-dropdown
         .form-elements__wrapper
           .form-elements__heading
             +heading('h3', 'rich-checkbox')
-          +rich-checkbox('checkbox13', 'checkbox13', 'Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-          +rich-checkbox('checkbox14', 'checkbox14', 'Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+          +rich-checkbox({ 
+            id: 'checkbox13', 
+            name: 'checkbox13', 
+            head_text: 'Широкий коридор', 
+            descr: 'Ширина коридоров в номере не менее 91 см.'
+          })
+          +rich-checkbox({ 
+            id: 'checkbox14', 
+            name: 'checkbox14', 
+            head_text: 'Помощник для инвалидов', 
+            descr: 'На 1 этаже вас встретит специалист и проводит до номера.'
+          })
 
 
       article.form-elements__right-dropdown
@@ -182,6 +201,12 @@ block content
 
       article.form-elements__comments
         .form-elements__wrapper
-          +comment('./img/avatar1.png', 11, 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+          +comment({
+            srcAvatar: './img/avatar1.png', 
+            numOfLikes: 11, 
+            authorName: 'Мурад Сарафанов', 
+            date: '5 дней назад', 
+            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+          })
 
 

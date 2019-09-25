@@ -27,11 +27,25 @@ block content
         section.room-details__content-info
           +heading('h2', 'Сведения о номере')
           .room-details__icon-text
-            +icon-text('insert_emoticon', 'Комфорт', 'Шумопоглощающие стены', true)
+            +icon-text({
+              image: 'insert_emoticon', 
+              title: 'Комфорт', 
+              descr: 'Шумопоглощающие стены', 
+              hasUnderline: true
+            })
           .room-details__icon-text
-            +icon-text('location_city', 'Удобство', 'Окно в каждой из спален', true)
+            +icon-text({
+              image: 'location_city', 
+              title: 'Удобство', 
+              descr: 'Окно в каждой из спален', 
+              hasUnderline: true
+            })
           .room-details__icon-text
-            +icon-text('whatshot', 'Уют', 'Номер оснащён камином')
+            +icon-text({
+              image: 'whatshot', 
+              title: 'Уют', 
+              descr: 'Номер оснащён камином',
+            })
 
         section.room-details__content-diagramm
           +heading('h2', 'Впечатления от номера')
@@ -52,9 +66,21 @@ block content
             +heading('h2', 'Отзывы посетителей номера')
             span.room-details__reviews-amount 2 отзыва
           .room-details__comment
-            +comment('img/avatar1.png', 11, 'Мурад Сарафанов', '5 дней назад', 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+            +comment({
+            srcAvatar: './img/avatar1.png', 
+            numOfLikes: 11, 
+            authorName: 'Мурад Сарафанов', 
+            date: '5 дней назад', 
+            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+          })
           .room-details__comment
-            +comment('img/avatar2.png', 11, 'Патисия Стёклышкова', 'неделю назад', 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.')
+            +comment({
+              srcAvatar: './img/avatar2.png', 
+              numOfLikes: 11, 
+              authorName: 'Патисия Стёклышкова', 
+              date: 'неделю назад', 
+              text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.'
+            })
           
 
         section.room-details__rules

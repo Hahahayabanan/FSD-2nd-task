@@ -1,6 +1,6 @@
 include ../checkbox-button/checkbox-button.pug
 
-mixin expandable-checkbox(title, values)
+mixin expandable-checkbox( title = 'Expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']])
   section.expandable-checkbox
     .expandable-checkbox__keyboard-arrow
       +material-icons('keyboard_arrow_down', {

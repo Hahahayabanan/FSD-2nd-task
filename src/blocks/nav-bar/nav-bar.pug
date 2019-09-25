@@ -3,8 +3,8 @@ include ../button/button.pug
 include ../button-long/button-long.pug
 include ../material-icons/material-icons.pug
 
-mixin nav-bar(options)
-  case options.page
+mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
+  case page
     when 'ui-kit'
       nav.nav-bar
         .nav-bar__inner
@@ -26,7 +26,7 @@ mixin nav-bar(options)
                 a.nav-bar__link(href='/mock-address/change-me') News
               li.nav-bar__item
                 a.nav-bar__link(href='/mock-address/change-me') Documentation
-            if !options.isLoggedIn
+            if isLoggedIn
               .nav-bar__login
                 +button({
                   'type': 'faint', 
@@ -75,7 +75,7 @@ mixin nav-bar(options)
                   +material-icons('keyboard_arrow_down', {
                     'color': 'rgba(31, 32, 65, 0.5)'
                   })
-            if !options.isLoggedIn
+            if isLoggedIn
               .nav-bar__login
                 +button({
                   'type': 'faint', 

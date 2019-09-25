@@ -1,6 +1,8 @@
 include ../material-icons/material-icons.pug
 
-mixin like-button(number)
+mixin like-button( number = 0 )
+  if number < 0
+    - number = 0
   .like-button
     .like-button__heart
       +material-icons('favorite_border', {

@@ -1,6 +1,6 @@
 include ../material-icons/material-icons.pug
 
-mixin rate-button(name, check_num)
+mixin rate-button( name = 'rate-button', check_num = 5 )
   - var i = 0;
   span.rate-button.js-rate-button
     while i < 5
