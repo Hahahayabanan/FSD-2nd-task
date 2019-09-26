@@ -1,10 +1,9 @@
-.dropdown-date__input-end-date{
-  width: 100%;
+.text-field.text-field_dark-placeholder{
   color: $dark-shade-75;
   &::placeholder{
     color: $dark-shade-75;
   }
-  &:focus{
+  &:focus, &:hover{
     border: 1px solid $dark-shade-25;
   }
 }

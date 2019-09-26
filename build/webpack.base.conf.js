@@ -1,3 +1,5 @@
+/* eslint-disable array-callback-return */
+/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const fs = require('fs');
 const async = require('async');

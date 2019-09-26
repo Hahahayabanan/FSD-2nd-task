@@ -10,23 +10,25 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
             +material-icons('keyboard_arrow_down')
-          +text-field({
-            type: 'text',
-            placeholder: 'ДД.ММ.ГГГГ',
-            readonly: 'readonly',
-            addClass: 'dropdown-date__input-start-date'
-          })
+          .dropdown-date__input-start-date
+            +text-field({
+              type: 'text',
+              placeholder: 'ДД.ММ.ГГГГ',
+              readonly: 'readonly',
+              theme: 'date-field'
+            })
       .dropdown-date__item
         +heading('h3', secondHeader)
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
             +material-icons('keyboard_arrow_down')
-          +text-field({
-            type: 'text',
-            placeholder: 'ДД.ММ.ГГГГ',
-            readonly: 'readonly',
-            addClass: 'dropdown-date__input-end-date'
-          })
+          .dropdown-date__input-end-date
+            +text-field({
+              type: 'text',
+              placeholder: 'ДД.ММ.ГГГГ',
+              readonly: 'readonly',
+              theme: 'date-field'
+            })
     .dropdown-date__dropdown-calendar
       +dropdown-calendar()
 

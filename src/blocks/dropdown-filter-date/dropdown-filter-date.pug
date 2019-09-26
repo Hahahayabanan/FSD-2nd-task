@@ -4,11 +4,12 @@ mixin dropdown-filter-date()
   section.dropdown-filter-date.js-dropdown-filter-date
     .dropdown-filter-date__keyboard-arrow
       +material-icons('keyboard_arrow_down')
-    +text-field({
-      type: 'text',
-      placeholder: 'ДД МЕС - ДД МЕС',
-      readonly: 'readonly',
-      addClass: 'dropdown-filter-date__input'
-    })
+    .dropdown-filter-date__input
+      +text-field({
+        type: 'text',
+        placeholder: 'ДД МЕС - ДД МЕС',
+        readonly: 'readonly',
+        theme: 'date-field'
+      })
     .dropdown-filter-date__dropdown-calendar
       +dropdown-calendar()
