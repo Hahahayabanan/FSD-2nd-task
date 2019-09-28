@@ -1,10 +1,10 @@
 include ../material-icons/material-icons.pug
 
-mixin rate-button( name = 'rate-button', check_num = 5 )
+mixin rate-button( name = 'rate-button', checkNum = 5 )
   - var i = 0;
   span.rate-button.js-rate-button
     while i < 5
-      if check_num-1==i
+      if checkNum-1==i
         label.rate-button__label
           +material-icons('star_border', {
             'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
