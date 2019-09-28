@@ -8,8 +8,6 @@
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  // dont know why but must - 1px border here
-  padding: (40px - 1px) (30px - 1px) (30px - 1px) (30px - 1px);
 
   @media (max-width: 380px) {
     left: 50%;

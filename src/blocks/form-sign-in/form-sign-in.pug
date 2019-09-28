@@ -3,41 +3,42 @@ include ../text-field/text-field.pug
 include ../button/button.pug
 include ../button-long/button-long.pug
 
-mixin form-sign-in()
-  form.form-sign-in(action='/mock-address/change-me' name='form-sign-in' method='post')
-    .form-sign-in__heading
-      +heading('h1', 'Войти')
+mixin form-sign-in({ action='/mock-address/change-me', name='form-registration', method='post' } = {})
+  form.form-sign-in(action=action name=name method=method)
+    .form-sign-in__wrapper
+      .form-sign-in__heading
+        +heading('h1', 'Войти')
 
-    .form-sign-in__text-field-email
-      +text-field({
-        type: 'email',
-        name: 'input-email',
-        placeholder: 'Email',
-        style: 'width: 100%'
-      })
-    .form-sign-in__text-field-password
-      +text-field({
-        type: 'password',
-        name: 'input-email',
-        placeholder: 'Пароль',
-        style: 'width: 100%'
-      })
-
-    .form-sign-in__button-long
-      +button-long({
-          href: '/mock-address/change-me', 
-          text: 'Войти',
-          type: 'submit',
+      .form-sign-in__text-field-email
+        +text-field({
+          type: 'email',
+          name: 'input-email',
+          placeholder: 'Email',
+          style: 'width: 100%'
+        })
+      .form-sign-in__text-field-password
+        +text-field({
+          type: 'password',
+          name: 'input-email',
+          placeholder: 'Пароль',
+          style: 'width: 100%'
         })
 
-    .form-sign-in__login
-      p.form-sign-in__login-text Нет аккаунта на Toxin?
-      +button({
-        'type': 'faint', 
-        'href':'/mock-address/change-me', 
-        'text': 'Создать', 
-        'style': {
-          'width': '99px',
-          'height': '44px'
-        }
-      })
+      .form-sign-in__button-long
+        +button-long({
+            href: '/mock-address/change-me', 
+            text: 'Войти',
+            type: 'submit',
+          })
+
+      .form-sign-in__login
+        p.form-sign-in__login-text Нет аккаунта на Toxin?
+        +button({
+          'type': 'faint', 
+          'href':'/mock-address/change-me', 
+          'text': 'Создать', 
+          'style': {
+            'width': '99px',
+            'height': '44px'
+          }
+        })

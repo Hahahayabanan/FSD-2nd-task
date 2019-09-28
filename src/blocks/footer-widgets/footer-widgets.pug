@@ -13,8 +13,8 @@ mixin vertical-menu(header, links)
         a.footer-widgets__link(href=link.href)=link.text 
 
 
-mixin footer-widgets(options)
-  case options.page
+mixin footer-widgets( { page = 'ui-kit' } = {} ) 
+  case page
     when 'ui-kit'
       footer.footer-widgets
         .footer-widgets__inner
@@ -59,6 +59,7 @@ mixin footer-widgets(options)
         +copying-bar('Copyright © 2018 Toxin UI Kit. All rights reserved.')
 
     when 'website-pages'
+
       footer.footer-widgets
         .footer-widgets__inner
           ul.footer-widgets__list

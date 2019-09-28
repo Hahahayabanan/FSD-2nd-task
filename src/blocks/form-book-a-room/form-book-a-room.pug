@@ -4,32 +4,33 @@ include ../dropdown/dropdown.pug
 include ../button-long/button-long.pug
 include ../info-table/info-table.pug
 
-mixin form-book-a-room()
-  form.form-book-a-room
-    .form-book-a-room__title
-      p.form-book-a-room__row
-        span.form-book-a-room__no № 
-        span.form-book-a-room__number 888
-        span.form-book-a-room__type  люкс
-      p.form-book-a-room__row.form-book-a-room__row_price-margin
-        span.form-book-a-room__price 9 990
-        span.form-book-a-room__price ₽
-        span.form-book-a-room__in-time  в сутки
+mixin form-book-a-room( { name='form-book-a-room', action='/mock-address/change-me', method='get' } = {})
+  form.form-book-a-room(name=name action=action method=method)
+    .form-book-a-room__wrapper
+      .form-book-a-room__title
+        p.form-book-a-room__row
+          span.form-book-a-room__no № 
+          span.form-book-a-room__number 888
+          span.form-book-a-room__type  люкс
+        p.form-book-a-room__row.form-book-a-room__row_price-margin
+          span.form-book-a-room__price 9 990
+          span.form-book-a-room__price ₽
+          span.form-book-a-room__in-time  в сутки
 
-    .form-book-a-room__dropdown-date
-      +dropdown-date('Прибытие', 'Выезд')
-    .form-book-a-room__dropdown
-      +heading('h3', 'Гости')
-      .form-book-a-room__dropdown-container
-        +dropdown('guests')
+      .form-book-a-room__dropdown-date
+        +dropdown-date('Прибытие', 'Выезд')
+      .form-book-a-room__dropdown
+        +heading('h3', 'Гости')
+        .form-book-a-room__dropdown-container
+          +dropdown('guests')
 
-    .form-book-a-room__info-table
-      +info-table()
+      .form-book-a-room__info-table
+        +info-table()
 
-    .form-book-a-room__button-long
-      +button-long({
-        href: '/mock-address/change-me', 
-        text: 'Забронировать',
-        type: 'sumbit',
-      })
+      .form-book-a-room__button-long
+        +button-long({
+          href: '/mock-address/change-me', 
+          text: 'Забронировать',
+          type: 'submit',
+        })
 
