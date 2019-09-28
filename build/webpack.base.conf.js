@@ -1,24 +1,15 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable import/no-extraneous-dependencies */
 const path = require('path');
 const fs = require('fs');
-const async = require('async');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
-// Main const
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#main-const
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
 }
 
-// Pages const for HtmlWebpackPlugin
-// see more: https://github.com/vedees/webpack-template/blob/master/README.md#html-dir-folder
 const PAGES_DIR = `${PATHS.src}/pages/`
-
 
 function getFiles(dir, files_, folder = '') {
   const filesArray = files_ || [];
@@ -37,7 +28,6 @@ function getFiles(dir, files_, folder = '') {
 const PAGES = getFiles(PAGES_DIR);
 
 module.exports = {
-  // BASE config
   externals: {
     paths: PATHS,
   },
@@ -45,8 +35,7 @@ module.exports = {
     app: `${PATHS.src}/js`,
   },
   output: {
-    // filename: `js/[name].[hash].js`,
-    filename: 'js/app.js',
+    filename: 'js/[name].[hash].js',
     path: PATHS.dist,
   },
   optimization: {
@@ -76,8 +65,8 @@ module.exports = {
         loader: 'url-loader',
         options: {
           limit: 50000,
-          name: './fonts/[name].[ext]', // Output below ./fonts
-          publicPath: '../', // Take the directory into account
+          name: './fonts/[name].[ext]',
+          publicPath: '../',
         },
       },
     },
@@ -86,7 +75,7 @@ module.exports = {
       loader: 'file-loader',
       exclude: /fonts/,
       options: {
-        name: '[name].[ext]', // Output below ./fonts
+        name: '[name].[ext]',
         outputPath: 'img/',
       },
     },
@@ -98,7 +87,7 @@ module.exports = {
           name: '[name].[ext]',
           outputPath: 'static/',
         },
-      }],
+      },],
     },
     {
       test: /\.(sa|sc|c)ss$/,
@@ -113,8 +102,8 @@ module.exports = {
           loader: 'sass-loader',
           options: {
             sourceMap: true,
-            data: '@import "./src/styles/main-presets";',
-            includePaths: [path.join(__dirname, 'src')],
+            data: '@import \'./src/styles/main-presets\';',
+            includePaths: [path.join(__dirname, 'src'),],
           },
         },
       ],
@@ -122,12 +111,11 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss'],
+    extensions: ['.js', '.jsx', '.scss',],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      // filename: "./css/[name].[hash].css"
-      filename: './css/app.css',
+      filename: './css/[name].[hash].css',
     }),
 
     new webpack.ProvidePlugin({
