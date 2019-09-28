@@ -1,8 +1,5 @@
-/* eslint-disable import/no-extraneous-dependencies */
-/* eslint-disable import/extensions */
 import 'jquery-ui-dist/jquery-ui.min.css';
 import 'jquery-ui-dist/jquery-ui.min.js';
-
 
 function importAll(resolve) {
   resolve.keys().forEach(resolve);

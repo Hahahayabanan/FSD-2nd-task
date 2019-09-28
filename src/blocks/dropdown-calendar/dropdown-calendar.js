@@ -19,7 +19,7 @@ class DropdownCalendar {
       this.$calendar.datepicker('option', 'dateFormat', 'dd.mm.yy');
     }
 
-    this.$calendar.datepicker('setDate', ['+1d', '+5d']);
+    this.$calendar.datepicker('setDate', ['+1d', '+5d',]);
 
     if (extensionRange.startDateText || extensionRange.endDateText) {
       this.changePositions(extensionRange);
@@ -33,7 +33,7 @@ class DropdownCalendar {
   }
 
   clearAll() {
-    this.$calendar.datepicker('setDate', [null, null]);
+    this.$calendar.datepicker('setDate', [null, null,]);
     this.$clearButton.toggleClass('option-button_hidden');
 
     if ($.isArray(this.input)) {
@@ -60,7 +60,7 @@ class DropdownCalendar {
   }
 
   outsideClickListener(event) {
-    const { target } = event;
+    const { target, } = event;
     const itsMenu = target === this.dropdown || this.dropdown.contains(target);
     if (!itsMenu) {
       this.hideCalendar(event);
@@ -72,7 +72,7 @@ class DropdownCalendar {
       $(this.$input[0]).val(extensionRange.startDateText);
       $(this.$input[1]).val(extensionRange.endDateText);
     } else {
-      $(this.$input).val(extensionRange.startDateText + ' - ' + extensionRange.endDateText);
+      $(this.$input).val(`${extensionRange.startDateText  } - ${  extensionRange.endDateText}`);
     }
 
     this.$clearButton.removeClass('option-button_hidden');
@@ -85,12 +85,12 @@ class DropdownCalendar {
       selectOtherMonths: true,
       showOtherMonths: true,
       dateFormat: 'dd M',
-      dayNames: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье'],
-      dayNamesMin: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-      dayNamesShort: ['Пон', 'Втр', 'Срд', 'Чтв', 'Птн', 'Суб', 'Вос'],
+      dayNames: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье',],
+      dayNamesMin: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс',],
+      dayNamesShort: ['Пон', 'Втр', 'Срд', 'Чтв', 'Птн', 'Суб', 'Вос',],
       monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май',
-        'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+        'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',],
+      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек',],
 
       onSelect: (dateText, inst, extensionRange) => {
         this.changePositions(extensionRange);
@@ -99,7 +99,4 @@ class DropdownCalendar {
   }
 }
 
-export {
-  DropdownCalendar,
-}
 export default DropdownCalendar;

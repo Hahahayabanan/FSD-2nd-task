@@ -1,7 +1,3 @@
-/* eslint-disable array-callback-return */
-/* eslint-disable class-methods-use-this */
-/* eslint-disable no-undef */
-// eslint-disable-next-line max-classes-per-file
 class DropdownGuests {
   constructor(htmlElem) {
     this.dropdown = htmlElem;
@@ -19,10 +15,10 @@ class DropdownGuests {
     const select = this.dropdown.querySelector('.dropdown__select');
     select.addEventListener('click', this.showHideDropdown.bind(this));
 
-    this.minusButtons.map((item) => {
+    this.minusButtons.forEach((item) => {
       item.addEventListener('click', this.calcMinus.bind(this));
     });
-    this.plusButtons.map((item) => {
+    this.plusButtons.forEach((item) => {
       item.addEventListener('click', this.calcPlus.bind(this));
     });
     if (this.clearButton) this.clearButton.addEventListener('click', this.clearOptions.bind(this));
@@ -56,7 +52,7 @@ class DropdownGuests {
   }
 
   outsideClickListener(event) {
-    const { target } = event;
+    const { target, } = event;
     const itsMenu = target === this.dropdown || this.dropdown.contains(target);
     if (!itsMenu) {
       this.hideDropdown(event);
@@ -109,7 +105,7 @@ class DropdownGuests {
       PLUS: '+',
       MINUS: '-',
     };
-    Array.from(this.dropdown.querySelectorAll('.dropdown-option__item_circle'), (val) => {
+    this.dropdown.querySelectorAll('.dropdown-option__item_circle').forEach((val) => {
       if (val.textContent === signs.MINUS) {
         this.minusButtons.push(val);
       }
@@ -145,8 +141,9 @@ class DropdownGuests {
     babyNumber.innerHTML = '';
     babyText.innerHTML = '';
 
-    Array.from(this.dropdown.querySelectorAll('.dropdown-option__item_number'), (val) => {
-      val.textContent = 0;
+    this.dropdown.querySelectorAll('.dropdown-option__item_number').forEach((val) => {
+      const number = val;
+      number.textContent = 0;
     });
   }
 
@@ -158,8 +155,8 @@ class DropdownGuests {
     const babyText = this.dropdown.querySelector('.dropdown__baby-text');
 
     const titles = {
-      гостей: ['гость', 'гостя', 'гостей'],
-      младенцев: ['младенец', 'младенца', 'младенцев'],
+      гостей: ['гость', 'гостя', 'гостей',],
+      младенцев: ['младенец', 'младенца', 'младенцев',],
     };
 
     const typeOfGuest = target.parentNode.previousElementSibling;
@@ -196,62 +193,7 @@ class DropdownGuests {
   }
 }
 
-
-class DropdownFurniture extends DropdownGuests {
-  // eslint-disable-next-line no-useless-constructor
-  setSelectTexts(target, number) {
-    const bedroomNumber = this.dropdown.querySelector('.dropdown__bedroom-num');
-    const bedroomText = this.dropdown.querySelector('.dropdown__bedroom-text');
-    const bedNumber = this.dropdown.querySelector('.dropdown__bed-num');
-    const bedText = this.dropdown.querySelector('.dropdown__bed-text');
-    const bathroomNumber = this.dropdown.querySelector('.dropdown__bathroom-num ');
-    const bathroomText = this.dropdown.querySelector('.dropdown__bathroom-text');
-
-    const titles = {
-      спальни: ['спальня, ', 'спальни, ', 'спален, '],
-      кровати: ['кровать, ', 'кровати, ', 'кроватей, '],
-      'ванные комнаты': ['ванная комната ', 'ванные комнаты ', 'ванных комнат '],
-    };
-    const furniture = {
-      BEDROOMS: 'спальни',
-      BEDS: 'кровати',
-      BATHROOMS: 'ванные комнаты',
-    };
-
-    const typeOfGuest = target.parentNode.previousElementSibling;
-    switch (typeOfGuest.textContent.toLowerCase()) {
-      case furniture.BEDROOMS:
-        bedroomNumber.textContent = `${number} `;
-        bedroomText.textContent = titles[furniture.BEDROOMS][this.checkPad(number)];
-        break;
-      case furniture.BEDS:
-        bedNumber.textContent = `${number} `;
-        bedText.textContent = titles[furniture.BEDS][this.checkPad(number)];
-        break;
-      case furniture.BATHROOMS:
-        bathroomNumber.textContent = `${number} `;
-        bathroomText.textContent = titles[furniture.BATHROOMS][this.checkPad(number)];
-        break;
-      default:
-    }
-  }
-}
-
-export {
-  DropdownGuests,
-  DropdownFurniture,
-}
+export default DropdownGuests;
 
 const dropdownGuests = document.querySelectorAll('.js-dropdown');
-
-if (dropdownGuests) {
-  // eslint-disable-next-line no-unused-vars
-  const dropdownGuestsArray = Array.from(dropdownGuests, (val) => new DropdownGuests(val));
-}
-
-const dropdownFurniture = document.querySelectorAll('.js-dropdown_furniture');
-
-if (dropdownFurniture) {
-  // eslint-disable-next-line no-unused-vars
-  const dropdownFurnitureArray = Array.from(dropdownFurniture, (val) => new DropdownFurniture(val));
-}
+dropdownGuests.forEach((val) => new DropdownGuests(val));

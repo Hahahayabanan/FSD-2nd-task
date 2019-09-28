@@ -6,9 +6,9 @@ $(() => {
     range: true,
     min: 1000,
     max: 15000,
-    values: [5000, 10000],
+    values: [5000, 10000,],
     slide: function setAmountsChanged(event, ui) {
-      $amount.val(ui.values[0] + '₽ - ' + ui.values[1] + '₽');
+      $amount.val(`${ui.values[0]  }₽ - ${  ui.values[1]  }₽`);
     },
   });
 

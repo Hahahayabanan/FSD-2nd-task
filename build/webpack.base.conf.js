@@ -14,7 +14,7 @@ const PAGES_DIR = `${PATHS.src}/pages/`
 function getFiles(dir, files_, folder = '') {
   const filesArray = files_ || [];
   let folderPath = folder;
-  fs.readdirSync(dir).map((filePath) => {
+  fs.readdirSync(dir).forEach((filePath) => {
     const name = path.join(dir, filePath);
     if (fs.statSync(name).isDirectory()) {
       folderPath = filePath;

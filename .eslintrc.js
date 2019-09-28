@@ -2,6 +2,7 @@ module.exports = {
   env: {
     browser: true,
     es6: true,
+    jquery: true,
   },
   extends: ["airbnb-base", "prettier"],
   plugins: ["eslint-plugin-prettier"],
@@ -20,5 +21,7 @@ module.exports = {
     'no-new': 'off',
     'no-underscore-dangle': 'off',
     "comma-dangle": ["error", "always"],
+    "import/extensions": [2, "ignorePackages"],
+    "consistent-return": [1],
   }
 };

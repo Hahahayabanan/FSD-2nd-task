@@ -1,5 +1,3 @@
-/* eslint-disable array-callback-return */
-
 class LikeButton {
   constructor(htmlElem) {
     this.elem = htmlElem;
@@ -11,8 +9,8 @@ class LikeButton {
   }
 
   // eslint-disable-next-line class-methods-use-this
-  changeStage(event) {
-    element = this.elem;
+  changeStage() {
+    const element = this.elem;
     element.classList.toggle('like-button_active');
 
     const likeBtnHeart = element.querySelector('.like-button__heart');
@@ -35,7 +33,4 @@ class LikeButton {
 }
 
 const likeBtnList = document.querySelectorAll('.like-button');
-
-if (likeBtnList) {
-  const likeBtnArray = Array.from(likeBtnList, (val) => new LikeButton(val));
-}
+likeBtnList.forEach((val) => new LikeButton(val));

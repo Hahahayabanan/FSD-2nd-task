@@ -25,7 +25,5 @@ class RateButton {
 
 
 const rateButtonLabel = document.querySelectorAll('.js-rate-button');
+rateButtonLabel.forEach((val) => new RateButton(val));
 
-if (rateButtonLabel) {
-  const rateButtons = Array.from(rateButtonLabel, (val) => new RateButton(val));
-}
