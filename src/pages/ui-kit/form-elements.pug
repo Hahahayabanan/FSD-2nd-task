@@ -65,9 +65,12 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading('h3', 'checkbox buttons')
-          +checkbox-button('checkbox0', 'Можно курить')
-          +checkbox-button('checkbox1', 'Можно с питомцами')
-          +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+          .form-elements__checkbox-button
+            +checkbox-button('checkbox0', 'Можно курить')
+          .form-elements__checkbox-button
+            +checkbox-button('checkbox1', 'Можно с питомцами')
+          .form-elements__checkbox-button
+            +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
         .form-elements__wrapper
           .form-elements__heading
             +heading('h3', 'radio button')

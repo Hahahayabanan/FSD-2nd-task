@@ -38,9 +38,12 @@ block content
           .search-room__checkbox-buttons-heading
             +heading('h3', 'checkbox buttons')
           .search-room__checkbox-buttons
-            +checkbox-button('checkbox0', 'Можно курить')
-            +checkbox-button('checkbox1', 'Можно с питомцами')
-            +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+            .search-room__checkbox-button
+              +checkbox-button('checkbox0', 'Можно курить')
+            .search-room__checkbox-button
+              +checkbox-button('checkbox1', 'Можно с питомцами')
+            .search-room__checkbox-button
+              +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
         section.search-room__rich-checkbox-container
           .search-room__rich-checkbox-heading
             +heading('h3', 'Доступность')

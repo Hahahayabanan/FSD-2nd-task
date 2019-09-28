@@ -48,6 +48,9 @@ body, html{
       grid-row-gap: 0px;
     }
   }
+  &__checkbox-button{
+    margin-top: 10px;
+  }
     
   &__fields { 
     grid-area: fields;
