@@ -1,7 +1,6 @@
 include ../radio-button/radio-button.pug
 include ../heading/heading.pug
 include ../text-field/text-field.pug
-include ../masked-text-field/masked-text-field.pug
 include ../toggle-button/toggle-button.pug
 include ../button/button.pug
 
@@ -34,7 +33,10 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
         +heading('h3', 'Дата рождения')
       
       .form-registration__masked-text-field-birthday
-        +masked-text-field({placeholder: 'ДД.ММ.ГГГГ'})
+        +text-field({
+          placeholder: 'ДД.ММ.ГГГГ',
+          theme: 'masked'
+        })
 
       .form-registration__heading-login-data
         +heading('h3', 'Данные для входа в сервис')

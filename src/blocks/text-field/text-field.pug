@@ -3,6 +3,9 @@ mixin text-field( { type = 'text', name = undefined, theme = undefined, id = und
   case theme
     when 'date-field'
       - addClass = 'text-field_dark-placeholder'
+    when 'masked'
+      - addClass = 'text-field_masked'
+      - placeholder = 'ДД.ММ.ГГГГ'
     
   input(
     type=type, 
@@ -22,6 +25,14 @@ mixin text-field( { type = 'text', name = undefined, theme = undefined, id = und
       type: 'email',
       name: 'input-email',
       placeholder: 'Email'
+    })
+
+
+    +text-field({
+      type: 'text',
+      name: 'masked-text-field',
+      placeholder: 'ДД.ММ.ГГГГ',
+      theme: 'masked'
     })
 //- 
 //- ***************

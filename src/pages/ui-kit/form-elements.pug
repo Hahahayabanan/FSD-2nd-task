@@ -8,7 +8,6 @@ block content
   include ../../blocks/logo-ui-kit/logo-ui-kit.pug
   include ../../blocks/text-field/text-field.pug
   include ../../blocks/dropdown/dropdown.pug
-  include ../../blocks/masked-text-field/masked-text-field.pug
   include ../../blocks/dropdown-date/dropdown-date.pug
   include ../../blocks/dropdown-filter-date/dropdown-filter-date.pug
   include ../../blocks/subscription-text-field/subscription-text-field.pug
@@ -48,7 +47,10 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading('h3', 'masked text field')
-          +masked-text-field({placeholder: 'ДД.ММ.ГГГГ'})
+          +text-field({
+            placeholder: 'ДД.ММ.ГГГГ',
+            theme: 'masked'
+          })
         .form-elements__wrapper
           +dropdown-date('date dropdown', 'date dropdown')
         .form-elements__wrapper
