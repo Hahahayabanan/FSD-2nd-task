@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 888, name = 'room photo', islucs = true, price = '9 900', rate = 5, reviews = 145} = {} )
+mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 888, name = 'room photo', isLucs = false, price = '9 900', rate = 5, reviews = 145} = {} )
   section.room-preview
     figure.room-preview__slider.js-room-preview__slider(class=isArrows ? 'room-preview__slider_with-arrows' : '')
       img(class='room-preview__image' src=src alt=name)
@@ -13,7 +13,7 @@ mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 8
         .room-preview__paragraph
           span.room-preview__no № 
           span.room-preview__number=number
-          if islucs
+          if isLucs
             span.room-preview__islucs  люкс
 
         .room-preview__paragraph
@@ -42,7 +42,7 @@ mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 8
 //-   name: 'room888',
 //-   rate: 5,
 //-   reviews: '145',
-//-   islucs: true
+//-   isLucs: true
 //- })
 //- +room-preview({
 //-   number: '840',
@@ -51,5 +51,5 @@ mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 8
 //-   name: 'room840',
 //-   rate: 4,
 //-   reviews: '65',
-//-   islucs: false
+//-   isLucs: false
 //- })
