@@ -8,5 +8,8 @@
     & + .radio-button__label::after{
       background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
     }
+    & + .radio-button__label{
+      color: $dark-shade-75;
+    }
   }
 }

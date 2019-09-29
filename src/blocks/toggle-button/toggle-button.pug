@@ -1,8 +1,8 @@
 mixin toggle-button(id = 'toggle-button', text = 'toggle button')
-  section.toggle-button.toggle-button_active
-    input(type='checkbox' id=id checked class='toggle-button__cb')
-    label(for=id class='toggle-button__label')=text
-    span.toggle-button__round
+  label.toggle-button
+    input.toggle-button__input(type="checkbox" id=id)
+    span.toggle-button__slider
+    span.toggle-button__label=text
 
 
 //- ***************

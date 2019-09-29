@@ -1,0 +1,14 @@
+.toggle-button__input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+
+  &:checked + .toggle-button__slider {
+    border: 1px solid $purple;
+  }
+  
+  &:checked + .toggle-button__slider:before {
+    transform: translateX(20px);
+    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+  }
+}
