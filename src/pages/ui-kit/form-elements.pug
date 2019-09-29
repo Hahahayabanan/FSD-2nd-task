@@ -19,7 +19,6 @@ block content
   include ../../blocks/rate-button/rate-button.pug
   include ../../blocks/range-slider/range-slider.pug
   include ../../blocks/button/button.pug
-  include ../../blocks/button-long/button-long.pug
   include ../../blocks/pagination/pagination.pug
   include ../../blocks/expandable-checkbox/expandable-checkbox.pug
   include ../../blocks/icon-text/icon-text.pug
@@ -102,7 +101,7 @@ block content
             +heading('h3', 'buttons')
           .form-elements__button
             +button({
-              'type': 'simple', 
+              'typeOfStyle': 'simple', 
               'href':'/mock-address/change-me', 
               'text': 'click me', 
               'style': {
@@ -112,7 +111,7 @@ block content
             })
           .form-elements__button
             +button({
-              'type': 'faint', 
+              'typeOfStyle': 'faint', 
               'href':'/mock-address/change-me', 
               'text': 'click me', 
               'style': {
@@ -122,7 +121,7 @@ block content
             })
           .form-elements__button
             +button({
-              'type': 'no-frame', 
+              'typeOfStyle': 'no-frame', 
               'href':'/mock-address/change-me', 
               'text': 'click me', 
               'style': {
@@ -131,10 +130,11 @@ block content
               }
             })
           .form-elements__button
-            +button-long({
+            +button({
+              typeOfStyle: 'long', 
               href: '/mock-address/change-me', 
               text: 'click me',
-              type: 'submit'
+              type: 'submit',
             })
         .form-elements__wrapper
           .form-elements__heading

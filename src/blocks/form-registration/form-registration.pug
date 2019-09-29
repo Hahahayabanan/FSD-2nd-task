@@ -4,7 +4,6 @@ include ../text-field/text-field.pug
 include ../masked-text-field/masked-text-field.pug
 include ../toggle-button/toggle-button.pug
 include ../button/button.pug
-include ../button-long/button-long.pug
 
 mixin form-registration( { action='/mock-address/change-me', name='form-registration', method='post' } = {} )
   form.form-registration(action=action name=name method=method)
@@ -59,16 +58,17 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
         +toggle-button('togglewoggle', 'Получать спецпредложения')
 
       .form-registration__button-long
-        +button-long({
-            href: '/mock-address/change-me', 
-            text: 'Перейти к оплате',
-            type: 'submit',
-          })    
+        +button({
+          typeOfStyle: 'long', 
+          href: '/mock-address/change-me', 
+          text: 'Перейти к оплате',
+          type: 'submit',
+        })   
 
       .form-registration__login
         p.form-registration__login-text Уже есть аккаунт на Toxin
         +button({
-          'type': 'faint', 
+          'typeOfStyle': 'faint', 
           'href':'/mock-address/change-me', 
           'text': 'Войти', 
           'style': {

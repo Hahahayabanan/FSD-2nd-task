@@ -1,7 +1,7 @@
 include ../heading/heading.pug
 include ../dropdown-date/dropdown-date.pug
 include ../dropdown/dropdown.pug
-include ../button-long/button-long.pug
+include ../button/button.pug
 
 mixin form-find-hotel-room( { name='form-find-hotel-room', action='/mock-address/change-me', method='get' } = {})
   form.form-find-hotel-room(name=name action=action method=method)
@@ -15,7 +15,8 @@ mixin form-find-hotel-room( { name='form-find-hotel-room', action='/mock-address
         .form-find-hotel-room__dropdown-container
           +dropdown('guests')
       .form-find-hotel-room__button-long
-        +button-long({
+        +button({
+          typeOfStyle: 'long', 
           href: '/mock-address/change-me', 
           text: 'Подобрать номер',
           type: 'submit',

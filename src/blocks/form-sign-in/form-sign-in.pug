@@ -1,7 +1,6 @@
 include ../heading/heading.pug
 include ../text-field/text-field.pug
 include ../button/button.pug
-include ../button-long/button-long.pug
 
 mixin form-sign-in({ action='/mock-address/change-me', name='form-registration', method='post' } = {})
   form.form-sign-in(action=action name=name method=method)
@@ -25,16 +24,16 @@ mixin form-sign-in({ action='/mock-address/change-me', name='form-registration',
         })
 
       .form-sign-in__button-long
-        +button-long({
-            href: '/mock-address/change-me', 
-            text: 'Войти',
-            type: 'submit',
-          })
-
+        +button({
+          typeOfStyle: 'long', 
+          href: '/mock-address/change-me', 
+          text: 'Войти',
+          type: 'submit',
+        })
       .form-sign-in__login
         p.form-sign-in__login-text Нет аккаунта на Toxin?
         +button({
-          'type': 'faint', 
+          'typeOfStyle': 'faint', 
           'href':'/mock-address/change-me', 
           'text': 'Создать', 
           'style': {

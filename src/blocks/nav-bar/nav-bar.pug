@@ -1,6 +1,5 @@
 include ../logotype/logotype.pug
 include ../button/button.pug
-include ../button-long/button-long.pug
 include ../material-icons/material-icons.pug
 
 mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
@@ -29,7 +28,7 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
             if isLoggedIn
               .nav-bar__login
                 +button({
-                  'type': 'faint', 
+                  'typeOfStyle': 'faint', 
                   'href':'/mock-address/change-me', 
                   'text': 'Login', 
                   'style': {
@@ -39,7 +38,7 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
                 })
               .nav-bar__register
                 +button({
-                  'type':'simple', 
+                  'typeOfStyle':'simple', 
                   'href':'/mock-address/change-me', 
                   'text':'Register', 
                   'style': {
@@ -78,7 +77,7 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
             if isLoggedIn
               .nav-bar__login
                 +button({
-                  'type': 'faint', 
+                  'typeOfStyle': 'faint', 
                   'href':'/mock-address/change-me', 
                   'text': 'Войти', 
                   'style': {
@@ -88,7 +87,7 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
                 })
               .nav-bar__register
                 +button({
-                  'type':'simple', 
+                  'typeOfStyle': 'simple', 
                   'href':'/mock-address/change-me', 
                   'text':'Зарегистрироваться', 
                   'style': {

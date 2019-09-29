@@ -1,16 +1,25 @@
-mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style = '', text = 'click me' } = {})
-  if typeOfStyle == 'faint'
-    .button_faint-wrap(style=style)
-      button(href=href class='button button_faint')=text
-  else
-    button(href=href class=`button button_${typeOfStyle}` style=style)=text
+include ../material-icons/material-icons.pug
+
+mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style = '', text = 'click me', type='' } = {})
+  case typeOfStyle
+    when 'faint'
+      .button__wrap(style=style)
+        button(href=href class='button button_faint')=text
+    when 'long'
+      button(href=href class='button button_long' style=style type=type)=text
+        .button__arrow
+          +material-icons('arrow_forward', {
+            'color': '#FFF'
+          })
+    default
+      button(href=href class=`button button_${typeOfStyle}` style=style)=text
 
 
 //- **********
 //- 
 //- 
 //-   +button({
-        'type': 'faint', 
+        'typeOfStyle': 'faint', 
         'href':'/mock-address/change-me', 
         'text': 'Войти', 
         'style': {
@@ -18,3 +27,16 @@ mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style =
           'height': '44px'
         }
       })
+
+
+//- ***************
+//- *** EXAMPLE ***
+//- 
+//- +button({
+    'typeOfStyle': 'long', 
+    href: '/mock-address/change-me', 
+    text: 'click me',
+    type: 'submit',
+  })
+//- 
+//- ***************
