@@ -5,7 +5,6 @@ import 'slick-carousel/slick/slick.scss'
 $(document).ready(() => {
   const $slider = $('.js-room-preview__slider');
 
-  // eslint-disable-next-line array-callback-return
   $slider.map((i, val) => {
     let isArrows = false;
     if ($(val).hasClass('room-preview__slider_with-arrows')) {

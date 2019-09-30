@@ -1,15 +1,15 @@
 include ../checkbox-button/checkbox-button.pug
 
-mixin expandable-checkbox( title = 'Expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']])
-  section.expandable-checkbox
-    .expandable-checkbox__keyboard-arrow
+mixin dropdown-checkbox( title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']])
+  section.dropdown-checkbox
+    .dropdown-checkbox__keyboard-arrow
       +material-icons('keyboard_arrow_down', {
         'color': 'rgba(31, 32, 65, 0.5)'
       })
-    .expandable-checkbox__select=title
-    .expandable-checkbox__option.expandable-checkbox__option_unvisible
+    .dropdown-checkbox__select=title
+    .dropdown-checkbox__option.dropdown-checkbox__option_unvisible
       each val in values
-        .expandable-checkbox__button
+        .dropdown-checkbox__button
           +checkbox-button(val[0], val[1])
       else
         .p There is no value
@@ -19,8 +19,8 @@ mixin expandable-checkbox( title = 'Expandable checkbox', values = [['cb1','Ente
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +expandable-checkbox(
-//-   'expandable checkbox list',
+//- +dropdown-checkbox(
+//-   'dropdown checkbox list',
 //-   [
 //-     ['checkbox3', 'Завтрак'],
 //-     ['checkbox4', 'Письменный стол'],

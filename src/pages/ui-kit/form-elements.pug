@@ -19,7 +19,7 @@ block content
   include ../../blocks/range-slider/range-slider.pug
   include ../../blocks/button/button.pug
   include ../../blocks/pagination/pagination.pug
-  include ../../blocks/expandable-checkbox/expandable-checkbox.pug
+  include ../../blocks/dropdown-checkbox/dropdown-checkbox.pug
   include ../../blocks/icon-text/icon-text.pug
   include ../../blocks/rich-checkbox/rich-checkbox.pug
   include ../../blocks/bullet-list/bullet-list.pug
@@ -149,7 +149,7 @@ block content
             +heading('h3', 'dropdown')
           +dropdown('furniture')
         .form-elements__wrapper
-          +expandable-checkbox(
+          +dropdown-checkbox(
             'expandable checkbox list',
             [
               ['checkbox3', 'Завтрак'],

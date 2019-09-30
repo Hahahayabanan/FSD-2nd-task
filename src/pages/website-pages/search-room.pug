@@ -9,7 +9,7 @@ block content
   include ../../blocks/heading/heading.pug
   include ../../blocks/form-book-a-room/form-book-a-room.pug
   include ../../blocks/room-preview/room-preview.pug
-  include ../../blocks/expandable-checkbox/expandable-checkbox.pug
+  include ../../blocks/dropdown-checkbox/dropdown-checkbox.pug
   include ../../blocks/dropdown/dropdown.pug
   include ../../blocks/dropdown-filter-date/dropdown-filter-date.pug
   include ../../blocks/checkbox-button/checkbox-button.pug
@@ -67,8 +67,8 @@ block content
           .search-room__dropdown-furniture
             +dropdown('furniture')
 
-        section.search-room__rich-expandable-checkbox
-          +expandable-checkbox(
+        section.search-room__rich-dropdown-checkbox
+          +dropdown-checkbox(
             'Дополнительные удобства',
             [
               ['checkbox3', 'Завтрак'],
