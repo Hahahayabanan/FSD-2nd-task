@@ -40,6 +40,6 @@ class DropdownFurniture extends DropdownGuests {
   }
 }
 
-const dropdownFurniture = document.querySelectorAll('.js-dropdown_furniture');
+const dropdownFurniture = document.querySelectorAll('.js-dropdown_with-furniture');
 dropdownFurniture.forEach((val) => new DropdownFurniture(val));
 

@@ -27,20 +27,19 @@ mixin dropdown( type = 'guests' )
 
   else if type == 'furniture'
 
-    section.dropdown.dropdown_furniture.js-dropdown_furniture
+    section.dropdown.dropdown_with-furniture.js-dropdown_with-furniture
       .dropdown__arrow
         +material-icons('keyboard_arrow_down', {
           'color': 'rgba(31, 32, 65, 0.75)'
         })
       .dropdown__select
-        .dropdown__select_furniture
-          span.dropdown__bedroom-num  0 
-          span.dropdown__bedroom-text спален, 
-          span.dropdown__bed-num  0 
-          span.dropdown__bed-text кроватей, 
-          span.dropdown__bathroom-num  0 
-          span.dropdown__bathroom-text ванных комнат
-      .dropdown__options.dropdown__options_furniture
+        span.dropdown__bedroom-num  0 
+        span.dropdown__bedroom-text спален, 
+        span.dropdown__bed-num  0 
+        span.dropdown__bed-text кроватей, 
+        span.dropdown__bathroom-num  0 
+        span.dropdown__bathroom-text ванных комнат
+      .dropdown__options
         .dropdown__option
           +dropdown-option('спальни')
         .dropdown__option
