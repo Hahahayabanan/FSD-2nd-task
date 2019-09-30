@@ -1,8 +1,10 @@
 mixin option-button( type = 'apply', text = 'Click me')
   if type=='apply'
-    .option-button.option-button_apply=text
+    .option-button
+      .option-button__apply=text
   if type=='clear'
-    .option-button.option-button_clear.option-button_hidden=text
+    .option-button.option-button_hidden
+      .option-button__clear=text
 
 
 
