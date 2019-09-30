@@ -59,37 +59,44 @@ class DropdownGuests {
     }
   }
 
-  calcMinus(event) {
-    const minusButton = event.currentTarget;
-    const optionContainer = minusButton.parentNode;
+  getCurrentValue(event){
+    const button = event.currentTarget;
+    const optionContainer = button.parentNode;
     const currentValueElem = optionContainer.querySelector('.dropdown-option__item_number');
-    let currentValue = currentValueElem.textContent;
+    const currentValue = parseInt(currentValueElem.textContent, 10);
+    return { currentValue, button, currentValueElem, };
+  }
 
-    if (parseInt(currentValue, 10) > 0) {
-      currentValue = Number(currentValue) - Number(1);
+  calcMinus(event) {
+    const settings = this.getCurrentValue(event);
+    let { currentValue, } = settings;
+    const {  button, currentValueElem, } = settings;
+
+    if (currentValue > 0) {
+      currentValue -= 1;
     }
-    if (parseInt(currentValue, 10) === 0) {
-      this.deactivateMinus(minusButton);
+    if (currentValue === 0) {
+      this.deactivateMinus(button);
     }
     currentValueElem.textContent = currentValue;
-    this.setSelectTexts(minusButton, currentValue);
+    this.setSelectTexts(button, currentValue);
   }
 
   calcPlus(event) {
-    const plusButton = event.currentTarget;
-    const optionContainer = plusButton.parentNode;
-    const currentValueElem = optionContainer.querySelector('.dropdown-option__item_number');
-    const minusButton = currentValueElem.previousElementSibling;
-    let currentValue = currentValueElem.textContent;
+    const settings = this.getCurrentValue(event);
+    let { currentValue, } = settings;
+    const {  button, currentValueElem, } = settings;
 
-    if (parseInt(currentValue, 10) === 0) {
+    const minusButton = currentValueElem.previousElementSibling;
+
+    if (currentValue === 0) {
       this.activateMinus(minusButton);
       this.activateClear();
     }
-    currentValue = Number(currentValue) + Number(1);
+    currentValue += Number(1);
 
     currentValueElem.textContent = currentValue;
-    this.setSelectTexts(plusButton, currentValue);
+    this.setSelectTexts(button, currentValue);
   }
 
   activateMinus(minusButton) {
@@ -127,14 +134,18 @@ class DropdownGuests {
     return this.dropdown.querySelector('.option-button__clear');
   }
 
-
-  clearOptions() {
-    this.deactivateClear();
-
+  getInputTextInParameters(){
     const guestsNumber = this.dropdown.querySelector('.dropdown__guests-num');
     const guestsText = this.dropdown.querySelector('.dropdown__guests-text');
     const babyNumber = this.dropdown.querySelector('.dropdown__baby-num');
     const babyText = this.dropdown.querySelector('.dropdown__baby-text');
+    return {guestsNumber, guestsText, babyNumber, babyText, }
+  }
+
+  clearOptions() {
+    this.deactivateClear();
+
+    const { guestsNumber, guestsText, babyNumber, babyText, } = this.getInputTextInParameters();
 
     guestsNumber.innerHTML = 'Сколько ';
     guestsText.innerHTML = 'гостей';
@@ -149,10 +160,8 @@ class DropdownGuests {
 
 
   setSelectTexts(target, number) {
-    const guestsNumber = this.dropdown.querySelector('.dropdown__guests-num');
-    const guestsText = this.dropdown.querySelector('.dropdown__guests-text');
-    const babyNumber = this.dropdown.querySelector('.dropdown__baby-num');
-    const babyText = this.dropdown.querySelector('.dropdown__baby-text');
+    
+    const { guestsNumber, guestsText, babyNumber, babyText, } = this.getInputTextInParameters();
 
     const titles = {
       гостей: ['гость', 'гостя', 'гостей',],
@@ -173,8 +182,9 @@ class DropdownGuests {
     } else {
       if (typeOfGuest.textContent.toLowerCase() === guestsList.ADULT) this.guestsNumber = number;
       if (typeOfGuest.textContent.toLowerCase() === guestsList.CHILDREN) this.childrenNumber = number;
-      guestsNumber.textContent = `${+this.childrenNumber + +this.guestsNumber} `;
-      guestsText.textContent = titles['гостей'][this.checkPad(number)];
+      const numberGuestsAndChildren = this.childrenNumber + +this.guestsNumber;
+      guestsNumber.textContent = `${numberGuestsAndChildren} `;
+      guestsText.textContent = titles['гостей'][this.checkPad(numberGuestsAndChildren)];
     }
   }
 
