@@ -1,7 +1,8 @@
 .button.button_faint{
-  background: #fff;
-  color: $purple;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &:hover{
+    background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
+  }
 }

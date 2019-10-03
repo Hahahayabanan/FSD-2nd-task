@@ -3,8 +3,8 @@ include ../material-icons/material-icons.pug
 mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style = '', text = 'click me', type='' } = {})
   case typeOfStyle
     when 'faint'
-      .button__wrap(style=style)
-        button(href=href class='button button_faint')=text
+      .button.button_faint(style=style)
+        button(href=href class='button__key')=text
     when 'long'
       button(href=href class='button button_long' style=style type=type)=text
         .button__arrow
