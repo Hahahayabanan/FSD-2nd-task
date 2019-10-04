@@ -6,7 +6,8 @@ mixin dropdown-checkbox( title = 'expandable checkbox', values = [['cb1','Enter'
       +material-icons('keyboard_arrow_down', {
         'color': 'rgba(31, 32, 65, 0.5)'
       })
-    .dropdown-checkbox__select=title
+    .dropdown-checkbox__select
+      +heading('h3', title)
     .dropdown-checkbox__option.dropdown-checkbox__option_unvisible
       each val in values
         .dropdown-checkbox__button

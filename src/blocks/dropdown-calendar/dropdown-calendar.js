@@ -5,7 +5,7 @@ class DropdownCalendar {
     this.$calendar = this.$dropdown.find('.dropdown-calendar');
     this.input = inputHtmlElem;
     this.$input = $(inputHtmlElem);
-    this.$clearButton = this.$calendar.find('.option-button_clear');
+    this.$clearButton = this.$dropdown.find('.option-button__clear');
     this.initCalendar();
   }
 
@@ -34,7 +34,7 @@ class DropdownCalendar {
 
   clearAll() {
     this.$calendar.datepicker('setDate', [null, null,]);
-    this.$clearButton.toggleClass('option-button_hidden');
+    this.$clearButton.parent().toggleClass('option-button_hidden');
 
     if ($.isArray(this.input)) {
       this.$input.val('ДД.ММ.ГГГГ');
@@ -75,7 +75,7 @@ class DropdownCalendar {
       $(this.$input).val(`${extensionRange.startDateText  } - ${  extensionRange.endDateText}`);
     }
 
-    this.$clearButton.removeClass('option-button_hidden');
+    this.$clearButton.parent().removeClass('option-button_hidden');
   }
 
   getOptions() {
