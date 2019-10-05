@@ -48,6 +48,7 @@
     line-height: 24px;
     text-align: center;
     color: $dark-shade-100;
+    margin-top: -14px;
   }
 
   .ui-datepicker-prev,
@@ -56,17 +57,50 @@
     width: 24px;
     height: 24px;
     cursor: pointer;
+    top: 0;
+    right: 0;
     &.ui-state-hover{
       background: none;
       border: none;
+      top: 0;
+      right: 0;
+    }
+    &::before{
+      font-family: 'Material Icons';
+      font-weight: normal;
+      font-style: normal;
+      font-size: rem(24px);  /* Preferred icon size */
+      display: inline-block;
+      line-height: 1;
+      text-transform: none;
+      letter-spacing: normal;
+      word-wrap: normal;
+      white-space: nowrap;
+      direction: ltr;
+      user-select: none;
+      color: $purple;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
   }
 
   .ui-datepicker-prev{
     margin-left: 20px;
+    position: relative;
+    left: 0;
+    &::before{
+      content: 'arrow_back';
+    }
+    &.ui-state-hover{
+      left: 0;
+    }
   }
   .ui-datepicker-next{
     margin-right: 20px;
+    &::before{
+      content: 'arrow_forward';
+    }
   }
 
   .ui-datepicker-prev span,

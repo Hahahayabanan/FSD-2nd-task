@@ -61,7 +61,11 @@ class DropdownCalendar {
 
   outsideClickListener(event) {
     const { target, } = event;
-    const itsMenu = target === this.dropdown || this.dropdown.contains(target);
+
+    const itsMenu = (this.dropdown.contains(target)) 
+      || target.classList.contains('ui-datepicker-prev') 
+      || target.classList.contains('ui-datepicker-next');
+
     if (!itsMenu) {
       this.hideCalendar(event);
     }
