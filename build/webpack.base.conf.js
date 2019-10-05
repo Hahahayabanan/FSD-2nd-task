@@ -73,19 +73,20 @@ module.exports = {
     {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
-      exclude: /fonts/,
+      exclude: [/fonts/, /static/,],
       options: {
         name: '[name].[ext]',
         outputPath: 'img/',
       },
     },
     {
-      test: /\.ico$/,
+      test: /\.(svg|png|ico|xml|json)$/,
+      exclude: [/fonts/, /blocks/, /img/, /node_modules/,],
       use: [{
         loader: 'file-loader',
         options: {
           name: '[name].[ext]',
-          outputPath: 'static/',
+          outputPath: 'favicons/',
         },
       },],
     },
