@@ -13,4 +13,10 @@
   font-size: rem(12px);
   line-height: 15px;
   text-transform: uppercase;
+  user-select: none; 
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+  }
 }

@@ -15,4 +15,10 @@
   color: $purple;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
+
+  cursor: pointer;
+
+  &:focus{
+    outline: none;
+  }
 }

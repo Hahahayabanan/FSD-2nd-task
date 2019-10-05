@@ -9,7 +9,10 @@ mixin dropdown-filter-date()
         type: 'text',
         placeholder: 'ДД МЕС - ДД МЕС',
         readonly: 'readonly',
-        theme: 'date-field'
+        theme: 'date-field',
+        style: {
+          'cursor': 'pointer'
+        },
       })
     .dropdown-filter-date__dropdown-calendar
       +dropdown-calendar()

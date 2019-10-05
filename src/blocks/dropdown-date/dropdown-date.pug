@@ -15,7 +15,10 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
               type: 'text',
               placeholder: 'ДД.ММ.ГГГГ',
               readonly: 'readonly',
-              theme: 'date-field'
+              theme: 'date-field',
+              style: {
+                'cursor': 'pointer'
+              },
             })
       .dropdown-date__item
         +heading('h3', secondHeader)
@@ -27,7 +30,10 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
               type: 'text',
               placeholder: 'ДД.ММ.ГГГГ',
               readonly: 'readonly',
-              theme: 'date-field'
+              theme: 'date-field',
+              style: {
+                'cursor': 'pointer'
+              },
             })
     .dropdown-date__dropdown-calendar
       +dropdown-calendar()

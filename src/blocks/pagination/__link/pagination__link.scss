@@ -8,6 +8,7 @@
 	line-height: 40px;
 	color: $dark-shade-50;
 	text-decoration: none;
+	user-select: none;
 	&:hover{
 		text-decoration: none;
 		background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
