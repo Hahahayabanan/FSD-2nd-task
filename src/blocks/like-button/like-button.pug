@@ -5,9 +5,11 @@ mixin like-button( number = 0 )
     - number = 0
   .like-button
     .like-button__heart
-      +material-icons('favorite_border', {
-        'font-size': '10px'
-      }, 'material-icons_color_gray')
+      +material-icons({
+        type: 'favorite_border', 
+        color: 'dark-shade-25',
+        size: 'small'
+      })
     span.like-button__label=number
 
 

@@ -6,8 +6,9 @@ mixin dropdown( type = 'guests' )
   if type == 'guests'
     section.dropdown.js-dropdown
       .dropdown__arrow
-        +material-icons('keyboard_arrow_down', {
-          'color': 'rgba(31, 32, 65, 0.75)'
+        +material-icons({
+          type: 'keyboard_arrow_down', 
+          color: 'dark-shade-75',
         })
       .dropdown__select
         span.dropdown__guests-num Сколько 
@@ -29,8 +30,9 @@ mixin dropdown( type = 'guests' )
 
     section.dropdown.dropdown_with-furniture.js-dropdown_with-furniture
       .dropdown__arrow
-        +material-icons('keyboard_arrow_down', {
-          'color': 'rgba(31, 32, 65, 0.75)'
+        +material-icons({
+          type: 'keyboard_arrow_down', 
+          color: 'dark-shade-75',
         })
       .dropdown__select
         span.dropdown__bedroom-num  0 

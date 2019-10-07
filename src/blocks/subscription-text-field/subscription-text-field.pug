@@ -4,10 +4,9 @@ mixin subscription-text-field( placeholder = 'Email' )
   section.subscription-text-field
     input(type='email', name='input-email', class='subscription-text-field__field', placeholder=placeholder)
     .subscription-text-field__arrow
-      +material-icons('arrow_forward', {
-        'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
-        '-webkit-background-clip': 'text',
-        '-webkit-text-fill-color': 'transparent'
+      +material-icons({
+        type: 'arrow_forward', 
+        color: 'purple-gradient'
       })
 
 

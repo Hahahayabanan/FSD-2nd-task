@@ -3,7 +3,9 @@ include ../dropdown-calendar/dropdown-calendar.pug
 mixin dropdown-filter-date()
   section.dropdown-filter-date.js-dropdown-filter-date
     .dropdown-filter-date__keyboard-arrow
-      +material-icons('keyboard_arrow_down')
+      +material-icons({
+        type: 'keyboard_arrow_down', 
+      })
     .dropdown-filter-date__input
       +text-field({
         type: 'text',

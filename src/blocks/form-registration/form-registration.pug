@@ -15,14 +15,14 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
           type: 'text',
           name: 'input-email',
           placeholder: 'Имя',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
       .form-registration__text-field-second-name
         +text-field({
           type: 'text',
           name: 'input-email',
           placeholder: 'Фамилия',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
 
       .form-registration__radio-button
@@ -46,14 +46,14 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
       .form-registration__text-field-password
         +text-field({
           type: 'password',
           name: 'input-email',
           placeholder: 'Пароль',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
 
       .form-registration__toggle-button
@@ -73,8 +73,4 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
           'typeOfStyle': 'faint', 
           'href':'/mock-address/change-me', 
           'text': 'Войти', 
-          'style': {
-            'width': '99px',
-            'height': '44px'
-          }
         })

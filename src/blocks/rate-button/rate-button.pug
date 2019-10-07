@@ -6,19 +6,17 @@ mixin rate-button( name = 'rate-button', checkNum = 5 )
     while i < 5
       if checkNum-1==i
         label.rate-button__label
-          +material-icons('star_border', {
-            'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
-            '-webkit-background-clip': 'text',
-            '-webkit-text-fill-color': 'transparent'
-          }) 
+          +material-icons({
+            type: 'star_border', 
+            color: 'purple-gradient'
+          })
           input.rate-button__input(type='radio' name=name value=i++ checked='checked')
       else
         label.rate-button__label
-          +material-icons('star_border', {
-            'background': 'linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%)',
-            '-webkit-background-clip': 'text',
-            '-webkit-text-fill-color': 'transparent'
-          }) 
+          +material-icons({
+            type: 'star_border', 
+            color: 'purple-gradient'
+          })
           input.rate-button__input(type='radio' name=name value=i++)
 
 

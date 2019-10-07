@@ -5,8 +5,9 @@ include ../heading/heading.pug
 mixin dropdown-checkbox( title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']])
   section.dropdown-checkbox
     .dropdown-checkbox__keyboard-arrow
-      +material-icons('keyboard_arrow_down', {
-        'color': 'rgba(31, 32, 65, 0.5)'
+      +material-icons({
+        type: 'keyboard_arrow_down', 
+        color: 'dark-shade-50',
       })
     .dropdown-checkbox__select
       +heading('h3', title)

@@ -14,5 +14,8 @@ mixin pagination()
       a.pagination__link(href='/mock-address/change-me') 15
     li.pagination__item.pagination__item_next
       a.pagination__link.pagination__link_next(href='/mock-address/change-me')
-        +material-icons('arrow_forward')
+        +material-icons({
+          type: 'arrow_forward', 
+          color: 'white'
+        })
     p.pagination__description 1 – 12 из 100+ вариантов аренды

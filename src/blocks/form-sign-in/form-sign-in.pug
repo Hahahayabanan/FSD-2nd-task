@@ -13,14 +13,14 @@ mixin form-sign-in({ action='/mock-address/change-me', name='form-registration',
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
       .form-sign-in__text-field-password
         +text-field({
           type: 'password',
           name: 'input-email',
           placeholder: 'Пароль',
-          style: 'width: 100%'
+          width: 'full-wide',
         })
 
       .form-sign-in__button-long
@@ -36,8 +36,4 @@ mixin form-sign-in({ action='/mock-address/change-me', name='form-registration',
           'typeOfStyle': 'faint', 
           'href':'/mock-address/change-me', 
           'text': 'Создать', 
-          'style': {
-            'width': '99px',
-            'height': '44px'
-          }
         })

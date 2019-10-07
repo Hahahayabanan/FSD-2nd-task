@@ -16,8 +16,9 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
                 a.nav-bar__link(href='/mock-address/change-me') About Us
               li.nav-bar__item.nav-bar__item_dropdown
                 a.nav-bar__link(href='/mock-address/change-me') Services
-                +material-icons('keyboard_arrow_down', {
-                  'color': 'rgba(31, 32, 65, 0.5)'
+                +material-icons({
+                  type: 'keyboard_arrow_down', 
+                  color: 'dark-shade-50',
                 })
               li.nav-bar__item
                 a.nav-bar__link(href='/mock-address/change-me') Careers
@@ -31,20 +32,14 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
                   'typeOfStyle': 'faint', 
                   'href':'/mock-address/change-me', 
                   'text': 'Login', 
-                  'style': {
-                    'width': '79px',
-                    'height': '34px'
-                  }
+                  'size': 'small',
                 })
               .nav-bar__register
                 +button({
                   'typeOfStyle':'simple', 
                   'href':'/mock-address/change-me', 
                   'text':'Register', 
-                  'style': {
-                    'min-width': '101px',
-                    'height': '34px'
-                  }
+                  'size': 'big',
                 })
             else
               .nav-bar__vertical-line
@@ -61,8 +56,9 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
               li.nav-bar__item.nav-bar__item_dropdown
                 a.nav-bar__link(href='/mock-address/change-me') Услуги
                 .nav-bar__arrow-down
-                  +material-icons('keyboard_arrow_down', {
-                    'color': 'rgba(31, 32, 65, 0.5)'
+                  +material-icons({
+                    type: 'keyboard_arrow_down', 
+                    color: 'dark-shade-50',
                   })
               li.nav-bar__item
                 a.nav-bar__link(href='/mock-address/change-me') Вакансии
@@ -71,8 +67,9 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
               li.nav-bar__item.nav-bar__item_dropdown
                 a.nav-bar__link(href='/mock-address/change-me') Соглашения
                 .nav-bar__arrow-down
-                  +material-icons('keyboard_arrow_down', {
-                    'color': 'rgba(31, 32, 65, 0.5)'
+                  +material-icons({
+                    type: 'keyboard_arrow_down', 
+                    color: 'dark-shade-50',
                   })
             if !isLoggedIn
               .nav-bar__login
@@ -80,20 +77,14 @@ mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
                   'typeOfStyle': 'faint', 
                   'href':'/mock-address/change-me', 
                   'text': 'Войти', 
-                  'style': {
-                    'width': '87px',
-                    'height': '34px'
-                  }
+                  'size': 'small',
                 })
               .nav-bar__register
                 +button({
                   'typeOfStyle': 'simple', 
                   'href':'/mock-address/change-me', 
                   'text':'Зарегистрироваться', 
-                  'style': {
-                    'min-width': '196px',
-                    'height': '34px'
-                  }
+                  'size': 'wide',
                 })
             else
               .nav-bar__vertical-line

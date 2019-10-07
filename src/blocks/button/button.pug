@@ -1,18 +1,29 @@
 include ../material-icons/material-icons.pug
 
-mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', style = '', text = 'click me', type='' } = {})
+mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', text = 'click me', type='', size=undefined } = {})
+  -let addClass = ''
+
+  case size
+    when 'small'
+      - addClass = 'button_size_small'
+    when 'big'
+      - addClass = 'button_size_big'
+    when 'wide'
+      - addClass = 'button_size_wide'
+
   case typeOfStyle
     when 'faint'
-      .button.button_faint(style=style)
+      .button.button_faint(class=addClass)
         button(href=href class='button__key')=text
     when 'long'
-      button(href=href class='button button_long' style=style type=type)=text
+      button(href=href class='button button_long' class=addClass type=type)=text
         .button__arrow
-          +material-icons('arrow_forward', {
-            'color': '#FFF'
+          +material-icons({
+            type: 'arrow_forward', 
+            color: 'white',
           })
     default
-      button(href=href class=`button button_${typeOfStyle}` style=style)=text
+      button(href=href class=`button button_${typeOfStyle}` class=addClass)=text
 
 
 //- **********

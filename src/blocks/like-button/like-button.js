@@ -17,7 +17,7 @@ class LikeButton {
     const likeBtnLabel = element.querySelector('.like-button__label');
     const materialIcon = likeBtnHeart.querySelector('.material-icons');
 
-    materialIcon.classList.toggle('material-icons_color_gray');
+    materialIcon.classList.toggle('material-icons_color_light-gray');
     materialIcon.classList.toggle('material-icons_color_purple');
     if (materialIcon.className.includes('material-icons_color_purple')) {
       materialIcon.textContent = 'favorite'

@@ -9,7 +9,9 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
         +heading('h3', firstHeader)
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
-            +material-icons('keyboard_arrow_down')
+            +material-icons({
+              type: 'keyboard_arrow_down', 
+            })
           .dropdown-date__input-start-date
             +text-field({
               type: 'text',
@@ -24,7 +26,9 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
         +heading('h3', secondHeader)
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
-            +material-icons('keyboard_arrow_down')
+            +material-icons({
+              type: 'keyboard_arrow_down', 
+            })
           .dropdown-date__input-end-date
             +text-field({
               type: 'text',
