@@ -1,51 +1,58 @@
-.room-details{
+.room-details {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-bottom: 1px solid rgba(31, 32, 65, 0.1);
-  h2{
-    margin-top: 0;
-    margin-bottom: 21px;
-  }
-  @media (max-width: 415px){
-    &__form-book-a-room{
+
+  @media (max-width: 415px) {
+
+    &__form-book-a-room {
       transform: scale(.85);
     }
-    &__review-amount{
+
+    &__review-amount {
       top: 35px;
     }
   }
-  &__photos{
+
+  &__photos {
     display: flex;
     justify-content: center;
     width: 100%;
     height: auto;
+
     @media (max-width: 876px) {
       flex-direction: column;
       align-items: center;
     }
   }
-  &__photos-column{
+
+  &__photos-column {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     @media (max-width: 876px) {
       width: 70%;
     }
   }
-  &__main-photo{
+
+  &__main-photo {
     width: 100%;
     height: auto;
   }
-  &__second-photo{
+
+  &__second-photo {
     width: 100%;
     height: auto;
   }
-  &__third-photo{
+
+  &__third-photo {
     width: 100%;
     height: auto;
   }
-  &__content{
+
+  &__content {
     padding-top: 70px;
     padding-bottom: 72px;
     max-width: 1160px;
@@ -63,26 +70,31 @@
       grid-template-rows: auto auto auto auto;
       grid-template-areas: 'info diagramm' 'review review' 'rules cancel' 'get-it get-it';
     }
+
     @media (max-width: 545px) {
       grid-template-columns: auto;
       grid-template-rows: auto auto auto auto auto auto;
       grid-template-areas: 'info' 'diagramm' 'review' 'rules' 'cancel' 'get-it';
     }
+
     @media (max-width: 380px) {
       grid-template-columns: 320px;
     }
   }
   &__content-info { 
     grid-area: info; 
+
     @media (max-width: 545px) {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
   }
-  &__icon-text{
+  
+  &__icon-text {
     margin-top: 20px;
   }
+
   &__content-diagramm { 
     grid-area: diagramm; 
     @media (max-width: 545px) {
@@ -96,9 +108,7 @@
   &__rules { 
     grid-area: rules; 
     padding-top: 10px;
-    h2{
-      margin-left: 20px;
-    }
+
     @media (max-width: 545px) {
       margin-top: 20px;
       display: flex;
@@ -108,9 +118,10 @@
   }
   
   
-  &__cancel{ 
+  &__cancel { 
     grid-area: cancel; 
     padding-top: 10px;
+
     @media (max-width: 545px) {
       margin-top: 20px;
       display: flex;
@@ -118,7 +129,8 @@
       align-items: center;
     }
   }
-  &__cancel-text{
+
+  &__cancel-text {
     max-width: 341px;
     max-height: 96px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
@@ -130,7 +142,7 @@
     margin-top: 17px;
   }
   
-  &__reviews-amount{
+  &__reviews-amount {
     position: absolute;
     top: 0;
     right: 60px;
@@ -139,48 +151,46 @@
     transform: translateY(-50%);
   }
   
-  &__reviews{
+  &__reviews {
     grid-area: review; 
     position: relative;
-    h2{
-      margin-top: 12px;
-    }
   }
-  &__reviews-heading{
+
+  &__reviews-heading {
     margin-top: 33px;
     margin-bottom: 20px;
     position: relative;
   }
   
-  &__review-list{
+  &__review-list {
     max-width: 266px;
     display: inline-block;
     margin-left: 30px;
     position: relative;
     top: -4px;
-    li{
-      margin-top: 0;
-      padding-left: 15px;
-    }
   }
-  &__comment{
+  
+  &__comment {
     margin-bottom: 23px;
   }
     
-  &__form-book-a-room{ 
+  &__form-book-a-room { 
     grid-area: get-it; 
     @media (max-width: 876px) {
       display: flex;
       justify-content: center;
     }
   }
-  &__rules-heading{
+  
+  &__rules-heading {
     margin-left: 20px;
   }
-  &__bullet-list{
+
+  &__bullet-list {
     margin-top: 17px;
   }
-  &__donut-chart{
+
+  &__donut-chart {
     margin-top: 20px;
   }
 }

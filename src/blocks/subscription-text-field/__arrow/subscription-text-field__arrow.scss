@@ -1,14 +1,14 @@
-.subscription-text-field__arrow{
+.subscription-text-field__arrow {
   position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 44px;
   height: 44px;
-  font-size: rem(24px);
-  line-height: 24px;
   right: 0;
   bottom: 0;
+  font-size: rem(24px);
+  line-height: 24px;
   cursor: pointer;
   
 }

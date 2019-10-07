@@ -1,10 +1,10 @@
-.button.button_no-frame{
+.button.button_no-frame {
   background: none;
   color: $purple;
   max-width: 75px;
   height: auto;
 
-  &:hover{
+  &:hover {
     color: $dark-shade-50;
   }
 }

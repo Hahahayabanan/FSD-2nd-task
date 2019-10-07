@@ -1,4 +1,4 @@
-.bullet-list__item{
+.bullet-list__item {
 	font-family: 'Montserrat', Arial, sans-serif;
 	font-weight: normal;
 	line-height: 24px;
@@ -9,7 +9,7 @@
 	margin-top: 10px;
 	padding-left: 20px;
 
-	&::before{
+	&::before {
 		content: '';
 		display: inline-block;
 		width: 10px;
@@ -22,7 +22,7 @@
 		top: 7px;
 	}
 
-	&:first-of-type{
+	&:first-of-type {
 		margin-top: 0;
 	}
 }

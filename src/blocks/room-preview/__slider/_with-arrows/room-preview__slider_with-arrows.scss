@@ -1,5 +1,6 @@
-.room-preview__slider_with-arrows{
-  &::before{
+.room-preview__slider_with-arrows {
+
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -9,7 +10,8 @@
     z-index: 1;
     box-shadow: inset 100px 0px 60px -80px rgba(0,0,0,.75);
   }
-  &::after{
+
+  &::after {
     content: '';
     position: absolute;
     top: 0;

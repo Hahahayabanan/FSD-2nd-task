@@ -1,13 +1,15 @@
-.footer-widgets__menu{
+.footer-widgets__menu {
   width: 100%;
   display: flex;
   justify-content: space-around;
   margin-top: 4px;
   padding-right: 25px;
   padding-left: 10px;
-  @media (max-width: 370px){
+
+  @media (max-width: 370px) {
     flex-direction: column;
   }
+  
   @media (max-width: 768px) {
     padding: 0;
   }

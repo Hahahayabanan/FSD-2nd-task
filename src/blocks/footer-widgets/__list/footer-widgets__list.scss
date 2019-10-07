@@ -1,8 +1,9 @@
-.footer-widgets__list{
+.footer-widgets__list {
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
+  
   @media (max-width: 768px) {
     align-items: center;
   }

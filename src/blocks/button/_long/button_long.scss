@@ -1,9 +1,10 @@
-.button.button_long{
+.button.button_long {
   width: 320px;
   height: 44px;
   color: #fff;
   position: relative;
-  &:hover{
+
+  &:hover {
     opacity: .5;
   }
 }

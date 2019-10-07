@@ -1,16 +1,20 @@
 section.dropdown {
-  &_with-furniture{
+
+  &_with-furniture {
     max-width: 266px;
   }
 }
 .dropdown {
+
   &_with-furniture & {
-    &__options{
+
+    &__options {
       width: 266px;
       height: auto;
       padding-bottom: 8px;
     }
-    &__select{
+
+    &__select {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;

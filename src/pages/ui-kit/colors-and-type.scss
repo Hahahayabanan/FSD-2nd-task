@@ -1,4 +1,4 @@
-.colors-and-type{
+.colors-and-type {
   max-width: 1440px;
   max-height: 900px;
   min-width: 1029px;
@@ -8,59 +8,65 @@
   align-items: flex-start;
   box-sizing: border-box;
 
-  &__container{
+  &__container {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
   }
-  &__colors{
+
+  &__colors {
     height: 610px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     box-sizing: border-box;
+
     @media (max-width: 684px) {
       padding: 20px;
     }
+
     @media (max-width: 448px) {
       width: 100%;
       padding-top: 50px;
     }
   }
 
-  &__headers{
+  &__headers {
     max-width: 403px;
     height: 321px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
     @media (max-width: 684px) {
       padding: 20px;
     }
+
     @media (max-width: 448px) {
       width: 100%;
     }
   }
-  &__h{
+  &__h {
     color: $dark-shade-25;
     display: inline-block;
     margin: 0;
   }
   
-  &__text{
+  &__text {
     display: block;
     width: 336px;
     padding-left: 30px;
     margin: 0;
   }
-  &__item{
+
+  &__item {
     display: flex;
     justify-content: flex-end;
   }
   
-  &__h-body{
+  &__h-body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -68,7 +74,8 @@
     line-height: 24px;
     color: $dark-shade-25;
   }
-  &__text-body{
+
+  &__text-body {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;

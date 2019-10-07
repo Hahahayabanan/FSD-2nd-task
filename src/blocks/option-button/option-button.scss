@@ -1,8 +1,8 @@
-.option-button{
-  cursor: pointer;
-  user-select: none; 
-  text-transform: uppercase;
+.option-button {
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: rem(12px);
+  text-transform: uppercase;
+  user-select: none; 
+  cursor: pointer;
 }

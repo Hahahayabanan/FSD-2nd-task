@@ -1,22 +1,16 @@
-.sign-in{
+.sign-in {
   height: 700px - 17px;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: bottom;
   position: relative;
-  &__container{
+
+  &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
-  
-    @media (max-width: 380px) {
-      .form-sign-in{
-        transform: scale(.84);
-      }
-    }
-      
+    height: 100%;   
   }
 }
 

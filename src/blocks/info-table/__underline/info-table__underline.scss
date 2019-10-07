@@ -1,9 +1,9 @@
-.info-table__underline{
+.info-table__underline {
+  position: absolute;
+  bottom: 5px;
+  left: 60px;
   width: 182px;
   height: 1px;
   border-top: 1px dotted $dark-shade-25;
   box-sizing: border-box;
-  position: absolute;
-  bottom: 5px;
-  left: 60px;
 }

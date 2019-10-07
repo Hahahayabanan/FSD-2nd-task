@@ -1,24 +1,26 @@
-.range-slider{
+.range-slider {
   width: 266px;
 }
 
-.ui-slider{
+.ui-slider {
   width: 266px;
   height: 6px;
   background: #FFFFFF;
   border: 1px solid $dark-shade-25;
   box-sizing: border-box;
   border-radius: 3px;
+
   & .ui-slider-handle {
     width: 12px;
     height: 12px;
+    margin-top: -1px;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: 2px solid #FFFFFF;
     border-radius: 10px;
-    margin-top: -1px;
     outline: none;
     cursor: pointer;
   }
+
   & .ui-slider-range {
     height: 6px;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);

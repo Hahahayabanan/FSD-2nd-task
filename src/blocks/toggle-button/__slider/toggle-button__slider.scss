@@ -1,27 +1,26 @@
 /* The slider */
 .toggle-button__slider {
   position: absolute;
-  cursor: pointer;
-  border: 1px solid $dark-shade-25;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  border: 1px solid $dark-shade-25;
   border-radius: 10px;
   background-color: #fff;
+  cursor: pointer;
 
   &:before {
-    position: absolute;
     content: "";
+    display: inline-block;
     width: 12px;
     height: 12px;
-    background: $dark-shade-25;
-    border-radius: 10px;
-    display: inline-block;
     position: absolute;
     left: 3px;
     top: 3px;
     margin-top: 0;
+    background: $dark-shade-25;
+    border-radius: 10px;
   }
 }
 

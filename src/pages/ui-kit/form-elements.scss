@@ -1,9 +1,10 @@
-.form-elements{
+.form-elements {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
   padding-top: 140px;
+
   &__container {
     width: 1440px;
     display: grid;
@@ -14,6 +15,7 @@
                           'left-comments  comments          comments';
     grid-row-gap: 100px;
     grid-column-gap: 10px;
+
     @media (max-width: 918px) {
       grid-template-columns: auto auto;
       grid-template-rows: auto auto auto auto auto;
@@ -26,6 +28,7 @@
                               ;
       grid-row-gap: 0px;
     }
+
     @media (max-width: 618px) {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto auto auto auto auto;
@@ -42,7 +45,8 @@
       grid-row-gap: 0px;
     }
   }
-  &__checkbox-button{
+
+  &__checkbox-button {
     margin-top: 10px;
   }
     
@@ -53,11 +57,13 @@
   &__check-buttons { 
     grid-area: check-buttons; 
   }
-  &__like-button{
+
+  &__like-button {
     display: inline-block;
     margin-left: 10px;
   }
-  &__rate-button{
+
+  &__rate-button {
     display: inline-block;
     margin-left: 20px;
   }
@@ -65,7 +71,8 @@
   &__buttons { 
     grid-area: buttons; 
   }
-  &__button{
+
+  &__button {
     margin-top: 16px;
   }
   
@@ -81,11 +88,11 @@
     grid-area: comments; 
   }
   
-  &__wrapper{
+  &__wrapper {
     margin-bottom: 40px;     
   }
   
-  &__heading{
+  &__heading {
     margin-bottom: 5px;
   }
 }

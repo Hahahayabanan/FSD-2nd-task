@@ -1,4 +1,4 @@
-.cards{
+.cards {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,17 +6,20 @@
   padding-bottom: 140px;
   background: #F4F4F6;
 
-  &__inner{
+  &__inner {
     display: flex;
     flex-direction: row;
+
     @media (max-width: 1114px) {
       flex-direction: column
     }
   }
-  &__column{
+
+  &__column {
     display: flex;
     flex-direction: column;
     margin-right: 40px;
+
     &:last-of-type{
       margin-right: 0;
     }
@@ -27,7 +30,7 @@
       top: 0;
     }
   }
-  &__row{
+  &__row {
     margin-bottom: 40px;
   }
 }

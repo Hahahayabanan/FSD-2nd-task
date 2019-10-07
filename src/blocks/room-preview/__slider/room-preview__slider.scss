@@ -1,27 +1,30 @@
 // PLUGIN OVERWRITING
-
-.slick-slider{
+.slick-slider {
   
-  &.slick-dotted{
+  &.slick-dotted {
     margin: 0;
   }
-  .slick-dots{
+
+  .slick-dots {
     bottom: 10px;
     right: 0;
     padding: 0 18px 12px 0;
     text-align: right;
   }
-  .slick-dots li{
+
+  .slick-dots li {
     width: auto;
     height: auto;
     margin-right: 5px;
-    button{
+
+    button {
       height: 0;
       width: 0;
       padding: 0;
       margin: 0;
     }
-    button::before{
+
+    button::before {
       content: '';
       width: 7px;
       height: 7px;
@@ -31,8 +34,10 @@
       opacity: 1;
       z-index: 2;
     }
-    &.slick-active{
-      button::before{
+
+    &.slick-active {
+
+      button::before {
         background: #FFF;
       }
     }
@@ -40,30 +45,33 @@
 
 
   
-  .slick-arrow{
-    &::before{
+  .slick-arrow {
+
+    &::before {
       font-family: 'Material Icons';
       font-size: rem(24px);
       opacity: 1;
     }
   }
-  .slick-next{
+
+  .slick-next {
     right: 10px;
     z-index: 2;
-    &::before{
+
+    &::before {
       content: 'keyboard_arrow_right'
     }
   }
-  .slick-prev{
+
+  .slick-prev {
     left: 10px;
     z-index: 2;
-    &::before{
+    &::before {
       content: 'keyboard_arrow_left'
     }
   }
 }
 
-// to avoid ajax-loader.gif 404 error
 .slick-list {
   .slick-loading & {
     background: none;

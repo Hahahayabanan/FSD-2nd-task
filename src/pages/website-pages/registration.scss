@@ -1,4 +1,4 @@
-.registration{
+.registration {
   max-height: 700px;
   height: 830px;
   width: 100%;
@@ -6,7 +6,8 @@
   background-size: cover;
   background-position-y: bottom;
   position: relative;
-  &__form-registration{
+  
+  &__form-registration {
     display: flex;
     justify-content: center;
     align-items: center;

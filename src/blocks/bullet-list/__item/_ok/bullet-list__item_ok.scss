@@ -1,5 +1,8 @@
-.bullet-list__item_ok{
-  &::before{
+.bullet-list__item.bullet-list__item_ok {
+  margin-top: 0;
+  padding-left: 15px;
+
+  &::before {
     background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   }
 }

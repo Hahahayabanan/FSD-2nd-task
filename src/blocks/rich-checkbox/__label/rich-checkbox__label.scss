@@ -1,24 +1,24 @@
-.rich-checkbox__label{
+.rich-checkbox__label {
   display: inline-block;
   height: 20px;
+  width: 100%;
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: rem(14px);
   font-weight: bold;
   line-height: 20px;
   color: $dark-shade-75;
-  width: 100%;
   cursor: pointer;
 
-  &::before{
+  &::before {
     content: '';
     display: inline-block;
     width: 20px;
     height: 20px;
+    margin-right: 9px;
     background-color: #FFFFFF;
     border: 1px solid $dark-shade-25;
     box-sizing: border-box;
     border-radius: 4px;
     vertical-align: middle;
-    margin-right: 9px;
   }
 }

@@ -1,24 +1,21 @@
-.button__key{
+.button__key {
   display: block;
+  height: calc(100% - 4px);
+  width: calc(100% - 4px);
+  background: #fff;
+  padding: 0;
   border-radius: 22px;
   border: none;
-  padding: 0;
   box-sizing: content-box;
-
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: rem(12px);
   line-height: 15px;
   text-transform: uppercase;
-
-  background: #fff;
   color: $purple;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-
   cursor: pointer;
 
-  &:focus{
+  &:focus {
     outline: none;
   }
 }

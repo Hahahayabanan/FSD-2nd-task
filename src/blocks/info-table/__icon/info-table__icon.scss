@@ -1,4 +1,10 @@
-.info-table__icon{
+.info-table__icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 0;
+  top: 14px;
   width: 20px;
   height: 20px;
   border: 1px solid $dark-shade-25;
@@ -9,10 +15,4 @@
   font-size: rem(12px);
   line-height: 14px;
   color: $dark-shade-25;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  right: 0;
-  top: 14px;
 }

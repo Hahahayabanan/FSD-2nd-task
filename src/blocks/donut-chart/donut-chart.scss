@@ -1,4 +1,4 @@
-.donut-chart{
+.donut-chart {
   display: inline-block;
   width: 121px;
   height: 121px;
@@ -7,14 +7,16 @@
 .pie {
   margin: 20px;
   user-select: none;
-  & .name-text{
+
+  & .name-text {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: rem(12px);
     font-weight: bold;
     line-height: 15px;
     text-transform: uppercase;
   }
-  & .value-text{
+
+  & .value-text {
     font-family: 'Quicksand', 'Open Sans';
     font-size: rem(24px);
     font-style: normal;
@@ -24,6 +26,6 @@
   }
 }
 
-svg.pie{
+svg.pie {
   margin: 0;
 }

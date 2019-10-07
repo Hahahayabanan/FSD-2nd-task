@@ -1,14 +1,14 @@
-.like-button{
+.like-button {
   display: inline-block;
   position: relative;
-  cursor: pointer;
   width: 40px;
   height: 20px;
   background: #FFFFFF;
   border: 1px solid $dark-shade-25;
-  box-sizing: border-box;
   border-radius: 10px;
+  box-sizing: border-box;
   font-size: rem(10px);   
+  cursor: pointer;
   user-select: none;
 }
 
