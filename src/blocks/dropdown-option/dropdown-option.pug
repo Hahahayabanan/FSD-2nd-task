@@ -1,6 +1,8 @@
+include ../heading/heading.pug
+
 mixin dropdown-option( title = '' )
   section.dropdown-option
-    h3.dropdown-option__title=title
+    +heading('h3', title)
     .dropdown-option__container
       .dropdown-option__item.dropdown-option__item_circle.dropdown-option__item_un-active -
       .dropdown-option__item.dropdown-option__item_number 0
