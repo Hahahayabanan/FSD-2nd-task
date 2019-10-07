@@ -1,7 +1,7 @@
 .checkbox-button__input{
   display: none;
   &:checked + .checkbox-button__label::before {
-    content: url('/img/check-box.svg');
+    content: url('./../img/check-box.svg');
     text-align: center;
     border: 1px solid $purple;
     line-height: 18px;

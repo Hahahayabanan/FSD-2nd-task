@@ -61,10 +61,10 @@ module.exports = {
     },
     {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
+      exclude: [/blocks/, /img/, /static/,],
       use: {
-        loader: 'url-loader',
+        loader: 'file-loader',
         options: {
-          limit: 50000,
           name: './fonts/[name].[ext]',
           publicPath: '../',
         },
@@ -75,8 +75,8 @@ module.exports = {
       loader: 'file-loader',
       exclude: [/fonts/, /static/,],
       options: {
-        name: '[name].[ext]',
-        outputPath: 'img/',
+        name: './img/[name].[ext]',
+        publicPath: '../',
       },
     },
     {
@@ -85,8 +85,8 @@ module.exports = {
       use: [{
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]',
-          outputPath: 'favicons/',
+          name: './favicons/[name].[ext]',
+          publicPath: '../',
         },
       },],
     },
