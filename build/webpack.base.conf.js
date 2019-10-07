@@ -122,6 +122,9 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx', '.scss',],
+    alias: {
+      "./dependencyLibs/inputmask.dependencyLib": "./dependencyLibs/inputmask.dependencyLib.jquery",
+    },
   },
   plugins: [
     new MiniCssExtractPlugin({

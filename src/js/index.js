@@ -1,5 +1,6 @@
 import 'jquery-ui-dist/jquery-ui.min.css';
 import 'jquery-ui-dist/jquery-ui.min.js';
+import "inputmask/dist/jquery.inputmask.bundle";
 
 function importAll(resolve) {
   resolve.keys().forEach(resolve);
