@@ -107,6 +107,15 @@ module.exports = {
             includePaths: [path.join(__dirname, 'src'),],
           },
         },
+        {
+          loader:'webpack-px-to-rem',
+          query:{
+            // 1rem=npx default 10
+            basePx:14,
+            min:1,
+            floatWidth:3,
+          },
+        },
       ],
     },
     ],

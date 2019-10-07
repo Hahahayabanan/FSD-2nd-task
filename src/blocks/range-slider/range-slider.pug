@@ -1,7 +1,10 @@
+include ../heading/heading.pug
+
 mixin range-slider( headText = '' )
   section.range-slider
     .range-slider__header
-      h3.range-slider__label=headText
+      .range-slider__label
+        +heading('h3', headText)
       input(type='text' readonly class='range-slider__price js-range-slider__price')
     .range-slider__inner
       div.range-slider__slider.js-range-slider__slider
