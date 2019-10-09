@@ -3,4 +3,38 @@
   align-items: center;
   justify-content: flex-start;
   max-width: 222px;
+
+  &__input {
+    display: none;
+    
+    &:checked + .checkbox-button__label::before {
+      content: url('./img/check-box.svg');
+      text-align: center;
+      border: 1px solid $purple;
+      line-height: 18px;
+    }
+  }
+
+  &__label {
+    padding-left: 30px;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-shade-50;
+    cursor: pointer;
+  
+    &::before {
+      content: '';
+      display: inline-block;
+      margin-left: -30px;
+      margin-right: 9px;
+      width: 20px;
+      height: 20px;
+      background-color: #FFFFFF;
+      border: 1px solid $dark-shade-25;
+      border-radius: 4px;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+  }
 }

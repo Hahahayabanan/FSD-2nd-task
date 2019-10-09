@@ -13,5 +13,26 @@
     left: 50%;
     transform: scale(.84);
   }
+
+  &__button-long {
+    margin-top: 32px;
+  }
+
+  &__dropdown {
+    margin-top: 20px;
+  }
+
+  &__dropdown-container {
+    margin-top: 5px;
+  }
+
+  &__dropdown-date {
+    margin-top: 20px;
+  }
+
+  &__wrapper {
+    // dont know why but must - 1px border here
+    padding: calc(40px - 1px) calc(30px - 1px) calc(30px - 1px) calc(30px - 1px);
+  }
 }
   

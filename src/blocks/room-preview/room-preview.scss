@@ -5,4 +5,227 @@
   box-shadow: 0px 10px 20px $dark-shade-5;
   border-radius: 4px;
   position: relative;
+
+  &__circle {
+    width: 7px;
+    height: 7px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 50%;
+    margin-left: 3.5px;
+
+    &_full {
+      background: #FFF;
+      margin-left: 0;
+    }
+  }
+
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 106px;
+    padding: 0 20px;
+  }
+
+  &__image {
+    border-radius: 4px 4px 0 0;
+    max-width: 270px;
+  }
+
+  &__in-time {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 18px;
+    color: $dark-shade-50;
+  }
+
+  &__underline {
+    width: 230px;
+    height: 1px;
+    margin-top: 10px;
+    margin-bottom: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    background: rgba(31, 32, 65, 0.1);
+  }
+
+  &__islucs {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+  }
+
+  &__no {
+    font-family: 'Quicksand','Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: $dark-shade-100;
+  }
+
+  &__number {
+    font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 17px;
+    color: $dark-shade-100;
+  }
+
+  &__price {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-shade-50;
+  }
+
+  &__rate-button {
+    margin-top: 1px;
+  }
+
+  &__reviews-num {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: $dark-shade-50;
+  }
+
+  &__reviews-rev {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: right;
+    color: $dark-shade-50;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__slider{
+    &_with-arrows {
+  
+      &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 151px;
+        left: 0;
+        z-index: 1;
+        box-shadow: inset 100px 0px 60px -80px rgba(0,0,0,.75);
+      }
+  
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 151px;
+        left: 0;
+        z-index: 1;
+        box-shadow: inset -100px 0px 60px -80px rgba(0,0,0,.75);
+      }
+    }
+  }
+  
 }
+
+
+  // PLUGIN OVERWRITING
+  .slick-slider {
+    
+    &.slick-dotted {
+      margin: 0;
+    }
+
+    .slick-dots {
+      bottom: 10px;
+      right: 0;
+      padding: 0 18px 12px 0;
+      text-align: right;
+    }
+
+    .slick-dots li {
+      width: auto;
+      height: auto;
+      margin-right: 5px;
+
+      button {
+        height: 0;
+        width: 0;
+        padding: 0;
+        margin: 0;
+      }
+
+      button::before {
+        content: '';
+        width: 7px;
+        height: 7px;
+        border: 1px solid #FFFFFF;
+        box-sizing: border-box;
+        border-radius: 50%;
+        opacity: 1;
+        z-index: 2;
+      }
+
+      &.slick-active {
+
+        button::before {
+          background: #FFF;
+        }
+      }
+    }
+
+
+    
+    .slick-arrow {
+
+      &::before {
+        font-family: 'Material Icons';
+        font-size: 24px;
+        opacity: 1;
+      }
+    }
+
+    .slick-next {
+      right: 10px;
+      z-index: 2;
+
+      &::before {
+        content: 'keyboard_arrow_right'
+      }
+    }
+
+    .slick-prev {
+      left: 10px;
+      z-index: 2;
+      &::before {
+        content: 'keyboard_arrow_left'
+      }
+    }
+  }
+
+  .slick-list {
+    .slick-loading & {
+      background: none;
+    }
+  }
+

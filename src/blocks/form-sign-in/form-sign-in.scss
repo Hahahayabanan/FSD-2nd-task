@@ -12,4 +12,36 @@
   @media (max-width: 380px) {
     transform: scale(.84);
   }
+
+  &__button-long {
+    margin-top: 19px;
+  }
+
+  &__login {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 29px;
+  }
+
+  &__login-text {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #000000;
+  }
+
+  &__text-field-email {
+    margin-top: 20px;
+  }
+
+  &__text-field-password {
+    margin-top: 10px;
+  }
+
+  &__wrapper {
+    padding: calc(40px - 1px) calc(30px - 1px) calc(30px - 1px) calc(30px - 1px);
+  }
 }

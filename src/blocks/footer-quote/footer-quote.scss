@@ -7,4 +7,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  &__description {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-75;
+    max-width: 560px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
 }

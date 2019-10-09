@@ -19,4 +19,44 @@
   -moz-osx-font-smoothing: grayscale;
   /* Support for IE. */
   font-feature-settings: 'liga';
+
+  &_color {
+
+    &_dark-gray{
+      color: $dark-shade-75;
+    }
+
+    &_gray{
+      color: $dark-shade-50;
+    }
+
+    &_light-gray {
+      color: $dark-shade-25;
+    }
+
+    &_purple-gradient{
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &_purple {
+      color: $purple;
+    }
+
+    &_white{
+      color: #FFF;
+    }
+  }
+
+  &_size {
+    
+    &_large{
+      font-size: 48px;
+    }
+
+    &_small{
+      font-size: 10px;
+    }
+  }
 }

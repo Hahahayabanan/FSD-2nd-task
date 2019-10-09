@@ -1,5 +1,30 @@
 .range-slider {
   width: 266px;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+  }
+
+  &__price {
+    width: auto;
+    max-width: 50%;
+    text-align: end;
+    border: none;
+    pointer-events: none;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-shade-50;
+    margin-top: -2px;
+  }
+
+  &__label {
+    margin: 0;
+    white-space: nowrap;
+  }
 }
 
 .ui-slider {

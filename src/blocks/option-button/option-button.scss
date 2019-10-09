@@ -5,4 +5,17 @@
   text-transform: uppercase;
   user-select: none; 
   cursor: pointer;
+
+  &__apply {
+    color: $purple;
+  }
+
+  &__clear {
+    color: $dark-shade-50;
+  }
+
+  &_hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
 }

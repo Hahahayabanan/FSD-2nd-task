@@ -1,4 +1,4 @@
-import DropdownGuests from '../dropdown.js';
+import DropdownGuests from './dropdown.js';
 
 class DropdownFurniture extends DropdownGuests {
 

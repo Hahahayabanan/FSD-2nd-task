@@ -1,24 +1,4 @@
-.footer-widgets__item {
-  display: block;
-  margin-right: 0;
-  margin-bottom: 20px;
 
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-
-  @media (max-width: 370px) {
-    text-align: center;
-
-    &:last-of-type {
-      margin-bottom: 16px;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    text-align: center;
-  }
-}
 
 
 

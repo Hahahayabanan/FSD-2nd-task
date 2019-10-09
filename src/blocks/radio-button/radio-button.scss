@@ -3,4 +3,61 @@
   align-items: center;
   justify-content: flex-start;
   max-width: 320px;
+
+  &__input {
+    display: none;
+  
+    &:checked {
+  
+      & + .radio-button__label::before {
+        text-align: center;
+        border: 1px solid $purple;
+      }
+  
+      & + .radio-button__label::after {
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      }
+  
+      & + .radio-button__label {
+        color: $dark-shade-75;
+      }
+    }
+  }
+
+  &__label {
+    position: relative;
+    height: 24px;
+    margin-right: 20px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-50;
+    cursor: pointer;
+  
+    &::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 9px;
+      background-color: #FFFFFF;
+      border: 1px solid $dark-shade-25;
+      border-radius: 50%;
+      box-sizing: border-box;
+      vertical-align: middle;
+    }
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border-radius: 10px;
+      z-index: 9;
+    }
+  }
 }

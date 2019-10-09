@@ -1,9 +1,0 @@
-.button.button_faint {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
-  }
-}

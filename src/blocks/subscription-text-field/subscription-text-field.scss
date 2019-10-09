@@ -1,4 +1,46 @@
 .subscription-text-field {
   max-width: 267px;
   position: relative;
+
+  &__arrow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    right: 0;
+    bottom: 0;
+    font-size: 24px;
+    line-height: 24px;
+    cursor: pointer;
+  }
+
+  &__field {
+    display: inline-block;
+    width: 100%;
+    height: 44px;
+    position: relative;
+    padding-left: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 4px;
+    line-height: 129%; // 18px
+    color: $dark-shade-25;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  
+    &:focus, &:hover {
+      border: 1px solid $dark-shade-50;
+      color: $dark-shade-75;
+      outline: none;
+    }
+    
+    &::placeholder {
+      color: $dark-shade-25;
+    }
+  }
 }

@@ -10,6 +10,38 @@
   font-size: 10px;   
   cursor: pointer;
   user-select: none;
+
+  &__heart {
+    display: inline-block;
+    position: absolute;
+    height: 100%;
+    left: 4px;
+    display: flex;
+    align-items: center;
+  }
+
+  &__label {
+    position: absolute;
+    left: 19px;
+    top: 50%;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 12px;
+    color: $dark-shade-25;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    &_active {
+      color: $purple;
+    }
+  }
+
+  &_active {
+    border: 1px solid $purple;
+  }
+  
 }
 
 

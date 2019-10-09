@@ -18,4 +18,96 @@
   &:focus {
     outline: none;
   }
+
+  &__arrow {
+    position: absolute;
+    height: 44px;
+    width: 44px;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__key {
+    display: block;
+    height: calc(100% - 4px);
+    width: calc(100% - 4px);
+    background: #fff;
+    padding: 0;
+    border-radius: 22px;
+    border: none;
+    box-sizing: content-box;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $purple;
+    cursor: pointer;
+  
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &_faint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    &:hover {
+      background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
+    }
+  }
+
+  &_long {
+    width: 320px;
+    height: 44px;
+    color: #fff;
+    position: relative;
+  
+    &:hover {
+      opacity: .5;
+    }
+  }
+
+  &_no-frame {
+    background: none;
+    color: $purple;
+    max-width: 75px;
+    height: auto;
+  
+    &:hover {
+      color: $dark-shade-50;
+    }
+  }
+
+  &_simple {
+    color: #fff;
+  
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  &_size {
+
+    &_big{
+      min-width: 101px;
+      height: 34px;
+    }
+
+    &_small{
+      width: 79px;
+      height: 34px;
+    }
+    
+    &_wide{
+      min-width: 196px;
+      height: 34px;
+    }
+  }
+
 }

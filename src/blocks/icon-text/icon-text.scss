@@ -3,4 +3,42 @@
   display: flex;
   flex-direction: column;
   margin: 0;
+
+  &__descr {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-75;
+  }
+
+  &__image {
+    line-height: 41px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding-right: 10px;
+  }
+
+  &__row {
+    display: flex;
+    height: 48px;
+  }
+
+  &__title {
+    margin: 0;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-shade-75;
+  }
+
+  &__underline {
+    margin-top: 20px;
+    width: 280px;
+    height: 1px;
+    background: rgba(31, 32, 65, 0.1);
+  }
 }

@@ -2,5 +2,49 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92px;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+
+    &_circle {
+      width: 30px;
+      height: 30px;
+      border: 1px solid $dark-shade-25;
+      box-sizing: border-box;
+      border-radius: 22px;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-size: 18px;
+      color: $dark-shade-25;
+      cursor: pointer;
+    }
+
+    &_hidden {
+      display: none;
+    }
+
+    &_number {
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 12px;
+      text-align: center;
+      text-transform: uppercase;
+      color: $dark-shade-100;
+    }
+
+    &_un-active {
+      opacity: .5;
+      pointer-events: none;
+    }
+  }
 }
 

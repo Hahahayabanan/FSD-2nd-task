@@ -26,4 +26,51 @@
   &::placeholder {
     color: $dark-shade-25;
   }
+
+  &_masked {
+    position: relative;
+    display: inline-block;
+    max-width: 320px;
+    width: 320px;
+    height: 44px;
+    padding-left: 15px;
+    padding-top: 0;
+    padding-bottom: 0;
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', Arial, sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: $dark-shade-25;
+  
+    &:focus, 
+    &:hover {
+      border: 1px solid $dark-shade-50;
+      color: $dark-shade-75;
+      outline: none;
+    }
+  
+    &::placeholder {
+      color: $dark-shade-25;
+    }
+  }
+
+  &_dark-placeholder {
+    color: $dark-shade-75;
+  
+    &::placeholder {
+      color: $dark-shade-75;
+    }
+  
+    &:focus, 
+    &:hover {
+      border: 1px solid $dark-shade-25;
+    }
+  }
+
+  &_wide {
+    width: 100%;
+  }
 }
