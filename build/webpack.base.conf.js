@@ -17,10 +17,10 @@ function getFiles(dir, files_, folder = '') {
   fs.readdirSync(dir).forEach((filePath) => {
     const name = path.join(dir, filePath);
     if (fs.statSync(name).isDirectory()) {
-      folderPath = filePath;
+      folderPath = path.join(folder, filePath)
       getFiles(name, filesArray, folderPath);
     } else if (filePath.endsWith('.pug')) {
-      filesArray.push(path.join(folderPath, filePath));
+      filesArray.push(path.join(folder, filePath));
     }
   });
   return filesArray;

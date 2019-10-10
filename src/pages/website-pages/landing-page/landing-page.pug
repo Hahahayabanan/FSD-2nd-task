@@ -1,11 +1,11 @@
-extends template
+extends ../template
 
 block variables
   - var pageTitle = 'Landing page'
 
 block content
 
-  include ../../blocks/form-find-hotel-room/form-find-hotel-room.pug
+  include ../../../blocks/form-find-hotel-room/form-find-hotel-room.pug
 
   main.landing-page(style="background-image: url('./img/land-page-back.jpg')")
     article.landing-page__form-find-hotel-room

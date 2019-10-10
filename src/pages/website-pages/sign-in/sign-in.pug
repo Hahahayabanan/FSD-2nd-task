@@ -1,11 +1,11 @@
-extends template
+extends ../template
 
 
 block variables
     - var pageTitle = 'Sign in'
 
 block content
-    include ../../blocks/form-sign-in/form-sign-in.pug
+    include ../../../blocks/form-sign-in/form-sign-in.pug
 
     main.sign-in(style="background-image: url('./img/sign-background.jpg')")
       article.sign-in__container
