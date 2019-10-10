@@ -25,9 +25,11 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
           width: 'full-wide',
         })
 
-      .form-registration__radio-button
-        +radio-button({ name:'form-registration', value:'man', text:'Мужчина', checked:'true' })
-        +radio-button({ name:'form-registration', value:'woman', text:'Женщина' })
+      .form-registration__radio-buttons
+        .form-registration__radio-button
+          +radio-button({ name:'form-registration', value:'man', text:'Мужчина', checked:'true' })
+        .form-registration__radio-button
+          +radio-button({ name:'form-registration', value:'woman', text:'Женщина' })
 
       .form-registration__heading-birthday
         +heading({ type: 'h3', text: 'Дата рождения' })

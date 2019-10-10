@@ -74,9 +74,11 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'radio button' })
-          .radio-button
-            +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', checked: true })
-            +radio-button({ name: 'contact', value: 'woman', text: 'Женщина' })
+          .form-elements__radio-buttons
+            .form-elements__radio-button
+              +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', checked: true })
+            .form-elements__radio-buttons
+              +radio-button({ name: 'contact', value: 'woman', text: 'Женщина' })
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'toggle button' })
@@ -181,7 +183,6 @@ block content
             description: 'На 1 этаже вас встретит специалист и проводит до номера.'
           })
 
-
       article.form-elements__right-dropdown
         .form-elements__wrapper
           .form-elements__heading
@@ -193,7 +194,6 @@ block content
               'Время прибытия — после 13:00, а выезд до 12:00'
               ]
           })
-
 
       article.form-elements__comments
         .form-elements__wrapper
