@@ -4,30 +4,43 @@
   justify-content: flex-start;
   max-width: 222px;
 
-  &__input {
-    display: none;
-    
-    &:checked + .checkbox-button__label::before {
-      content: url('./img/check-box.svg');
-      text-align: center;
-      border: 1px solid $purple;
-      line-height: 18px;
-    }
-  }
-
-  &__label {
+  &__head-text {
+    position: relative;
     padding-left: 30px;
+    margin: 0;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: $dark-shade-50;
     cursor: pointer;
-  
+  }
+
+  &__label {
+    position: relative;
+  }
+
+  &__description {
+    margin: 0;
+  }
+
+  &__input {
+    position: absolute;
+    left: 0;
+    top: 0;
+    
+    &:checked {
+      &::before {
+        content: url('./img/check-box.svg');
+        text-align: center;
+        border: 1px solid $purple;
+        line-height: 20px;
+      }
+    }
+
     &::before {
       content: '';
       display: inline-block;
-      margin-left: -30px;
-      margin-right: 9px;
+      margin-top: -5px;
       width: 20px;
       height: 20px;
       background-color: #FFFFFF;
@@ -37,4 +50,34 @@
       vertical-align: middle;
     }
   }
+
+  &_rich {
+    max-width: 266px;
+  }
+
+  &_rich & {
+
+    &__head-text {
+      position: relative;
+      padding-left: 30px;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: bold;
+      color: $dark-shade-75;
+      cursor: pointer;
+    }
+
+    &__description {
+      margin-top: 5px;
+      margin-left: 20px + 9px;
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-size: 12px;
+      font-weight: normal;
+      line-height: 14px;
+      color: $dark-shade-50;
+      cursor: pointer;
+    }
+  }
+  
 }

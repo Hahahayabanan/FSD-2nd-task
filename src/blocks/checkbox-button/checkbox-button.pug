@@ -1,15 +1,20 @@
-mixin checkbox-button( nameId = 'checkbox-button', text = 'check box')
-  section.checkbox-button
-    input(type='checkbox' name=nameId id=nameId class='checkbox-button__input')
-    label(for=nameId class='checkbox-button__label')=text
+mixin checkbox-button({ name = 'checkbox-button', text = 'check box', description = '' } = {})
+  - let richClass = ''
 
+  if description !== ''
+    - richClass = 'checkbox-button_rich'
+
+  section.checkbox-button(class = richClass)
+    label(class='checkbox-button__label')
+      input(type='checkbox' name=name class='checkbox-button__input')
+      p.checkbox-button__head-text=text
+      p.checkbox-button__description=description
 
 
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//-   +checkbox-button('checkbox0', 'Можно курить')
-//-   +checkbox-button('checkbox1', 'Можно с питомцами')
-//-   +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+//-   +checkbox-button({ name: 'checkbox0', text: 'Можно курить'})
+
 //- 
 //- ***************
