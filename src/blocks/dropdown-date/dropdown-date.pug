@@ -18,9 +18,7 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
               placeholder: 'ДД.ММ.ГГГГ',
               readonly: 'readonly',
               theme: 'date-field',
-              style: {
-                'cursor': 'pointer'
-              },
+              cursor: 'pointer',
             })
       .dropdown-date__item
         +heading('h3', secondHeader)
@@ -35,9 +33,7 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
               placeholder: 'ДД.ММ.ГГГГ',
               readonly: 'readonly',
               theme: 'date-field',
-              style: {
-                'cursor': 'pointer'
-              },
+              cursor: 'pointer',
             })
     .dropdown-date__dropdown-calendar
       +dropdown-calendar()

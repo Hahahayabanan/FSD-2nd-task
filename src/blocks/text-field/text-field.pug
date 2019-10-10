@@ -1,21 +1,29 @@
-mixin text-field( { type = 'text', name = undefined, theme = undefined, id = undefined, placeholder = '', disabled = false, readonly = false, width = undefined } = {})
-  - let addClass = ''
+mixin text-field({ type = 'text', name = undefined, theme = undefined, id = undefined, placeholder = '', disabled = false, readonly = false, width = undefined, cursor = undefined,} = {})
+
+  - let addClassTheme = ''
+  - let addClassWidth = ''
+  - let addClassCursor = ''
+
   case theme
     when 'date-field'
-      - addClass = 'text-field_dark-placeholder'
+      - addClassTheme = 'text-field_dark-placeholder'
     when 'masked'
-      - addClass = 'text-field_masked'
+      - addClassTheme = 'text-field_masked'
       - placeholder = 'ДД.ММ.ГГГГ'
 
   case width
     when 'full-wide'
-      - addClass = 'text-field_wide'
+      - addClassSize = 'text-field_wide'
+
+  case cursor
+    when 'pointer'
+      - addClassCursor = 'text-field_clickable'
 
   input(
     type=type, 
     name=name, 
     id=id,
-    class=`text-field ${addClass}`, 
+    class=`text-field ${addClassTheme} ${addClassSize} ${addClassCursor}`, 
     placeholder=placeholder 
     disabled=disabled 
     readonly=readonly 
