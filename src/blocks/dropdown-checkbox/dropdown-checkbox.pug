@@ -2,7 +2,7 @@ include ../checkbox-button/checkbox-button.pug
 include ../material-icons/material-icons.pug
 include ../heading/heading.pug
 
-mixin dropdown-checkbox( title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']])
+mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']], ifEmpty = 'There is no value' } = {})
   section.dropdown-checkbox
     .dropdown-checkbox__keyboard-arrow
       +material-icons({
@@ -10,31 +10,31 @@ mixin dropdown-checkbox( title = 'expandable checkbox', values = [['cb1','Enter'
         color: 'dark-shade-50',
       })
     .dropdown-checkbox__select
-      +heading('h3', title)
+      +heading({ type: 'h3', text: title })
     .dropdown-checkbox__option.dropdown-checkbox__option_unvisible
       each val in values
         .dropdown-checkbox__button
-          +checkbox-button(val[0], val[1])
+          +checkbox-button({ name: val[0], text: val[1] })
       else
-        .p There is no value
+        .p=ifEmpty
 
         
 
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +dropdown-checkbox(
-//-   'dropdown checkbox list',
-//-   [
-//-     ['checkbox3', 'Завтрак'],
-//-     ['checkbox4', 'Письменный стол'],
-//-     ['checkbox5', 'Стул для кормления'],
-//-     ['checkbox6', 'Кроватка'],
-//-     ['checkbox7', 'Телевизор'],
-//-     ['checkbox8', 'Шампунь'],
-//-     ['checkbox9', 'Телевизор'],
-//-     ['checkbox10', 'Шампунь']
-//-   ]
-//- )
+//- +dropdown-checkbox({
+      title: 'expandable checkbox list',
+      values: [
+        ['checkbox3', 'Завтрак'],
+        ['checkbox4', 'Письменный стол'],
+        ['checkbox5', 'Стул для кормления'],
+        ['checkbox6', 'Кроватка'],
+        ['checkbox7', 'Телевизор'],
+        ['checkbox8', 'Шампунь'],
+        ['checkbox9', 'Телевизор'],
+        ['checkbox10', 'Шампунь']
+      ],
+    })
 //- 
 //- ***************

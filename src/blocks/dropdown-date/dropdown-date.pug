@@ -2,11 +2,11 @@ include ../dropdown-calendar/dropdown-calendar.pug
 include ../text-field/text-field.pug
 include ../heading/heading.pug
 
-mixin dropdown-date( firstHeader = '', secondHeader = '' )
+mixin dropdown-date({ firstHeader = 'date Dropdown', secondHeader = 'date Dropdown' } = {})
   section.dropdown-date.js-dropdown-date
     .dropdown-date__inputs
       .dropdown-date__item
-        +heading('h3', firstHeader)
+        +heading({ type: 'h3', text: firstHeader })
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
             +material-icons({
@@ -21,7 +21,7 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
               cursor: 'pointer',
             })
       .dropdown-date__item
-        +heading('h3', secondHeader)
+        +heading({ type: 'h3', text: secondHeader })
         .dropdown-date__input
           .dropdown-date__keyboard-arrow
             +material-icons({
@@ -41,5 +41,5 @@ mixin dropdown-date( firstHeader = '', secondHeader = '' )
 
 
 //- ******* EXAMPLE *********
-//-  +dropdown-date('date dropdown', 'date dropdown')
+//-  +dropdown-date({ firstHeader: 'date dropdown', secondHeader: 'date dropdown' })
 //- 

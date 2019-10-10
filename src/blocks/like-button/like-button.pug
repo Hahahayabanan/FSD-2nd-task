@@ -1,6 +1,6 @@
 include ../material-icons/material-icons.pug
 
-mixin like-button( number = 0 )
+mixin like-button({ number = 0 } = {})
   if number < 0
     - number = 0
   .like-button
@@ -16,6 +16,6 @@ mixin like-button( number = 0 )
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +like-button(12)
+//- +like-button({ number: 12 })
 //- 
 //- ***************

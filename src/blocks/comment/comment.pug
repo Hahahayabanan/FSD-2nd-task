@@ -5,7 +5,7 @@ mixin comment({ srcAvatar = './img/avatar1.png', numOfLikes = 5, authorName = 'Ð
     .comment__avatar-like-container
       img(class='comment__avatar' src=srcAvatar)
       .comment__like-button
-        +like-button(numOfLikes)
+        +like-button({ number: numOfLikes })
     .comment__body-container
       .comment__name=authorName
       .comment__date=date

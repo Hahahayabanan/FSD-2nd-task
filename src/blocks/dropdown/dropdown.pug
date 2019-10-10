@@ -2,7 +2,7 @@ include ../dropdown-option/dropdown-option.pug
 include ../option-button/option-button.pug
 include ../material-icons/material-icons.pug
 
-mixin dropdown( type = 'guests' )
+mixin dropdown({ type = 'guests' } = {})
   if type == 'guests'
     section.dropdown.js-dropdown
       .dropdown__arrow
@@ -17,14 +17,14 @@ mixin dropdown( type = 'guests' )
         span.dropdown__baby-text
       .dropdown__options
         .dropdown__option
-          +dropdown-option('взрослые')
+          +dropdown-option({ text: 'взрослые' })
         .dropdown__option
-          +dropdown-option('дети')
+          +dropdown-option({ text: 'дети' })
         .dropdown__option
-          +dropdown-option('младенцы')
+          +dropdown-option({ text: 'младенцы' })
         .dropdown__option-button
-          +option-button('clear', 'Очистить')
-          +option-button('apply', 'Применить')
+          +option-button({ type: 'clear', text: 'Очистить' })
+          +option-button({ text: 'apply', text: 'Применить' })
 
   else if type == 'furniture'
 
@@ -43,15 +43,15 @@ mixin dropdown( type = 'guests' )
         span.dropdown__bathroom-text ванных комнат
       .dropdown__options
         .dropdown__option
-          +dropdown-option('спальни')
+          +dropdown-option({ text: 'спальни' })
         .dropdown__option
-          +dropdown-option('кровати')
+          +dropdown-option({ text: 'кровати' })
         .dropdown__option
-          +dropdown-option('ванные комнаты')
+          +dropdown-option({ text: 'ванные комнаты' })
 
 
 
 
 
 
-//- +dropdown('guests')
+//- +dropdown({ type: 'guests' })

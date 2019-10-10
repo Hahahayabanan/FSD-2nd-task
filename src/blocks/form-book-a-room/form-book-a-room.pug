@@ -4,7 +4,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../info-table/info-table.pug
 
-mixin form-book-a-room( { name='form-book-a-room', action='/mock-address/change-me', method='get' } = {})
+mixin form-book-a-room({ name='form-book-a-room', action='/mock-address/change-me', method='get' } = {})
   form.form-book-a-room(name=name action=action method=method)
     .form-book-a-room__wrapper
       .form-book-a-room__title
@@ -18,11 +18,11 @@ mixin form-book-a-room( { name='form-book-a-room', action='/mock-address/change-
           span.form-book-a-room__in-time  в сутки
 
       .form-book-a-room__dropdown-date
-        +dropdown-date('Прибытие', 'Выезд')
+        +dropdown-date({ firstHeader: 'Прибытие', secondHeader: 'Выезд' })
       .form-book-a-room__dropdown
-        +heading('h3', 'Гости')
+        +heading({ type: 'h3', text: 'Гости' })
         .form-book-a-room__dropdown-container
-          +dropdown('guests')
+          +dropdown({ type: 'guests' })
 
       .form-book-a-room__info-table
         +info-table()

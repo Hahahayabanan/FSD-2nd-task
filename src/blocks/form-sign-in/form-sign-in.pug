@@ -6,7 +6,7 @@ mixin form-sign-in({ action='/mock-address/change-me', name='form-registration',
   form.form-sign-in(action=action name=name method=method)
     .form-sign-in__wrapper
       .form-sign-in__heading
-        +heading('h1', 'Войти')
+        +heading({ type: 'h1', text: 'Войти' })
 
       .form-sign-in__text-field-email
         +text-field({

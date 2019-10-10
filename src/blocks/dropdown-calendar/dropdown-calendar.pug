@@ -4,5 +4,5 @@ include ../material-icons/material-icons.pug
 mixin dropdown-calendar()
   .dropdown-calendar
     .dropdown-calendar__buttons
-      +option-button('clear', 'Очистить')
-      +option-button('apply', 'Применить')
+      +option-button({ type: 'clear', text: 'Очистить' })
+      +option-button({ type: 'apply', text: 'Применить' })

@@ -1,7 +1,7 @@
-mixin heading( type = 'h3', text = 'Header' )
+mixin heading({ type = 'h3', text = 'Header' } = {})
   p.heading(class = `heading_${type}`)=text
 
 
 
 //- 
-  +heading('h3', 'hello world')
+  +heading({ type: 'h3', text: 'hello world' })

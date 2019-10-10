@@ -1,8 +1,8 @@
 include ../heading/heading.pug
 
-mixin dropdown-option( title = '' )
+mixin dropdown-option({ text = 'Option'  } = {})
   section.dropdown-option
-    +heading('h3', title)
+    +heading({ type: 'h3', text: text })
     .dropdown-option__container
       .dropdown-option__item.dropdown-option__item_circle.dropdown-option__item_un-active -
       .dropdown-option__item.dropdown-option__item_number 0
@@ -10,4 +10,4 @@ mixin dropdown-option( title = '' )
 
 
 
-//- +dropdown-option('Взрослые')
+//- +dropdown-option({ text: 'Взрослые' })

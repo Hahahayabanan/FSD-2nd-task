@@ -25,7 +25,7 @@ block content
     article.room-details__content
       .room-details__content-container
         section.room-details__content-info
-          +heading('h2', 'Сведения о номере')
+          +heading({ type: 'h2', text: 'Сведения о номере' })
           .room-details__icon-text
             +icon-text({
               image: 'insert_emoticon', 
@@ -48,7 +48,7 @@ block content
             })
 
         section.room-details__content-diagramm
-          +heading('h2', 'Впечатления от номера')
+          +heading({ type: 'h2', text: 'Впечатления от номера' })
           .room-details__donut-chart
             +donut-chart()
             .bullet-list.room-details__review-list
@@ -63,7 +63,7 @@ block content
 
         section.room-details__reviews
           .room-details__reviews-heading
-            +heading('h2', 'Отзывы посетителей номера')
+            +heading({ type: 'h2', text: 'Отзывы посетителей номера' })
             span.room-details__reviews-amount 2 отзыва
           .room-details__comment
             +comment({
@@ -85,11 +85,11 @@ block content
 
         section.room-details__rules
           .room-details__rules-heading
-            +heading('h2', 'Правила')
+            +heading({ type: 'h2', text: 'Правила' })
           .room-details__bullet-list
             +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
 
         section.room-details__cancel
-          +heading('h2', 'Отмена')
+          +heading({ type: 'h2', text: 'Отмена' })
           p.room-details__cancel-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги
 

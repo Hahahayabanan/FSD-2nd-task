@@ -1,16 +1,16 @@
-mixin bullet-list(values = ['Enter', 'paragraphs', 'here'])
+mixin bullet-list({ values = ['Enter', 'paragraphs', 'here'], ifEmpty = 'There are no values' } = {})
   section.bullet-list
     ul.bullet-list__list
       each val in values
-        li.bullet-list__item= val
+        li.bullet-list__item=val
       else
-        li.bullet-list__item There are no values
+        li.bullet-list__item=ifEmpty
 
 
 
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+//- +bullet-list({ values: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00']})
 //- 
 //- ***************

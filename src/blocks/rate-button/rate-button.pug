@@ -1,22 +1,17 @@
 include ../material-icons/material-icons.pug
 
-mixin rate-button( name = 'rate-button', checkNum = 5 )
+mixin rate-button({ name = 'rate-button', checkNum = 5 } = {})
   - var i = 0;
   span.rate-button.js-rate-button
     while i < 5
-      if checkNum-1==i
-        label.rate-button__label
-          +material-icons({
-            type: 'star_border', 
-            color: 'purple-gradient'
-          })
+      label.rate-button__label
+        +material-icons({
+          type: 'star_border', 
+          color: 'purple-gradient'
+        })
+        if checkNum-1==i
           input.rate-button__input(type='radio' name=name value=i++ checked='checked')
-      else
-        label.rate-button__label
-          +material-icons({
-            type: 'star_border', 
-            color: 'purple-gradient'
-          })
+        else
           input.rate-button__input(type='radio' name=name value=i++)
 
 
@@ -24,8 +19,8 @@ mixin rate-button( name = 'rate-button', checkNum = 5 )
 //- ***************
 //- *** EXAMPLE ***
 //- 
-//- +rate-button('rate01', 3)
-//- +rate-button('rate02', 2)
+//- +rate-button({ name: 'rate01', checkNum: 3 })
+//- +rate-button({ name: 'rate02', checkNum: 2 })
 //- 
 //- ***************
 

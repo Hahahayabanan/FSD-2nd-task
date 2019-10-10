@@ -26,11 +26,11 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
         })
 
       .form-registration__radio-button
-        +radio-button({id:'form-registration1', name:'form-registration', value:'man', text:'Мужчина', checked:'true'})
-        +radio-button({id:'form-registration2', name:'form-registration', value:'woman', text:'Женщина'})
+        +radio-button({ name:'form-registration', value:'man', text:'Мужчина', checked:'true' })
+        +radio-button({ name:'form-registration', value:'woman', text:'Женщина' })
 
       .form-registration__heading-birthday
-        +heading('h3', 'Дата рождения')
+        +heading({ type: 'h3', text: 'Дата рождения' })
       
       .form-registration__masked-text-field-birthday
         +text-field({
@@ -39,7 +39,7 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
         })
 
       .form-registration__heading-login-data
-        +heading('h3', 'Данные для входа в сервис')
+        +heading({ type: 'h3', text: 'Данные для входа в сервис' })
 
       .form-registration__text-field-email
         +text-field({
@@ -57,7 +57,7 @@ mixin form-registration( { action='/mock-address/change-me', name='form-registra
         })
 
       .form-registration__toggle-button
-        +toggle-button('togglewoggle', 'Получать спецпредложения')
+        +toggle-button({ name: 'toggle', text: 'Получать спецпредложения' })
 
       .form-registration__button-long
         +button({

@@ -1,6 +1,6 @@
 include ../rate-button/rate-button.pug
 
-mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 888, name = 'room photo', isLucs = false, price = '9 900', rate = 5, reviews = 145} = {} )
+mixin room-preview({ isArrows = false, src = 'img/rooms/room888.svg', number = 888, name = 'room photo', isLucs = false, price = '9 900', rate = 5, reviews = 145 } = {} )
   section.room-preview
     figure.room-preview__slider.js-room-preview__slider(class=isArrows ? 'room-preview__slider_with-arrows' : '')
       img(class='room-preview__image' src=src alt=name)
@@ -27,7 +27,7 @@ mixin room-preview( {isArrows = false, src = 'img/rooms/room888.svg', number = 8
       .room-preview__row
         .room-preview__paragraph
           .room-preview__rate-button
-            +rate-button(name, rate)
+            +rate-button({ name: name, checkNum: rate })
 
         .room-preview__paragraph
           span.room-preview__reviews-num=reviews

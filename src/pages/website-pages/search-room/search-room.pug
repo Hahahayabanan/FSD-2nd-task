@@ -12,7 +12,6 @@ block content
   include ../../../blocks/dropdown/dropdown.pug
   include ../../../blocks/dropdown-filter-date/dropdown-filter-date.pug
   include ../../../blocks/checkbox-button/checkbox-button.pug
-  include ../../../blocks/rich-checkbox/rich-checkbox.pug
   include ../../../blocks/pagination/pagination.pug
   include ../../../blocks/range-slider/range-slider.pug
 
@@ -22,54 +21,52 @@ block content
       form.search-room__side-bar-inner
         section.search-room__filter-date-container
           .search-room__filter-date-heading
-            +heading('h3', 'даты пребывания в отеле')
+            +heading({ type: 'h3', text: 'даты пребывания в отеле' })
           .search-room__filter-date
             +dropdown-filter-date()
         section.search-room__dropdown-guests-container
           .search-room__dropdown-guests-heading
-            +heading('h3', 'Гости')
+            +heading({ type: 'h3', text: 'Гости' })
           .search-room__dropdown-guests
-            +dropdown('guests')
+            +dropdown({ type: 'guests' })
         section.search-room__range-slider
-          +range-slider('диапазон цены')
+          +range-slider({ headText: 'диапазон цены' })
           p.search-room__range-slider-descr Стоимость за сутки пребывания в номере
         section.search-room__checkbox-buttons-container
           .search-room__checkbox-buttons-heading
-            +heading('h3', 'checkbox buttons')
+            +heading({ type: 'h3', text: 'checkbox buttons' })
           .search-room__checkbox-buttons
             .search-room__checkbox-button
-              +checkbox-button('checkbox0', 'Можно курить')
+              +checkbox-button({ name: 'checkbox0', text: 'Можно курить' })
             .search-room__checkbox-button
-              +checkbox-button('checkbox1', 'Можно с питомцами')
+              +checkbox-button({ name: 'checkbox1', text: 'Можно с питомцами' })
             .search-room__checkbox-button
-              +checkbox-button('checkbox2', 'Можно пригласить гостей (до 10 человек)')
+              +checkbox-button({ name: 'checkbox2', text: 'Можно пригласить гостей (до 10 человек)' })
         section.search-room__rich-checkbox-container
           .search-room__rich-checkbox-heading
-            +heading('h3', 'Доступность')
+            +heading({ type: 'h3', text: 'Доступность' })
           .search-room__rich-checkbox
-            +rich-checkbox({ 
-            id: 'checkbox13', 
-            name: 'checkbox13', 
-            headText: 'Широкий коридор', 
-            descr: 'Ширина коридоров в номере не менее 91 см.'
-          })
+            +checkbox-button({ 
+              name: 'checkbox13', 
+              text: 'Широкий коридор', 
+              description: 'Ширина коридоров в номере не менее 91 см.'
+            })
           .search-room__rich-checkbox-second
-            +rich-checkbox({ 
-              id: 'checkbox14', 
+            +checkbox-button({ 
               name: 'checkbox14', 
-              headText: 'Помощник для инвалидов', 
-              descr: 'На 1 этаже вас встретит специалист и проводит до номера.'
+              text: 'Помощник для инвалидов', 
+              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
             })
         section.search-room__dropdown-furniture-container
           .search-room__dropdown-furniture-heading
-            +heading('h3', 'Удобства номера')
+            +heading({ type: 'h3', text: 'Удобства номера' })
           .search-room__dropdown-furniture
-            +dropdown('furniture')
+            +dropdown({ type: 'furniture' })
 
         section.search-room__rich-dropdown-checkbox
-          +dropdown-checkbox(
-            'Дополнительные удобства',
-            [
+          +dropdown-checkbox({
+            title: 'Дополнительные удобства',
+            values: [
               ['checkbox3', 'Завтрак'],
               ['checkbox4', 'Письменный стол'],
               ['checkbox5', 'Стул для кормления'],
@@ -78,10 +75,10 @@ block content
               ['checkbox8', 'Шампунь'],
               ['checkbox9', 'Шампунь']
             ]
-          )
+          })
     article
       header.search-room__title
-        +heading('h1', 'Номера, которые мы для вас подобрали')
+        +heading({ type: 'h1', text: 'Номера, которые мы для вас подобрали' })
       .search-room__elements
         +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',isLucs: true, isArrows: true})
         +room-preview({number: '840',src: 'img/room840.jpg',price: '9 900',name: 'room840',rate: 4,reviews: '65',isLucs: false})

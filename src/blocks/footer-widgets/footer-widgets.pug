@@ -3,10 +3,10 @@ include ../logotype/logotype.pug
 include ../copying-bar/copying-bar.pug
 include ../heading/heading.pug
 
-mixin vertical-menu(header, links)
+mixin vertical-menu({ header = 'title', links = [] } = {})
   ul.footer-widgets__list
     li.footer-widgets__item
-      +heading('h3', header)
+      +heading({ type: 'h3', text: header })
     each link in links
       li.footer-widgets__item
         a.footer-widgets__link(href=link.href)=link.text 
@@ -25,26 +25,32 @@ mixin footer-widgets( { page = 'ui-kit' } = {} )
               p.footer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
           
           section.footer-widgets__menu
-            +vertical-menu('Navigation', 
-            [
-              {href: '/mock-address/change-me', text: 'About us'},
-              {href: '/mock-address/change-me', text: 'News'},
-              {href: '/mock-address/change-me', text: 'Support'},
-              {href: '/mock-address/change-me', text: 'Products'},
-            ])
-            +vertical-menu('About us', 
-            [
-              {href: '/mock-address/change-me', text: 'Who we are'},
-              {href: '/mock-address/change-me', text: 'Our team'},
-              {href: '/mock-address/change-me', text: 'Careers'},
-              {href: '/mock-address/change-me', text: 'Investors'},
-            ])
-            +vertical-menu('Support', 
-            [
-              {href: '/mock-address/change-me', text: 'Documentation'},
-              {href: '/mock-address/change-me', text: 'Community'},
-              {href: '/mock-address/change-me', text: 'Get in Touch'},
-            ])
+            +vertical-menu({ 
+              header: 'Navigation', 
+              links: [ 
+                {href: '/mock-address/change-me', text: 'About us'}, 
+                {href: '/mock-address/change-me', text: 'News'}, 
+                {href: '/mock-address/change-me', text: 'Support'}, 
+                {href: '/mock-address/change-me', text: 'Products'}
+              ] 
+            })
+            +vertical-menu({ 
+              header: 'About us', 
+              links: [
+                {href: '/mock-address/change-me', text: 'Who we are'},
+                {href: '/mock-address/change-me', text: 'Our team'},
+                {href: '/mock-address/change-me', text: 'Careers'},
+                {href: '/mock-address/change-me', text: 'Investors'}
+              ] 
+            })
+            +vertical-menu({
+              header: 'Support', 
+              links: [
+                {href: '/mock-address/change-me', text: 'Documentation'},
+                {href: '/mock-address/change-me', text: 'Community'},
+                {href: '/mock-address/change-me', text: 'Get in Touch'},
+              ]
+            })
 
           ul.footer-widgets__list
             li.footer-widgets__item
@@ -69,39 +75,45 @@ mixin footer-widgets( { page = 'ui-kit' } = {} )
               p.footer-widgets__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
           
           section.footer-widgets__menu
-            +vertical-menu('Навигация', 
-            [
-              {href: '/mock-address/change-me', text: 'О нас'},
-              {href: '/mock-address/change-me', text: 'Новости'},
-              {href: '/mock-address/change-me', text: 'Служба поддержки'},
-              {href: '/mock-address/change-me', text: 'Услуги'},
-            ])
+            +vertical-menu({
+              header: 'Навигация', 
+              links: [
+                {href: '/mock-address/change-me', text: 'О нас'},
+                {href: '/mock-address/change-me', text: 'Новости'},
+                {href: '/mock-address/change-me', text: 'Служба поддержки'},
+                {href: '/mock-address/change-me', text: 'Услуги'},
+              ]
+            })
             .footer-widgets__about-us
-              +vertical-menu('О нас', 
-              [
-                {href: '/mock-address/change-me', text: 'О сервисе'},
-                {href: '/mock-address/change-me', text: 'Наша команда'},
-                {href: '/mock-address/change-me', text: 'Вакансии'},
-                {href: '/mock-address/change-me', text: 'Инвесторы'},
-              ])
-            +vertical-menu('Служба поддержки', 
-            [
-              {href: '/mock-address/change-me', text: 'Соглашения'},
-              {href: '/mock-address/change-me', text: 'Сообщества'},
-              {href: '/mock-address/change-me', text: 'Связь с нами'},
-            ])
+              +vertical-menu({
+                header: 'О нас', 
+                links: [
+                  {href: '/mock-address/change-me', text: 'О сервисе'},
+                  {href: '/mock-address/change-me', text: 'Наша команда'},
+                  {href: '/mock-address/change-me', text: 'Вакансии'},
+                  {href: '/mock-address/change-me', text: 'Инвесторы'},
+                ]
+              })
+            +vertical-menu({
+              header: 'Служба поддержки', 
+              links: [
+                {href: '/mock-address/change-me', text: 'Соглашения'},
+                {href: '/mock-address/change-me', text: 'Сообщества'},
+                {href: '/mock-address/change-me', text: 'Связь с нами'},
+              ]
+            })
 
           ul.footer-widgets__list
             .footer-widgets__subscription
               li.footer-widgets__item
-                +heading('h3', 'Подписка')
+                +heading({ type: 'h3', text: 'Подписка' })
               li.footer-widgets__item
                 p.footer-widgets__description Получайте специальные предложения и новости сервиса
               li.footer-widgets__item
                 .footer-widgets__subscription-text-field
-                  +subscription-text-field('Email')
+                  +subscription-text-field({ placeholder: 'Email'})
       aside.footer-widgets__copying-bar      
-        +copying-bar('Copyright © 2018 Toxin отель. Все права зачищены.')
+        +copying-bar({ text: 'Copyright © 2018 Toxin отель. Все права зачищены.'})
 
 
 //- ***** EXAMPLE *****
