@@ -67,12 +67,12 @@ block content
             span.room-details__reviews-amount 2 отзыва
           .room-details__comment
             +comment({
-            srcAvatar: './img/avatar1.png', 
-            numOfLikes: 11, 
-            authorName: 'Мурад Сарафанов', 
-            date: '5 дней назад', 
-            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-          })
+              srcAvatar: './img/avatar1.png', 
+              numOfLikes: 11, 
+              authorName: 'Мурад Сарафанов', 
+              date: '5 дней назад', 
+              text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+            })
           .room-details__comment
             +comment({
               srcAvatar: './img/avatar2.png', 
@@ -87,7 +87,7 @@ block content
           .room-details__rules-heading
             +heading({ type: 'h2', text: 'Правила' })
           .room-details__bullet-list
-            +bullet-list(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+            +bullet-list({ values: ['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'] })
 
         section.room-details__cancel
           +heading({ type: 'h2', text: 'Отмена' })

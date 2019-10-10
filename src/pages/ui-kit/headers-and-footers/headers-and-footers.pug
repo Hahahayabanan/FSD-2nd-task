@@ -16,10 +16,64 @@ block content
   main.headers-and-footers
     +logo-ui-kit()
     article.headers-and-footers__item
-      +nav-bar({ page: 'ui-kit', 'isLoggedIn': false })
+      +nav-bar({
+        isLoggedIn: false, 
+        links: [
+          { text: 'Home', isActive: true },
+          { text: 'About Us' },
+          { text: 'Services', isDropdown: true },
+          { text: 'Careers' },
+          { text: 'News' },
+          { text: 'Documentation' },
+        ]
+      })
     article.headers-and-footers__item
-      +nav-bar({ page: 'ui-kit', 'isLoggedIn': true })
+      +nav-bar({
+        isLoggedIn: true, 
+        links: [
+          { text: 'Home', isActive: true },
+          { text: 'About Us' },
+          { text: 'Services', isDropdown: true },
+          { text: 'Careers' },
+          { text: 'News' },
+          { text: 'Documentation' },
+        ]
+      })
     article.headers-and-footers__item
-      +footer-widgets({ page: 'ui-kit' })
+      +footer-widgets( { 
+        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', 
+        subscribeHeading: 'Subscribe to our newsletter', 
+        subscribeDescription: 'Receive our latest news and promotions in your inbox!', 
+        emailPlaceHolder: 'Your email address', 
+        copying: 'Copyright © 2018 Toxin UI Kit. All rights reserved.', 
+        verticalMenus: [
+          {
+            heading: 'Navigation',
+            links: [
+              { text: 'About us' },
+              { text: 'News' },
+              { text: 'Support' },
+              { text: 'Products' },
+            ]
+          },
+          {
+            heading: 'About us',
+            links: [
+              { text: 'Who we are' },
+              { text: 'Our team' },
+              { text: 'Careers' },
+              { text: 'Investors' },
+            ]
+          },
+          {
+            heading: 'Support',
+            links: [
+              { text: 'Documentation' },
+              { text: 'Community' },
+              { text: 'Get in Touch' },
+            ]
+          },
+        ] 
+      })
     article.headers-and-footers__item
       +footer-quote()

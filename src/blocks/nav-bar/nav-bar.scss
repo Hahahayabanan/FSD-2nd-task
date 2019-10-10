@@ -8,12 +8,6 @@
     height: auto;
   }
 
-  &__arrow-down {
-    display: flex;
-    align-items: flex-end;
-    margin-top: 3px;
-  }
-
   &__inner {
     margin: 0 auto;
     height: 100%;
@@ -31,49 +25,6 @@
       flex-direction: column;
       height: auto;
       padding: 10px 0;
-    }
-  }
-
-  &__item {
-    list-style: none;
-    display: inline;
-    margin-right: 20px;
-  
-    @media (max-width: 804px) {
-      display: block;
-      margin-right: 0;
-      text-align: center;
-      margin-top: 5px;
-    }
-    
-    @media (min-width:804px) and (max-width: 880px) {
-      margin-right: 10px;
-    }
-
-    &_dropdown {
-      display: flex;
-      align-items: center;
-      height: 24px;
-      margin-right: 19px;
-    
-      @media (max-width: 804px) {
-        margin-right: 0;
-      }
-    }
-  }
-
-  &__link {
-    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-size: 14px;
-    line-height: 0;
-    color: $dark-shade-50;
-    position: relative;
-    text-decoration: none;
-
-    &_active {
-      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-      font-weight: bold;
-      color: $dark-shade-75;
     }
   }
 
@@ -124,6 +75,10 @@
   }
 
   &__user-name {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 0;
+    color: $dark-shade-50;
     margin-left: 30px;
     
     @media (max-width: 804px) {

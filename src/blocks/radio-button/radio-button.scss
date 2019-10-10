@@ -25,6 +25,7 @@
       border-radius: 50%;
       box-sizing: border-box;
       vertical-align: middle;
+      cursor: pointer;
     }
 
     &::after {
@@ -39,6 +40,7 @@
       background: transparent;
       border-radius: 10px;
       z-index: 9;
+      cursor: pointer;
     }
   
     &:checked {

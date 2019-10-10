@@ -1,0 +1,52 @@
+.nav-link{
+  &__item {
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+
+    @media (max-width: 804px) {
+      display: block;
+      margin-right: 0;
+      text-align: center;
+      margin-top: 5px;
+    }
+    
+    @media (min-width:804px) and (max-width: 880px) {
+      margin-right: 10px;
+    }
+
+    &_dropdown {
+      display: flex;
+      align-items: center;
+      height: 24px;
+      margin-right: 19px;
+      margin-top: -2px;
+    
+      @media (max-width: 804px) {
+        margin-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 0;
+    color: $dark-shade-50;
+    position: relative;
+    text-decoration: none;
+
+    &_active {
+      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      color: $dark-shade-75;
+    }
+  }
+
+  &__arrow-down {
+    display: flex;
+    align-items: flex-end;
+    margin-top: 5px;
+    cursor: pointer;
+  }
+}

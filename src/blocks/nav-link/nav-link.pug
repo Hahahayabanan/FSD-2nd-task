@@ -1,0 +1,14 @@
+include ../material-icons/material-icons.pug
+
+mixin nav-link({ href = '/mock-address/change-me', text = 'Click me', isDropdown = false, isActive = false } = {})
+  - const dropdownClass = isDropdown ? 'nav-link__item_dropdown' : ''
+  - const activeClass = isActive ? 'nav-link__link_active' : ''
+  
+  li.nav-link__item(class=dropdownClass)
+    a.nav-link__link(href=href class=activeClass)=text
+    if isDropdown
+      .nav-link__arrow-down
+        +material-icons({
+          type: 'keyboard_arrow_down', 
+          color: 'dark-shade-50',
+        })

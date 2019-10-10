@@ -1,10 +1,10 @@
 include ../logotype/logotype.pug
 include ../social-icons/social-icons
 
-mixin footer-quote()
+mixin footer-quote({ description = 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.' } = {})
   footer.footer-quote
     +logotype()
-    p.footer-quote__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+    p.footer-quote__description=description
     +social-icons()
 
 

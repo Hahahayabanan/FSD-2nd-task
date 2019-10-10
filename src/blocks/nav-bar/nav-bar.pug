@@ -1,95 +1,47 @@
 include ../logotype/logotype.pug
 include ../button/button.pug
 include ../material-icons/material-icons.pug
+include ../nav-link/nav-link.pug
 
-mixin nav-bar({ page = 'ui-kit', isLoggedIn = true } = {})
-  case page
-    when 'ui-kit'
+mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register' } = {})
       nav.nav-bar
         .nav-bar__inner
           +logotype()
           .nav-bar__menu
             ul.nav-bar__list
-              li.nav-bar__item
-                a.nav-bar__link.nav-bar__link_active(href='/mock-address/change-me') Home
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') About Us
-              li.nav-bar__item.nav-bar__item_dropdown
-                a.nav-bar__link(href='/mock-address/change-me') Services
-                +material-icons({
-                  type: 'keyboard_arrow_down', 
-                  color: 'dark-shade-50',
-                })
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') Careers
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') News
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') Documentation
-            if !isLoggedIn
-              .nav-bar__login
-                +button({
-                  'typeOfStyle': 'faint', 
-                  'href':'/mock-address/change-me', 
-                  'text': 'Login', 
-                  'size': 'small',
-                })
-              .nav-bar__register
-                +button({
-                  'typeOfStyle':'simple', 
-                  'href':'/mock-address/change-me', 
-                  'text':'Register', 
-                  'size': 'big',
-                })
-            else
-              .nav-bar__vertical-line
-              .nav-bar__user-name.nav-bar__link Cosmin Negoita
+              each link in links
+                +nav-link({ text: link.text, isActive: link.isActive, isDropdown: link.isDropdown, href: link.href })
 
-    when 'website-pages'
-      nav.nav-bar
-        .nav-bar__inner
-          +logotype()
-          .nav-bar__menu
-            ul.nav-bar__list
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') О нас
-              li.nav-bar__item.nav-bar__item_dropdown
-                a.nav-bar__link(href='/mock-address/change-me') Услуги
-                .nav-bar__arrow-down
-                  +material-icons({
-                    type: 'keyboard_arrow_down', 
-                    color: 'dark-shade-50',
-                  })
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') Вакансии
-              li.nav-bar__item
-                a.nav-bar__link(href='/mock-address/change-me') Новости
-              li.nav-bar__item.nav-bar__item_dropdown
-                a.nav-bar__link(href='/mock-address/change-me') Соглашения
-                .nav-bar__arrow-down
-                  +material-icons({
-                    type: 'keyboard_arrow_down', 
-                    color: 'dark-shade-50',
-                  })
             if !isLoggedIn
               .nav-bar__login
                 +button({
-                  'typeOfStyle': 'faint', 
-                  'href':'/mock-address/change-me', 
-                  'text': 'Войти', 
-                  'size': 'small',
+                  typeOfStyle: 'faint', 
+                  href: '/mock-address/change-me', 
+                  text: loginButtonText, 
+                  size: 'small',
                 })
               .nav-bar__register
                 +button({
-                  'typeOfStyle': 'simple', 
-                  'href':'/mock-address/change-me', 
-                  'text':'Зарегистрироваться', 
-                  'size': 'wide',
+                  typeOfStyle: 'simple', 
+                  href: '/mock-address/change-me', 
+                  text: registerButtonText, 
+                  size: 'wide',
                 })
             else
               .nav-bar__vertical-line
-              .nav-bar__user-name.nav-bar__link Cosmin Negoita
+              .nav-bar__user-name=userName
 
 
 //- ******** EXAMPLE *********
-//- +nav-bar({'page': 'ui-kit', 'isLoggedIn': false})
+//- +nav-bar({
+//-   isLoggedIn: false, 
+//-   links: [
+//-     { text: 'О нас' },
+//-     { text: 'Услуги', isDropdown: true },
+//-     { text: 'Вакансии'  },
+//-     { text: 'Новости' },
+//-     { text: 'Соглашения', isDropdown: true },
+//-   ],
+//-   loginButtonText: 'Войти',
+//-   registerButtonText: 'Зарегистрироваться'
+//- })

@@ -9,113 +9,76 @@ mixin vertical-menu({ header = 'title', links = [] } = {})
       +heading({ type: 'h3', text: header })
     each link in links
       li.footer-widgets__item
+        if link.href === undefined
+          - link.href = '/mock-address/change-me'
+        if link.text === undefined
+          - link.text = 'click me'
         a.footer-widgets__link(href=link.href)=link.text 
 
 
-mixin footer-widgets( { page = 'ui-kit' } = {} ) 
-  case page
-    when 'ui-kit'
-      footer.footer-widgets
-        .footer-widgets__inner
-          ul.footer-widgets__list
-            li.footer-widgets__item
-              .footer-widgets__logotype
-                +logotype()
-            li.footer-widgets__item
-              p.footer-widgets__description Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
-          
-          section.footer-widgets__menu
-            +vertical-menu({ 
-              header: 'Navigation', 
-              links: [ 
-                {href: '/mock-address/change-me', text: 'About us'}, 
-                {href: '/mock-address/change-me', text: 'News'}, 
-                {href: '/mock-address/change-me', text: 'Support'}, 
-                {href: '/mock-address/change-me', text: 'Products'}
-              ] 
-            })
-            +vertical-menu({ 
-              header: 'About us', 
-              links: [
-                {href: '/mock-address/change-me', text: 'Who we are'},
-                {href: '/mock-address/change-me', text: 'Our team'},
-                {href: '/mock-address/change-me', text: 'Careers'},
-                {href: '/mock-address/change-me', text: 'Investors'}
-              ] 
-            })
-            +vertical-menu({
-              header: 'Support', 
-              links: [
-                {href: '/mock-address/change-me', text: 'Documentation'},
-                {href: '/mock-address/change-me', text: 'Community'},
-                {href: '/mock-address/change-me', text: 'Get in Touch'},
-              ]
-            })
+mixin footer-widgets( { description = 'Description', subscribeHeading = 'Subscribe', subscribeDescription = 'Sub descr', emailPlaceHolder = 'Email', copying = 'copying', verticalMenus = [] } = {} ) 
+  footer.footer-widgets
+    .footer-widgets__inner
+      ul.footer-widgets__list
+        li.footer-widgets__item
+          .footer-widgets__logotype
+            +logotype()
+        li.footer-widgets__item
+          p.footer-widgets__description=description
+      
+      .footer-widgets__menu
+        each menu in verticalMenus
+          +vertical-menu({ 
+            header: menu.heading, 
+            links: menu.links
+          })
 
-          ul.footer-widgets__list
-            li.footer-widgets__item
-              +heading('h3', 'Subscribe to our newsletter')
-            li.footer-widgets__item
-              p.footer-widgets__description Receive our latest news and promotions in your inbox!
-            li.footer-widgets__item
-              .footer-widgets__subscription-text-field
-                +subscription-text-field('Your email address')
-      section.footer-widgets__copying-bar      
-        +copying-bar('Copyright © 2018 Toxin UI Kit. All rights reserved.')
-
-    when 'website-pages'
-
-      footer.footer-widgets
-        .footer-widgets__inner
-          ul.footer-widgets__list
-            li.footer-widgets__item.footer-widgets__item_logo
-              .footer-widgets__logotype
-                +logotype()
-            li.footer-widgets__item
-              p.footer-widgets__description Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-          
-          section.footer-widgets__menu
-            +vertical-menu({
-              header: 'Навигация', 
-              links: [
-                {href: '/mock-address/change-me', text: 'О нас'},
-                {href: '/mock-address/change-me', text: 'Новости'},
-                {href: '/mock-address/change-me', text: 'Служба поддержки'},
-                {href: '/mock-address/change-me', text: 'Услуги'},
-              ]
-            })
-            .footer-widgets__about-us
-              +vertical-menu({
-                header: 'О нас', 
-                links: [
-                  {href: '/mock-address/change-me', text: 'О сервисе'},
-                  {href: '/mock-address/change-me', text: 'Наша команда'},
-                  {href: '/mock-address/change-me', text: 'Вакансии'},
-                  {href: '/mock-address/change-me', text: 'Инвесторы'},
-                ]
-              })
-            +vertical-menu({
-              header: 'Служба поддержки', 
-              links: [
-                {href: '/mock-address/change-me', text: 'Соглашения'},
-                {href: '/mock-address/change-me', text: 'Сообщества'},
-                {href: '/mock-address/change-me', text: 'Связь с нами'},
-              ]
-            })
-
-          ul.footer-widgets__list
-            .footer-widgets__subscription
-              li.footer-widgets__item
-                +heading({ type: 'h3', text: 'Подписка' })
-              li.footer-widgets__item
-                p.footer-widgets__description Получайте специальные предложения и новости сервиса
-              li.footer-widgets__item
-                .footer-widgets__subscription-text-field
-                  +subscription-text-field({ placeholder: 'Email'})
-      aside.footer-widgets__copying-bar      
-        +copying-bar({ text: 'Copyright © 2018 Toxin отель. Все права зачищены.'})
+      ul.footer-widgets__list
+        li.footer-widgets__item
+          +heading({ type: 'h3', text: subscribeHeading })
+        li.footer-widgets__item
+          p.footer-widgets__description=subscribeDescription
+        li.footer-widgets__item
+          .footer-widgets__subscription-text-field
+            +subscription-text-field({ placeholder: emailPlaceHolder })
+  section.footer-widgets__copying-bar      
+    +copying-bar({ text: copying })
 
 
 //- ***** EXAMPLE *****
 //- 
-  +footer-widgets({page: 'website-pages'})
+  +footer-widgets( { 
+    description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.', 
+    subscribeHeading: 'Subscribe to our newsletter', 
+    subscribeDescription: 'Receive our latest news and promotions in your inbox!', 
+    emailPlaceHolder: 'Your email address', 
+    copying: 'Copyright © 2018 Toxin UI Kit. All rights reserved.', 
+    verticalMenus: [
+      {
+        heading: 'Navigation',
+        links: [
+          { text: 'About us' },
+          { text: 'News' },
+          { text: 'Support' },
+          { text: 'Products' },
+        ]
+      },
+      {
+        heading: 'About us',
+        links: [
+          { text: 'Who we are' },
+          { text: 'Our team' },
+          { text: 'Careers' },
+          { text: 'Investors' },
+        ]
+      },
+      {
+        heading: 'Support',
+        links: [
+          { text: 'Documentation' },
+          { text: 'Community' },
+          { text: 'Get in Touch' },
+        ]
+      },
+    ] 
+  })

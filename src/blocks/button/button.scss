@@ -94,18 +94,16 @@
 
   &_size {
 
-    &_big{
-      min-width: 101px;
-      height: 34px;
-    }
-
     &_small{
       width: 79px;
       height: 34px;
     }
     
     &_wide{
-      min-width: 196px;
+      width: auto;
+      padding-left: 19px;
+      padding-right: 19px;
+      max-width: 196px;
       height: 34px;
     }
   }
