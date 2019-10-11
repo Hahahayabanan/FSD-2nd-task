@@ -19,10 +19,6 @@
       display: inline-block;
       width: 20px;
       height: 20px;
-      // position: absolute;
-      // left: 0;
-      // top: 50%;
-      // transform: translateY(-50%);
       background-color: #FFFFFF;
       border: 1px solid $dark-shade-25;
       box-sizing: border-box;
@@ -30,11 +26,12 @@
       cursor: pointer;
     }
 
+    // px into Px just to ignore px-to-rem plugin transformation
     &::after {
       content: '';
       display: inline-block;
-      width: 12px;
-      height: 12px;
+      width: 12Px;
+      height: 12Px;
       position: absolute;
       left: 50%;
       top: 50%;
