@@ -38,6 +38,9 @@
 
     &_with-result {
       padding-top: 30px;
+      display: flex;
+      flex-direction: row;
+      white-space: nowrap;
     }
   }
 
@@ -64,7 +67,8 @@
     position: absolute;
     bottom: 5px;
     left: 60px;
-    width: 182px;
+    width: 100%;
+    max-width: 180px;
     height: 1px;
     border-top: 1px dotted $dark-shade-25;
     box-sizing: border-box;

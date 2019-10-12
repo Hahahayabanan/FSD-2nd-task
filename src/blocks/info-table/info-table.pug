@@ -1,27 +1,27 @@
 include ../heading/heading.pug
 
-mixin info-table()
-  table.info-table
+mixin info-table({ priceOfRoom = 'price', sumPriceOfRoom = 'sum price', numberOfDays = 'number days', numberOfDiscount = 'number discount', priceOfDiscount = 'discoint price', advancedServicesPrice = 'adv serv price', finalPrice = 'final price' } = {})
+  table.info-table.js-info-table
     tr.info-table__row
       td.info-table__service
-        span 9 990
+        span.js-info-table__price-of-room=priceOfRoom
         span ₽ x 
-        span 4
+        span.js-info-table__number-of-days=numberOfDays
         span  суток
       td.info-table__price
-        span 39 960
+        span.js-info-table__summary-price-of-rooms=sumPriceOfRoom
         span ₽
     tr.info-table__row
       td.info-table__service
         .info-table__discount
           span Сбор за услуги: 
           span скидка 
-          span 2 179
+          span.js-info-table__number-of-discount=numberOfDiscount
           span ₽
           span.info-table__icon i
       td.info-table__price
         .info-table__discount
-          span 0
+          span.js-info-table__price-of-discount=priceOfDiscount
           span ₽
     tr.info-table__row
       td.info-table__service
@@ -32,11 +32,12 @@ mixin info-table()
           span услуги
       td.info-table__price
         .info-table__advanced
-          span 300
+          span.js-info-table__advanced-services-price=advancedServicesPrice
           span ₽
     tr.info-table__row
       td.info-table__service.info-table__service_with-result
         +heading( { type: 'h2', text: 'Итого' }) 
         .info-table__underline
-      td.info-table__price.info-table__price_with-result
-        +heading( { type: 'h2', text: '38 081₽' }) 
+      td.info-table__price.info-table__price_with-result.js-info-table__final-price
+        +heading( { type: 'h2', text: finalPrice }) 
+        +heading( { type: 'h2', text: '₽' }) 
