@@ -30,10 +30,11 @@
     align-items: center;
   }
 
+  // Px to exclude px-to-rem plugin auto transform
   &__key {
     display: block;
-    height: calc(100% - 4px);
-    width: calc(100% - 4px);
+    height: calc(100% - 4Px);
+    width: calc(100% - 4Px);
     background: #fff;
     padding: 0;
     border-radius: 22px;
@@ -63,7 +64,8 @@
   }
 
   &_long {
-    width: 320px;
+    width: 100%;
+    max-width: 320px;
     height: 44px;
     color: #fff;
     position: relative;

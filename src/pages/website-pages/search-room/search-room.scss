@@ -22,6 +22,11 @@
     justify-content: center;
   }
 
+  @media (max-width: 1200px){
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
   &__side-bar { 
     grid-area: side-bar; 
   }
@@ -58,6 +63,7 @@
     @media (max-width: 1112px) {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+      justify-items: center;
     }
 
     @media (max-width: 834px) {

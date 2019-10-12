@@ -8,10 +8,6 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  
-  @media (max-width: 380px) {
-    transform: scale(.84);
-  }
 
   &__button-long {
     margin-top: 19px;
@@ -43,5 +39,9 @@
 
   &__wrapper {
     padding: calc(40px - 1px) calc(30px - 1px) calc(30px - 1px) calc(30px - 1px);
+  }
+
+  @media (max-width: 415px) {    
+    transform: scale(.795);
   }
 }

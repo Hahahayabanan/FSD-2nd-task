@@ -8,6 +8,8 @@
   &__container {
     width: 1440px;
     display: grid;
+    margin-right: 10px;
+    margin-left: 10px;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto;
     grid-template-areas:  'fields         check-buttons     buttons' 
@@ -19,7 +21,6 @@
     @media (max-width: 918px) {
       grid-template-columns: auto auto;
       grid-template-rows: auto auto auto auto auto;
-  
       grid-template-areas:    'fields check-buttons' 
                               'buttons left-dropdown'
                               'buttons left-comments'
@@ -32,7 +33,6 @@
     @media (max-width: 618px) {
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto auto auto auto auto;
-  
       grid-template-areas:    'fields' 
                               'check-buttons' 
                               'buttons'
@@ -43,6 +43,10 @@
                               'comments'
                               ;
       grid-row-gap: 0px;
+    }
+
+    @media (max-width: 380px) {
+      grid-template-columns: 300px;
     }
   }
 
