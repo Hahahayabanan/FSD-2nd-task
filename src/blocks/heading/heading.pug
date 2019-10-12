@@ -1,5 +1,16 @@
-mixin heading({ type = 'h3', text = 'Header' } = {})
-  p.heading(class = `heading_${type}`)=text
+mixin heading({ type = 'h3', text = 'Header', color = undefined, weight = undefined } = {})
+  - let addColor = ''
+  - let addWeight = ''
+  
+  case color
+    when 'dark-shade-25'
+      - addColor = 'heading_color_light-gray'
+  
+  case weight
+    when 'normal'
+      - addWeight = 'heading_weight_normal'
+
+  p.heading(class = `heading_${type} ${addColor} ${addWeight}`)=text
 
 
 

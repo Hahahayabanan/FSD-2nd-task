@@ -14,6 +14,7 @@ block variables
 
 block content
     include ../../../blocks/logo-ui-kit/logo-ui-kit.pug
+    include ../../../blocks/heading/heading.pug
 
     +logo-ui-kit()
     .colors-and-type__container
@@ -29,14 +30,20 @@ block content
 
         article.colors-and-type__headers
           .colors-and-type__item
-            h1.colors-and-type__h H1
-            h1.colors-and-type__text This one is the sub-section or widget title
+            .colors-and-type__h 
+              +heading({ type: 'h1', text: 'H1', color: 'dark-shade-25', weight: 'normal', })
+            .colors-and-type__text 
+              +heading({ type: 'h1', text: 'This one is the sub-section or widget title' })
           .colors-and-type__item
-            h2.colors-and-type__h H2
-            h2.colors-and-type__text Next one is the item title inside widgets
+            .colors-and-type__h 
+              +heading({ type: 'h2', text: 'H2', color: 'dark-shade-25', weight: 'normal', })
+            .colors-and-type__text 
+              +heading({ type: 'h2', text: 'Next one is the item title inside widgets' })
           .colors-and-type__item
-            h3.colors-and-type__h H3
-            h3.colors-and-type__text This is a label or CTA text
+            .colors-and-type__h 
+              +heading({ type: 'h3', text: 'H3', color: 'dark-shade-25', weight: 'normal', })
+            .colors-and-type__text 
+              +heading({ type: 'h3', text: 'This is a label or CTA text' })
           .colors-and-type__item
             p.colors-and-type__h.colors-and-type__h-body Body
             p.colors-and-type__text.colors-and-type__text-body This is the body text which is used for most of the design, like paragraphs, lists, etc.
