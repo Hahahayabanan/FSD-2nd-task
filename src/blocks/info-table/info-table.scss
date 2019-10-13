@@ -7,10 +7,19 @@
     padding-right: 20px;
   }
 
-  &__discount {
+  &__advanced-price {
     padding-top: 5px;
   }
+  
+  &__discount {
+    padding-top: 5px;
+    padding-right: 20px;
+  }
 
+  &__discount-price {
+    padding-top: 5px;
+  }
+  
   &__icon {
     display: flex;
     justify-content: center;
