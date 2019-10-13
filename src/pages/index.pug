@@ -20,22 +20,20 @@ html(lang='en')
     meta(name="theme-color" content="#ffffff")
   body
     block content
-      .container  
-        a(href='cards.html') cards
-        br
-        a(href='colors-and-type.html') colors & type
-        br
-        a(href='form-elements.html') form elements
-        br
-        a(href='headers-and-footers.html') headers and footers
-        br
-        a(href='landing-page.html') landing page
-        br
-        a(href='registration.html') registration
-        br
-        a(href='room-details.html') room details
-        br
-        a(href='search-room.html') search room
-        br
-        a(href='sign-in.html') sign in
-
+    include ../blocks/vertical-menu/vertical-menu.pug
+      
+    .index-menu
+      +vertical-menu({ 
+        header: 'Pages', 
+        links: [
+          { text: 'cards', href: 'cards.html' },
+          { text: 'colors & type', href: 'colors-and-type.html' },
+          { text: 'form elements', href: 'form-elements.html' },
+          { text: 'headers and footers', href: 'headers-and-footers.html' },
+          { text: 'landing page', href: 'landing-page.html' },
+          { text: 'registration', href: 'registration.html' },
+          { text: 'room details', href: 'room-details.html' },
+          { text: 'search room', href: 'search-room.html' },
+          { text: 'sign in', href: 'sign-in.html' },
+        ]
+      })
