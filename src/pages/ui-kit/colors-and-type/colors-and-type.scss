@@ -95,35 +95,3 @@
     align-items: center;
   }
 }
-
-
-.color{
-  display: flex;
-  height: 70px;
-  width: 270px;
-  &__rect{
-    width: 70px;
-    height: 70px;
-    border-radius: 6px;
-  }
-  &__text{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 40px;
-  }
-  
-  &__title{
-    margin: 0;
-    font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    font-size: rem(19px);
-    line-height: 29px;
-  }
-  &__descr{
-    margin: 0;
-    font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: rem(19px);
-    line-height: 29px;
-  }
-}

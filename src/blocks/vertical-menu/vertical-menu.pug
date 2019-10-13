@@ -1,0 +1,15 @@
+include ../heading/heading.pug
+
+
+mixin vertical-menu({ header = 'title', links = [] } = {})
+  .vertical-menu
+    ul.vertical-menu__list
+      li.vertical-menu__item
+        +heading({ type: 'h3', text: header })
+      each link in links
+        li.vertical-menu__item
+          if link.href === undefined
+            - link.href = '/mock-address/change-me'
+          if link.text === undefined
+            - link.text = 'click me'
+          a.vertical-menu__link(href=link.href)=link.text 

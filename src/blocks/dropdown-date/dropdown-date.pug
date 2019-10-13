@@ -1,30 +1,11 @@
 include ../dropdown-calendar/dropdown-calendar.pug
-include ../text-field/text-field.pug
-include ../heading/heading.pug
-
-mixin input-item({ header = 'date dropdown', type = 'start' } = {})
-  .dropdown-date__item
-    +heading({ type: 'h3', text: header })
-    .dropdown-date__input
-      .dropdown-date__keyboard-arrow
-        +material-icons({
-          type: 'keyboard_arrow_down', 
-        })
-      div( class=`dropdown-date__input-${type}-date` )
-        +text-field({
-          type: 'text',
-          placeholder: 'ДД.ММ.ГГГГ',
-          readonly: 'readonly',
-          theme: 'date-field',
-          cursor: 'pointer',
-        })
-
+include ../dropdown-date-item/dropdown-date-item.pug
 
 mixin dropdown-date({ firstHeader = 'date Dropdown', secondHeader = 'date Dropdown' } = {})
   section.dropdown-date.js-dropdown-date
     .dropdown-date__inputs
-      +input-item({ header: firstHeader, type: 'start' })
-      +input-item({ header: secondHeader, type: 'end' })
+      +dropdown-date-item({ header: firstHeader, type: 'start' })
+      +dropdown-date-item({ header: secondHeader, type: 'end' })
     .dropdown-date__dropdown-calendar
       +dropdown-calendar()
 

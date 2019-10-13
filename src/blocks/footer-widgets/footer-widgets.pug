@@ -1,20 +1,7 @@
 include ../subscription-text-field/subscription-text-field.pug
 include ../logotype/logotype.pug
 include ../copying-bar/copying-bar.pug
-include ../heading/heading.pug
-
-mixin vertical-menu({ header = 'title', links = [] } = {})
-  ul.footer-widgets__list
-    li.footer-widgets__item
-      +heading({ type: 'h3', text: header })
-    each link in links
-      li.footer-widgets__item
-        if link.href === undefined
-          - link.href = '/mock-address/change-me'
-        if link.text === undefined
-          - link.text = 'click me'
-        a.footer-widgets__link(href=link.href)=link.text 
-
+include ../vertical-menu/vertical-menu.pug
 
 mixin footer-widgets( { description = 'Description', subscribeHeading = 'Subscribe', subscribeDescription = 'Sub descr', emailPlaceHolder = 'Email', copying = 'copying', verticalMenus = [] } = {} ) 
   footer.footer-widgets

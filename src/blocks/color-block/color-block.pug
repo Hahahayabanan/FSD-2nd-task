@@ -1,0 +1,24 @@
+mixin color-block({ text = 'Color', description = 'Description', bgColor = 'darkest-gray' } = {})
+  - let addColor = ''
+
+  case bgColor
+    when 'dark-shade-100'
+      - addColor = 'color-block_color_darkest-gray'
+    when 'dark-shade-75'
+      - addColor = 'color-block_color_dark-gray'
+    when 'dark-shade-50'
+      - addColor = 'color-block_color_gray'
+    when 'dark-shade-25'
+      - addColor = 'color-block_color_light-gray'
+    when 'dark-shade-5'
+      - addColor = 'color-block_color_lightest-gray'
+    when 'purple'
+      - addColor = 'color-block_color_purple'
+    when 'green'
+      - addColor = 'color-block_color_green'
+
+  .color-block
+    div(class=`color-block__rect ${addColor}`)
+    .color-block__text
+      p.color-block__title=text
+      p.color-block__description=description

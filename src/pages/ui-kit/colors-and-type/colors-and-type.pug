@@ -1,13 +1,5 @@
 extends ../../index
 
-mixin color-block(text, descr, col)
-  .color
-    div(style=`background: ${col}` class='color__rect')
-    .color__text
-      p.color__title=text
-      p.color__descr=descr
-
-
 block variables
     - var pageTitle = 'Colors & Type'
 
@@ -15,18 +7,19 @@ block variables
 block content
     include ../../../blocks/logo-ui-kit/logo-ui-kit.pug
     include ../../../blocks/heading/heading.pug
+    include ../../../blocks/color-block/color-block.pug
 
     +logo-ui-kit()
     .colors-and-type__container
       .colors-and-type
         article.colors-and-type__colors
-          +color-block('Dark Shade 100%', '#1F2041', 'rgba(31, 32, 65, 1)')
-          +color-block('Dark Shade 75%', '#1F2041', 'rgba(31, 32, 65, .75)')
-          +color-block('Dark Shade 50%', '#1F2041', 'rgba(31, 32, 65, .5)')
-          +color-block('Dark Shade 25%', '#1F2041', 'rgba(31, 32, 65, .25)')
-          +color-block('Dark Shade 5%', '#1F2041', 'rgba(31, 32, 65, .05)')
-          +color-block('Purple', '#BC9CFF', '#BC9CFF')
-          +color-block('Green', '#6FCF97', '#6FCF97')
+          +color-block({ text: 'Dark Shade 100%', description: '#1F2041', bgColor: 'dark-shade-100' })
+          +color-block({ text: 'Dark Shade 75%', description: '#1F2041', bgColor: 'dark-shade-75' })
+          +color-block({ text: 'Dark Shade 50%', description: '#1F2041', bgColor: 'dark-shade-50' })
+          +color-block({ text: 'Dark Shade 25%', description: '#1F2041', bgColor: 'dark-shade-25' })
+          +color-block({ text: 'Dark Shade 5%', description: '#1F2041', bgColor: 'dark-shade-5' })
+          +color-block({ text: 'Purple', description: '#BC9CFF', bgColor: 'purple' })
+          +color-block({ text: 'Green', description: '#6FCF97', bgColor: 'green' })
 
         article.colors-and-type__headers
           .colors-and-type__item
