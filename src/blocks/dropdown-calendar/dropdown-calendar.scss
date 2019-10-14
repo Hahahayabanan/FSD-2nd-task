@@ -1,224 +1,205 @@
-.dropdown-calendar {
-  display: none;
-  height: 0;
-  z-index: 10;
-  max-width: 320px;
-  position: absolute;
-
-  &__buttons {
-    position: absolute;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    padding: 20px;
-    justify-content: space-between;
-    box-sizing: border-box;
-  }
-
-  &_active {
-    display: block;
-    height: auto;
-  }
-}
-
-.ui-datepicker,
-.ui-datepicker table,
-.ui-datepicker tr,
-.ui-datepicker td,
-.ui-datepicker th {
- margin: 0;
- padding: 0;
- border: none;
- border-spacing: 0;
-}
-
-#ui-datepicker-div {
-  display: none;
-}
-
-.ui-datepicker {
-  width: 320px;
-  height: 369px;
-  background: #FFFFFF;
-  border: 1px solid rgba(31, 32, 65, 0.25);
-  box-sizing: border-box;
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
-  border-radius: 4px;
+.datepicker {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  width: 320px;
+  height: 369px;
+  padding: 19px;
+  box-sizing: border-box;
 
-  // Заголовок с месяцем
-  .ui-datepicker-header {
-    background: #fff;
-    border: none;
-    padding-top: 20px;
-    padding-bottom: 30px;
-    width: 100%;
-  }
-
-  .ui-datepicker-title {
-    font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
-    font-size: 19px;
-    line-height: 24px;
-    text-align: center;
-    color: $dark-shade-100;
-    margin-top: -14px;
-  }
-
-  .ui-datepicker-prev,
-  .ui-datepicker-next {
-    margin-top: 20px;
-    width: 24px;
-    height: 24px;
-    cursor: pointer;
-    top: 0;
-    right: 0;
-
-    &.ui-state-hover {
-      background: none;
-      border: none;
-      top: 0;
-      right: 0;
-    }
-
-    &::before {
-      font-family: 'Material Icons';
-      font-weight: normal;
-      font-style: normal;
-      font-size: 24px;  /* Preferred icon size */
-      display: inline-block;
-      line-height: 1;
-      text-transform: none;
-      letter-spacing: normal;
-      word-wrap: normal;
-      white-space: nowrap;
-      direction: ltr;
-      user-select: none;
-      color: $purple;
-      position: absolute;
-      top: 0;
-      left: 0;
-    }
-  }
-
-  .ui-datepicker-prev {
-    margin-left: 20px;
-    position: relative;
-    left: 0;
-
-    &::before {
-      content: 'arrow_back';
-    }
-
-    &.ui-state-hover {
-      left: 0;
-    }
-  }
-
-  .ui-datepicker-next {
-    margin-right: 20px;
-
-    &::before {
-      content: 'arrow_forward';
-    }
-  }
-
-  .ui-datepicker-prev span,
-  .ui-datepicker-next span {
+  &--pointer {
     display: none;
-    background: none;
   }
 
-  // Таблица с календарем
-  .ui-datepicker-calendar {
-    max-width: 280px;
-    max-height: 240px;
-    margin: 0 auto;
+  &--nav {
+    border: none;
+    padding-bottom: 10px;
+    width: 100%;
+
+    &-title {
+      font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 19px;
+      line-height: 24px;
+      text-align: center;
+      color: $dark-shade-100;
+
+      i {
+        color: inherit;
+      }
+
+      &:hover {
+        background: none;
+      }
+    }
   }
 
-  // Названия дней недели (шапка)
-  thead span {
+  &--day-name {
+    width: 38Px;
+    height: 38Px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 15px;
     color: $purple;
   }
 
-  // Все дни недели
-  td a {
-    width: 40px ;
-    height: 40px ;
-    border: none;
-    padding: 0 ;
-    margin: 0 ;
+  &--cell-day {
     display: flex ;
     justify-content: center;
     align-items: center;
+    width: 38.85943Px;
+    height: 38.85943Px;
+    border: none;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 15px;
-  }
-
-  // Простой день недели
-  .ui-state-default {
     color: $dark-shade-50;
     border: none;
     background: none;
-  }
-  
-  // Простой день недели другого месяца
-  .ui-priority-secondary {
-    color: $dark-shade-25;
+
+    &.-other-month- {
+      color: $dark-shade-25;
+    }
+
+    &.-current- {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 50%;
+      color: #fff;
+    }
+
+    &.-selected- {
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 50%;
+      color: #fff;
+      position: relative;
+    }
+
+    &.-in-range- {
+      color: $dark-shade-50;
+
+      &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        opacity: 0.15;
+      }
+    }
+
+    &.-range-from-::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 50% 0 0 50%;
+      opacity: 0.25;
+    }
+
+    &.-range-to-::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      border-radius: 0 50% 50% 0;
+      opacity: 0.25;
+    }
+
+    &:hover {
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 50%;
+      color: #fff;
+    }
   }
 
-  // Строка в таблице
-  tr {
-    height: 40px;
+  &--buttons {
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+    padding: 0;
+    border: unset;
   }
 
-  // Текущий день
-  .ui-state-highlight {
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 50%;
-    color: #fff;
-  }
-    
-
-  /* первая дата периода */
-  .selected-start .ui-state-active, 
-  .selected-end .ui-state-active {
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    border-radius: 50%;
-    color: #fff;
-  } 
-
-  .selected {
-    position: relative;
-  }
-  
-  .selected a {
+  &--button {
+    display: inline-block;
+    max-width: min-content;
+    height: min-content;
+    text-align: left;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    user-select: none; 
+    cursor: pointer;
     color: $dark-shade-50;
+
+    &:hover {
+      background: none;
+    }
   }
 
-  .selected::after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-    opacity: 0.25;
+  &__apply-button {
+    text-align: right;
+    color: $purple;
   }
 
-  .selected-end::after {
-    border-radius: 0 50% 50% 0;
+  &__material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    user-select: none;
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+
+    &_color {
+
+      &_purple {
+        color: $purple;
+      }
+    }
   }
 
-  .selected-start::after {
-    border-radius: 50% 0 0 50%;
-  }   
+  &--nav-action {
+
+    &:hover {
+      background: none;
+    }
+  }
+
 }

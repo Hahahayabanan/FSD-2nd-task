@@ -1,4 +1,3 @@
-include ../dropdown-calendar/dropdown-calendar.pug
 include ../dropdown-date-item/dropdown-date-item.pug
 
 mixin dropdown-date({ firstHeader = 'date Dropdown', secondHeader = 'date Dropdown' } = {})
@@ -6,8 +5,6 @@ mixin dropdown-date({ firstHeader = 'date Dropdown', secondHeader = 'date Dropdo
     .dropdown-date__inputs
       +dropdown-date-item({ header: firstHeader, type: 'start' })
       +dropdown-date-item({ header: secondHeader, type: 'end' })
-    .dropdown-date__dropdown-calendar
-      +dropdown-calendar()
 
 
 

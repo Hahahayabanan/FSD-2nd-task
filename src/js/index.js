@@ -1,6 +1,8 @@
 import 'jquery-ui-dist/jquery-ui.min.css';
 import 'jquery-ui-dist/jquery-ui.min.js';
-import "inputmask/dist/jquery.inputmask.bundle";
+import 'inputmask/dist/jquery.inputmask.bundle';
+import 'air-datepicker/dist/css/datepicker.min.css'
+import 'air-datepicker';
 
 function importAll(resolve) {
   resolve.keys().forEach(resolve);

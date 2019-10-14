@@ -1,106 +1,63 @@
 class DropdownCalendar {
-  constructor(dropdownHtmlElem, inputHtmlElem) {
-    this.dropdown = dropdownHtmlElem;
-    this.$dropdown = $(dropdownHtmlElem);
-    this.$calendar = this.$dropdown.find('.dropdown-calendar');
-    this.input = inputHtmlElem;
-    this.$input = $(inputHtmlElem);
-    this.$clearButton = this.$dropdown.find('.option-button__clear');
-    this.initCalendar();
+  constructor($datepicker) {
+    this.$datepicker = $datepicker;
+    this.$datepickerHTML = this.$datepicker.$datepicker;
+    this.$calendarInput = $datepicker.$el;
+    this.$title = this.$datepickerHTML.find('.datepicker--nav-title');
+    this.applyButtonText = 'Применить';
+    this.createApplyButton();
+    this.bindEventListeners();
+    this.removeCommaFromTitle();
+    this.replaceNavArrows();
   }
 
-  initCalendar() {
-    this.$calendar.datepicker(this.getOptions());
-
-    // объект расширения (хранит состояние календаря)
-    const extensionRange = this.$calendar.datepicker('widget').data('datepickerExtensionRange')
-
-    if ($.isArray(this.input)) {
-      this.$calendar.datepicker('option', 'dateFormat', 'dd.mm.yy');
-    }
-
-    this.$calendar.datepicker('setDate', ['+1d', '+5d',]);
-
-    if (extensionRange.startDateText || extensionRange.endDateText) {
-      this.changePositions(extensionRange);
-    }
-
-    this.bindEventListeners();
+  createApplyButton() {
+    this.$buttonsContainer = this.$datepickerHTML.find('.datepicker--buttons');
+    this.applyButton = document.createElement('div');
+    this.applyButton.textContent = this.applyButtonText;
+    this.applyButton.classList.add('datepicker--button', 'datepicker__apply-button');
+    this.$buttonsContainer.append(this.applyButton);
   }
 
   bindEventListeners() {
-    this.$input.on('click', this.showCalendar.bind(this));
+    this.applyButton.addEventListener('click', this.hideDatepicker.bind(this));
   }
 
-  clearAll() {
-    this.$calendar.datepicker('setDate', [null, null,]);
-    this.$clearButton.parent().toggleClass('option-button_hidden');
-
-    if ($.isArray(this.input)) {
-      this.$input.val('ДД.ММ.ГГГГ');
-    } else {
-      this.$input.val('ДД МЕС - ДД МЕС');
-    }
+  hideDatepicker() {
+    this.$datepicker.hide();
   }
 
-  showCalendar() {
-    this.$calendar.addClass('dropdown-calendar_active');
-    $(document).on('click', this.outsideClickListener.bind(this));
-    this.$clearButton.on('click', this.clearAll.bind(this));
-    this.$input.off('click');
-    this.$input.on('click', this.hideCalendar.bind(this));
-  }
-
-  hideCalendar() {
-    this.$calendar.removeClass('dropdown-calendar_active');
-    $(document).off('click');
-    this.$clearButton.off('click');
-    this.$input.off('click');
-    this.$input.on('click', this.showCalendar.bind(this));
-  }
-
-  outsideClickListener(event) {
-    const { target, } = event;
-
-    const itsMenu = (this.dropdown.contains(target)) 
-      || target.classList.contains('ui-datepicker-prev') 
-      || target.classList.contains('ui-datepicker-next');
-
-    if (!itsMenu) {
-      this.hideCalendar(event);
-    }
-  }
-
-  changePositions(extensionRange) {
-    if ($.isArray(this.input)) {
-      $(this.$input[0]).val(extensionRange.startDateText);
-      $(this.$input[1]).val(extensionRange.endDateText);
-    } else {
-      $(this.$input).val(`${extensionRange.startDateText  } - ${  extensionRange.endDateText}`);
-    }
-
-    this.$clearButton.parent().removeClass('option-button_hidden');
-  }
-
-  getOptions() {
-    return {
-      range: 'period', // режим - выбор периода
-      numberOfMonths: 1,
-      selectOtherMonths: true,
-      showOtherMonths: true,
-      dateFormat: 'dd M',
-      dayNames: ['Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота', 'Воскресенье',],
-      dayNamesMin: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс',],
-      dayNamesShort: ['Пон', 'Втр', 'Срд', 'Чтв', 'Птн', 'Суб', 'Вос',],
-      monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май',
-        'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь',],
-      monthNamesShort: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек',],
-
-      onSelect: (dateText, inst, extensionRange) => {
-        this.changePositions(extensionRange);
+  removeCommaFromTitle() {
+    this.$calendarInput.datepicker({ 
+      navTitles: {
+        days: 'MM <i>yyyy</i>',
       },
-    }
+    });
   }
-}
 
+  replaceNavArrows() {
+    this.$calendarInput.datepicker({ 
+      nextHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_forward</i>',
+      prevHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_back</i>',
+      minDate: this.$datepicker.currentDate,
+    });
+    
+
+  }
+
+}
 export default DropdownCalendar;
+
+
+$.fn.datepicker.language.ru =  {
+  days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота',],
+  daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб',],
+  daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб',],
+  months: ['Январь','Февраль','Март','Апрель','Май','Июнь','Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь',],
+  monthsShort: ['янв','фев','мар','апр','май','июн','июл','авг','сен','окт','ноя','дек',],
+  today: 'Сегодня',
+  clear: 'Очистить',
+  dateFormat: 'dd.mm.yyyy',
+  timeFormat: 'hh:ii',
+  firstDay: 1,
+};
