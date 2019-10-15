@@ -4,18 +4,19 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../info-table/info-table.pug
 
-mixin form-book-a-room({ name='form-book-a-room', action='/mock-address/change-me', method='get' } = {})
+mixin form-book-a-room({ name='form-book-a-room', action='/mock-address/change-me', method='get', currency = '₽', inTime = 'в сутки', isLux = true, roomPrice = '9 990', roomNumber = '888' } = {})
   form.form-book-a-room(name=name action=action method=method)
     .form-book-a-room__wrapper
       .form-book-a-room__title
         p.form-book-a-room__row
           span.form-book-a-room__no № 
-          span.form-book-a-room__number 888
-          span.form-book-a-room__type  люкс
+          span.form-book-a-room__number=roomNumber
+          if isLux 
+            span.form-book-a-room__type  люкс
         p.form-book-a-room__row.form-book-a-room__row_price-margin
-          span.form-book-a-room__price 9 990
-          span.form-book-a-room__price ₽
-          span.form-book-a-room__in-time  в сутки
+          span.form-book-a-room__price=roomPrice
+          span.form-book-a-room__price=currency + ' '
+          span.form-book-a-room__in-time=inTime
 
       .form-book-a-room__dropdown-date
         +dropdown-date({ firstHeader: 'Прибытие', secondHeader: 'Выезд' })
@@ -33,7 +34,7 @@ mixin form-book-a-room({ name='form-book-a-room', action='/mock-address/change-m
           })
 
       .form-book-a-room__info-table
-        +info-table()
+        +info-table({ currency: currency })
 
       .form-book-a-room__button-long
         +button({

@@ -4,7 +4,6 @@
   &__header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: 20px;
   }
 
   &__price {
@@ -27,26 +26,34 @@
   }
 }
 
-.ui-slider {
-  width: 266px;
-  height: 6px;
-  background: #FFFFFF;
-  border: 1px solid $dark-shade-25;
-  box-sizing: border-box;
-  border-radius: 3px;
+span.irs.irs--flat {
+  
+  .irs-line {
+    width: 266px;
+    height: 6px;
+    background: #FFFFFF;
+    border: 1px solid $dark-shade-25;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
 
-  & .ui-slider-handle {
-    width: 12px;
-    height: 12px;
+  .irs-handle {
+    width: 14Px;
+    height: 14Px;
     margin-top: -1px;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border: 2px solid #FFFFFF;
-    border-radius: 10px;
+    border-radius: 50%;
+    box-sizing: border-box;
     outline: none;
     cursor: pointer;
+
+    i {
+      display: none;
+    }
   }
 
-  & .ui-slider-range {
+  .irs-bar {
     height: 6px;
     background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
     border-radius: 3px;
