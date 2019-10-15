@@ -115,11 +115,11 @@ class DropdownGuests {
   }
 
   activateClear() {
-    if (this.clearButton) this.clearButton.parentNode.classList.remove('option-button_hidden');
+    if (this.clearButton) this.clearButton.classList.remove('option-button_hidden');
   }
 
   deactivateClear() {
-    if (this.clearButton) this.clearButton.parentNode.classList.add('option-button_hidden');
+    if (this.clearButton) this.clearButton.classList.add('option-button_hidden');
   }
 
   clearOptions() {
