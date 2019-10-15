@@ -4,9 +4,14 @@
   justify-content: center;
   align-items: center;
   width: 320px;
-  height: 369px;
+  min-height: 369px;
   padding: 19px;
   box-sizing: border-box;
+
+  &.datepicker--smaller {
+    transform: scale(.83);
+    transform-origin: 0 0 0;
+  }
 
   &--pointer {
     display: none;
@@ -162,7 +167,17 @@
 
   &__apply-button {
     text-align: right;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
     color: $purple;
+    text-transform: uppercase;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    user-select: none;
   }
 
   &__material-icons {

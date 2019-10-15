@@ -5,6 +5,8 @@ class DropdownFilterDate {
     this.calendar = calendar;
     this.input = calendar.querySelector('.dropdown-filter-date__input > input');
     this.initCalendar();
+
+    this.setAdditionalClass();
   }
 
   initCalendar() {
@@ -16,7 +18,13 @@ class DropdownFilterDate {
       clearButton: true,
     })
 
-    new DropdownCalendar($(this.input).datepicker().data('datepicker'));
+    this.$dropdown = $(this.input).datepicker().data('datepicker');
+
+    new DropdownCalendar(this.$dropdown);
+  }
+
+  setAdditionalClass() {
+    this.$dropdown.$datepicker.addClass('datepicker--smaller');
   }
 }
 

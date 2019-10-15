@@ -1,3 +1,5 @@
+import 'jquery';
+
 class DropdownCalendar {
   constructor($datepicker) {
     this.$datepicker = $datepicker;
@@ -13,9 +15,9 @@ class DropdownCalendar {
 
   createApplyButton() {
     this.$buttonsContainer = this.$datepickerHTML.find('.datepicker--buttons');
-    this.applyButton = document.createElement('div');
+    this.applyButton = document.createElement('a');
     this.applyButton.textContent = this.applyButtonText;
-    this.applyButton.classList.add('datepicker--button', 'datepicker__apply-button');
+    this.applyButton.classList.add('datepicker__apply-button');
     this.$buttonsContainer.append(this.applyButton);
   }
 
@@ -39,7 +41,6 @@ class DropdownCalendar {
     this.$calendarInput.datepicker({ 
       nextHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_forward</i>',
       prevHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_back</i>',
-      minDate: this.$datepicker.currentDate,
     });
     
 
