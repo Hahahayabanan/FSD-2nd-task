@@ -1,11 +1,18 @@
 include ../heading/heading.pug
 
-mixin dropdown-option({ text = 'Option' } = {})
-  section.dropdown-option
-    +heading({ type: 'h3', text: text })
+mixin dropdown-option({ text = 'Option', number = 0, group = undefined } = {})
+  if number < 0
+    - number = 0
+  
+  if group == undefined
+    - group = text
+
+  section.dropdown-option.js-dropdown-option(data-group=group)
+    .js-dropdown-option__header
+      +heading({ type: 'h3', text: text })
     .dropdown-option__container
       .dropdown-option__item.dropdown-option__item_circle.dropdown-option__item_un-active -
-      .dropdown-option__item.dropdown-option__item_number 0
+      .dropdown-option__item.dropdown-option__item_number=number
       .dropdown-option__item.dropdown-option__item_circle +
 
 

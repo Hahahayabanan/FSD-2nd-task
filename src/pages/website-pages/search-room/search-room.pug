@@ -28,7 +28,15 @@ block content
           .search-room__dropdown-guests-heading
             +heading({ type: 'h3', text: 'Гости' })
           .search-room__dropdown-guests
-            +dropdown({ type: 'guests' })
+           +dropdown({ 
+            selectText: 'Сколько гостей',
+            hasButtons: true,
+            options: [
+              { text: 'взрослые', group: 'гости' },
+              { text: 'дети', group: 'гости' },
+              { text: 'младенцы' },
+            ],
+          })
         section.search-room__range-slider
           +range-slider({ headText: 'диапазон цены' })
           p.search-room__range-slider-descr Стоимость за сутки пребывания в номере
@@ -61,7 +69,14 @@ block content
           .search-room__dropdown-furniture-heading
             +heading({ type: 'h3', text: 'Удобства номера' })
           .search-room__dropdown-furniture
-            +dropdown({ type: 'furniture' })
+            +dropdown({ 
+            width: 'short',
+            options: [
+              { text: 'спальни', number: 2 },
+              { text: 'кровати', number: 2 },
+              { text: 'ванные комнаты' },
+            ],
+          })
 
         section.search-room__rich-dropdown-checkbox
           +dropdown-checkbox({
@@ -74,7 +89,7 @@ block content
               ['checkbox7', 'Телевизор'],
               ['checkbox8', 'Шампунь'],
               ['checkbox9', 'Шампунь']
-            ]
+            ],
           })
     article.search-room__rooms-list
       header.search-room__title

@@ -13,7 +13,15 @@ mixin form-find-hotel-room({ name='form-find-hotel-room', action='/mock-address/
       .form-find-hotel-room__dropdown
         +heading({ type: 'h3', text: 'Гости' })
         .form-find-hotel-room__dropdown-container
-          +dropdown({ type: 'guests'})
+         +dropdown({ 
+            selectText: 'Сколько гостей',
+            hasButtons: true,
+            options: [
+              { text: 'взрослые', group: 'гости' },
+              { text: 'дети', group: 'гости' },
+              { text: 'младенцы' },
+            ]
+          })
       .form-find-hotel-room__button-long
         +button({
           typeOfStyle: 'long', 

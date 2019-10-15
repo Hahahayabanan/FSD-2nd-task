@@ -22,7 +22,15 @@ mixin form-book-a-room({ name='form-book-a-room', action='/mock-address/change-m
       .form-book-a-room__dropdown
         +heading({ type: 'h3', text: 'Гости' })
         .form-book-a-room__dropdown-container
-          +dropdown({ type: 'guests' })
+          +dropdown({ 
+            selectText: 'Сколько гостей',
+            hasButtons: true,
+            options: [
+              { text: 'взрослые', group: 'гости' },
+              { text: 'дети', group: 'гости' },
+              { text: 'младенцы' },
+            ]
+          })
 
       .form-book-a-room__info-table
         +info-table()

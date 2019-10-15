@@ -42,7 +42,15 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'dropdown' })
-          +dropdown({ type: 'guests'})
+          +dropdown({ 
+            selectText: 'Сколько гостей',
+            hasButtons: true,
+            options: [
+              { text: 'взрослые', group: 'гости' },
+              { text: 'дети', group: 'гости' },
+              { text: 'младенцы' },
+            ],
+          })
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'masked text field' })
@@ -136,7 +144,14 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'dropdown' })
-          +dropdown({ type: 'furniture' })
+          +dropdown({ 
+            width: 'short',
+            options: [
+              { text: 'спальни', number: 2 },
+              { text: 'кровати', number: 2 },
+              { text: 'ванные комнаты' },
+            ],
+          })
         .form-elements__wrapper
           +dropdown-checkbox({
             title: 'expandable checkbox list',

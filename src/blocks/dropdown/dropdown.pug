@@ -2,55 +2,37 @@ include ../dropdown-option/dropdown-option.pug
 include ../option-button/option-button.pug
 include ../material-icons/material-icons.pug
 
-mixin dropdown({ type = 'guests' } = {})
-  if type == 'guests'
-    section.dropdown.js-dropdown
-      .dropdown__arrow
-        +material-icons({
-          type: 'keyboard_arrow_down', 
-          color: 'dark-shade-75',
-        })
-      .dropdown__select
-        span.dropdown__guests-num Сколько 
-        span.dropdown__guests-text гостей
-        span.dropdown__baby-num
-        span.dropdown__baby-text
-      .dropdown__options
+mixin dropdown({ selectText = '', options = [], hasButtons = false, width = undefined } = {})
+  - let addWidth = ''
+  case width
+    when 'short'
+      - addWidth = 'dropdown_width_short'
+
+  section.dropdown.js-dropdown(class=addWidth)
+    .dropdown__arrow
+      +material-icons({
+        type: 'keyboard_arrow_down', 
+        color: 'dark-shade-75',
+      })
+    .dropdown__select
+      span.dropdown__select-text=selectText
+    .dropdown__options
+      each option in options
         .dropdown__option
-          +dropdown-option({ text: 'взрослые' })
-        .dropdown__option
-          +dropdown-option({ text: 'дети' })
-        .dropdown__option
-          +dropdown-option({ text: 'младенцы' })
+          +dropdown-option({ text: option.text, group: option.group, number: option.number })
+      if hasButtons
         .dropdown__option-button
           +option-button({ type: 'clear', text: 'Очистить' })
           +option-button({ text: 'apply', text: 'Применить' })
 
-  else if type == 'furniture'
-    section.dropdown.dropdown_with-furniture.js-dropdown_with-furniture
-      .dropdown__arrow
-        +material-icons({
-          type: 'keyboard_arrow_down', 
-          color: 'dark-shade-75',
-        })
-      .dropdown__select
-        span.dropdown__bedroom-num  0 
-        span.dropdown__bedroom-text спален, 
-        span.dropdown__bed-num  0 
-        span.dropdown__bed-text кроватей, 
-        span.dropdown__bathroom-num  0 
-        span.dropdown__bathroom-text ванных комнат
-      .dropdown__options
-        .dropdown__option
-          +dropdown-option({ text: 'спальни' })
-        .dropdown__option
-          +dropdown-option({ text: 'кровати' })
-        .dropdown__option
-          +dropdown-option({ text: 'ванные комнаты' })
 
-
-
-
-
-
-//- +dropdown({ type: 'guests' })
+//- 
+//- +dropdown({ 
+//-   selectText: 'Сколько гостей',
+//-   hasButtons: true,
+//-   options: [
+//-     { text: 'взрослые', group: 'гости' },
+//-     { text: 'дети', group: 'гости' },
+//-     { text: 'младенцы' },
+//-   ]
+//- })
