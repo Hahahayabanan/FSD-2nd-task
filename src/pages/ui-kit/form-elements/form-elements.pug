@@ -106,7 +106,15 @@ block content
 
       article.form-elements__buttons
         .form-elements__wrapper
-          +range-slider({ headText: 'range slider' })
+          +range-slider({ 
+            headText: 'range slider', 
+            type: 'double', 
+            min: 1000, 
+            max: 15000, 
+            step: 1, 
+            from: 5000, 
+            to: 10000, 
+          })
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'buttons' })
@@ -138,7 +146,14 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'pagination' })
-          +pagination()
+          +pagination({ 
+            links: [
+              { href: '/mock-address/change-me', number: 1, isActive: true, },
+              { href: '/mock-address/change-me', number: 2, },
+              { href: '/mock-address/change-me', number: 3, },
+              { href: '/mock-address/change-me', number: 15, },
+            ]
+          })
 
       article.form-elements__left-dropdown
         .form-elements__wrapper

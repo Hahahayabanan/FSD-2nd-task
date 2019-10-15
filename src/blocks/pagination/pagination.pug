@@ -1,21 +1,23 @@
 include ../material-icons/material-icons.pug
 
-mixin pagination()
+mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descriptionText = 'вариантов аренды', links = [] } = {})
   ul.pagination
-    li.pagination__item.pagination__item_active
-      a.pagination__link.pagination__link_active(href='/mock-address/change-me') 1
-    li.pagination__item
-      a.pagination__link(href='/mock-address/change-me') 2
-    li.pagination__item
-      a.pagination__link(href='/mock-address/change-me') 3
-    li.pagination__item
-      a.pagination__link(href='/mock-address/change-me') ...
-    li.pagination__item
-      a.pagination__link(href='/mock-address/change-me') 15
+    each link, i in links
+      if i === links.length-1
+        li.pagination__item
+          .pagination__ellipsis ...
+      li.pagination__item
+        a.pagination__link(href=link.href, class= link.isActive ? 'pagination__link_active' : '')=link.number      
     li.pagination__item.pagination__item_next
       a.pagination__link.pagination__link_next(href='/mock-address/change-me')
         +material-icons({
           type: 'arrow_forward', 
           color: 'white'
         })
-    p.pagination__description 1 – 12 из 100+ вариантов аренды
+    p.pagination__description 
+      span.pagination__start-number=startNumber
+      span  – 
+      span.pagination__end-number=endNumber
+      span  из 
+      span.pagination__all-numbers=allNumbers
+      span.pagination__description-text= ' ' + descriptionText

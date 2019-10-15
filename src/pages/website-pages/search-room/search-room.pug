@@ -38,7 +38,15 @@ block content
             ],
           })
         section.search-room__range-slider
-          +range-slider({ headText: 'диапазон цены' })
+          +range-slider({ 
+            headText: 'диапазон цены', 
+            type: 'double', 
+            min: 1000, 
+            max: 15000, 
+            step: 1, 
+            from: 5000, 
+            to: 10000, 
+          })
           p.search-room__range-slider-descr Стоимость за сутки пребывания в номере
         section.search-room__checkbox-buttons-container
           .search-room__checkbox-buttons-heading
@@ -110,7 +118,14 @@ block content
 
 
     section.search-room__pagination
-      +pagination()
+      +pagination({ 
+        links: [
+          { href: '/mock-address/change-me', number: 1, isActive: true, },
+          { href: '/mock-address/change-me', number: 2, },
+          { href: '/mock-address/change-me', number: 3, },
+          { href: '/mock-address/change-me', number: 15, },
+        ]
+      })
 
   .search-room__underline
 

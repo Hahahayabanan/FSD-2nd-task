@@ -22,7 +22,7 @@ mixin dropdown({ selectText = '', options = [], hasButtons = false, width = unde
           +dropdown-option({ text: option.text, group: option.group, number: option.number })
       if hasButtons
         .dropdown__option-button
-          +option-button({ type: 'clear', text: 'Очистить' })
+          +option-button({ type: 'clear', text: 'Очистить', isHidden: true })
           +option-button({ text: 'apply', text: 'Применить' })
 
 

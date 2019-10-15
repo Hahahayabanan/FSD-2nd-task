@@ -17,15 +17,29 @@
     font-size: 12px;
   }
 
-  &__link {
-    position: relative;
+  &__ellipsis {
     display: inline-block;
-    text-align: center;
-    border-radius: 50%;
     width: 40px;
     height: 40px;
-    line-height: 42px;
+    text-align: center;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 12px;
     color: $dark-shade-50;
+    line-height: 42px;
+    user-select: none;
+  }
+
+  &__link {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    text-align: center;
+    border-radius: 50%;
+    font-family: 'Montserrat', Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: $dark-shade-50;
+    line-height: 42px;
     text-decoration: none;
     user-select: none;
   
