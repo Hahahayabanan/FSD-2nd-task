@@ -3,24 +3,28 @@
 ---
 ## Развёртывание
 Клонировать
->git clone https://github.com/Hahahayabanan/FSD-2nd-task.git
+>```git clone https://github.com/Hahahayabanan/FSD-2nd-task.git```
 
 Установка
->npm i
+>```npm i```
 
 Запустить webpack server
->npm run dev
+>```npm run dev```
 
 Запустить production build
->npm run build
+>```npm run build```
 
 Запустить Eslint по файлам проекта
-> npm run eslint-fix
+>```npm run eslint-fix```
 ---
 
 ## Использованные библиотеки
 
-jquery, jquery ui, d3, slick-carousel
+[jQuery](https://github.com/jquery/jquery),
+[d3](https://github.com/d3/d3),
+[slick-carousel](https://github.com/kenwheeler/slick),
+[ion-rangeslider](https://github.com/IonDen/ion.rangeSlider),
+[air-datepicker](https://github.com/t1m0n/air-datepicker)
 
 ---
 ## UI kit
