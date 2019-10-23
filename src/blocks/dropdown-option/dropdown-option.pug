@@ -8,7 +8,7 @@ mixin dropdown-option({ text = 'Option', number = 0, group = undefined } = {})
     - group = text
 
   section.dropdown-option.js-dropdown-option(data-group=group)
-    .js-dropdown-option__header
+    .dropdown-option__header.js-dropdown-option__header
       +heading({ type: 'h3', text: text })
     .dropdown-option__container
       .dropdown-option__item.dropdown-option__item_circle.dropdown-option__item_un-active -

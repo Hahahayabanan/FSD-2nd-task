@@ -1,35 +1,33 @@
 include ../logotype/logotype.pug
 include ../button/button.pug
 include ../material-icons/material-icons.pug
-include ../nav-link/nav-link.pug
+include ../list-of-links/list-of-links.pug
 
 mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register' } = {})
-      nav.nav-bar
-        .nav-bar__inner
-          +logotype()
-          .nav-bar__menu
-            ul.nav-bar__list
-              each link in links
-                +nav-link({ text: link.text, isActive: link.isActive, isDropdown: link.isDropdown, href: link.href })
-
-            if !isLoggedIn
-              .nav-bar__login
-                +button({
-                  typeOfStyle: 'faint', 
-                  href: '/mock-address/change-me', 
-                  text: loginButtonText, 
-                  size: 'small',
-                })
-              .nav-bar__register
-                +button({
-                  typeOfStyle: 'simple', 
-                  href: '/mock-address/change-me', 
-                  text: registerButtonText, 
-                  size: 'wide',
-                })
-            else
-              .nav-bar__vertical-line
-              .nav-bar__user-name=userName
+  nav.nav-bar
+    .nav-bar__inner
+      +logotype()
+      .nav-bar__menu
+        .nav-bar__list
+          +list-of-links({ links: links })
+        if !isLoggedIn
+          .nav-bar__login
+            +button({
+              typeOfStyle: 'faint', 
+              href: '/mock-address/change-me', 
+              text: loginButtonText, 
+              size: 'small',
+            })
+          .nav-bar__register
+            +button({
+              typeOfStyle: 'simple', 
+              href: '/mock-address/change-me', 
+              text: registerButtonText, 
+              size: 'wide',
+            })
+        else
+          .nav-bar__vertical-line
+          .nav-bar__user-name=userName
 
 
 //- ******** EXAMPLE *********

@@ -28,8 +28,9 @@ mixin footer-widgets( { description = 'Description', subscribeHeading = 'Subscri
         li.footer-widgets__item
           .footer-widgets__subscription-text-field
             +subscription-text-field({ placeholder: emailPlaceHolder })
-  section.footer-widgets__copying-bar      
-    +copying-bar({ text: copying })
+    .footer-widgets__underline
+    section.footer-widgets__copying-bar      
+      +copying-bar({ text: copying })
 
 
 //- ***** EXAMPLE *****
