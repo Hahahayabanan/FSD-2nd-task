@@ -9,7 +9,7 @@ mixin rate-button({ name = 'rate-button', checkNum = 5 } = {})
           type: 'star_border', 
           color: 'purple-gradient'
         })
-        if checkNum-1==i
+        if checkNum-1===i
           input.rate-button__input(type='radio' name=name value=i++ checked='checked')
         else
           input.rate-button__input(type='radio' name=name value=i++)

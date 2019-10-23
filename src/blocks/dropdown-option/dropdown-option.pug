@@ -4,7 +4,7 @@ mixin dropdown-option({ text = 'Option', number = 0, group = undefined } = {})
   if number < 0
     - number = 0
   
-  if group == undefined
+  if group === undefined
     - group = text
 
   section.dropdown-option.js-dropdown-option(data-group=group)
