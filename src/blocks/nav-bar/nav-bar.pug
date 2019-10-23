@@ -16,14 +16,14 @@ mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], logi
               typeOfStyle: 'faint', 
               href: '/mock-address/change-me', 
               text: loginButtonText, 
-              size: 'small',
+              size: 'narrow',
             })
           .nav-bar__register
             +button({
               typeOfStyle: 'simple', 
               href: '/mock-address/change-me', 
               text: registerButtonText, 
-              size: 'wide',
+              size: 'narrow',
             })
         else
           .nav-bar__vertical-line

@@ -54,7 +54,7 @@
 
   &__select {
     position: relative;
-    height: 44px;
+    height: max-content;
     padding-left: 15px;
     border: 1px solid $dark-shade-25;
     border-radius: 4px;
@@ -63,7 +63,7 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 40px;
+    line-height: 44px;
     color: $dark-shade-75;
     cursor: pointer;
     user-select: none;   
@@ -82,7 +82,7 @@
   &_width_short & { 
     
     &__options {
-      width: 266px;
+      min-width: 266px;
       height: auto;
       padding-bottom: 8px;
     }
@@ -91,7 +91,7 @@
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      width: 266px;
+      min-width: 266px;
       padding-right: 90px;
       margin: 0;
     }

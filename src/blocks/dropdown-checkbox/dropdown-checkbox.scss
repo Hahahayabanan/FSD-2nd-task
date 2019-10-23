@@ -1,5 +1,6 @@
 .dropdown-checkbox {
   max-width: 266px;
+  width: 100%;
   position: relative;
 
   &__button {
@@ -22,7 +23,7 @@
     display: block;
     height: auto;
     max-width: 266px;
-    width: 266px;
+    width: 100%;
     position: absolute;
     padding: 0;
     background: #FFFFFF;

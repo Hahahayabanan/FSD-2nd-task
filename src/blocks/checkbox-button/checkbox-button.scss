@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: flex-start;
   max-width: 222px;
+  width: 100%;
 
   &__head-text {
     position: relative;
@@ -29,6 +30,7 @@
     top: 0;
     
     &:checked {
+      
       &::before {
         content: url('./img/check-box.svg');
         text-align: center;

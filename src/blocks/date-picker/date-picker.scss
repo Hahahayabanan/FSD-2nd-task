@@ -3,7 +3,8 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 320px;
+  max-width: 320px;
+  width: max-content;
   min-height: 369px;
   padding: 19px;
   box-sizing: border-box;

@@ -1,9 +1,13 @@
 .button {
   display: block;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 19px;
-  padding-right: 19px;
+  min-width: 99px;
+  min-height: 44px;
+  padding-top: 14px;
+  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  height: max-content;
+  width: max-content;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
@@ -11,7 +15,7 @@
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 12px;
-  line-height: 44px;
+  text-align: center;
   text-transform: uppercase;
   user-select: none; 
   cursor: pointer;
@@ -34,13 +38,13 @@
   // Px to exclude px-to-rem plugin auto transform
   &__key {
     display: block;
-    height: calc(100% - 4Px);
-    width: calc(100% - 4Px);
+    height: 100%;
+    width: 100%;
     background: #fff;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-top: 12px;
+    padding-bottom: 13px;
+    padding-left: 16px;
+    padding-right: 16px;
     border-radius: 22px;
     border: none;
     box-sizing: border-box;
@@ -61,12 +65,24 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 44px;
     width: max-content;
-    padding: 0;
+    height: max-content;
+    border-radius: 22%/50%;
+    padding: 2Px;
+    box-sizing: border-box;
       
     &:hover {
       background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
+    }
+
+    &.button_size_narrow {
+      padding: 2px;
+      min-width: 79px;
+
+      & .button__key {
+        padding-top: 7px;
+        padding-bottom: 8px;
+      }
     }
   }
 
@@ -87,7 +103,9 @@
     padding: 0;
     width: unset;
     max-width: unset;
+    min-width: unset;
     height: auto;
+    box-sizing: border-box;
   
     &:hover {
       color: $dark-shade-50;
@@ -104,12 +122,16 @@
 
   &_size {
 
-    &_small{
-      line-height: 34px;
+    &_small {
+      min-width: 79px;
+      min-height: 34px;
     }
-    
-    &_wide{
-      line-height: 34px;
+
+    &_narrow {
+      padding-top: 9px;
+      padding-bottom: 10px;
+      min-width: 79px;
+      min-height: 34px;
     }
   }
 

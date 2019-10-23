@@ -1,5 +1,5 @@
 .range-slider {
-  width: 266px;
+  max-width: 266px;
 
   &__header {
     display: flex;
@@ -29,7 +29,8 @@
 span.irs.irs--flat {
   
   .irs-line {
-    width: 266px;
+    max-width: 266px;
+    width: 100%;
     height: 6px;
     background: #FFFFFF;
     border: 1px solid $dark-shade-25;
