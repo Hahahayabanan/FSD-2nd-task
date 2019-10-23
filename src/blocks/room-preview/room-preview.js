@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.scss'
 $(document).ready(() => {
   const $slider = $('.js-room-preview__slider');
 
-  $slider.map((i, val) => {
+  $slider.each( (i, val) => {
     let isArrows = false;
     if ($(val).hasClass('room-preview__slider_with-arrows')) {
       isArrows = true;

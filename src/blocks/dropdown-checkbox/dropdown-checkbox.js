@@ -1,10 +1,10 @@
-class DropdownCheckBox{
-  constructor(elem){
+class DropdownCheckBox {
+  constructor(elem) {
     this.checkbox = elem;
     this.initCheckBoxes();
   }
 
-  initCheckBoxes(){
+  initCheckBoxes() {
     const dropdownOption = this.checkbox.querySelector('.dropdown-checkbox__option');
     const dropdownSelect = this.checkbox.querySelector('.dropdown-checkbox__select');
     const keyboardArrow = this.checkbox.querySelector('.dropdown-checkbox__keyboard-arrow');
@@ -12,7 +12,7 @@ class DropdownCheckBox{
     this.bindEventListeners({ dropdownOption, materialIcons, dropdownSelect, });
   }
 
-  bindEventListeners(options){
+  bindEventListeners(options) {
     const { dropdownOption, materialIcons, dropdownSelect, } = options;
     dropdownSelect.addEventListener('click', () => {
       dropdownOption.classList.toggle('dropdown-checkbox__option_unvisible');

@@ -1,5 +1,5 @@
 class DropdownOption {
-  constructor(elem){
+  constructor(elem) {
     this.option = elem;
     this.name = '';
     this.group = undefined;
@@ -47,7 +47,7 @@ class DropdownOption {
     this.plusButton.addEventListener('click', this.calcPlus.bind(this));
   }
 
-  calcMinus(event) {
+  calcMinus() {
     if (this.value > 0) {
       this.value -= 1;
     }
@@ -64,7 +64,7 @@ class DropdownOption {
     );
   }
 
-  calcPlus(event) {
+  calcPlus() {
     if (this.value === 0) {
       this.activateMinus(this.minusButton);
     }

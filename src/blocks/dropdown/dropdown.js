@@ -1,4 +1,4 @@
-import DropdownOption from '../dropdown-option/dropdown-option.js'
+import DropdownOption from '../dropdown-option/dropdown-option'
 
 class DropdownGuests {
   constructor(htmlElem, titleCases) {
@@ -37,7 +37,7 @@ class DropdownGuests {
         if(optionValue.group === option.group) return true;
         return false;
       });
-      if(optionVal){
+      if(optionVal) {
         optionVal.options.push(option);
       } else {
         this.options.push({ group: option.group, options: [option,], })
@@ -129,7 +129,7 @@ class DropdownGuests {
       })
     });
     this.deactivateClear();
-    if(this.selectText){
+    if(this.selectText) {
       this.setSelectText(this.selectText);
     } else {
       this.calculateSelectText();

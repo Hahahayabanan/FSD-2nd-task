@@ -4,7 +4,7 @@ module.exports = {
     es6: true,
     jquery: true,
   },
-  extends: ["airbnb-base", "prettier"],
+  extends: ["airbnb", "prettier"],
   plugins: ["eslint-plugin-prettier"],
   globals: {
     Atomics: 'readonly',
@@ -15,13 +15,10 @@ module.exports = {
     sourceType: 'module',
   },
   rules: {
-    'linebreak-style':'off',
-    'import/no-extraneous-dependencies': ['error', {'devDependencies': true}],
     'class-methods-use-this': 'off',
     'no-new': 'off',
     'no-underscore-dangle': 'off',
-    "comma-dangle": ["error", "always"],
-    "import/extensions": [2, "ignorePackages"],
     "consistent-return": [1],
+    "space-before-blocks": ["error", "always"],
   }
 };

@@ -1,15 +1,15 @@
-import DatePicker from '../date-picker/date-picker.js';
+import DatePicker from '../date-picker/date-picker';
 
 class FilterDate {
   constructor(calendar) {
     this.calendar = calendar;
-    this.input = calendar.querySelector('.filter-date-item__input-entire-date > input');
+    this.input = calendar.querySelector('.date-text-field__input-entire-date > input');
     this.range = false;
 
     if(!this.input) {
       this.range = true;
-      this.$startInput = $(this.calendar).find('.filter-date-item__input-start-date > input');
-      this.$endInput = $(this.calendar).find('.filter-date-item__input-end-date > input');
+      this.$startInput = $(this.calendar).find('.date-text-field__input-start-date > input');
+      this.$endInput = $(this.calendar).find('.date-text-field__input-end-date > input');
       this.$datepicker = this.$startInput.datepicker().data('datepicker');
     }
     this.initCalendar();

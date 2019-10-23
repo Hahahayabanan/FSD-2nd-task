@@ -50,7 +50,7 @@ class DatePicker {
 export default DatePicker;
 
 
-$.fn.datepicker.language.ru =  {
+$.fn.datepicker.language.ru = {
   days: ['Воскресенье','Понедельник','Вторник','Среда','Четверг','Пятница','Суббота',],
   daysShort: ['Вос','Пон','Вто','Сре','Чет','Пят','Суб',],
   daysMin: ['Вс','Пн','Вт','Ср','Чт','Пт','Сб',],

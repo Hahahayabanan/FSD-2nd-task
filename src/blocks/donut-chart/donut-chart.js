@@ -1,7 +1,7 @@
 import * as d3 from 'd3';
 
-class DonutChart{
-  constructor(element){
+class DonutChart {
+  constructor(element) {
     this.donutChart = element;
     this.getConstants();
     this.initDonutChart();
@@ -10,7 +10,7 @@ class DonutChart{
     this.setStartText()
   }
 
-  getConstants(){
+  getConstants() {
     const data = [
       { name: 'голосов', value: 260, },
       { name: 'голосов', value: 260, },
@@ -24,10 +24,8 @@ class DonutChart{
     return { data, width, height, thickness, radius, }
   }
 
-  initDonutChart(){
-
+  initDonutChart() {
     const { data, width, height, thickness, radius, } =  this.getConstants();
-
     const svg = d3.select(this.donutChart)
       .append('svg')
       .attr('class', 'pie')
@@ -36,25 +34,21 @@ class DonutChart{
 
     this.g = svg.append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
-
     this.arc = d3.arc()
       .innerRadius(radius - thickness)
       .outerRadius(radius);
     this.arc2 = d3.arc()
       .innerRadius(radius - 10)
       .outerRadius(radius);
-
     this.pie = d3.pie()
       .value((d) => d.value)
       .sort(null)
       .padAngle(0.02);
-      
     this.defs = svg.append('svg:defs');
-
     this.data = data;
   }
 
-  onPieClick(d){
+  onPieClick(d) {
     const {data,} = d;
     d3.selectAll('.text-group').remove();
     d3.selectAll('.value-text').remove();
@@ -77,21 +71,19 @@ class DonutChart{
       .attr('dy', '1.3em');
   }
 
-  onPieClickColor(d,i,paths){
+  onPieClickColor(d,i,paths) {
     d3.selectAll('path')
       .attr('d', this.arc);
-
     d3.select(paths[i])
       .attr('d', this.arc2);
   }
 
-  onPieColorMouseOver(){
+  onPieColorMouseOver() {
     d3.select(this)
       .style('cursor', 'pointer');
   }
   
-
-  createPaths(){
+  createPaths() {
     this.g.selectAll('path')
       .data(this.pie(this.data))
       .enter()
@@ -111,12 +103,12 @@ class DonutChart{
       })
       .on('click',  this.onPieClickColor.bind(this))
       .on('mouseover', this.onPieColorMouseOver)
-      .each(function eachColor(i) { this._current = i; });
+      .each(function eachColor (i) { this._current = i; });
 
       this.g.select('path').attr('d', this.arc2);
   }
 
-  setStartText(){
+  setStartText() {
     this.g.append('text')
       .attr('text-anchor', 'middle')
       .attr('dy', '.35em')
@@ -136,7 +128,7 @@ class DonutChart{
       .style('fill', 'url(#gradient1)');
   }
 
-  setGradients(){
+  setGradients() {
     const yellowGradient = this.defs.append('svg:linearGradient')
       .attr('id', 'gradient3')
       .attr('x1', '0%')
@@ -161,12 +153,10 @@ class DonutChart{
       .attr('x2', '0%')
       .attr('y2', '100%')
       .attr('spreadMethod', 'pad');
-
     greenGradient.append('svg:stop')
       .attr('offset', '0%')
       .attr('stop-color', '#6FCF97')
       .attr('stop-opacity', 1);
-
     greenGradient.append('svg:stop')
       .attr('offset', '100%')
       .attr('stop-color', '#66D2EA')
@@ -178,12 +168,10 @@ class DonutChart{
       .attr('x2', '0%')
       .attr('y2', '100%')
       .attr('spreadMethod', 'pad');
-
     purpleGradient.append('svg:stop')
       .attr('offset', '0%')
       .attr('stop-color', '#BC9CFF')
       .attr('stop-opacity', 1);
-
     purpleGradient.append('svg:stop')
       .attr('offset', '100%')
       .attr('stop-color', '#8BA4F9')

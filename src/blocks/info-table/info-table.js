@@ -1,6 +1,6 @@
-class InfoTable{
+class InfoTable {
 
-  constructor(table){
+  constructor(table) {
     this.table = table;
 
     this.bindHTMLElements();
@@ -8,7 +8,7 @@ class InfoTable{
     this.setValuesToTable();
   }
 
-  bindHTMLElements(){
+  bindHTMLElements() {
     this.priceOfRoom = this.table.querySelector('.js-info-table__price-of-room');
     this.numberOfDays = this.table.querySelector('.js-info-table__number-of-days');
     this.summaryPriceOfRooms = this.table.querySelector('.js-info-table__summary-price-of-rooms');
@@ -18,7 +18,7 @@ class InfoTable{
     this.finalPrice = this.table.querySelector('.js-info-table__final-price :first-child');
   }
 
-  getValues(){
+  getValues() {
     this.values = {
       priceOfRoom: '9 990',
       numberOfDays: 4,
@@ -30,7 +30,7 @@ class InfoTable{
     }
   }
 
-  setValuesToTable(){
+  setValuesToTable() {
     const {
       priceOfRoom,
       numberOfDays,
