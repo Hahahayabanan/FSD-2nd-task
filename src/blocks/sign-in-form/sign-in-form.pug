@@ -13,20 +13,17 @@ mixin sign-in-form({ action='/mock-address/change-me', name='registration', meth
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
-          width: 'full-wide',
         })
       .sign-in-form__text-field-password
         +text-field({
           type: 'password',
           name: 'input-email',
           placeholder: 'Пароль',
-          width: 'full-wide',
         })
 
       .sign-in-form__button-long
         +button({
           typeOfStyle: 'long', 
-          href: '/mock-address/change-me', 
           text: 'Войти',
           type: 'submit',
         })

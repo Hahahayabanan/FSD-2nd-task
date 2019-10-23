@@ -48,14 +48,12 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
-          width: 'full-wide',
         })
       .registration-form__text-field-password
         +text-field({
           type: 'password',
           name: 'input-email',
           placeholder: 'Пароль',
-          width: 'full-wide',
         })
 
       .registration-form__toggle-button
@@ -64,7 +62,6 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
       .registration-form__button-long
         +button({
           typeOfStyle: 'long', 
-          href: '/mock-address/change-me', 
           text: 'Перейти к оплате',
           type: 'submit',
         })   
@@ -72,7 +69,7 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
       .registration-form__login
         p.registration-form__login-text Уже есть аккаунт на Toxin
         +button({
-          'typeOfStyle': 'faint', 
-          'href':'/mock-address/change-me', 
-          'text': 'Войти', 
+          typeOfStyle: 'faint', 
+          href:'/mock-address/change-me', 
+          text: 'Войти', 
         })
