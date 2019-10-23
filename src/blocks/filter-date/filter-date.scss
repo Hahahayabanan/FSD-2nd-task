@@ -1,9 +1,14 @@
-.dropdown-filter-date {
-  max-width: 266px;
+.filter-date {
+  max-width: 320px;
   position: relative;
   cursor: pointer;
 
-  &__dropdown-calendar {
+  &__inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__date-picker {
     position: absolute;
     margin-top: 5px;
     transform-origin: 0 0;

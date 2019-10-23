@@ -1,18 +1,18 @@
 include ../heading/heading.pug
-include ../dropdown-date/dropdown-date.pug
+include ../filter-date/filter-date.pug
 include ../dropdown/dropdown.pug
 include ../button/button.pug
 
-mixin form-find-hotel-room({ name='form-find-hotel-room', action='/mock-address/change-me', method='get' } = {})
-  form.form-find-hotel-room(name=name action=action method=method)
-    .form-find-hotel-room__wrapper
-      .form-find-hotel-room__heading
+mixin filter({ name='filter', action='/mock-address/change-me', method='get' } = {})
+  form.filter(name=name action=action method=method)
+    .filter__wrapper
+      .filter__heading
         +heading({ type: 'h1', text: 'Найдём номера под ваши пожелания'})
-      .form-find-hotel-room__dropdown-date
-        +dropdown-date({ firstHeader: 'Прибытие', secondHeader: 'Выезд' })
-      .form-find-hotel-room__dropdown
+      .filter__dropdown-date
+        +filter-date({ firstHeader: 'Прибытие', secondHeader: 'Выезд' })
+      .filter__dropdown
         +heading({ type: 'h3', text: 'Гости' })
-        .form-find-hotel-room__dropdown-container
+        .filter__dropdown-container
          +dropdown({ 
             selectText: 'Сколько гостей',
             hasButtons: true,
@@ -22,7 +22,7 @@ mixin form-find-hotel-room({ name='form-find-hotel-room', action='/mock-address/
               { text: 'младенцы' },
             ]
           })
-      .form-find-hotel-room__button-long
+      .filter__button-long
         +button({
           typeOfStyle: 'long', 
           href: '/mock-address/change-me', 

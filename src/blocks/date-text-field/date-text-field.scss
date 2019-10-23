@@ -1,10 +1,16 @@
-.dropdown-date-item {
+.date-text-field {
 
   &__input {
     max-width: 150px;
     width: 100%;
     position: relative;
     margin-top: 5px;
+
+    &_width {
+      &_wide {
+        max-width: 266px;
+      }
+    }
   }
 
   &__keyboard-arrow {

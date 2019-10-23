@@ -1,6 +1,6 @@
 import 'jquery';
 
-class DropdownCalendar {
+class DatePicker {
   constructor($datepicker) {
     this.$datepicker = $datepicker;
     this.$datepickerHTML = this.$datepicker.$datepicker;
@@ -47,7 +47,7 @@ class DropdownCalendar {
   }
 
 }
-export default DropdownCalendar;
+export default DatePicker;
 
 
 $.fn.datepicker.language.ru =  {

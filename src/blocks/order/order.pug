@@ -1,0 +1,44 @@
+include ../heading/heading.pug
+include ../filter-date/filter-date.pug
+include ../dropdown/dropdown.pug
+include ../button/button.pug
+include ../info-table/info-table.pug
+
+mixin order({ name='order', action='/mock-address/change-me', method='get', currency = '₽', inTime = 'в сутки', typeOfRoom = 'люкс', roomPrice = '9 990', roomNumber = '888' } = {})
+  form.order(name=name action=action method=method)
+    .order__wrapper
+      .order__title
+        p.order__row
+          span.order__no № 
+          span.order__number=roomNumber
+          span.order__type= ' ' + typeOfRoom
+        p.order__row.order__row_price-margin
+          span.order__price=roomPrice
+          span.order__price=currency + ' '
+          span.order__in-time=inTime
+
+      .order__dropdown-date
+        +filter-date({ typeOfInputs: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
+      .order__dropdown
+        +heading({ type: 'h3', text: 'Гости' })
+        .order__dropdown-container
+          +dropdown({ 
+            selectText: 'Сколько гостей',
+            hasButtons: true,
+            options: [
+              { text: 'взрослые', group: 'гости' },
+              { text: 'дети', group: 'гости' },
+              { text: 'младенцы' },
+            ]
+          })
+
+      .order__info-table
+        +info-table({ currency: currency })
+
+      .order__button-long
+        +button({
+          typeOfStyle: 'long', 
+          href: '/mock-address/change-me', 
+          text: 'Забронировать',
+          type: 'submit',
+        })

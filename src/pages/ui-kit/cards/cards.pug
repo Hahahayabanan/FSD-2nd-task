@@ -7,10 +7,10 @@ block variables
 
 block content
   include ../../../blocks/room-preview/room-preview.pug
-  include ../../../blocks/form-sign-in/form-sign-in.pug
-  include ../../../blocks/form-book-a-room/form-book-a-room.pug
-  include ../../../blocks/form-registration/form-registration.pug
-  include ../../../blocks/form-find-hotel-room/form-find-hotel-room.pug
+  include ../../../blocks/sign-in-form/sign-in-form.pug
+  include ../../../blocks/order/order.pug
+  include ../../../blocks/registration-form/registration-form.pug
+  include ../../../blocks/filter/filter.pug
   include ../../../blocks/logo-ui-kit/logo-ui-kit.pug
 
   +logo-ui-kit()
@@ -18,14 +18,14 @@ block content
     .cards__inner
       section.cards__column
         .cards__row
-          +form-find-hotel-room()
+          +filter()
         .cards__row
-          +form-registration()
+          +registration-form()
       section.cards__column
         .cards__row
-          +form-book-a-room()
+          +order()
         .cards__row
-          +form-sign-in()
+          +sign-in-form()
       section.cards__column
         .cards__row
           +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',typeOfRoom:'люкс', isArrows: true})

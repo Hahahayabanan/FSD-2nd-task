@@ -8,8 +8,7 @@ block content
   include ../../../blocks/logo-ui-kit/logo-ui-kit.pug
   include ../../../blocks/text-field/text-field.pug
   include ../../../blocks/dropdown/dropdown.pug
-  include ../../../blocks/dropdown-date/dropdown-date.pug
-  include ../../../blocks/dropdown-filter-date/dropdown-filter-date.pug
+  include ../../../blocks/filter-date/filter-date.pug
   include ../../../blocks/subscription-text-field/subscription-text-field.pug
   include ../../../blocks/checkbox-button/checkbox-button.pug
   include ../../../blocks/radio-button/radio-button.pug
@@ -59,11 +58,11 @@ block content
             theme: 'masked'
           })
         .form-elements__wrapper
-          +dropdown-date({ firstHeader: 'date Dropdown', secondHeader: 'date Dropdown' })
+          +filter-date({ typeOfInputs: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown' })
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'filter date dropdown' })
-          +dropdown-filter-date()
+          +filter-date()
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'subscription text field' })

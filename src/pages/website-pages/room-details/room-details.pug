@@ -11,7 +11,7 @@ block content
   include ../../../blocks/bullet-list/bullet-list.pug
   include ../../../blocks/heading/heading.pug
   include ../../../blocks/donut-chart/donut-chart.pug
-  include ../../../blocks/form-book-a-room/form-book-a-room.pug
+  include ../../../blocks/order/order.pug
 
 
   main.room-details
@@ -58,8 +58,8 @@ block content
                 li.bullet-list__item.bullet-list__item_ok Удовлетворительно
                 li.bullet-list__item.bullet-list__item_bad Разочарован
 
-        section.room-details__form-book-a-room
-          +form-book-a-room()
+        section.room-details__order
+          +order()
 
         section.room-details__reviews
           .room-details__reviews-heading

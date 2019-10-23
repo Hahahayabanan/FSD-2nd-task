@@ -2,20 +2,20 @@ include ../heading/heading.pug
 include ../text-field/text-field.pug
 include ../button/button.pug
 
-mixin form-sign-in({ action='/mock-address/change-me', name='form-registration', method='post' } = {})
-  form.form-sign-in(action=action name=name method=method)
-    .form-sign-in__wrapper
-      .form-sign-in__heading
+mixin sign-in-form({ action='/mock-address/change-me', name='registration', method='post' } = {})
+  form.sign-in-form(action=action name=name method=method)
+    .sign-in-form__wrapper
+      .sign-in-form__heading
         +heading({ type: 'h1', text: 'Войти' })
 
-      .form-sign-in__text-field-email
+      .sign-in-form__text-field-email
         +text-field({
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
           width: 'full-wide',
         })
-      .form-sign-in__text-field-password
+      .sign-in-form__text-field-password
         +text-field({
           type: 'password',
           name: 'input-email',
@@ -23,15 +23,15 @@ mixin form-sign-in({ action='/mock-address/change-me', name='form-registration',
           width: 'full-wide',
         })
 
-      .form-sign-in__button-long
+      .sign-in-form__button-long
         +button({
           typeOfStyle: 'long', 
           href: '/mock-address/change-me', 
           text: 'Войти',
           type: 'submit',
         })
-      .form-sign-in__login
-        p.form-sign-in__login-text Нет аккаунта на Toxin?
+      .sign-in-form__login
+        p.sign-in-form__login-text Нет аккаунта на Toxin?
         +button({
           typeOfStyle: 'faint', 
           href:'/mock-address/change-me', 

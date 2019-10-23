@@ -6,11 +6,11 @@ block variables
 
 block content
   include ../../../blocks/heading/heading.pug
-  include ../../../blocks/form-book-a-room/form-book-a-room.pug
+  include ../../../blocks/order/order.pug
   include ../../../blocks/room-preview/room-preview.pug
   include ../../../blocks/dropdown-checkbox/dropdown-checkbox.pug
   include ../../../blocks/dropdown/dropdown.pug
-  include ../../../blocks/dropdown-filter-date/dropdown-filter-date.pug
+  include ../../../blocks/filter-date/filter-date.pug
   include ../../../blocks/checkbox-button/checkbox-button.pug
   include ../../../blocks/pagination/pagination.pug
   include ../../../blocks/range-slider/range-slider.pug
@@ -23,7 +23,7 @@ block content
           .search-room__filter-date-heading
             +heading({ type: 'h3', text: 'даты пребывания в отеле' })
           .search-room__filter-date
-            +dropdown-filter-date()
+            +filter-date()
         section.search-room__dropdown-guests-container
           .search-room__dropdown-guests-heading
             +heading({ type: 'h3', text: 'Гости' })

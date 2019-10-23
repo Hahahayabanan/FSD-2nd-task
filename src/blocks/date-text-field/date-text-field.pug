@@ -1,0 +1,26 @@
+include ../text-field/text-field.pug
+include ../heading/heading.pug
+include ../material-icons/material-icons.pug
+
+mixin date-text-field({ header = 'date dropdown', type = 'start', placeholder = '', width = '', } = {})
+  - let widthModifier = ''
+
+  case width
+    when 'wide'
+      - widthModifier = 'date-text-field__input_width_wide'
+
+  .date-text-field
+    +heading({ type: 'h3', text: header })
+    .date-text-field__input(class = widthModifier)
+      .date-text-field__keyboard-arrow
+        +material-icons({
+          type: 'keyboard_arrow_down', 
+        })
+      div(class=`date-text-field__input-${type}-date`)
+        +text-field({
+          type: 'text',
+          readonly: 'readonly',
+          theme: 'date-field',
+          cursor: 'pointer',
+          placeholder: placeholder,
+        })

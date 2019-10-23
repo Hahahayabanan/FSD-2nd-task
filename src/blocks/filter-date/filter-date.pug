@@ -1,0 +1,17 @@
+include ../material-icons/material-icons.pug
+include ../text-field/text-field.pug
+include ../date-text-field/date-text-field.pug
+
+
+mixin filter-date({ typeOfInputs = 'single', firstHeader = 'date Dropdown', secondHeader = 'date Dropdown', } = {})
+  section.filter-date.js-filter-date
+    case typeOfInputs
+      when 'single'
+        .filter-date__input
+          +date-text-field({ header: firstHeader, type: 'entire', placeholder: 'ДД.МЕС - ДД.МЕС', width: 'wide', })
+      when 'range'
+        .filter-date__inputs
+          +date-text-field({ header: firstHeader, type: 'start', placeholder: 'ДД.ММ.ГГГГ', })
+          +date-text-field({ header: secondHeader, type: 'end', placeholder: 'ДД.ММ.ГГГГ', })
+
+    
