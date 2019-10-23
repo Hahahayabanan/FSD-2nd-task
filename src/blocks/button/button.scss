@@ -1,16 +1,17 @@
 .button {
   display: block;
-  width: 99px;
-  height: 44px;
-  padding: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 19px;
+  padding-right: 19px;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
   border-radius: 22px;
   border: none;
-  box-sizing: content-box;
+  box-sizing: border-box;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
+  line-height: 44px;
   text-transform: uppercase;
   user-select: none; 
   cursor: pointer;
@@ -36,17 +37,20 @@
     height: calc(100% - 4Px);
     width: calc(100% - 4Px);
     background: #fff;
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 18px;
+    padding-right: 18px;
     border-radius: 22px;
     border: none;
-    box-sizing: content-box;
+    box-sizing: border-box;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 12px;
-    line-height: 15px;
     text-transform: uppercase;
     color: $purple;
     cursor: pointer;
+    white-space: nowrap;
   
     &:focus {
       outline: none;
@@ -57,7 +61,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  
+    height: 44px;
+    width: max-content;
+    padding: 0;
+      
     &:hover {
       background: linear-gradient(180deg, rgba(188, 156, 255, .5) 0%, rgba(139, 164, 249, .5) 100%);
     }
@@ -66,7 +73,6 @@
   &_long {
     width: 100%;
     max-width: 320px;
-    height: 44px;
     color: #fff;
     position: relative;
   
@@ -78,7 +84,9 @@
   &_no-frame {
     background: none;
     color: $purple;
-    max-width: 75px;
+    padding: 0;
+    width: unset;
+    max-width: unset;
     height: auto;
   
     &:hover {
@@ -97,16 +105,11 @@
   &_size {
 
     &_small{
-      width: 79px;
-      height: 34px;
+      line-height: 34px;
     }
     
     &_wide{
-      width: auto;
-      padding-left: 19px;
-      padding-right: 19px;
-      max-width: 196px;
-      height: 34px;
+      line-height: 34px;
     }
   }
 

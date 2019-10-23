@@ -1,10 +1,10 @@
-mixin bullet-list({ values = ['Enter', 'paragraphs', 'here'], ifEmpty = 'There are no values' } = {})
+mixin bullet-list({ values = ['Enter', 'paragraphs', 'here'], reserveText = 'There are no values' } = {})
   section.bullet-list
     ul.bullet-list__list
       each val in values
         li.bullet-list__item=val
       else
-        li.bullet-list__item=ifEmpty
+        li.bullet-list__item=reserveText
 
 
 

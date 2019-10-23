@@ -1,26 +1,26 @@
 mixin material-icons({ type = 'Enter symbol text', color = undefined, size = undefined } = {})
-  - let additionalColor = ''
-  - let additionalSize = ''
+  - let colorModifier = ''
+  - let sizeModifier = ''
 
   case color
     when 'dark-shade-75'
-      - additionalColor = 'material-icons_color_dark-gray'
+      - colorModifier = 'material-icons_color_dark-gray'
     when 'dark-shade-50'
-      - additionalColor = 'material-icons_color_gray'
+      - colorModifier = 'material-icons_color_gray'
     when 'dark-shade-25'
-      - additionalColor = 'material-icons_color_light-gray'
+      - colorModifier = 'material-icons_color_light-gray'
     when 'white'
-      - additionalColor = 'material-icons_color_white'
+      - colorModifier = 'material-icons_color_white'
     when 'purple-gradient'
-      - additionalColor = 'material-icons_color_purple-gradient'
+      - colorModifier = 'material-icons_color_purple-gradient'
 
   case size
     when 'large'
-      - additionalSize = 'material-icons_size_large'
+      - sizeModifier = 'material-icons_size_large'
     when 'small'
-      - additionalSize = 'material-icons_size_small'
+      - sizeModifier = 'material-icons_size_small'
 
-  i.material-icons(class=`${additionalSize} ${additionalColor}`)=type
+  i.material-icons(class=`${sizeModifier} ${colorModifier}`)=type
 
 
 //- *********EXAPMLE**************
