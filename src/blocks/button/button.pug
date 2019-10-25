@@ -2,11 +2,19 @@ include ../material-icons/material-icons.pug
 
 mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'click me', buttonType = '', size = undefined } = {})
   - let sizeModifier = ''
+  - let tagModifier = ''
+  - let typeModifier = ''
   - let isSubmit = false
 
   case buttonType
     when 'submit'
+      - tagModifier = 'button'
+      - typeModifier = 'submit'
       - isSubmit = true
+    when 'button'
+      - tagModifier = 'button'
+    default
+      - tagModifier = 'a'
 
   case size
     when 'small'
@@ -17,30 +25,17 @@ mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'c
   case styleType
     when 'faint'
       .button.button_faint(class=sizeModifier)
-        if isSubmit
-          button(class='button__key' type='submit')=text
-        else 
-          a(href=href class='button__key')=text
+        #{tagModifier}(class='button__key' type=typeModifier href=isSubmit ? undefined : href)=text
     when 'long'
-      if isSubmit
-        button(class='button button_long' class=sizeModifier type='submit')=text
-          .button__arrow
-            +material-icons({
-              type: 'arrow_forward', 
-              color: 'white',
-            })
-      else 
-        a(href=href class='button button_long' class=sizeModifier)=text
-          .button__arrow
-            +material-icons({
-              type: 'arrow_forward', 
-              color: 'white',
-            })
+      #{tagModifier}(class='button button_long' class=sizeModifier type=typeModifier href=isSubmit ? undefined : href)=text
+        .button__arrow
+          +material-icons({
+            type: 'arrow_forward', 
+            color: 'white',
+          })
     default
-      if isSubmit
-        button(class=`button button_${styleType}` class=sizeModifier type='submit')=text
-      else 
-        a(href=href class=`button button_${styleType}` class=sizeModifier)=text
+      #{tagModifier}(class=`button button_${styleType}` class=sizeModifier type=typeModifier href=isSubmit ? undefined : href)=text
+
 
 
 

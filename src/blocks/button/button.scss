@@ -2,10 +2,7 @@
   display: block;
   min-width: 99px;
   min-height: 44px;
-  padding-top: 14px;
-  padding-bottom: 15px;
-  padding-left: 18px;
-  padding-right: 18px;
+  padding: 14px 18px 15px 18px;
   height: max-content;
   width: max-content;
   background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
@@ -43,10 +40,7 @@
     height: 100%;
     width: 100%;
     background: #fff;
-    padding-top: 12px;
-    padding-bottom: 13px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 12px 16px 13px 16px;
     border-radius: 22px;
     border: none;
     box-sizing: border-box;
@@ -105,9 +99,8 @@
     max-width: max-content;
     min-width: max-content;
     height: auto;
-    padding: 0;
-    padding-top: 14px;
-    padding-bottom: 15px;
+    padding-right: 0;
+    padding-left: 0;
     color: $purple;
     box-sizing: border-box;
   
