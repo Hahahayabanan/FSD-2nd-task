@@ -42,7 +42,7 @@ block content
           .form-elements__heading
             +heading({ type: 'h3', text: 'dropdown' })
           +dropdown({ 
-            selectText: 'Сколько гостей',
+            text: 'Сколько гостей',
             hasButtons: true,
             options: [
               { text: 'взрослые', group: 'гости' },
@@ -83,7 +83,7 @@ block content
             +heading({ type: 'h3', text: 'radio button' })
           .form-elements__radio-buttons
             .form-elements__radio-button
-              +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', checked: true })
+              +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', isChecked: true })
             .form-elements__radio-buttons
               +radio-button({ name: 'contact', value: 'woman', text: 'Женщина' })
         .form-elements__wrapper
@@ -93,20 +93,20 @@ block content
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'like button' })
-          +like-button({ number: 2 })
+          +like-button({ likesNumber: 2 })
           .form-elements__like-button
-            +like-button({ number: 12 })
+            +like-button({ likesNumber: 12, isChecked: true })
         .form-elements__wrapper
           .form-elements__heading
             +heading({ type: 'h3', text: 'rate button' })
-          +rate-button({ name: 'rate01', checkNum: 4 })
+          +rate-button({ name: 'rate01', rating: 4 })
           .form-elements__rate-button
-            +rate-button({ name: 'rate02', checkNum: 5 })
+            +rate-button({ name: 'rate02', rating: 5 })
 
       article.form-elements__buttons
         .form-elements__wrapper
           +range-slider({ 
-            headText: 'range slider', 
+            headerText: 'range slider', 
             type: 'double', 
             min: 1000, 
             max: 15000, 
@@ -119,28 +119,28 @@ block content
             +heading({ type: 'h3', text: 'buttons' })
           .form-elements__button
             +button({
-              typeOfStyle: 'simple', 
+              styleType: 'simple', 
               href:'/mock-address/change-me', 
               text: 'click me', 
             })
           .form-elements__button
             +button({
-              typeOfStyle: 'faint', 
+              styleType: 'faint', 
               href:'/mock-address/change-me', 
               text: 'click me', 
             })
           .form-elements__button
             +button({
-              typeOfStyle: 'no-frame', 
+              styleType: 'no-frame', 
               href:'/mock-address/change-me', 
               text: 'click me', 
             })
           .form-elements__button
             +button({
-              typeOfStyle: 'long', 
+              styleType: 'long', 
               href: '/mock-address/change-me', 
               text: 'click me',
-              type: 'submit',
+              buttonType: 'submit',
             })
         .form-elements__wrapper
           .form-elements__heading
@@ -186,14 +186,14 @@ block content
           +icon-text({
             image: 'insert_emoticon', 
             title: 'Комфорт', 
-            descr: 'Шумопоглощающие стены', 
+            description: 'Шумопоглощающие стены', 
             hasUnderline: true
           })
         .form-elements__wrapper
           +icon-text({
             image: 'location_city', 
             title: 'Удобство', 
-            descr: 'Окно в каждой из спален', 
+            description: 'Окно в каждой из спален', 
             hasUnderline: true
           })
 
@@ -227,8 +227,8 @@ block content
       article.form-elements__comments
         .form-elements__wrapper
           +comment({
-            srcAvatar: './img/avatar1.png', 
-            numOfLikes: 11, 
+            avatarSourceLink: './img/avatar1.png', 
+            likesNumber: 11, 
             authorName: 'Мурад Сарафанов', 
             date: '5 дней назад', 
             text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'

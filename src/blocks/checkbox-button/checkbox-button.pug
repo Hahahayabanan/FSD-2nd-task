@@ -1,13 +1,13 @@
 mixin checkbox-button({ name = 'checkbox-button', text = 'check box', description = '' } = {})
-  - let richModifier = ''
+  - let typeModifier = ''
 
   if description !== ''
-    - richModifier = 'checkbox-button_rich'
+    - typeModifier = 'checkbox-button_rich'
 
-  section.checkbox-button(class = richModifier)
+  section.checkbox-button(class=typeModifier)
     label(class='checkbox-button__label')
       input(type='checkbox' name=name class='checkbox-button__input')
-      p.checkbox-button__head-text=text
+      p.checkbox-button__header-text=text
       p.checkbox-button__description=description
 
 

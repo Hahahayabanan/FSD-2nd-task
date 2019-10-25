@@ -1,6 +1,6 @@
 include ../material-icons/material-icons.pug
 
-mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', descr = 'Шумопоглощающие стены', hasUnderline = false } = {})
+mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', description = 'Шумопоглощающие стены', hasUnderline = false } = {})
   section.icon-text
     .icon-text__row
       .icon-text__image
@@ -11,7 +11,7 @@ mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', descr = '
         })
       .icon-text__text-container            
         p.icon-text__title=title
-        p.icon-text__descr=descr
+        p.icon-text__descr=description
     if hasUnderline 
       .icon-text__underline
 
@@ -26,7 +26,7 @@ mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', descr = '
 //- +icon-text({
       image: 'insert_emoticon', 
       title: 'Комфорт', 
-      descr: 'Шумопоглощающие стены', 
+      description: 'Шумопоглощающие стены', 
       hasUnderline: true
     })
 //- 

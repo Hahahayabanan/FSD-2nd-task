@@ -1,10 +1,10 @@
 include ../material-icons/material-icons.pug
 
-mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', text = 'click me', type='', size=undefined } = {})
+mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'click me', buttonType = '', size = undefined } = {})
   - let sizeModifier = ''
   - let isSubmit = false
 
-  case type
+  case buttonType
     when 'submit'
       - isSubmit = true
 
@@ -14,7 +14,7 @@ mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', text = 
     when 'narrow'
       - sizeModifier = 'button_size_narrow'
 
-  case typeOfStyle
+  case styleType
     when 'faint'
       .button.button_faint(class=sizeModifier)
         if isSubmit
@@ -38,9 +38,9 @@ mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', text = 
             })
     default
       if isSubmit
-        button(class=`button button_${typeOfStyle}` class=sizeModifier type='submit')=text
+        button(class=`button button_${styleType}` class=sizeModifier type='submit')=text
       else 
-        a(href=href class=`button button_${typeOfStyle}` class=sizeModifier)=text
+        a(href=href class=`button button_${styleType}` class=sizeModifier)=text
 
 
 
@@ -48,7 +48,7 @@ mixin button({ typeOfStyle = 'simple', href = '/mock-address/change-me', text = 
 //- *** EXAMPLE ***
 //- 
 //- +button({
-    'typeOfStyle': 'long', 
+    'styleType': 'long', 
     href: '/mock-address/change-me', 
     text: 'click me',
     type: 'submit',

@@ -23,13 +23,13 @@ block content
           .search-room__filter-date-heading
             +heading({ type: 'h3', text: 'даты пребывания в отеле' })
           .search-room__filter-date
-            +filter-date()
+            +filter-date({ firstHeader: '' })
         section.search-room__dropdown-guests-container
           .search-room__dropdown-guests-heading
             +heading({ type: 'h3', text: 'Гости' })
           .search-room__dropdown-guests
            +dropdown({ 
-            selectText: 'Сколько гостей',
+            text: 'Сколько гостей',
             hasButtons: true,
             options: [
               { text: 'взрослые', group: 'гости' },
@@ -39,7 +39,7 @@ block content
           })
         section.search-room__range-slider
           +range-slider({ 
-            headText: 'диапазон цены', 
+            headerText: 'диапазон цены', 
             type: 'double', 
             min: 1000, 
             max: 15000, 
@@ -103,7 +103,7 @@ block content
       header.search-room__title
         +heading({ type: 'h1', text: 'Номера, которые мы для вас подобрали' })
       .search-room__elements
-        +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',typeOfRoom: 'люкс', isArrows: true})
+        +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',typeOfRoom: 'люкс', hasArrows: true})
         +room-preview({number: '840',src: 'img/room840.jpg',price: '9 900',name: 'room840',rate: 4,reviews: '65',})
         +room-preview({number: '980',src: 'img/room980.jpg',price: '8 500',name: 'room980',rate: 3,reviews: '19',typeOfRoom: 'люкс'})
         +room-preview({number: '856',src: 'img/room856.jpg',price: '7 300',name: 'room856',rate: 5,reviews: '19',})

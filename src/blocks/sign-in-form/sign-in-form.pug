@@ -8,13 +8,13 @@ mixin sign-in-form({ action='/mock-address/change-me', name='registration', meth
       .sign-in-form__heading
         +heading({ type: 'h1', text: 'Войти' })
 
-      .sign-in-form__text-field-email
+      .sign-in-form__email
         +text-field({
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
         })
-      .sign-in-form__text-field-password
+      .sign-in-form__password
         +text-field({
           type: 'password',
           name: 'input-email',
@@ -23,14 +23,14 @@ mixin sign-in-form({ action='/mock-address/change-me', name='registration', meth
 
       .sign-in-form__button-long
         +button({
-          typeOfStyle: 'long', 
+          styleType: 'long', 
           text: 'Войти',
-          type: 'submit',
+          buttonType: 'submit',
         })
       .sign-in-form__login
         p.sign-in-form__login-text Нет аккаунта на Toxin?
         +button({
-          typeOfStyle: 'faint', 
+          styleType: 'faint', 
           href:'/mock-address/change-me', 
           text: 'Создать', 
         })

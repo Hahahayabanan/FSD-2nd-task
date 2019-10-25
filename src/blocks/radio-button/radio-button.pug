@@ -1,7 +1,7 @@
-mixin radio-button({ name = 'radio-button' , value = '', text = 'radio-button', checked = undefined } = {})
+mixin radio-button({ name = 'radio-button' , value = '', text = 'radio-button', isChecked = false } = {})
   .radio-button
     label(class='radio-button__label')
-      input(type='radio' name=name value=value class='radio-button__input' checked= checked ? 'checked' : checked)
+      input(type='radio' name=name value=value class='radio-button__input' checked= isChecked ? 'checked' : '')
       p.radio-button__text=text
 
 //- ***************

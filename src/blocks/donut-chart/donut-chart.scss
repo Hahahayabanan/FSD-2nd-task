@@ -2,13 +2,12 @@
   display: inline-block;
   width: 121px;
   height: 121px;
-}
 
-.pie {
-  margin: 20px;
-  user-select: none;
+  &__pie {
+    user-select: none;
+  }
 
-  & .name-text {
+  &__text {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 12px;
     font-weight: bold;
@@ -16,7 +15,7 @@
     text-transform: uppercase;
   }
 
-  & .value-text {
+  &__value {
     font-family: 'Quicksand', 'Open Sans', Arial, Helvetica, sans-serif;
     font-size: 24px;
     font-style: normal;
@@ -24,8 +23,4 @@
     line-height: 30px;
     text-transform: uppercase;
   }
-}
-
-svg.pie {
-  margin: 0;
 }

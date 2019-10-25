@@ -15,7 +15,7 @@ class DropdownCheckBox {
   bindEventListeners(options) {
     const { dropdownOption, materialIcons, dropdownSelect, } = options;
     dropdownSelect.addEventListener('click', () => {
-      dropdownOption.classList.toggle('dropdown-checkbox__option_unvisible');
+      dropdownOption.classList.toggle('dropdown-checkbox__option_invisible');
       materialIcons.innerHTML = materialIcons.innerHTML === 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
     });
   }

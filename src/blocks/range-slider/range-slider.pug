@@ -1,20 +1,20 @@
 include ../heading/heading.pug
 
-mixin range-slider({ headText = '', type = 'double', min = 0, max = 100, step = 1, from = 10, to = 20, hideMinMax = true, hideFromTo = true, } = {})
+mixin range-slider({ headerText = '', type = 'double', min = 0, max = 100, step = 1, from = 10, to = 20, isMinMaxHidden = true, isFromToHidden = true, } = {})
   section.range-slider
     .range-slider__header
       .range-slider__label
-        +heading({ type: 'h3', text: headText })
+        +heading({ type: 'h3', text: headerText })
       input(type='text' readonly class='range-slider__price js-range-slider__price')
     .range-slider__inner
-      input.range-slider__slider.js-range-slider__slider( data-type=`${type}` data-min=`${min}` data-max=`${max}` data-step=`${step}` data-from=`${from}` data-to=`${to}` data-hide-min-max=`${hideMinMax}` data-hide-from-to=`${hideFromTo}`)
+      input.range-slider__slider.js-range-slider__slider( data-type=`${type}` data-min=`${min}` data-max=`${max}` data-step=`${step}` data-from=`${from}` data-to=`${to}` data-hide-min-max=`${isMinMaxHidden}` data-hide-from-to=`${isFromToHidden}`)
 
 
 //- ***************
 //- *** EXAMPLE ***
 //- 
 //- +range-slider({ 
-      headText: 'range slider', 
+      headerText: 'range slider', 
       type: 'double', 
       min: 1000, 
       max: 15000, 

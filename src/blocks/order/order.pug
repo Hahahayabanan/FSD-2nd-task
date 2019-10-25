@@ -18,12 +18,12 @@ mixin order({ name='order', action='/mock-address/change-me', method='get', curr
           span.order__in-time=inTime
 
       .order__dropdown-date
-        +filter-date({ typeOfInputs: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
+        +filter-date({ inputFieldType: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
       .order__dropdown
         +heading({ type: 'h3', text: 'Гости' })
         .order__dropdown-container
           +dropdown({ 
-            selectText: 'Сколько гостей',
+            text: 'Сколько гостей',
             hasButtons: true,
             options: [
               { text: 'взрослые', group: 'гости' },
@@ -37,7 +37,7 @@ mixin order({ name='order', action='/mock-address/change-me', method='get', curr
 
       .order__button-long
         +button({
-          typeOfStyle: 'long', 
+          styleType: 'long', 
           text: 'Забронировать',
-          type: 'submit',
+          buttonType: 'submit',
         })

@@ -9,12 +9,12 @@ mixin filter({ name='filter', action='/mock-address/change-me', method='get' } =
       .filter__heading
         +heading({ type: 'h1', text: 'Найдём номера под ваши пожелания'})
       .filter__dropdown-date
-        +filter-date({ typeOfInputs: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
+        +filter-date({ inputFieldType: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
       .filter__dropdown
         +heading({ type: 'h3', text: 'Гости' })
         .filter__dropdown-container
          +dropdown({ 
-            selectText: 'Сколько гостей',
+            text: 'Сколько гостей',
             hasButtons: true,
             options: [
               { text: 'взрослые', group: 'гости' },
@@ -24,8 +24,8 @@ mixin filter({ name='filter', action='/mock-address/change-me', method='get' } =
           })
       .filter__button-long
         +button({
-          typeOfStyle: 'long', 
+          styleType: 'long', 
           href: '/mock-address/change-me', 
           text: 'Подобрать номер',
-          type: 'submit',
+          buttonType: 'submit',
         })

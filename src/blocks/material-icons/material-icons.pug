@@ -3,12 +3,12 @@ mixin material-icons({ type = 'Enter symbol text', color = undefined, size = und
   - let sizeModifier = ''
 
   case color
-    when 'dark-shade-75'
-      - colorModifier = 'material-icons_color_dark-gray'
-    when 'dark-shade-50'
-      - colorModifier = 'material-icons_color_gray'
-    when 'dark-shade-25'
-      - colorModifier = 'material-icons_color_light-gray'
+    when 'dark-shade'
+      - colorModifier = 'material-icons_color_dark-shade'
+    when 'shade'
+      - colorModifier = 'material-icons_color_shade'
+    when 'light-shade'
+      - colorModifier = 'material-icons_color_light-shade'
     when 'white'
       - colorModifier = 'material-icons_color_white'
     when 'purple-gradient'
@@ -23,7 +23,7 @@ mixin material-icons({ type = 'Enter symbol text', color = undefined, size = und
   i.material-icons(class=`${sizeModifier} ${colorModifier}`)=type
 
 
-//- *********EXAPMLE**************
+//- *********EXAMPLE**************
 //- 
 //- +material-icons({
       type: 'keyboard_arrow_down', 

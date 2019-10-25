@@ -4,15 +4,12 @@ mixin list-of-links({ links = [] } = {})
   
   ul.list-of-links
     each link in links
-      - const dropdownClass = link.isDropdown ? 'list-of-links__item_dropdown' : ''
-      - const activeClass = link.isActive ? 'list-of-links__link_active' : ''
-
-      li.list-of-links__item(class=dropdownClass)
+      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_dropdown' : '')
         if link.href === undefined
-            - link.href = '/mock-address/change-me'
+          - link.href = '/mock-address/change-me'
         if link.text === undefined
           - link.text = 'click me'
-        a.list-of-links__link(href=link.href class=activeClass)=link.text
+        a.list-of-links__link(href=link.href class=link.isActive ? 'list-of-links__link_active' : '')=link.text
         if link.isDropdown
           .list-of-links__arrow-down
             +material-icons({

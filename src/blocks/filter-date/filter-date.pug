@@ -3,9 +3,9 @@ include ../text-field/text-field.pug
 include ../date-text-field/date-text-field.pug
 
 
-mixin filter-date({ typeOfInputs = 'single', firstHeader = 'date Dropdown', secondHeader = 'date Dropdown', } = {})
+mixin filter-date({ inputFieldType = 'single', firstHeader = 'date Dropdown', secondHeader = 'date Dropdown', } = {})
   section.filter-date.js-filter-date
-    case typeOfInputs
+    case inputFieldType
       when 'single'
         .filter-date__input
           +date-text-field({ header: firstHeader, type: 'entire', placeholder: 'ДД.МЕС - ДД.МЕС', width: 'wide', })

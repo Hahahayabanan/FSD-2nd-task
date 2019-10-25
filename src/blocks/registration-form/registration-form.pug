@@ -10,14 +10,14 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
       .registration-form__heading
         +heading({ type: 'h1', text: 'Регистрация аккаунта' })
 
-      .registration-form__text-field-first-name
+      .registration-form__first-name
         +text-field({
           type: 'text',
           name: 'input-email',
           placeholder: 'Имя',
           width: 'full-wide',
         })
-      .registration-form__text-field-second-name
+      .registration-form__second-name
         +text-field({
           type: 'text',
           name: 'input-email',
@@ -27,29 +27,29 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
 
       .registration-form__radio-buttons
         .registration-form__radio-button
-          +radio-button({ name:'registration-form', value:'man', text:'Мужчина', checked:'true' })
+          +radio-button({ name:'registration-form', value:'man', text:'Мужчина', isChecked:'true' })
         .registration-form__radio-button
           +radio-button({ name:'registration-form', value:'woman', text:'Женщина' })
 
-      .registration-form__heading-birthday
+      .registration-form__birthday-heading
         +heading({ type: 'h3', text: 'Дата рождения' })
       
-      .registration-form__masked-text-field-birthday
+      .registration-form__birthday
         +text-field({
           placeholder: 'ДД.ММ.ГГГГ',
           theme: 'masked'
         })
 
-      .registration-form__heading-login-data
+      .registration-form__login-data-heading
         +heading({ type: 'h3', text: 'Данные для входа в сервис' })
 
-      .registration-form__text-field-email
+      .registration-form__email
         +text-field({
           type: 'email',
           name: 'input-email',
           placeholder: 'Email',
         })
-      .registration-form__text-field-password
+      .registration-form__password
         +text-field({
           type: 'password',
           name: 'input-email',
@@ -61,7 +61,7 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
 
       .registration-form__button-long
         +button({
-          typeOfStyle: 'long', 
+          styleType: 'long', 
           text: 'Перейти к оплате',
           type: 'submit',
         })   
@@ -69,7 +69,7 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
       .registration-form__login
         p.registration-form__login-text Уже есть аккаунт на Toxin
         +button({
-          typeOfStyle: 'faint', 
+          styleType: 'faint', 
           href:'/mock-address/change-me', 
           text: 'Войти', 
         })

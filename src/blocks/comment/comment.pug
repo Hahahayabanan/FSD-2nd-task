@@ -1,11 +1,11 @@
 include ../like-button/like-button.pug
 
-mixin comment({ srcAvatar = './img/avatar1.png', numOfLikes = 5, authorName = 'Имя пользователя', date = 'сегодня', text = 'Отзыв' } = {})
+mixin comment({ avatarSourceLink = './img/avatar1.png', likesNumber = 5, authorName = 'Имя пользователя', date = 'сегодня', text = 'Отзыв' } = {})
   section.comment
     .comment__avatar-like-container
-      img(class='comment__avatar' src=srcAvatar)
+      img(class='comment__avatar' src=avatarSourceLink)
       .comment__like-button
-        +like-button({ number: numOfLikes })
+        +like-button({ likesNumber: likesNumber })
     .comment__body-container
       .comment__name=authorName
       .comment__date=date
@@ -20,8 +20,8 @@ mixin comment({ srcAvatar = './img/avatar1.png', numOfLikes = 5, authorName = '�
 //- *** EXAMPLE ***
 //-  
 //- +comment({
-      srcAvatar: './img/avatar1.png', 
-      numOfLikes: 11, 
+      avatarSourceLink: './img/avatar1.png', 
+      likesNumber: 11, 
       authorName: 'Мурад Сарафанов', 
       date: '5 дней назад', 
       text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'

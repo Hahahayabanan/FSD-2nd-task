@@ -1,8 +1,8 @@
 include ../material-icons/material-icons.pug
 
-mixin like-button({ number = 0, isChecked = false } = {})
-  if number < 0
-    - number = 0
+mixin like-button({ likesNumber = 0, isChecked = false } = {})
+  if likesNumber < 0
+    - likesNumber = 0
   .like-button(data-stage = `${isChecked}`)
     .like-button__heart
       +material-icons({
@@ -10,7 +10,7 @@ mixin like-button({ number = 0, isChecked = false } = {})
         color: 'light shade',
         size: 'small'
       })
-    span.like-button__label=number
+    span.like-button__label=likesNumber
 
 
 //- ***************

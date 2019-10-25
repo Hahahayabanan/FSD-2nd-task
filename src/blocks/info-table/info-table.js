@@ -14,7 +14,7 @@ class InfoTable {
     this.summaryPriceOfRooms = this.table.querySelector('.js-info-table__summary-price-of-rooms');
     this.numberOfDiscount = this.table.querySelector('.js-info-table__number-of-discount');
     this.priceOfService = this.table.querySelector('.js-info-table__price-of-service');
-    this.advancedServicesPrice = this.table.querySelector('.js-info-table__advanced-services-price');
+    this.priceOfAdditionalServices = this.table.querySelector('.js-info-table__price-of-additional-services');
     this.finalPrice = this.table.querySelector('.js-info-table__final-price :first-child');
   }
 
@@ -25,7 +25,7 @@ class InfoTable {
       summaryPriceOfRooms: '39 960',
       numberOfDiscount: '2 179',
       priceOfService: 0,
-      advancedServicesPrice: 300,
+      priceOfAdditionalServices: 300,
       finalPrice: '38 081',
     }
   }
@@ -37,7 +37,7 @@ class InfoTable {
       summaryPriceOfRooms,
       numberOfDiscount,
       priceOfService,
-      advancedServicesPrice,
+      priceOfAdditionalServices,
       finalPrice,
   } = this.values;
 
@@ -46,7 +46,7 @@ class InfoTable {
     this.summaryPriceOfRooms.textContent = summaryPriceOfRooms;
     this.numberOfDiscount.textContent = numberOfDiscount;
     this.priceOfService.textContent = priceOfService;
-    this.advancedServicesPrice.textContent = advancedServicesPrice;
+    this.priceOfAdditionalServices.textContent = priceOfAdditionalServices;
     this.finalPrice.textContent = finalPrice;
   }
 

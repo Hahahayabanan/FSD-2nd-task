@@ -28,7 +28,7 @@ class DonutChart {
     const { data, width, height, thickness, radius, } =  this.getConstants();
     const svg = d3.select(this.donutChart)
       .append('svg')
-      .attr('class', 'pie')
+      .attr('class', 'donut-chart__pie')
       .attr('width', width)
       .attr('height', height);
 
@@ -57,15 +57,15 @@ class DonutChart {
     const g = d3.select(this)
       .style('cursor', 'pointer')
       .append('g')
-      .attr('class', 'text-group');
+      .attr('class', 'donut-chart__text-group');
 
     g.append('text')
-      .attr('class', 'value-text')
+      .attr('class', 'donut-chart__value')
       .text(`${data.value}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '-0.1em');
     g.append('text')
-      .attr('class', 'name-text')
+      .attr('class', 'donut-chart__text')
       .text(`${data.name}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '1.3em');
@@ -115,13 +115,13 @@ class DonutChart {
       .text('');
 
     this.g.append('text')
-      .attr('class', 'value-text')
+      .attr('class', 'donut-chart__value')
       .text(`${this.data[0].value}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '-0.1em')
       .style('fill', 'url(#gradient1)');
     this.g.append('text')
-      .attr('class', 'name-text')
+      .attr('class', 'donut-chart__text')
       .text('голосов')
       .attr('text-anchor', 'middle')
       .attr('dy', '1.3em')

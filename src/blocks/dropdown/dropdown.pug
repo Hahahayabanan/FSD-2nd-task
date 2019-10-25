@@ -2,7 +2,7 @@ include ../dropdown-option/dropdown-option.pug
 include ../option-button/option-button.pug
 include ../material-icons/material-icons.pug
 
-mixin dropdown({ selectText = '', options = [], hasButtons = false, width = undefined } = {})
+mixin dropdown({ text = '', options = [], hasButtons = false, width = undefined } = {})
   - let widthModifier = ''
   case width
     when 'short'
@@ -15,7 +15,7 @@ mixin dropdown({ selectText = '', options = [], hasButtons = false, width = unde
         color: 'dark shade',
       })
     .dropdown__select
-      span.dropdown__select-text=selectText
+      span.dropdown__select-text=text
     .dropdown__options
       each option in options
         .dropdown__option
@@ -28,7 +28,7 @@ mixin dropdown({ selectText = '', options = [], hasButtons = false, width = unde
 
 //- 
 //- +dropdown({ 
-//-   selectText: 'Сколько гостей',
+//-   text: 'Сколько гостей',
 //-   hasButtons: true,
 //-   options: [
 //-     { text: 'взрослые', group: 'гости' },
