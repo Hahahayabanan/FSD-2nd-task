@@ -20,12 +20,12 @@
     &_circle {
       width: 30px;
       height: 30px;
-      border: 1px solid $dark-shade-25;
+      border: 1px solid $light-shade;
       box-sizing: border-box;
       border-radius: 22px;
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       font-size: 18px;
-      color: $dark-shade-25;
+      color: $light-shade;
       cursor: pointer;
     }
 
@@ -39,7 +39,7 @@
       font-size: 12px;
       text-align: center;
       text-transform: uppercase;
-      color: $dark-shade-100;
+      color: $darkest-shade;
     }
 
     &_un-active {

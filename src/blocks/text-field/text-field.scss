@@ -8,23 +8,23 @@
   padding-top: 0;
   padding-bottom: 0;
   background: #FFFFFF;
-  border: 1px solid $dark-shade-25;
+  border: 1px solid $light-shade;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Montserrat', Arial, Helvetica, sans-serif;
   font-size: 14px;
   line-height: 18px;
-  color: $dark-shade-25;
+  color: $light-shade;
 
   &:focus, 
   &:hover {
-    border: 1px solid $dark-shade-50;
-    color: $dark-shade-75;
+    border: 1px solid $shade;
+    color: $dark-shade;
     outline: none;
   }
 
   &::placeholder {
-    color: $dark-shade-25;
+    color: $light-shade;
   }
 
   &_masked {
@@ -34,36 +34,36 @@
     padding-top: 0;
     padding-bottom: 0;
     background: #FFFFFF;
-    border: 1px solid $dark-shade-25;
+    border: 1px solid $light-shade;
     border-radius: 4px;
     box-sizing: border-box;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 14px;
     line-height: 18px;
-    color: $dark-shade-25;
+    color: $light-shade;
   
     &:focus, 
     &:hover {
-      border: 1px solid $dark-shade-50;
-      color: $dark-shade-75;
+      border: 1px solid $shade;
+      color: $dark-shade;
       outline: none;
     }
   
     &::placeholder {
-      color: $dark-shade-25;
+      color: $light-shade;
     }
   }
 
   &_dark-placeholder {
-    color: $dark-shade-75;
+    color: $dark-shade;
   
     &::placeholder {
-      color: $dark-shade-75;
+      color: $dark-shade;
     }
   
     &:focus, 
     &:hover {
-      border: 1px solid $dark-shade-25;
+      border: 1px solid $light-shade;
     }
   }
 

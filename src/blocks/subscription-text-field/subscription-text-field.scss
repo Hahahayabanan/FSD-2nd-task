@@ -25,22 +25,22 @@
     padding-top: 0;
     padding-bottom: 0;
     background: #FFFFFF;
-    border: 1px solid $dark-shade-25;
+    border: 1px solid $light-shade;
     box-sizing: border-box;
     border-radius: 4px;
     line-height: 129%; // 18px
-    color: $dark-shade-25;
+    color: $light-shade;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
   
     &:focus, &:hover {
-      border: 1px solid $dark-shade-50;
-      color: $dark-shade-75;
+      border: 1px solid $shade;
+      color: $dark-shade;
       outline: none;
     }
     
     &::placeholder {
-      color: $dark-shade-25;
+      color: $light-shade;
     }
   }
 }

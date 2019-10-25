@@ -12,7 +12,7 @@
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
-    color: $dark-shade-50;
+    color: $shade;
     cursor: pointer;
   }
 
@@ -46,7 +46,7 @@
       width: 20px;
       height: 20px;
       background-color: #FFFFFF;
-      border: 1px solid $dark-shade-25;
+      border: 1px solid $light-shade;
       border-radius: 4px;
       box-sizing: border-box;
       vertical-align: middle;
@@ -66,7 +66,7 @@
       font-size: 14px;
       line-height: 18px;
       font-weight: bold;
-      color: $dark-shade-75;
+      color: $dark-shade;
       cursor: pointer;
     }
 
@@ -77,7 +77,7 @@
       font-size: 12px;
       font-weight: normal;
       line-height: 14px;
-      color: $dark-shade-50;
+      color: $shade;
       cursor: pointer;
     }
   }

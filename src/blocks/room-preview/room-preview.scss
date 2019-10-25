@@ -2,7 +2,7 @@
   width: 270px;
   height: 257px;
   background: #FFFFFF;
-  box-shadow: 0px 10px 20px $dark-shade-5;
+  box-shadow: 0px 10px 20px $lightest-shade;
   border-radius: 4px;
   position: relative;
 
@@ -39,7 +39,7 @@
     font-weight: normal;
     font-size: 12px;
     line-height: 18px;
-    color: $dark-shade-50;
+    color: $shade;
   }
 
   &__underline {
@@ -68,7 +68,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 17px;
-    color: $dark-shade-100;
+    color: $darkest-shade;
   }
 
   &__number {
@@ -77,7 +77,7 @@
     font-weight: bold;
     font-size: 19px;
     line-height: 17px;
-    color: $dark-shade-100;
+    color: $darkest-shade;
   }
 
   &__price {
@@ -86,7 +86,7 @@
     font-weight: bold;
     font-size: 14px;
     line-height: 18px;
-    color: $dark-shade-50;
+    color: $shade;
   }
 
   &__rate-button {
@@ -100,7 +100,7 @@
     font-size: 14px;
     line-height: 18px;
     text-align: right;
-    color: $dark-shade-50;
+    color: $shade;
   }
 
   &__reviews-rev {
@@ -110,7 +110,7 @@
     font-size: 14px;
     line-height: 18px;
     text-align: right;
-    color: $dark-shade-50;
+    color: $shade;
   }
 
   &__row {

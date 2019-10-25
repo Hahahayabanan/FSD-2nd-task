@@ -25,7 +25,7 @@ class LikeButton {
   changeStage() {
     this.element.classList.toggle('like-button_active');
 
-    this.materialIcon.classList.toggle('material-icons_color_light-gray');
+    this.materialIcon.classList.toggle('material-icons_color_light-shade');
     this.materialIcon.classList.toggle('material-icons_color_purple');
     if (this.materialIcon.className.includes('material-icons_color_purple')) {
       this.materialIcon.textContent = 'favorite'
@@ -41,7 +41,7 @@ class LikeButton {
 
   setActive() {
     this.element.classList.add('like-button_active');
-    this.materialIcon.classList.remove('material-icons_color_light-gray');
+    this.materialIcon.classList.remove('material-icons_color_light-shade');
     this.materialIcon.classList.add('material-icons_color_purple');
     this.materialIcon.textContent = 'favorite'
     this.likeBtnLabel.classList.add('like-button__label_active');
@@ -49,7 +49,7 @@ class LikeButton {
 
   setUnActive() {
     this.element.classList.remove('like-button_active');
-    this.materialIcon.classList.add('material-icons_color_light-gray');
+    this.materialIcon.classList.add('material-icons_color_light-shade');
     this.materialIcon.classList.remove('material-icons_color_purple');
     this.materialIcon.textContent = 'favorite_border'
     this.likeBtnLabel.classList.remove('like-button__label_active');

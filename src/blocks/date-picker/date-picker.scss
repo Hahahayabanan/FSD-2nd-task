@@ -29,7 +29,7 @@
       font-size: 19px;
       line-height: 24px;
       text-align: center;
-      color: $dark-shade-100;
+      color: $darkest-shade;
 
       i {
         color: inherit;
@@ -63,12 +63,12 @@
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 12px;
     line-height: 15px;
-    color: $dark-shade-50;
+    color: $shade;
     border: none;
     background: none;
 
     &.-other-month- {
-      color: $dark-shade-25;
+      color: $light-shade;
     }
 
     &.-current- {
@@ -85,7 +85,7 @@
     }
 
     &.-in-range- {
-      color: $dark-shade-50;
+      color: $shade;
 
       &::after {
         content: '';
@@ -159,7 +159,7 @@
     text-transform: uppercase;
     user-select: none; 
     cursor: pointer;
-    color: $dark-shade-50;
+    color: $shade;
 
     &:hover {
       background: none;

@@ -43,14 +43,14 @@
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 0;
-    color: $dark-shade-50;
+    color: $shade;
     position: relative;
     text-decoration: none;
 
     &_active {
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       font-weight: bold;
-      color: $dark-shade-75;
+      color: $dark-shade;
     }
   }
 

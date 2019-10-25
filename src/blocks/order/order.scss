@@ -29,7 +29,7 @@
   &__in-time {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: $dark-shade-50;
+    color: $shade;
   }  
 
   &__info-table {
@@ -40,21 +40,21 @@
     font-family: 'Quicksand', 'Open Sans', Arial, sans-serif;
     font-weight: bold;
     font-size: 13px;
-    color: $dark-shade-100;
+    color: $darkest-shade;
   }
 
   &__number {
     font-family: 'Quicksand', 'Open Sans', Arial, sans-serif;
     font-weight: bold;
     font-size: 24px;
-    color: $dark-shade-100;
+    color: $darkest-shade;
   }
 
   &__price {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
-    color: $dark-shade-50;
+    color: $shade;
   }
 
   &__row {

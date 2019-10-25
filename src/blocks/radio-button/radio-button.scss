@@ -20,7 +20,7 @@
       width: 20px;
       height: 20px;
       background-color: #FFFFFF;
-      border: 1px solid $dark-shade-25;
+      border: 1px solid $light-shade;
       box-sizing: border-box;
       border-radius: 50%;
       cursor: pointer;
@@ -55,7 +55,7 @@
       }
 
       + .radio-button__text {
-        color: $dark-shade-75;
+        color: $dark-shade;
       }
     }
   }
@@ -70,7 +70,7 @@
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 14px;
     line-height: 24px;
-    color: $dark-shade-50;
+    color: $shade;
     cursor: pointer;
   }
 }
