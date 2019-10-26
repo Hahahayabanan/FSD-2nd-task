@@ -1,8 +1,8 @@
 .list-of-links{
-  padding: 0;
-  margin: 0;
   display: flex;
   height: 100%;
+  margin: 0;
+  padding: 0;
   align-items: center;
   
   @media (max-width: 804px) {
@@ -16,11 +16,15 @@
     display: inline;
     margin-right: 20px;
 
+    &:last-of-type {
+      margin-right: 0;
+    }
+
     @media (max-width: 804px) {
       display: block;
+      margin-top: 5px;
       margin-right: 0;
       text-align: center;
-      margin-top: 5px;
     }
     
     @media (min-width:804px) and (max-width: 880px) {
@@ -31,7 +35,6 @@
       display: flex;
       align-items: center;
       margin-right: 19px;
-      margin-top: -2px;
     
       @media (max-width: 804px) {
         margin-right: 0;
@@ -42,7 +45,7 @@
   &__link {
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 0;
+    line-height: 24px;
     color: $shade;
     position: relative;
     text-decoration: none;
@@ -57,7 +60,7 @@
   &__arrow-down {
     display: flex;
     align-items: flex-end;
-    margin-top: 5px;
+    margin-top: 3px;
     cursor: pointer;
   }
 }

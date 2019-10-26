@@ -17,46 +17,47 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $shade;
-    margin-top: -2px;
   }
 
   &__label {
     margin: 0;
     white-space: nowrap;
   }
-}
 
-span.irs.irs--flat {
+  span.irs.irs--flat {
   
-  .irs-line {
-    max-width: 266px;
-    width: 100%;
-    height: 6px;
-    background: #FFFFFF;
-    border: 1px solid $light-shade;
-    box-sizing: border-box;
-    border-radius: 3px;
-  }
-
-  .irs-handle {
-    width: 14Px;
-    height: 14Px;
-    margin-top: -1px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border: 2px solid #FFFFFF;
-    border-radius: 50%;
-    box-sizing: border-box;
-    outline: none;
-    cursor: pointer;
-
-    i {
-      display: none;
+    .irs-line {
+      max-width: 266px;
+      width: 100%;
+      height: 6px;
+      background: #FFFFFF;
+      border: 1px solid $light-shade;
+      box-sizing: border-box;
+      border-radius: 3px;
+    }
+  
+    .irs-handle {
+      width: 14Px;
+      height: 14Px;
+      margin-top: -1px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border: 2px solid #FFFFFF;
+      border-radius: 50%;
+      box-sizing: border-box;
+      outline: none;
+      cursor: pointer;
+  
+      i {
+        display: none;
+      }
+    }
+  
+    .irs-bar {
+      height: 6px;
+      background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      border-radius: 3px;
     }
   }
-
-  .irs-bar {
-    height: 6px;
-    background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
-    border-radius: 3px;
-  }
 }
+
+

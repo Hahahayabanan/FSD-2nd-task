@@ -1,39 +1,37 @@
 .like-button {
   display: inline-block;
   position: relative;
-  // height: 20px;
   width: max-content;
   min-width: 40px;
-  padding-right: 10px;
-  padding-left: 20px;
+  padding-right: 4px;
+  padding-left: 4px;
+  padding-bottom: 1px;
   background: #FFFFFF;
   border: 1px solid $light-shade;
   border-radius: 10px;
   box-sizing: border-box;
   font-size: 10px;   
-  cursor: pointer;
+  line-height: 16px;
   user-select: none;
+  white-space: nowrap;
+  cursor: pointer;
 
   &__heart {
-    display: inline-block;
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    vertical-align: middle;
   }
 
   &__label {
-    width: 100%;
-    height: 100%;
+    display: inline-block;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 10px;
-    line-height: 18px;
     color: $light-shade;
-    transform: translateY(-50%);
+    padding-left: 6px;
     pointer-events: none;
+    vertical-align: middle;
 
     &_active {
       color: $purple;
@@ -43,7 +41,6 @@
   &_active {
     border: 1px solid $purple;
   }
-  
 }
 
 

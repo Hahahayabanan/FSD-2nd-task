@@ -13,9 +13,9 @@
   }
 
   &__avatar-like-container {
-    max-width: 48px;
     display: flex;
     flex-direction: column;
+    max-width: 48px;
   }
 
   &__body-container {
@@ -25,10 +25,10 @@
   }
 
   &__date {
+    margin-top: 3px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     color: $dark-shade;
-    margin-top: 3px;
   }
 
   &__like-button {
@@ -46,10 +46,10 @@
   }
 
   &__text {
+    margin-top: 13px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 24px;
     color: $dark-shade;
-    margin-top: 13px;
   }
 }

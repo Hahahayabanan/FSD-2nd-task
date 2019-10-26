@@ -1,7 +1,6 @@
 .color-block{
   display: flex;
-  height: 70px;
-  width: 270px;
+  max-width: 270px;
 
   &__rect {
     width: 70px;

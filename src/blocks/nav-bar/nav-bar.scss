@@ -48,6 +48,10 @@
     }
   }
 
+  &__list {
+    margin-right: 30px;
+  }
+
   &__register {
   
     @media (max-width: 804px) {
@@ -56,11 +60,10 @@
   }
 
   &__user-name {
+    margin-left: 30px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
-    line-height: 0;
     color: $shade;
-    margin-left: 30px;
     
     @media (max-width: 804px) {
       margin-left: 0;

@@ -1,19 +1,19 @@
 .colors-and-type {
-  max-width: 1440px;
-  max-height: 900px;
-  min-width: 1029px;
-  padding: 5px 5px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 
   &__container {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1440px;
+    max-height: 900px;
+    min-width: 1029px;
+    padding: 5px 5px;
+    box-sizing: border-box;
   }
 
   &__colors {
@@ -82,6 +82,12 @@
     font-size: rem(14px);
     line-height: 24px;
     color: $dark-shade;
+  }
+
+  &__logo-ui-kit {
+    position: absolute;
+    top: 30px;
+    left: 30px;
   }
 
   @media (max-width: 1029px) {

@@ -1,7 +1,7 @@
 include ../material-icons/material-icons.pug
 
 mixin rate-button({ name = 'rate-button', rating = 5 } = {})
-  - var i = 0;
+  - let i = 0
   span.rate-button.js-rate-button
     while i < 5
       label.rate-button__label
@@ -9,10 +9,8 @@ mixin rate-button({ name = 'rate-button', rating = 5 } = {})
           type: 'star_border', 
           color: 'purple-gradient'
         })
-        if rating-1===i
-          input.rate-button__input(type='radio' name=name value=i++ checked='checked')
-        else
-          input.rate-button__input(type='radio' name=name value=i++)
+        input.rate-button__input(type='radio' name=name value=i++ checked= rating===i ? 'checked' : undefined)
+
 
 
 

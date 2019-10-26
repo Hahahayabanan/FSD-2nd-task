@@ -2,32 +2,44 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  max-width: 222px;
+  max-width: 223px;
   width: 100%;
 
   &__header-text {
-    position: relative;
-    padding-left: 30px;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 10px;
     margin: 0;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
     color: $shade;
     cursor: pointer;
+    white-space: normal;
   }
 
   &__label {
-    position: relative;
+    display: inline-block;
+    white-space: nowrap;
   }
 
   &__description {
+    display: inline-block;
     margin: 0;
   }
 
   &__input {
-    position: absolute;
-    left: 0;
-    top: 0;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    outline: unset;
+
+    &:focus {
+
+      &::before {
+        border: 1px solid $purple;
+      }
+    }
     
     &:checked {
       
@@ -35,14 +47,14 @@
         content: url('./img/check-box.svg');
         text-align: center;
         border: 1px solid $purple;
-        line-height: 20px;
+        line-height: 18px;
       }
     }
 
     &::before {
       content: '';
       display: inline-block;
-      margin-top: -5px;
+      transform: translate(-15%, -16%);
       width: 20px;
       height: 20px;
       background-color: #FFFFFF;
@@ -59,20 +71,18 @@
 
   &_rich & {
 
+    &__label {
+      white-space: normal;
+    }
+
     &__header-text {
-      position: relative;
-      padding-left: 30px;
-      font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-      font-size: 14px;
-      line-height: 18px;
       font-weight: bold;
       color: $dark-shade;
-      cursor: pointer;
     }
 
     &__description {
       margin-top: 5px;
-      margin-left: 20px + 9px;
+      margin-left: 20px + 10px;
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: normal;

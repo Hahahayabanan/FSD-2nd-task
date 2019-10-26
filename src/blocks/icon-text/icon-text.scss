@@ -1,7 +1,7 @@
 .icon-text {
-  max-width: 291px;
   display: flex;
   flex-direction: column;
+  max-width: 291px;
   margin: 0;
 
   &__descr {
@@ -14,10 +14,10 @@
   }
 
   &__image {
-    line-height: 41px;
     display: flex;
     align-items: center;
     text-align: center;
+    line-height: 41px;
     padding-right: 10px;
   }
 
