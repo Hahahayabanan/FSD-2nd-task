@@ -51,12 +51,15 @@ block content
           +heading({ type: 'h2', text: 'Впечатления от номера' })
           .room-details__donut-chart
             +donut-chart()
-            .bullet-list.room-details__review-list
-              ul.bullet-list__list
-                li.bullet-list__item.bullet-list__item_great Великолепно
-                li.bullet-list__item.bullet-list__item_good Хорошо
-                li.bullet-list__item.bullet-list__item_ok Удовлетворительно
-                li.bullet-list__item.bullet-list__item_bad Разочарован
+            .room-details__review-list
+              +bullet-list({
+                values: [
+                  { text: 'Великолепно', type: 'great' },
+                  { text: 'Хорошо', type: 'good' },
+                  { text: 'Удовлетворительно', type: 'ok' },
+                  { text: 'Разочарован', type: 'bad' },
+                ]
+              })
 
         section.room-details__order
           +order()

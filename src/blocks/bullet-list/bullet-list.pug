@@ -1,8 +1,17 @@
-mixin bullet-list({ values = ['Enter', 'paragraphs', 'here'], reserveText = 'There are no values' } = {})
+mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragraphs', type: 'bad' }, { text: 'here', type: 'ok' }], reserveText = 'There are no values' } = {})
   section.bullet-list
     ul.bullet-list__list
-      each val in values
-        li.bullet-list__item=val
+      each value in values
+        case value.type
+          when 'great'
+            - typeModifier = 'bullet-list__item_great'
+          when 'good'
+            - typeModifier = 'bullet-list__item_good'
+          when 'ok'
+            - typeModifier = 'bullet-list__item_ok'
+          when 'bad'
+            - typeModifier = 'bullet-list__item_bad'
+        li.bullet-list__item(class=typeModifier)=value.text
       else
         li.bullet-list__item=reserveText
 
