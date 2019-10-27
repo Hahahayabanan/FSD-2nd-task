@@ -1,76 +1,60 @@
 .radio-button {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+  display: inline-block;
   max-width: 320px;
+  white-space: nowrap;
 
-  &__input {
-    position: absolute;
-    left: -30px;
-    top: 50%;
-    transform: translateY(-50%);
-    margin: 0;
-    box-sizing: border-box;
+  &__circle {
+    display: inline-block;
     width: 20px;
     height: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid $light-shade;
+    box-sizing: border-box;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+  }
 
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      background-color: #FFFFFF;
-      border: 1px solid $light-shade;
-      box-sizing: border-box;
-      border-radius: 50%;
-      cursor: pointer;
-    }
+  &__thumb {
+    display: inline-block;
+    width: 12Px;
+    height: 12Px;
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+  }
 
-    // px into Px just to ignore px-to-rem plugin transformation
-    &::after {
-      content: '';
-      display: inline-block;
-      width: 12Px;
-      height: 12Px;
-      position: absolute;
-      margin: 0;
-      padding: 0;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      background: transparent;
-      border-radius: 50%;
-      z-index: 9;
-      cursor: pointer;
-    }
+  &__input {
+    width: 0;
+    margin: 0;
   
     &:checked {
   
-      &::before {
+      ~ .radio-button__circle {
         border: 1px solid $purple;
       }
   
-      &::after {
+      ~ .radio-button__circle > .radio-button__thumb {
         background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
       }
 
-      + .radio-button__text {
+      ~ .radio-button__text {
         color: $dark-shade;
       }
     }
   }
 
-  &__label {
-    position: relative;
-    margin-left: 30px;
-  }
-
   &__text {
-    margin: 0;
+    display: inline-block;
+    margin-left: 10px;
     font-family: 'Montserrat', Arial, sans-serif;
     font-size: 14px;
     line-height: 24px;
     color: $shade;
     cursor: pointer;
+    vertical-align: middle;
+    white-space: normal;
   }
 }

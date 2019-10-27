@@ -8,8 +8,7 @@
   &__header-text {
     display: inline-block;
     vertical-align: middle;
-    padding-left: 10px;
-    margin: 0;
+    margin-left: 20px + 10px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
@@ -30,16 +29,10 @@
 
   &__input {
     display: inline-block;
+    width: 0;
+    margin: 0;
     vertical-align: top;
-    position: relative;
-    outline: unset;
-
-    &:focus {
-
-      &::before {
-        border: 1px solid $purple;
-      }
-    }
+    cursor: pointer;
     
     &:checked {
       
@@ -54,9 +47,9 @@
     &::before {
       content: '';
       display: inline-block;
-      transform: translate(-15%, -16%);
       width: 20px;
       height: 20px;
+      padding-top: 1px;
       background-color: #FFFFFF;
       border: 1px solid $light-shade;
       border-radius: 4px;

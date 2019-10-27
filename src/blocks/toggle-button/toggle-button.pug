@@ -1,8 +1,10 @@
 mixin toggle-button({ name = 'toggle-button', text = 'toggle button', isChecked = false } = {})
-  label.toggle-button
-    input.toggle-button__input(type="checkbox" name=name checked= isChecked ? 'checked' : undefined)
-    span.toggle-button__slider
-    span.toggle-button__label=text
+  .toggle-button
+    label.toggle-button__label
+      input.toggle-button__input(type="checkbox" name=name checked= isChecked ? 'checked' : undefined)
+      span.toggle-button__slider
+        i.toggle-button__circle
+      span.toggle-button__text=text
 
 
 //- ***************

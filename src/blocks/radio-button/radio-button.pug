@@ -2,7 +2,9 @@ mixin radio-button({ name = 'radio-button' , value = '', text = 'radio-button', 
   .radio-button
     label(class='radio-button__label')
       input(type='radio' name=name value=value class='radio-button__input' checked= isChecked ? 'checked' : '')
-      p.radio-button__text=text
+      span.radio-button__circle
+        i.radio-button__thumb
+      span.radio-button__text=text
 
 //- ***************
 //- *** EXAMPLE ***
