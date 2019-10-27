@@ -1,9 +1,8 @@
 .copyright-bar {
-  height: 70px;
-  background: #FFFFFF;
-  box-shadow: 0px 10px 20px $lightest-shade;
   display: flex;
   justify-content: center;
+  background: #FFFFFF;
+  box-shadow: 0px 10px 20px $lightest-shade;
 
   &__description {
     display: flex;
@@ -13,20 +12,31 @@
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 24px;
+    line-height: 70px;
     color: $dark-shade;
     text-align: left;
   
     @media (max-width: 768px) {
       text-align: center;
     }
+
+    @media (max-width: 476px) {
+      line-height: 24px;
+    }
   }
 
   &__inner {
-    width: 1160px;
-    height: 100%;
     display: flex;
     justify-content: space-between;
+    width: 100%;
+    max-width: 1160px;
+
+    @media (max-width: 476px) {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
   }
 
   &__social-icons {
