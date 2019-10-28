@@ -2,20 +2,20 @@ import DatePickerCalendar from '../date-picker-calendar/date-picker-calendar';
 
 class FilterDate {
   constructor(calendar) {
-    this.calendar = calendar;
+    this.$calendar = $(calendar);
 
     this.findDOMElements();
     this.initCalendar();
   }
 
   findDOMElements() {
-    this.input = this.calendar.querySelector('.date-text-field__input-entire-date > input');
+    this.$input = this.$calendar.find('.date-text-field__input-entire-date > input');
     this.range = false;
-
-    if (!this.input) {
+    
+    if (this.$input.length === 0) {
       this.range = true;
-      this.$startInput = $(this.calendar).find('.date-text-field__input-start-date > input');
-      this.$endInput = $(this.calendar).find('.date-text-field__input-end-date > input');
+      this.$startInput = this.$calendar.find('.date-text-field__input-start-date > input');
+      this.$endInput = this.$calendar.find('.date-text-field__input-end-date > input');
       this.$datepicker = this.$startInput.datepicker().data('datepicker');
     }
   }
@@ -41,7 +41,7 @@ class FilterDate {
       new DatePickerCalendar(this.$startInput.datepicker().data('datepicker'));
       this.initEndInput();
     } else {
-      $(this.input).datepicker({
+      this.$input.datepicker({
         range: true,
         multipleDatesSeparator: ' - ',
         language: 'ru',
@@ -49,7 +49,7 @@ class FilterDate {
         clearButton: true,
         classes: 'date-picker-calendar',
       });
-      this.$dropdown = $(this.input).datepicker().data('datepicker');
+      this.$dropdown = this.$input.datepicker().data('datepicker');
       new DatePickerCalendar(this.$dropdown);
       this.setAdditionalClass();
     }
