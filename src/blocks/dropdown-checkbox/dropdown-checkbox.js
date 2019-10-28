@@ -1,25 +1,23 @@
-class DropdownCheckBox {
+class DropdownCheckbox {
   constructor(elem) {
     this.checkbox = elem;
     this.initCheckBoxes();
+    this.bindEventListeners();
   }
 
   initCheckBoxes() {
-    const dropdownOption = this.checkbox.querySelector('.dropdown-checkbox__option');
-    const dropdownSelect = this.checkbox.querySelector('.dropdown-checkbox__select');
-    const keyboardArrow = this.checkbox.querySelector('.dropdown-checkbox__keyboard-arrow');
-    const materialIcons = keyboardArrow.querySelector('.material-icons');
-    this.bindEventListeners({ dropdownOption, materialIcons, dropdownSelect, });
+    this.dropdownOption = this.checkbox.querySelector('.dropdown-checkbox__option');
+    this.dropdownSelect = this.checkbox.querySelector('.dropdown-checkbox__select');
+    this.keyboardArrow = this.checkbox.querySelector('.dropdown-checkbox__keyboard-arrow');
+    this.keyboardArrowMaterialIcon = this.keyboardArrow.querySelector('.material-icons');
   }
 
-  bindEventListeners(options) {
-    const { dropdownOption, materialIcons, dropdownSelect, } = options;
-    dropdownSelect.addEventListener('click', () => {
-      dropdownOption.classList.toggle('dropdown-checkbox__option_invisible');
-      materialIcons.innerHTML = materialIcons.innerHTML === 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
+  bindEventListeners() {
+    this.dropdownSelect.addEventListener('click', () => {
+      this.dropdownOption.classList.toggle('dropdown-checkbox__option_invisible');
+      this.keyboardArrowMaterialIcon.innerHTML = this.keyboardArrowMaterialIcon.innerHTML === 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
     });
   }
 }
 
-const checkboxesList = document.querySelectorAll('.dropdown-checkbox');
-checkboxesList.forEach((val) => new DropdownCheckBox(val));
+export default DropdownCheckbox;

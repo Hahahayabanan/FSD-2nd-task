@@ -12,25 +12,29 @@ class DonutChart {
     this.initDonutChart();
     this.setGradients();
     this.createPaths();
-    this.setStartText()
+    this.setStartText();
   }
 
   getConstants() {
     const data = [
-      { name: 'голосов', value: 260, },
-      { name: 'голосов', value: 260, },
-      { name: 'голосов', value: 520, },
+      { name: 'голосов', value: 260 },
+      { name: 'голосов', value: 260 },
+      { name: 'голосов', value: 520 },
     ];
-  
+
     const width = 120;
     const height = 120;
     const thickness = 5;
     const radius = Math.min(width, height) / 2;
-    return { data, width, height, thickness, radius, }
+    return {
+      data, width, height, thickness, radius,
+    };
   }
 
   initDonutChart() {
-    const { data, width, height, thickness, radius, } =  this.getConstants();
+    const {
+      data, width, height, thickness, radius,
+    } = this.getConstants();
     const svg = d3.select(this.donutChart)
       .append('svg')
       .attr('class', 'donut-chart__pie')
@@ -54,7 +58,7 @@ class DonutChart {
   }
 
   onPieClick(d) {
-    const {data,} = d;
+    const { data } = d;
     d3.selectAll('.text-group').remove();
     d3.selectAll('.value-text').remove();
     d3.selectAll('.name-text').remove();
@@ -76,7 +80,7 @@ class DonutChart {
       .attr('dy', '1.3em');
   }
 
-  onPieClickColor(d,i,paths) {
+  onPieClickColor(d, i, paths) {
     d3.selectAll('path')
       .attr('d', this.arc);
     d3.select(paths[i])
@@ -87,13 +91,13 @@ class DonutChart {
     d3.select(this)
       .style('cursor', 'pointer');
   }
-  
+
   createPaths() {
     this.g.selectAll('path')
       .data(this.pie(this.data))
       .enter()
       .append('g')
-      .on('click',  this.onPieClick)
+      .on('click', this.onPieClick)
       .style('fill', (d, i) => {
         if (i === 0) return 'url(#gradient1)';
         if (i === 1) return 'url(#gradient2)';
@@ -106,11 +110,11 @@ class DonutChart {
         if (i === 1) return 'url(#gradient2)';
         if (i === 2) return 'url(#gradient3)';
       })
-      .on('click',  this.onPieClickColor.bind(this))
+      .on('click', this.onPieClickColor.bind(this))
       .on('mouseover', this.onPieColorMouseOver)
-      .each(function eachColor (i) { this._current = i; });
+      .each(function eachColor(i) { this._current = i; });
 
-      this.g.select('path').attr('d', this.arc2);
+    this.g.select('path').attr('d', this.arc2);
   }
 
   setStartText() {
@@ -184,5 +188,4 @@ class DonutChart {
   }
 }
 
-const donutChart = document.querySelectorAll('.donut-chart');
-donutChart.forEach((val)=>{ new DonutChart(val) });
+export default DonutChart;

@@ -1,14 +1,15 @@
-import DropdownOption from '../dropdown-option/dropdown-option'
+import DropdownOption from '../dropdown-option/dropdown-option';
 
-class DropdownGuests {
+class Dropdown {
   constructor(htmlElem, titleCases) {
     this.dropdown = htmlElem;
     this.options = [];
     this.titleCases = titleCases;
-    this.select = undefined;
-    this.clearButton = undefined;
-    this.applyButton = undefined;
 
+    this.init();
+  }
+
+  init() {
     this.getHTMLElements();
     this.bindEventListeners();
     this.setOptions();
@@ -31,18 +32,18 @@ class DropdownGuests {
 
   setOptions() {
     const optionsHTML = this.dropdown.querySelectorAll('.js-dropdown-option');
-    optionsHTML.forEach((val)=>{
+    optionsHTML.forEach((val) => {
       const option = new DropdownOption(val);
       const optionVal = this.options.find((optionValue) => {
-        if(optionValue.group === option.group) return true;
+        if (optionValue.group === option.group) return true;
         return false;
       });
-      if(optionVal) {
+      if (optionVal) {
         optionVal.options.push(option);
       } else {
-        this.options.push({ group: option.group, options: [option,], })
+        this.options.push({ group: option.group, options: [option] });
       }
-    })
+    });
   }
 
   onChangeOption() {
@@ -56,29 +57,32 @@ class DropdownGuests {
       const groupName = option.group.toLowerCase();
       let groupValue = 0;
 
-      option.options.forEach((val)=>{
+      option.options.forEach((val) => {
         groupValue += +val.value;
-      })
+      });
 
-      if(groupValue === 0 && item !== 0) return '';
+      if (groupValue === 0 && item !== 0) return '';
 
       const cases = this.checkPad(groupValue);
-      const isTitlesAvailable = this.titleCases || this.titleCases[groupName] || this.titleCases[groupName][cases];
-      if(!isTitlesAvailable) {
-        return ` ${groupValue} ${groupName}`
+      const isTitlesAvailable = this.titleCases
+        || this.titleCases[groupName]
+        || this.titleCases[groupName][cases];
+
+      if (!isTitlesAvailable) {
+        return ` ${groupValue} ${groupName}`;
       }
       const groupText = this.titleCases[groupName][cases];
 
-      return ` ${groupValue} ${groupText}`
+      return ` ${groupValue} ${groupText}`;
     });
-    summaryText = summaryText.filter(entry => entry.trim() !== '');
+    summaryText = summaryText.filter((entry) => entry.trim() !== '');
 
     let finalText = '';
-    summaryText.forEach((item, i)=>{
-      if(i === summaryText.length-1) finalText += item.replace(/,\s/g, '');
+    summaryText.forEach((item, i) => {
+      if (i === summaryText.length - 1) finalText += item.replace(/,\s/g, '');
       else finalText += `${item.replace(/,\s/g, '')}, `;
-    })
-    
+    });
+
     return this.setSelectText(finalText);
   }
 
@@ -107,7 +111,7 @@ class DropdownGuests {
   }
 
   outsideClickListener(event) {
-    const { target, } = event;
+    const { target } = event;
     const itsMenu = target === this.dropdown || this.dropdown.contains(target);
     if (!itsMenu) {
       this.hideDropdown(event);
@@ -124,12 +128,12 @@ class DropdownGuests {
 
   clearOptions() {
     this.options.forEach((val) => {
-      val.options.forEach((option)=>{
+      val.options.forEach((option) => {
         option.clear();
-      })
+      });
     });
     this.deactivateClear();
-    if(this.selectText) {
+    if (this.selectText) {
       this.setSelectText(this.selectText);
     } else {
       this.calculateSelectText();
@@ -141,10 +145,10 @@ class DropdownGuests {
   }
 
   setSelectText(text) {
-    if(text || text !== '') {
+    if (text || text !== '') {
       this.select.textContent = text;
       return text;
-    } 
+    }
     this.select.textContent = this.selectText;
     return this.calculateSelectText();
   }
@@ -164,15 +168,4 @@ class DropdownGuests {
   }
 }
 
-export default DropdownGuests;
-
-const optionCases = {
-      'гости': ['гость', 'гостя', 'гостей',],
-      'младенцы': ['младенец', 'младенца', 'младенцев',],
-      'спальни': ['спальня, ', 'спальни, ', 'спален, ',],
-      'кровати': ['кровать, ', 'кровати, ', 'кроватей, ',],
-      'ванные комнаты': ['ванная комната ', 'ванные комнаты ', 'ванных комнат ',],
-    };
-
-const dropdownGuests = document.querySelectorAll('.js-dropdown');
-dropdownGuests.forEach((val) => new DropdownGuests(val, optionCases));
+export default Dropdown;

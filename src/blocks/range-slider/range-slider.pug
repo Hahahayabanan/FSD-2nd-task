@@ -1,7 +1,7 @@
 include ../heading/heading.pug
 
 mixin range-slider({ headerText = '', type = 'double', min = 0, max = 100, step = 1, from = 10, to = 20, isMinMaxHidden = true, isFromToHidden = true, } = {})
-  section.range-slider
+  section.range-slider.js-range-slider
     .range-slider__header
       .range-slider__label
         +heading({ type: 'h3', text: headerText })

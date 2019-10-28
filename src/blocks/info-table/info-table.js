@@ -1,5 +1,4 @@
 class InfoTable {
-
   constructor(table) {
     this.table = table;
 
@@ -8,7 +7,7 @@ class InfoTable {
     this.setValuesToTable();
   }
 
-  bindHTMLElements() {
+  findHTMLElements() {
     this.priceOfRoom = this.table.querySelector('.js-info-table__price-of-room');
     this.numberOfDays = this.table.querySelector('.js-info-table__number-of-days');
     this.summaryPriceOfRooms = this.table.querySelector('.js-info-table__summary-price-of-rooms');
@@ -27,7 +26,7 @@ class InfoTable {
       priceOfService: 0,
       priceOfAdditionalServices: 300,
       finalPrice: '38 081',
-    }
+    };
   }
 
   setValuesToTable() {
@@ -39,7 +38,7 @@ class InfoTable {
       priceOfService,
       priceOfAdditionalServices,
       finalPrice,
-  } = this.values;
+    } = this.values;
 
     this.priceOfRoom.textContent = priceOfRoom;
     this.numberOfDays.textContent = numberOfDays;
@@ -49,8 +48,6 @@ class InfoTable {
     this.priceOfAdditionalServices.textContent = priceOfAdditionalServices;
     this.finalPrice.textContent = finalPrice;
   }
-
 }
 
-const dropdownFurniture = document.querySelectorAll('.js-info-table');
-dropdownFurniture.forEach((val) => new InfoTable(val));
+export default InfoTable;

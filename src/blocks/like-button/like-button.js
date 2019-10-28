@@ -12,9 +12,6 @@ class LikeButton {
     this.likeBtnHeart = this.element.querySelector('.like-button__heart');
     this.likeBtnLabel = this.element.querySelector('.like-button__label');
     this.materialIcon = this.likeBtnHeart.querySelector('.material-icons');
-
-    this.bindEventListeners();
-    this.setStage();
   }
 
   bindEventListeners() {
@@ -22,9 +19,9 @@ class LikeButton {
   }
 
   setStage() {
-    if(this.stage === 'true') {
+    if (this.stage === 'true') {
       this.setActive();
-    } else if(this.stage === 'false') {
+    } else if (this.stage === 'false') {
       this.setUnActive();
     }
   }
@@ -35,7 +32,7 @@ class LikeButton {
     this.materialIcon.classList.toggle('material-icons_color_light-shade');
     this.materialIcon.classList.toggle('material-icons_color_purple');
     if (this.materialIcon.className.includes('material-icons_color_purple')) {
-      this.materialIcon.textContent = 'favorite'
+      this.materialIcon.textContent = 'favorite';
       this.likeBtnLabel.textContent = Number(this.likeBtnLabel.textContent) + Number(1);
     } else {
       this.materialIcon.textContent = 'favorite_border';
@@ -50,7 +47,7 @@ class LikeButton {
     this.element.classList.add('like-button_active');
     this.materialIcon.classList.remove('material-icons_color_light-shade');
     this.materialIcon.classList.add('material-icons_color_purple');
-    this.materialIcon.textContent = 'favorite'
+    this.materialIcon.textContent = 'favorite';
     this.likeBtnLabel.classList.add('like-button__label_active');
   }
 
@@ -58,10 +55,9 @@ class LikeButton {
     this.element.classList.remove('like-button_active');
     this.materialIcon.classList.add('material-icons_color_light-shade');
     this.materialIcon.classList.remove('material-icons_color_purple');
-    this.materialIcon.textContent = 'favorite_border'
+    this.materialIcon.textContent = 'favorite_border';
     this.likeBtnLabel.classList.remove('like-button__label_active');
   }
 }
 
-const likeBtnList = document.querySelectorAll('.like-button');
-likeBtnList.forEach((val) => new LikeButton(val));
+export default LikeButton;

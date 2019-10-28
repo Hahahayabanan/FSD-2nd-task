@@ -3,7 +3,7 @@ include ../material-icons/material-icons.pug
 include ../heading/heading.pug
 
 mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']] } = {})
-  section.dropdown-checkbox
+  section.dropdown-checkbox.js-dropdown-checkbox
     .dropdown-checkbox__keyboard-arrow
       +material-icons({
         type: 'keyboard_arrow_down', 

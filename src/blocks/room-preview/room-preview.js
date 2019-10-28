@@ -1,22 +1,37 @@
-import 'slick-carousel'
-import 'slick-carousel/slick/slick-theme.scss'
-import 'slick-carousel/slick/slick.scss'
+import 'slick-carousel';
+import 'slick-carousel/slick/slick-theme.scss';
+import 'slick-carousel/slick/slick.scss';
 
-$(document).ready(() => {
-  const $slider = $('.js-room-preview__slider');
+class RoomPreview {
+  constructor(preview) {
+    this.$preview = $(preview);
+    this.hasArrows = false;
 
-  $slider.each( (i, val) => {
-    let isArrows = false;
-    if ($(val).hasClass('room-preview__slider_with-arrows')) {
-      isArrows = true;
+    this.findDOMElements();
+    this.checkArrows(this.$slider);
+    this.initSlider();
+  }
+
+  findDOMElements() {
+    this.$slider = this.$preview.find('.js-room-preview__slider');
+  }
+
+  checkArrows(element) {
+    if ($(element).hasClass('room-preview__slider_with-arrows')) {
+      this.hasArrows = true;
     }
-    $(val).slick({
+  }
+
+  initSlider() {
+    this.$slider.slick({
       dots: true,
       infinite: true,
       speed: 300,
       slidesToShow: 1,
-      arrows: isArrows,
+      arrows: this.hasArrows,
       useCSS: false,
     });
-  })
-})
+  }
+}
+
+export default RoomPreview;
