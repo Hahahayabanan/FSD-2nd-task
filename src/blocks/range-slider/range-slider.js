@@ -1,3 +1,6 @@
+import 'ion-rangeslider/css/ion.rangeSlider.min.css';
+import 'ion-rangeslider/js/ion.rangeSlider.min';
+
 class RangeSlider {
   constructor(elem) {
     this.$elem = $(elem);

@@ -1,3 +1,5 @@
+import 'inputmask/dist/jquery.inputmask.bundle';
+
 class TextField {
   constructor(element) {
     this.$field = $(element);

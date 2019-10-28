@@ -1,10 +1,3 @@
-import 'inputmask/dist/jquery.inputmask.bundle';
-import 'air-datepicker/dist/css/datepicker.min.css';
-import 'air-datepicker';
-import 'ion-rangeslider/css/ion.rangeSlider.min.css';
-import 'ion-rangeslider/js/ion.rangeSlider.min';
-
-
 function importAll(resolve) {
   resolve.keys().forEach(resolve);
 }

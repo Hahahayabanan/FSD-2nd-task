@@ -1,3 +1,6 @@
+import 'air-datepicker/dist/css/datepicker.min.css';
+import 'air-datepicker';
+
 class DatePickerCalendar {
   constructor($datepicker) {
     this.$datepicker = $datepicker;
