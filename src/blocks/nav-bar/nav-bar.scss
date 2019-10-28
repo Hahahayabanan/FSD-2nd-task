@@ -45,6 +45,10 @@
 
   &__list {
     margin-right: 30px;
+
+    @media (max-width: 804px) {
+      margin-right: 0;
+    }
   }
 
   &__register {
