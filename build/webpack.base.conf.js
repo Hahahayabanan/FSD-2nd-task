@@ -7,9 +7,9 @@ const webpack = require('webpack');
 const PATHS = {
   src: path.join(__dirname, '../src'),
   dist: path.join(__dirname, '../dist'),
-}
+};
 
-const PAGES_DIR = `${PATHS.src}/pages/`
+const PAGES_DIR = `${PATHS.src}/pages/`;
 
 function getFiles(dir, files_, folder = '') {
   const filesArray = files_ || [];
@@ -17,7 +17,7 @@ function getFiles(dir, files_, folder = '') {
   fs.readdirSync(dir).forEach((filePath) => {
     const name = path.join(dir, filePath);
     if (fs.statSync(name).isDirectory()) {
-      folderPath = path.join(folder, filePath)
+      folderPath = path.join(folder, filePath);
       getFiles(name, filesArray, folderPath);
     } else if (filePath.endsWith('.pug')) {
       filesArray.push(path.join(folder, filePath));
@@ -61,7 +61,7 @@ module.exports = {
     },
     {
       test: /\.(eot|svg|ttf|woff|woff2)$/,
-      exclude: [/blocks/, /img/, /static/,],
+      exclude: [/blocks/, /img/, /static/],
       use: {
         loader: 'file-loader',
         options: {
@@ -73,7 +73,7 @@ module.exports = {
     {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
-      exclude: [/fonts/, /static/,],
+      exclude: [/fonts/, /static/],
       options: {
         name: './img/[name].[ext]',
         publicPath: '../',
@@ -81,14 +81,14 @@ module.exports = {
     },
     {
       test: /\.(svg|png|ico|xml|json)$/,
-      exclude: [/fonts/, /blocks/, /img/, /node_modules/,],
+      exclude: [/fonts/, /blocks/, /img/, /node_modules/],
       use: [{
         loader: 'file-loader',
         options: {
           name: './favicons/[name].[ext]',
           publicPath: '../',
         },
-      },],
+      }],
     },
     {
       test: /\.(sa|sc|c)ss$/,
@@ -104,16 +104,16 @@ module.exports = {
           options: {
             sourceMap: true,
             data: '@import \'./src/styles/main-presets\';',
-            includePaths: [path.join(__dirname, 'src'),],
+            includePaths: [path.join(__dirname, 'src')],
           },
         },
         {
-          loader:'webpack-px-to-rem',
-          query:{
+          loader: 'webpack-px-to-rem',
+          query: {
             // 1rem=npx default 10
-            basePx:14,
-            min:1,
-            floatWidth:3,
+            basePx: 14,
+            min: 1,
+            floatWidth: 3,
           },
         },
       ],
@@ -121,9 +121,9 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss',],
+    extensions: ['.js', '.jsx', '.scss'],
     alias: {
-      "./dependencyLibs/inputmask.dependencyLib": "./dependencyLibs/inputmask.dependencyLib.jquery",
+      './dependencyLibs/inputmask.dependencyLib': './dependencyLibs/inputmask.dependencyLib.jquery',
     },
   },
   plugins: [
@@ -144,4 +144,4 @@ module.exports = {
     })),
 
   ],
-}
+};

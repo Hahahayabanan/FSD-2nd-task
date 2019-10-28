@@ -5,8 +5,8 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
   // BUILD config
   mode: 'production',
   plugins: [],
-})
+});
 
 module.exports = new Promise((resolve) => {
-  resolve(buildWebpackConfig)
-})
+  resolve(buildWebpackConfig);
+});

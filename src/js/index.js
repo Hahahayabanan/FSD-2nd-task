@@ -1,5 +1,5 @@
 import 'inputmask/dist/jquery.inputmask.bundle';
-import 'air-datepicker/dist/css/datepicker.min.css'
+import 'air-datepicker/dist/css/datepicker.min.css';
 import 'air-datepicker';
 import 'ion-rangeslider/css/ion.rangeSlider.min.css';
 import 'ion-rangeslider/js/ion.rangeSlider.min';
@@ -11,7 +11,7 @@ function importAll(resolve) {
 
 
 importAll(require.context('../img', true, /\.(jpg|png|svg|png)$/));
-importAll(require.context('../static/favicons/',  true,  /\.(svg|png|ico|xml|json)$/));
+importAll(require.context('../static/favicons/', true, /\.(svg|png|ico|xml|json)$/));
 
 importAll(require.context('../styles', true, /\.(css|scss)$/));
 importAll(require.context('../blocks', true, /\.(css|scss|jpg|png|svg|png|ico|xml|mp4|)$/));

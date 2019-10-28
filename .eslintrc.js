@@ -4,8 +4,7 @@ module.exports = {
     es6: true,
     jquery: true,
   },
-  extends: ["airbnb", "prettier"],
-  plugins: ["eslint-plugin-prettier"],
+  extends: ["airbnb"],
   globals: {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
