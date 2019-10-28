@@ -8,12 +8,12 @@
   padding: 19px;
   box-sizing: border-box;
 
-  .datepicker {
+  &.datepicker--smaller {
+    transform: scale(.83);
+    transform-origin: 0 0 0;
+  }
 
-    &.datepicker--smaller {
-      transform: scale(.83);
-      transform-origin: 0 0 0;
-    }
+  .datepicker {  
 
     &--pointer {
       display: none;

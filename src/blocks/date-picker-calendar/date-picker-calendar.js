@@ -26,14 +26,14 @@ class DatePickerCalendar {
 
   createApplyButton() {
     this.$buttonsContainer = this.$datepickerHTML.find('.datepicker--buttons');
-    this.applyButton = document.createElement('a');
-    this.applyButton.textContent = this.applyButtonText;
-    this.applyButton.classList.add('datepicker__apply-button');
-    this.$buttonsContainer.append(this.applyButton);
+    this.$applyButton = $('<span>', {
+      text: this.applyButtonText,
+      class: 'datepicker__apply-button',
+    }).appendTo(this.$buttonsContainer);
   }
 
   bindEventListeners() {
-    this.applyButton.addEventListener('click', this.hideDatepicker.bind(this));
+    this.$applyButton.on('click', this.hideDatepicker.bind(this));
   }
 
   hideDatepicker() {
