@@ -3,7 +3,13 @@ import DatePicker from '../date-picker/date-picker';
 class FilterDate {
   constructor(calendar) {
     this.calendar = calendar;
-    this.input = calendar.querySelector('.date-text-field__input-entire-date > input');
+
+    this.findDOMElements();
+    this.initCalendar();
+  }
+
+  findDOMElements() {
+    this.input = this.calendar.querySelector('.date-text-field__input-entire-date > input');
     this.range = false;
 
     if(!this.input) {

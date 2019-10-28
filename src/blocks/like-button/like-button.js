@@ -1,6 +1,13 @@
 class LikeButton {
   constructor(htmlElem) {
     this.element = htmlElem;
+
+    this.findHTMLElements();
+    this.bindEventListeners();
+    this.setStage();
+  }
+
+  findHTMLElements() {
     this.stage = this.element.dataset.stage;
     this.likeBtnHeart = this.element.querySelector('.like-button__heart');
     this.likeBtnLabel = this.element.querySelector('.like-button__label');

@@ -3,6 +3,11 @@ import * as d3 from 'd3';
 class DonutChart {
   constructor(element) {
     this.donutChart = element;
+
+    this.init();
+  }
+
+  init() {
     this.getConstants();
     this.initDonutChart();
     this.setGradients();

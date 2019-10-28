@@ -2,11 +2,7 @@ class DropdownOption {
   constructor(elem) {
     this.option = elem;
     this.name = '';
-    this.group = undefined;
-    this.minusButton = undefined;
-    this.plusButton = undefined;
-    this.number = undefined;
-    this.value = undefined;
+
     this.getHTMLElements();
     this.getValues();
     this.bindEventListeners();

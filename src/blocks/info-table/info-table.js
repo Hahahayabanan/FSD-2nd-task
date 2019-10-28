@@ -3,7 +3,7 @@ class InfoTable {
   constructor(table) {
     this.table = table;
 
-    this.bindHTMLElements();
+    this.findHTMLElements();
     this.getValues();
     this.setValuesToTable();
   }

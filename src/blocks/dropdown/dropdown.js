@@ -8,7 +8,7 @@ class DropdownGuests {
     this.select = undefined;
     this.clearButton = undefined;
     this.applyButton = undefined;
-    
+
     this.getHTMLElements();
     this.bindEventListeners();
     this.setOptions();
