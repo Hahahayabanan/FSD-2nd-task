@@ -17,115 +17,114 @@ block content
 
 
   main.search-room
-    article.search-room__side-bar
-      form.search-room__side-bar-inner
-        section.search-room__filter-date-container
-          .search-room__filter-date-heading
-            +heading({ type: 'h3', text: 'даты пребывания в отеле' })
-          .search-room__filter-date
-            +filter-date({ firstHeader: '' })
-        section.search-room__dropdown-guests-container
-          .search-room__dropdown-guests-heading
-            +heading({ type: 'h3', text: 'Гости' })
-          .search-room__dropdown-guests
-           +dropdown({ 
-            text: 'Сколько гостей',
-            hasButtons: true,
-            options: [
-              { text: 'взрослые', group: 'гости' },
-              { text: 'дети', group: 'гости' },
-              { text: 'младенцы' },
-            ],
-          })
-        section.search-room__range-slider
-          +range-slider({ 
-            headerText: 'диапазон цены', 
-            type: 'double', 
-            min: 1000, 
-            max: 15000, 
-            step: 1, 
-            from: 5000, 
-            to: 10000, 
-          })
-          p.search-room__range-slider-descr Стоимость за сутки пребывания в номере
-        section.search-room__checkbox-buttons-container
-          .search-room__checkbox-buttons-heading
-            +heading({ type: 'h3', text: 'checkbox buttons' })
-          .search-room__checkbox-buttons
-            .search-room__checkbox-button
-              +checkbox-button({ name: 'checkbox0', text: 'Можно курить' })
-            .search-room__checkbox-button
-              +checkbox-button({ name: 'checkbox1', text: 'Можно с питомцами' })
-            .search-room__checkbox-button
-              +checkbox-button({ name: 'checkbox2', text: 'Можно пригласить гостей (до 10 человек)' })
-        section.search-room__rich-checkbox-container
-          .search-room__rich-checkbox-heading
-            +heading({ type: 'h3', text: 'Доступность' })
-          .search-room__rich-checkbox
-            +checkbox-button({ 
-              name: 'checkbox13', 
-              text: 'Широкий коридор', 
-              description: 'Ширина коридоров в номере не менее 91 см.'
-            })
-          .search-room__rich-checkbox-second
-            +checkbox-button({ 
-              name: 'checkbox14', 
-              text: 'Помощник для инвалидов', 
-              description: 'На 1 этаже вас встретит специалист и проводит до номера.'
-            })
-        section.search-room__dropdown-furniture-container
-          .search-room__dropdown-furniture-heading
-            +heading({ type: 'h3', text: 'Удобства номера' })
-          .search-room__dropdown-furniture
+    .search-room__inner
+      article.search-room__side-bar
+        form.search-room__side-bar-inner
+          section.search-room__filter-date-container
+            .search-room__filter-date-heading
+              +heading({ type: 'h3', text: 'даты пребывания в отеле' })
+            .search-room__filter-date
+              +filter-date({ firstHeader: '' })
+          section.search-room__dropdown-guests-container
+            .search-room__dropdown-guests-heading
+              +heading({ type: 'h3', text: 'Гости' })
+            .search-room__dropdown-guests
             +dropdown({ 
-            width: 'short',
-            options: [
-              { text: 'спальни', number: 2 },
-              { text: 'кровати', number: 2 },
-              { text: 'ванные комнаты' },
-            ],
-          })
+              text: 'Сколько гостей',
+              hasButtons: true,
+              options: [
+                { text: 'взрослые', group: 'гости' },
+                { text: 'дети', group: 'гости' },
+                { text: 'младенцы' },
+              ],
+            })
+          section.search-room__range-slider
+            +range-slider({ 
+              headerText: 'диапазон цены', 
+              type: 'double', 
+              min: 1000, 
+              max: 15000, 
+              step: 1, 
+              from: 5000, 
+              to: 10000, 
+            })
+            p.search-room__range-slider-descr Стоимость за сутки пребывания в номере
+          section.search-room__checkbox-buttons-container
+            .search-room__checkbox-buttons-heading
+              +heading({ type: 'h3', text: 'checkbox buttons' })
+            .search-room__checkbox-buttons
+              .search-room__checkbox-button
+                +checkbox-button({ name: 'checkbox0', text: 'Можно курить' })
+              .search-room__checkbox-button
+                +checkbox-button({ name: 'checkbox1', text: 'Можно с питомцами' })
+              .search-room__checkbox-button
+                +checkbox-button({ name: 'checkbox2', text: 'Можно пригласить гостей (до 10 человек)' })
+          section.search-room__rich-checkbox-container
+            .search-room__rich-checkbox-heading
+              +heading({ type: 'h3', text: 'Доступность' })
+            .search-room__rich-checkbox
+              +checkbox-button({ 
+                name: 'checkbox13', 
+                text: 'Широкий коридор', 
+                description: 'Ширина коридоров в номере не менее 91 см.'
+              })
+            .search-room__rich-checkbox-second
+              +checkbox-button({ 
+                name: 'checkbox14', 
+                text: 'Помощник для инвалидов', 
+                description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+              })
+          section.search-room__dropdown-furniture-container
+            .search-room__dropdown-furniture-heading
+              +heading({ type: 'h3', text: 'Удобства номера' })
+            .search-room__dropdown-furniture
+              +dropdown({ 
+              width: 'short',
+              options: [
+                { text: 'спальни', number: 2 },
+                { text: 'кровати', number: 2 },
+                { text: 'ванные комнаты' },
+              ],
+            })
 
-        section.search-room__rich-dropdown-checkbox
-          +dropdown-checkbox({
-            title: 'Дополнительные удобства',
-            values: [
-              ['checkbox3', 'Завтрак'],
-              ['checkbox4', 'Письменный стол'],
-              ['checkbox5', 'Стул для кормления'],
-              ['checkbox6', 'Кроватка'],
-              ['checkbox7', 'Телевизор'],
-              ['checkbox8', 'Шампунь'],
-              ['checkbox9', 'Шампунь']
-            ],
-          })
-    article.search-room__rooms-list
-      header.search-room__title
-        +heading({ type: 'h1', text: 'Номера, которые мы для вас подобрали' })
-      .search-room__elements
-        +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',typeOfRoom: 'люкс', hasArrows: true})
-        +room-preview({number: '840',src: 'img/room840.jpg',price: '9 900',name: 'room840',rate: 4,reviews: '65',})
-        +room-preview({number: '980',src: 'img/room980.jpg',price: '8 500',name: 'room980',rate: 3,reviews: '19',typeOfRoom: 'люкс'})
-        +room-preview({number: '856',src: 'img/room856.jpg',price: '7 300',name: 'room856',rate: 5,reviews: '19',})
-        +room-preview({number: '740',src: 'img/room740.jpg',price: '6 000',name: 'room740',rate: 4,reviews: '44',})
-        +room-preview({number: '982',src: 'img/room982.jpg',price: '5 800',name: 'room982',rate: 3,reviews: '56',})
-        +room-preview({number: '678',src: 'img/room678.jpg',price: '5 500',name: 'room678',rate: 5,reviews: '45',})
-        +room-preview({number: '450',src: 'img/room450.jpg',price: '5 300',name: 'room450',rate: 4,reviews: '39',})
-        +room-preview({number: '350',src: 'img/room350.jpg',price: '5 000',name: 'room350',rate: 3,reviews: '77',})
-        +room-preview({number: '666',src: 'img/room666.jpg',price: '5 000',name: 'room666',rate: 5,reviews: '25',})
-        +room-preview({number: '444',src: 'img/room444.jpg',price: '5 000',name: 'room444',rate: 3,reviews: '15',})
-        +room-preview({number: '352',src: 'img/room352.jpg',price: '5 000',name: 'room352',rate: 3,reviews: '55',})
+          section.search-room__rich-dropdown-checkbox
+            +dropdown-checkbox({
+              title: 'Дополнительные удобства',
+              values: [
+                ['checkbox3', 'Завтрак'],
+                ['checkbox4', 'Письменный стол'],
+                ['checkbox5', 'Стул для кормления'],
+                ['checkbox6', 'Кроватка'],
+                ['checkbox7', 'Телевизор'],
+                ['checkbox8', 'Шампунь'],
+                ['checkbox9', 'Шампунь']
+              ],
+            })
+      article.search-room__rooms-list
+        header.search-room__title
+          +heading({ type: 'h1', text: 'Номера, которые мы для вас подобрали' })
+        .search-room__elements
+          +room-preview({number: '888',src: 'img/room888.jpg',price: '9 990',name: 'room888',rate: 5,reviews: '145',typeOfRoom: 'люкс', hasArrows: true})
+          +room-preview({number: '840',src: 'img/room840.jpg',price: '9 900',name: 'room840',rate: 4,reviews: '65',})
+          +room-preview({number: '980',src: 'img/room980.jpg',price: '8 500',name: 'room980',rate: 3,reviews: '19',typeOfRoom: 'люкс'})
+          +room-preview({number: '856',src: 'img/room856.jpg',price: '7 300',name: 'room856',rate: 5,reviews: '19',})
+          +room-preview({number: '740',src: 'img/room740.jpg',price: '6 000',name: 'room740',rate: 4,reviews: '44',})
+          +room-preview({number: '982',src: 'img/room982.jpg',price: '5 800',name: 'room982',rate: 3,reviews: '56',})
+          +room-preview({number: '678',src: 'img/room678.jpg',price: '5 500',name: 'room678',rate: 5,reviews: '45',})
+          +room-preview({number: '450',src: 'img/room450.jpg',price: '5 300',name: 'room450',rate: 4,reviews: '39',})
+          +room-preview({number: '350',src: 'img/room350.jpg',price: '5 000',name: 'room350',rate: 3,reviews: '77',})
+          +room-preview({number: '666',src: 'img/room666.jpg',price: '5 000',name: 'room666',rate: 5,reviews: '25',})
+          +room-preview({number: '444',src: 'img/room444.jpg',price: '5 000',name: 'room444',rate: 3,reviews: '15',})
+          +room-preview({number: '352',src: 'img/room352.jpg',price: '5 000',name: 'room352',rate: 3,reviews: '55',})
 
 
-    section.search-room__pagination
-      +pagination({ 
-        links: [
-          { href: '/mock-address/change-me', number: 1, isActive: true, },
-          { href: '/mock-address/change-me', number: 2, },
-          { href: '/mock-address/change-me', number: 3, },
-          { href: '/mock-address/change-me', number: 15, },
-        ]
-      })
-
-  .search-room__underline
+      section.search-room__pagination
+        +pagination({ 
+          links: [
+            { href: '/mock-address/change-me', number: 1, isActive: true, },
+            { href: '/mock-address/change-me', number: 2, },
+            { href: '/mock-address/change-me', number: 3, },
+            { href: '/mock-address/change-me', number: 15, },
+          ]
+        })
 
