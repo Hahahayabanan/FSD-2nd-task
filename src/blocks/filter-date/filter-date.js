@@ -11,7 +11,7 @@ class FilterDate {
   findDOMElements() {
     this.$input = this.$calendar.find('.date-text-field__input-entire-date > input');
     this.range = false;
-    
+
     if (this.$input.length === 0) {
       this.range = true;
       this.$startInput = this.$calendar.find('.date-text-field__input-start-date > input');
@@ -27,7 +27,6 @@ class FilterDate {
         multipleDatesSeparator: ' - ',
         language: 'ru',
         clearButton: true,
-        classes: 'date-picker-calendar',
       });
 
       const { $startInput } = this;
@@ -47,7 +46,6 @@ class FilterDate {
         language: 'ru',
         dateFormat: 'dd M',
         clearButton: true,
-        classes: 'date-picker-calendar',
       });
       this.$dropdown = this.$input.datepicker().data('datepicker');
       new DatePickerCalendar(this.$dropdown);

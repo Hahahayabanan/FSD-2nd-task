@@ -1,6 +1,7 @@
 include ../material-icons/material-icons.pug
 include ../text-field/text-field.pug
 include ../date-text-field/date-text-field.pug
+include ../date-picker-calendar/date-picker-calendar.pug
 
 
 mixin filter-date({ inputFieldType = 'single', firstHeader = 'date Dropdown', secondHeader = 'date Dropdown', } = {})
@@ -13,5 +14,6 @@ mixin filter-date({ inputFieldType = 'single', firstHeader = 'date Dropdown', se
         .filter-date__inputs
           +date-text-field({ header: firstHeader, type: 'start', placeholder: 'ДД.ММ.ГГГГ', })
           +date-text-field({ header: secondHeader, type: 'end', placeholder: 'ДД.ММ.ГГГГ', })
+    +date-picker-calendar()
 
     
