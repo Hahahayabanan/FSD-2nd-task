@@ -8,11 +8,20 @@ class DonutChart {
   }
 
   init() {
-    this.getConstants();
+    this.setStyleClass();
     this.initDonutChart();
     this.setGradients();
     this.createPaths();
     this.setStartText();
+  }
+
+  setStyleClass() {
+    this.styleClass = {
+      PIE: 'donut-chart__pie',
+      PATH: 'donut-chart__path',
+      VALUE: 'donut-chart__value',
+      TEXT: 'donut-chart__text',
+    };
   }
 
   getConstants() {
@@ -35,9 +44,10 @@ class DonutChart {
     const {
       data, width, height, thickness, radius,
     } = this.getConstants();
+
     const d3DonutChart = d3.select(this.donutChart)
       .append('svg')
-      .attr('class', 'donut-chart__pie')
+      .attr('class', this.styleClass.PIE)
       .attr('width', width)
       .attr('height', height);
     this.svgObject = d3DonutChart.append('g')
@@ -57,27 +67,12 @@ class DonutChart {
   }
 
   onPieClick(dataObject) {
-    const { data } = dataObject;
+    const { data, index } = dataObject;
 
-    d3.selectAll('.text-group').remove();
-    d3.selectAll('.value-text').remove();
-    d3.selectAll('.name-text').remove();
-
-    const currentArc = d3.select(this)
-      .style('cursor', 'pointer')
-      .append('g')
-      .attr('class', 'donut-chart__text-group');
-
-    currentArc.append('text')
-      .attr('class', 'donut-chart__value')
-      .text(`${data.value}`)
-      .attr('text-anchor', 'middle')
-      .attr('dy', '-0.1em');
-    currentArc.append('text')
-      .attr('class', 'donut-chart__text')
-      .text(`${data.name}`)
-      .attr('text-anchor', 'middle')
-      .attr('dy', '1.3em');
+    this.valueTextField.style('fill', `url(#gradient${index})`)
+      .text(`${data.value}`);
+    this.descriptionTextField.style('fill', `url(#gradient${index})`)
+      .text(`${data.name}`);
   }
 
   onPieClickColor(data, currentPath, paths) {
@@ -87,104 +82,60 @@ class DonutChart {
       .attr('d', this.innerArc);
   }
 
-  onPieColorMouseOver() {
-    d3.select(this)
-      .style('cursor', 'pointer');
-  }
-
   createPaths() {
     this.svgObject.selectAll('path')
       .data(this.pie(this.data))
       .enter()
       .append('g')
-      .on('click', this.onPieClick)
-      .style('fill', (d, index) => {
-        if (index === 0) return 'url(#gradient1)';
-        if (index === 1) return 'url(#gradient2)';
-        if (index === 2) return 'url(#gradient3)';
-      })
+      .on('click', this.onPieClick.bind(this))
+      .style('fill', (d, index) => `url(#gradient${index})`)
       .append('path')
       .attr('d', this.outerArc)
-      .attr('fill', (d, index) => {
-        if (index === 0) return 'url(#gradient1)';
-        if (index === 1) return 'url(#gradient2)';
-        if (index === 2) return 'url(#gradient3)';
-      })
-      .on('click', this.onPieClickColor.bind(this))
-      .on('mouseover', this.onPieColorMouseOver)
-      .each(function eachColor(index) { this._current = index; });
-
+      .attr('fill', (d, index) => `url(#gradient${index})`)
+      .attr('class', this.styleClass.PATH)
+      .on('click', this.onPieClickColor.bind(this));
     this.svgObject.select('path').attr('d', this.innerArc);
   }
 
-  setStartText() {
-    this.svgObject.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('dy', '.35em')
-      .text('');
-
-    this.svgObject.append('text')
-      .attr('class', 'donut-chart__value')
-      .text(`${this.data[0].value}`)
+  setStartText(valueNumber = 0) {
+    this.valueTextField = this.svgObject.append('text')
+      .text(`${this.data[valueNumber].value}`)
+      .attr('class', this.styleClass.VALUE)
       .attr('text-anchor', 'middle')
       .attr('dy', '-0.1em')
-      .style('fill', 'url(#gradient1)');
-    this.svgObject.append('text')
-      .attr('class', 'donut-chart__text')
+      .style('fill', `url(#gradient${valueNumber})`);
+    this.descriptionTextField = this.svgObject.append('text')
       .text('голосов')
+      .attr('class', this.styleClass.PIE)
       .attr('text-anchor', 'middle')
       .attr('dy', '1.3em')
-      .style('fill', 'url(#gradient1)');
+      .style('fill', `url(#gradient${valueNumber})`);
   }
 
   setGradients() {
-    const yellowGradient = this.defs.append('svg:linearGradient')
-      .attr('id', 'gradient3')
+    this.purpleGradient = this.createGradient({ id: 0, startColor: '#BC9CFF', endColor: '#8BA4F9' });
+    this.greenGradient = this.createGradient({ id: 1, startColor: '#6FCF97', endColor: '#66D2EA' });
+    this.yellowGradient = this.createGradient({ id: 2, startColor: '#FFE39C', endColor: '#FFBA9C' });
+  }
+
+  createGradient(parameters) {
+    const { startColor, endColor, id } = parameters;
+    const gradient = this.defs.append('svg:linearGradient')
+      .attr('id', `gradient${id}`)
       .attr('x1', '0%')
       .attr('y1', '0%')
       .attr('x2', '0%')
       .attr('y2', '100%')
       .attr('spreadMethod', 'pad');
-    // first dark yellow color
-    yellowGradient.append('svg:stop')
+    gradient.append('svg:stop')
       .attr('offset', '0%')
-      .attr('stop-color', '#FFE39C')
+      .attr('stop-color', startColor)
       .attr('stop-opacity', 1);
-    // second light yellow color
-    yellowGradient.append('svg:stop')
+    gradient.append('svg:stop')
       .attr('offset', '100%')
-      .attr('stop-color', '#FFBA9C')
+      .attr('stop-color', endColor)
       .attr('stop-opacity', 1);
-    const greenGradient = this.defs.append('svg:linearGradient')
-      .attr('id', 'gradient2')
-      .attr('x1', '0%')
-      .attr('y1', '0%')
-      .attr('x2', '0%')
-      .attr('y2', '100%')
-      .attr('spreadMethod', 'pad');
-    greenGradient.append('svg:stop')
-      .attr('offset', '0%')
-      .attr('stop-color', '#6FCF97')
-      .attr('stop-opacity', 1);
-    greenGradient.append('svg:stop')
-      .attr('offset', '100%')
-      .attr('stop-color', '#66D2EA')
-      .attr('stop-opacity', 1);
-    const purpleGradient = this.defs.append('svg:linearGradient')
-      .attr('id', 'gradient1')
-      .attr('x1', '0%')
-      .attr('y1', '0%')
-      .attr('x2', '0%')
-      .attr('y2', '100%')
-      .attr('spreadMethod', 'pad');
-    purpleGradient.append('svg:stop')
-      .attr('offset', '0%')
-      .attr('stop-color', '#BC9CFF')
-      .attr('stop-opacity', 1);
-    purpleGradient.append('svg:stop')
-      .attr('offset', '100%')
-      .attr('stop-color', '#8BA4F9')
-      .attr('stop-opacity', 1);
+    return gradient;
   }
 }
 
