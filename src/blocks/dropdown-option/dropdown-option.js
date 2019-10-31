@@ -29,7 +29,7 @@ class DropdownOption {
     this.value = parseInt(this.number.textContent, 10);
     if (this.value === '') this.value = 0;
     if (this.value > 0) this.activateMinus();
-    this.name = this.option.querySelector('.js-dropdown-option__header > p.heading').textContent;
+    this.name = this.option.querySelector('.js-dropdown-option__header > .heading').textContent;
     if (this.option.hasAttribute('data-group')) {
       const { group } = this.option.dataset;
       if (group) {

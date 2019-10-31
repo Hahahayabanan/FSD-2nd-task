@@ -4,19 +4,21 @@
   font-weight: bold;
   color: $darkest-shade;
 
-  &_h1 {
-    font-size: 24px;
-    line-height: 30px;
-  }
+  &_type {
+    &_h1 {
+      font-size: 24px;
+      line-height: 30px;
+    }
 
-  &_h2 {
-    font-size: 19px;
-  }
+    &_h2 {
+      font-size: 19px;
+    }
 
-  &_h3 {
-    font-family: 'Montserrat', Arial, sans-serif;
-    font-size: 12px;
-    text-transform: uppercase;
+    &_h3 {
+      font-family: 'Montserrat', Arial, sans-serif;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
   }
 
   &_color {
