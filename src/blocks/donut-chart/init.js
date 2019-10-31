@@ -2,7 +2,7 @@ import DonutChart from './donut-chart';
 
 $(() => {
   const $donutChart = $('.js-donut-chart');
-  $donutChart.each((val) => {
+  $donutChart.each((index, val) => {
     new DonutChart(val);
   });
 });

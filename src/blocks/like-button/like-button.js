@@ -1,6 +1,6 @@
 class LikeButton {
   constructor(htmlElem) {
-    this.element = htmlElem;
+    this.button = htmlElem;
 
     this.findHTMLElements();
     this.bindEventListeners();
@@ -8,55 +8,55 @@ class LikeButton {
   }
 
   findHTMLElements() {
-    this.stage = this.element.dataset.stage;
-    this.likeBtnHeart = this.element.querySelector('.like-button__heart');
-    this.likeBtnLabel = this.element.querySelector('.like-button__label');
-    this.materialIcon = this.likeBtnHeart.querySelector('.material-icons');
+    this.stageData = this.button.dataset.stage;
+    this.heartContainer = this.button.querySelector('.like-button__heart');
+    this.heart = this.heartContainer.querySelector('i');
+    this.likesNumber = this.button.querySelector('.like-button__label');
   }
 
   bindEventListeners() {
-    this.element.addEventListener('click', this.changeStage.bind(this));
+    this.button.addEventListener('click', this.changeStage.bind(this));
   }
 
   setStage() {
-    if (this.stage === 'true') {
+    if (this.stageData === 'true') {
       this.setActive();
-    } else if (this.stage === 'false') {
+    } else if (this.stageData === 'false') {
       this.setUnActive();
     }
   }
 
   changeStage() {
-    this.element.classList.toggle('like-button_active');
+    this.button.classList.toggle('like-button_active');
 
-    this.materialIcon.classList.toggle('material-icons_color_light-shade');
-    this.materialIcon.classList.toggle('material-icons_color_purple');
-    if (this.materialIcon.className.includes('material-icons_color_purple')) {
-      this.materialIcon.textContent = 'favorite';
-      this.likeBtnLabel.textContent = Number(this.likeBtnLabel.textContent) + Number(1);
+    this.heart.classList.toggle('material-icons_color_light-shade');
+    this.heart.classList.toggle('material-icons_color_purple');
+    if (this.heart.className.includes('material-icons_color_purple')) {
+      this.heart.textContent = 'favorite';
+      this.likesNumber.textContent = Number(this.likesNumber.textContent) + Number(1);
     } else {
-      this.materialIcon.textContent = 'favorite_border';
-      if (this.likeBtnLabel.textContent >= 0) {
-        this.likeBtnLabel.textContent = Number(this.likeBtnLabel.textContent) - Number(1);
+      this.heart.textContent = 'favorite_border';
+      if (this.likesNumber.textContent >= 0) {
+        this.likesNumber.textContent = Number(this.likesNumber.textContent) - Number(1);
       }
     }
-    this.likeBtnLabel.classList.toggle('like-button__label_active');
+    this.likesNumber.classList.toggle('like-button__label_active');
   }
 
   setActive() {
-    this.element.classList.add('like-button_active');
-    this.materialIcon.classList.remove('material-icons_color_light-shade');
-    this.materialIcon.classList.add('material-icons_color_purple');
-    this.materialIcon.textContent = 'favorite';
-    this.likeBtnLabel.classList.add('like-button__label_active');
+    this.button.classList.add('like-button_active');
+    this.heart.classList.remove('material-icons_color_light-shade');
+    this.heart.classList.add('material-icons_color_purple');
+    this.heart.textContent = 'favorite';
+    this.likesNumber.classList.add('like-button__label_active');
   }
 
   setUnActive() {
-    this.element.classList.remove('like-button_active');
-    this.materialIcon.classList.add('material-icons_color_light-shade');
-    this.materialIcon.classList.remove('material-icons_color_purple');
-    this.materialIcon.textContent = 'favorite_border';
-    this.likeBtnLabel.classList.remove('like-button__label_active');
+    this.button.classList.remove('like-button_active');
+    this.heart.classList.add('material-icons_color_light-shade');
+    this.heart.classList.remove('material-icons_color_purple');
+    this.heart.textContent = 'favorite_border';
+    this.likesNumber.classList.remove('like-button__label_active');
   }
 }
 

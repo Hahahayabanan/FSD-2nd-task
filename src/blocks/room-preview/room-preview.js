@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.scss';
 
 class RoomPreview {
   constructor(preview) {
-    this.$preview = $(preview);
+    this.$roomPreview = $(preview);
     this.hasArrows = false;
 
     this.findDOMElements();
@@ -13,7 +13,7 @@ class RoomPreview {
   }
 
   findDOMElements() {
-    this.$slider = this.$preview.find('.js-room-preview__slider');
+    this.$slider = this.$roomPreview.find('.js-room-preview__slider');
   }
 
   checkArrows(element) {

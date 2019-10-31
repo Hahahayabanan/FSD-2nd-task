@@ -1,18 +1,18 @@
 class RateButton {
   constructor(htmlElem) {
     this.isEnoughFullStars = false;
-    this.elem = htmlElem;
+    this.rateButton = htmlElem;
 
     this.findDOMElements();
     this.init();
   }
 
   findDOMElements() {
-    this.labels = this.elem.querySelectorAll('.rate-button__label');
+    this.stars = this.rateButton.querySelectorAll('.rate-button__label');
   }
 
   init() {
-    this.inputs = Array.from(this.labels, this.initFullStars.bind(this));
+    this.inputs = Array.from(this.stars, this.initFullStars.bind(this));
   }
 
   initFullStars(label) {

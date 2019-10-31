@@ -35,56 +35,56 @@ class DonutChart {
     const {
       data, width, height, thickness, radius,
     } = this.getConstants();
-    const svg = d3.select(this.donutChart)
+    const d3DonutChart = d3.select(this.donutChart)
       .append('svg')
       .attr('class', 'donut-chart__pie')
       .attr('width', width)
       .attr('height', height);
-
-    this.g = svg.append('g')
+    this.svgObject = d3DonutChart.append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
-    this.arc = d3.arc()
+    this.outerArc = d3.arc()
       .innerRadius(radius - thickness)
       .outerRadius(radius);
-    this.arc2 = d3.arc()
+    this.innerArc = d3.arc()
       .innerRadius(radius - 10)
       .outerRadius(radius);
     this.pie = d3.pie()
       .value((d) => d.value)
       .sort(null)
       .padAngle(0.02);
-    this.defs = svg.append('svg:defs');
+    this.defs = d3DonutChart.append('svg:defs');
     this.data = data;
   }
 
-  onPieClick(d) {
-    const { data } = d;
+  onPieClick(dataObject) {
+    const { data } = dataObject;
+
     d3.selectAll('.text-group').remove();
     d3.selectAll('.value-text').remove();
     d3.selectAll('.name-text').remove();
 
-    const g = d3.select(this)
+    const currentArc = d3.select(this)
       .style('cursor', 'pointer')
       .append('g')
       .attr('class', 'donut-chart__text-group');
 
-    g.append('text')
+    currentArc.append('text')
       .attr('class', 'donut-chart__value')
       .text(`${data.value}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '-0.1em');
-    g.append('text')
+    currentArc.append('text')
       .attr('class', 'donut-chart__text')
       .text(`${data.name}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '1.3em');
   }
 
-  onPieClickColor(d, i, paths) {
+  onPieClickColor(data, currentPath, paths) {
     d3.selectAll('path')
-      .attr('d', this.arc);
-    d3.select(paths[i])
-      .attr('d', this.arc2);
+      .attr('d', this.outerArc);
+    d3.select(paths[currentPath])
+      .attr('d', this.innerArc);
   }
 
   onPieColorMouseOver() {
@@ -93,43 +93,43 @@ class DonutChart {
   }
 
   createPaths() {
-    this.g.selectAll('path')
+    this.svgObject.selectAll('path')
       .data(this.pie(this.data))
       .enter()
       .append('g')
       .on('click', this.onPieClick)
-      .style('fill', (d, i) => {
-        if (i === 0) return 'url(#gradient1)';
-        if (i === 1) return 'url(#gradient2)';
-        if (i === 2) return 'url(#gradient3)';
+      .style('fill', (d, index) => {
+        if (index === 0) return 'url(#gradient1)';
+        if (index === 1) return 'url(#gradient2)';
+        if (index === 2) return 'url(#gradient3)';
       })
       .append('path')
-      .attr('d', this.arc)
-      .attr('fill', (d, i) => {
-        if (i === 0) return 'url(#gradient1)';
-        if (i === 1) return 'url(#gradient2)';
-        if (i === 2) return 'url(#gradient3)';
+      .attr('d', this.outerArc)
+      .attr('fill', (d, index) => {
+        if (index === 0) return 'url(#gradient1)';
+        if (index === 1) return 'url(#gradient2)';
+        if (index === 2) return 'url(#gradient3)';
       })
       .on('click', this.onPieClickColor.bind(this))
       .on('mouseover', this.onPieColorMouseOver)
-      .each(function eachColor(i) { this._current = i; });
+      .each(function eachColor(index) { this._current = index; });
 
-    this.g.select('path').attr('d', this.arc2);
+    this.svgObject.select('path').attr('d', this.innerArc);
   }
 
   setStartText() {
-    this.g.append('text')
+    this.svgObject.append('text')
       .attr('text-anchor', 'middle')
       .attr('dy', '.35em')
       .text('');
 
-    this.g.append('text')
+    this.svgObject.append('text')
       .attr('class', 'donut-chart__value')
       .text(`${this.data[0].value}`)
       .attr('text-anchor', 'middle')
       .attr('dy', '-0.1em')
       .style('fill', 'url(#gradient1)');
-    this.g.append('text')
+    this.svgObject.append('text')
       .attr('class', 'donut-chart__text')
       .text('голосов')
       .attr('text-anchor', 'middle')

@@ -2,13 +2,13 @@ import 'inputmask/dist/jquery.inputmask.bundle';
 
 class TextField {
   constructor(element) {
-    this.$field = $(element);
+    this.$textField = $(element);
 
     this.init();
   }
 
   init() {
-    this.$field.inputmask({
+    this.$textField.inputmask({
       alias: 'datetime',
       inputFormat: 'dd.mm.yyyy',
       placeholder: 'ДД.ММ.ГГГГ',
