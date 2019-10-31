@@ -8,11 +8,25 @@
     flex-direction: column;
     padding: 10px 0;
   }
+
+  &_indent {
+
+    &_large {
+
+      .list-of-links__item {
+        margin-right: 30px;
+
+        &_dropdown {
+          margin-right: 20px;
+        }
+      }
+    }
+  }
   
   &__item {
     list-style: none;
     display: inline;
-    margin-right: 30px;
+    margin-right: 20px;
 
     &:last-of-type {
       margin-right: 0;
@@ -32,7 +46,7 @@
     &_dropdown {
       display: flex;
       align-items: center;
-      margin-right: 19px;
+      margin-right: 20px;
     
       @media (max-width: 804px) {
         margin-right: 0;

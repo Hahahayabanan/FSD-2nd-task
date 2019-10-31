@@ -44,7 +44,14 @@
   }
 
   &__list {
-    margin-right: 30px;
+    margin-right: 20px;
+
+    &_indent {
+
+      &_large {
+        margin-right: 30px;
+      }
+    }
 
     @media (max-width: 804px) {
       margin-right: 0;

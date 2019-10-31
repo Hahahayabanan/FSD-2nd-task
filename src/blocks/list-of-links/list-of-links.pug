@@ -1,8 +1,13 @@
 include ../material-icons/material-icons.pug
 
-mixin list-of-links({ links = [] } = {})
+mixin list-of-links({ links = [], indentBetweenElements = '' } = {})
+  - let indentModifier = ''
+
+  case indentBetweenElements
+    when 'large'
+      - indentModifier = 'list-of-links_indent_large'
   
-  ul.list-of-links
+  ul.list-of-links(class=indentModifier)
     each link in links
       li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_dropdown' : '')
         if link.href === undefined

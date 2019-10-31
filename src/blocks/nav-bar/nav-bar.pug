@@ -3,13 +3,18 @@ include ../button/button.pug
 include ../material-icons/material-icons.pug
 include ../list-of-links/list-of-links.pug
 
-mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register' } = {})
+mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register', indentBetweenElements = '' } = {})
+  case indentBetweenElements
+    when 'large'
+      - indentModifier = 'nav-bar__list_indent_large'
+
+
   nav.nav-bar
     .nav-bar__inner
       +logotype()
       .nav-bar__menu
-        .nav-bar__list
-          +list-of-links({ links: links })
+        .nav-bar__list(class=indentModifier)
+          +list-of-links({ links, indentBetweenElements })
         if !isLoggedIn
           .nav-bar__login
             +button({
