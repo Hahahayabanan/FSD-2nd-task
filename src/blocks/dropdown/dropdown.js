@@ -58,7 +58,7 @@ class Dropdown {
       let groupValue = 0;
 
       option.options.forEach((val) => {
-        groupValue += +val.value;
+        groupValue += Number(val.value);
       });
 
       if (groupValue === 0 && item !== 0) return '';
