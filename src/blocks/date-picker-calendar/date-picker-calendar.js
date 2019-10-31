@@ -2,9 +2,8 @@ import 'air-datepicker/dist/css/datepicker.min.css';
 import 'air-datepicker';
 
 class DatePickerCalendar {
-  constructor($datepicker) {
-    this.$datepicker = $datepicker;
-
+  constructor(datepicker) {
+    this.datepickerPluginInstance = datepicker;
     this.init();
   }
 
@@ -20,16 +19,16 @@ class DatePickerCalendar {
   }
 
   findDOMElements() {
-    this.$datepickerHTML = this.$datepicker.$datepicker;
-    this.$calendarInput = this.$datepicker.$el;
-    this.$title = this.$datepickerHTML.find('.datepicker--nav-title');
-    this.parent = this.$datepicker.$el.closest('.js-filter-date');
+    this.$datepicker = this.datepickerPluginInstance.$datepicker;
+    this.$calendarInput = this.datepickerPluginInstance.$el;
+    this.$title = this.$datepicker.find('.datepicker--nav-title');
+    this.parent = this.datepickerPluginInstance.$el.closest('.js-filter-date');
   }
 
   replaceCalendarToBlock() {
     this.$elementContainer = this.parent.find('.date-picker-calendar-container');
     if (this.$elementContainer.length > 0) {
-      this.$elementContainer.append(this.$datepicker.$datepicker);
+      this.$elementContainer.append(this.$datepicker);
     }
   }
 
@@ -38,7 +37,7 @@ class DatePickerCalendar {
   }
 
   createApplyButton() {
-    this.$buttonsContainer = this.$datepickerHTML.find('.datepicker--buttons');
+    this.$buttonsContainer = this.$datepicker.find('.datepicker--buttons');
     this.$applyButton = $('<span>', {
       text: this.applyButtonText,
       class: 'datepicker__apply-button',
@@ -50,7 +49,7 @@ class DatePickerCalendar {
   }
 
   hideDatepicker() {
-    this.$datepicker.hide();
+    this.datepickerPluginInstance.hide();
   }
 
   initLanguage() {
