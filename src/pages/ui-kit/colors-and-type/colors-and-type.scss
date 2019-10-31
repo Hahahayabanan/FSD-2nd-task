@@ -17,7 +17,8 @@
   }
 
   &__colors {
-    height: 610px;
+    min-height: 610px;
+    height: min-content;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

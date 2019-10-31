@@ -1,6 +1,8 @@
 .registration {
-  max-height: 700px;
-  height: 830px;
+  display: flex;
+  align-items: center;
+  min-height: 830px;
+  height: min-content;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -12,10 +14,12 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    width: 100%;
     padding-top: 3px;    
   }
 
   @media (max-width: 400px) {
-    height: 60%;;
+    min-height: 600px;
+    height: min-content;
   }
 }

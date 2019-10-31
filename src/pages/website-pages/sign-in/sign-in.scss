@@ -1,5 +1,8 @@
 .sign-in {
-  height: 700px - 17px;
+  display: flex;
+  align-items: center;  
+  min-height: 683px;
+  height: min-content;
   width: 100%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -7,14 +10,16 @@
   position: relative;
 
   @media (max-width: 456px) {
-    height: 35%;
+    min-height: 350px;
+    height: min-content;
   }
 
   &__container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;       
+    width: 100%;
+    height: 100%;
   }
 }
 
