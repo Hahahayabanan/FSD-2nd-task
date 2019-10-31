@@ -4,12 +4,12 @@ mixin rate-button({ name = 'rate-button', rating = 5 } = {})
   - let i = 0
   span.rate-button.js-rate-button
     while i < 5
-      label.rate-button__label
+      label.rate-button__label.js-rate-button__label
         +material-icons({
           type: 'star_border', 
           color: 'purple-gradient'
         })
-        input.rate-button__input(type='radio' name=name value=i++ checked= rating===i ? 'checked' : undefined)
+        input.rate-button__input.js-rate-button__input(type='radio' name=name value=i++ checked= rating===i ? 'checked' : undefined)
 
 
 

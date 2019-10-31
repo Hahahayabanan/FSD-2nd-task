@@ -11,9 +11,9 @@ mixin dropdown-option({ text = 'Option', number = 0, group = undefined } = {})
     .dropdown-option__header.js-dropdown-option__header
       +heading({ type: 'h3', text: text })
     .dropdown-option__container
-      .dropdown-option__item.dropdown-option__item_circle.dropdown-option__item_un-active -
-      .dropdown-option__item.dropdown-option__item_number=number
-      .dropdown-option__item.dropdown-option__item_circle +
+      .dropdown-option__circle.js-dropdown-option__circle.dropdown-option__circle_inactive -
+      .dropdown-option__number.js-dropdown-option__number=number
+      .dropdown-option__circle.js-dropdown-option__circle +
 
 
 

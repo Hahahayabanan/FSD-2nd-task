@@ -8,7 +8,7 @@ class RateButton {
   }
 
   findDOMElements() {
-    this.stars = this.rateButton.querySelectorAll('.rate-button__label');
+    this.stars = this.rateButton.querySelectorAll('.js-rate-button__label');
   }
 
   init() {
@@ -17,10 +17,10 @@ class RateButton {
 
   initFullStars(label) {
     if (!this.isEnoughFullStars) {
-      const input = label.querySelector('.rate-button__input');
+      const input = label.querySelector('.js-rate-button__input');
       const starIcon = 'star';
       const isChecked = input.getAttribute('checked') === 'checked';
-      const materialIcon = label.querySelector('.material-icons');
+      const materialIcon = label.querySelector('i');
 
       materialIcon.textContent = starIcon;
 

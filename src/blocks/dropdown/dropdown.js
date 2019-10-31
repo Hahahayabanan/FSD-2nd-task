@@ -18,9 +18,9 @@ class Dropdown {
   }
 
   getHTMLElements() {
-    this.select = this.dropdown.querySelector('.dropdown__select');
-    this.clearButton = this.dropdown.querySelector('.option-button__clear');
-    this.applyButton = this.dropdown.querySelector('.option-button__apply');
+    this.select = this.dropdown.querySelector('.js-dropdown__select');
+    this.clearButton = this.dropdown.querySelector('.js-option-button__clear');
+    this.applyButton = this.dropdown.querySelector('.js-option-button__apply');
   }
 
   bindEventListeners() {
@@ -58,7 +58,7 @@ class Dropdown {
       let groupValue = 0;
 
       option.options.forEach((val) => {
-        groupValue += Number(val.value);
+        groupValue += parseInt(val.value, 10);
       });
 
       if (groupValue === 0 && item !== 0) return '';
@@ -97,7 +97,7 @@ class Dropdown {
   showDropdown() {
     this.select.classList.add('dropdown__select_active');
     const dropdown = this.select.parentNode;
-    const selectOptions = dropdown.querySelector('.dropdown__options');
+    const selectOptions = dropdown.querySelector('.js-dropdown__options');
     selectOptions.classList.add('dropdown__options_active');
     $(document).on('click', this.outsideClickListener.bind(this));
   }
@@ -105,7 +105,7 @@ class Dropdown {
   hideDropdown() {
     this.select.classList.remove('dropdown__select_active');
     const dropdown = this.select.parentNode;
-    const selectOptions = dropdown.querySelector('.dropdown__options');
+    const selectOptions = dropdown.querySelector('.js-dropdown__options');
     selectOptions.classList.remove('dropdown__options_active');
     $(document).off('click');
   }

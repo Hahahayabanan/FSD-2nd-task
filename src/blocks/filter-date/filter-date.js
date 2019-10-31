@@ -9,13 +9,13 @@ class FilterDate {
   }
 
   findDOMElements() {
-    this.$input = this.$calendar.find('.date-text-field__input-entire-date > input');
+    this.$input = this.$calendar.find('.js-date-text-field__input-entire-date > input');
     this.isRange = false;
 
     if (this.$input.length === 0) {
       this.isRange = true;
-      this.$startInput = this.$calendar.find('.date-text-field__input-start-date > input');
-      this.$endInput = this.$calendar.find('.date-text-field__input-end-date > input');
+      this.$startInput = this.$calendar.find('.js-date-text-field__input-start-date > input');
+      this.$endInput = this.$calendar.find('.js-date-text-field__input-end-date > input');
       this.datepickerPluginInstance = this.$startInput.datepicker().data('datepicker');
     }
   }

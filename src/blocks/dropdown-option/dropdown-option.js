@@ -13,7 +13,7 @@ class DropdownOption {
       PLUS: '+',
       MINUS: '-',
     };
-    this.option.querySelectorAll('.dropdown-option__item_circle').forEach((val) => {
+    this.option.querySelectorAll('.js-dropdown-option__circle').forEach((val) => {
       if (val.textContent === signs.MINUS) {
         this.minusButton = val;
       }
@@ -22,7 +22,7 @@ class DropdownOption {
       }
     });
 
-    this.number = this.option.querySelector('.dropdown-option__item_number');
+    this.number = this.option.querySelector('.js-dropdown-option__number');
   }
 
   getValues() {
@@ -76,11 +76,11 @@ class DropdownOption {
   }
 
   activateMinus() {
-    this.minusButton.classList.remove('dropdown-option__item_un-active');
+    this.minusButton.classList.remove('dropdown-option__circle_inactive');
   }
 
   deactivateMinus() {
-    this.minusButton.classList.add('dropdown-option__item_un-active');
+    this.minusButton.classList.add('dropdown-option__circle_inactive');
   }
 
   clear() {

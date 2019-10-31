@@ -9,9 +9,9 @@ class LikeButton {
 
   findHTMLElements() {
     this.stageData = this.button.dataset.stage;
-    this.heartContainer = this.button.querySelector('.like-button__heart');
+    this.heartContainer = this.button.querySelector('.js-like-button__heart');
     this.heart = this.heartContainer.querySelector('i');
-    this.likesNumber = this.button.querySelector('.like-button__label');
+    this.likesNumber = this.button.querySelector('.js-like-button__label');
   }
 
   bindEventListeners() {

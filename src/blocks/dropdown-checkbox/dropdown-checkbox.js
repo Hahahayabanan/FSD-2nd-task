@@ -6,10 +6,10 @@ class DropdownCheckbox {
   }
 
   initCheckBoxes() {
-    this.dropdownOption = this.checkbox.querySelector('.dropdown-checkbox__option');
-    this.dropdownSelect = this.checkbox.querySelector('.dropdown-checkbox__select');
-    this.keyboardArrow = this.checkbox.querySelector('.dropdown-checkbox__keyboard-arrow');
-    this.keyboardArrowMaterialIcon = this.keyboardArrow.querySelector('.material-icons');
+    this.dropdownOption = this.checkbox.querySelector('.js-dropdown-checkbox__option');
+    this.dropdownSelect = this.checkbox.querySelector('.js-dropdown-checkbox__select');
+    this.keyboardArrow = this.checkbox.querySelector('.js-dropdown-checkbox__keyboard-arrow');
+    this.keyboardArrowMaterialIcon = this.keyboardArrow.querySelector('i');
   }
 
   bindEventListeners() {
