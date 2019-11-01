@@ -24,10 +24,10 @@ class Dropdown {
   }
 
   bindEventListeners() {
-    this.select.addEventListener('click', this.showHideDropdown.bind(this));
-    if (this.clearButton) this.clearButton.addEventListener('click', this.clearOptions.bind(this));
-    if (this.applyButton) this.applyButton.addEventListener('click', this.applyOptions.bind(this));
-    this.dropdown.addEventListener('changeOption', this.onChangeOption.bind(this));
+    this.select.addEventListener('click', this.handleSelectClick.bind(this));
+    if (this.clearButton) this.clearButton.addEventListener('click', this.handleClearButtonClick.bind(this));
+    if (this.applyButton) this.applyButton.addEventListener('click', this.handleApplyButtonClick.bind(this));
+    document.addEventListener('changeOption', this.handleDocumentChangeOption.bind(this));
   }
 
   setOptions() {
@@ -46,7 +46,7 @@ class Dropdown {
     });
   }
 
-  onChangeOption() {
+  handleDocumentChangeOption() {
     this.activateClear();
     this.calculateSelectText();
   }
@@ -86,7 +86,7 @@ class Dropdown {
     return this.setSelectText(finalText);
   }
 
-  showHideDropdown() {
+  handleSelectClick() {
     if (this.select.classList.contains('dropdown__select_active')) {
       this.hideDropdown();
     } else {
@@ -99,7 +99,8 @@ class Dropdown {
     const dropdown = this.select.parentNode;
     const selectOptions = dropdown.querySelector('.js-dropdown__options');
     selectOptions.classList.add('dropdown__options_active');
-    $(document).on('click', this.outsideClickListener.bind(this));
+    this.handleDocumentClick = this.handleDocumentClick.bind(this);
+    document.addEventListener('click', this.handleDocumentClick);
   }
 
   hideDropdown() {
@@ -107,10 +108,10 @@ class Dropdown {
     const dropdown = this.select.parentNode;
     const selectOptions = dropdown.querySelector('.js-dropdown__options');
     selectOptions.classList.remove('dropdown__options_active');
-    $(document).off('click');
+    document.removeEventListener('click', this.handleDocumentClick);
   }
 
-  outsideClickListener(event) {
+  handleDocumentClick(event) {
     const { target } = event;
     const itsMenu = target === this.dropdown || this.dropdown.contains(target);
     if (!itsMenu) {
@@ -126,7 +127,7 @@ class Dropdown {
     if (this.clearButton) this.clearButton.classList.add('option-button_hidden');
   }
 
-  clearOptions() {
+  handleClearButtonClick() {
     this.options.forEach((val) => {
       val.options.forEach((option) => {
         option.clear();
@@ -140,7 +141,7 @@ class Dropdown {
     }
   }
 
-  applyOptions() {
+  handleApplyButtonClick() {
     this.hideDropdown();
   }
 

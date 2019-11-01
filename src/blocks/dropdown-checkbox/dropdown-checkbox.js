@@ -13,10 +13,12 @@ class DropdownCheckbox {
   }
 
   bindEventListeners() {
-    this.dropdownSelect.addEventListener('click', () => {
-      this.dropdownOption.classList.toggle('dropdown-checkbox__option_invisible');
-      this.keyboardArrowMaterialIcon.innerHTML = this.keyboardArrowMaterialIcon.innerHTML === 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
-    });
+    this.dropdownSelect.addEventListener('click', this.handleDropdownSelectClick.bind(this));
+  }
+
+  handleDropdownSelectClick() {
+    this.dropdownOption.classList.toggle('dropdown-checkbox__option_invisible');
+    this.keyboardArrowMaterialIcon.innerHTML = this.keyboardArrowMaterialIcon.innerHTML === 'keyboard_arrow_down' ? 'keyboard_arrow_up' : 'keyboard_arrow_down';
   }
 }
 

@@ -54,9 +54,11 @@ class FilterDate {
   }
 
   initEndInput() {
-    this.$endInput.on('click', () => {
-      this.datepickerPluginInstance.show();
-    });
+    this.$endInput.on('click', this.handleEndInputClick.bind(this));
+  }
+
+  handleEndInputClick() {
+    this.datepickerPluginInstance.show();
   }
 
   setAdditionalClass() {

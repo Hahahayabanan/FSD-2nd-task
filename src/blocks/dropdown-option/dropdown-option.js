@@ -39,11 +39,11 @@ class DropdownOption {
   }
 
   bindEventListeners() {
-    this.minusButton.addEventListener('click', this.calcMinus.bind(this));
-    this.plusButton.addEventListener('click', this.calcPlus.bind(this));
+    this.minusButton.addEventListener('click', this.handleMinusButtonClick.bind(this));
+    this.plusButton.addEventListener('click', this.handlePlusButtonClick.bind(this));
   }
 
-  calcMinus() {
+  handleMinusButtonClick() {
     if (this.value > 0) {
       this.value -= 1;
     }
@@ -52,7 +52,7 @@ class DropdownOption {
     }
     this.number.textContent = this.value;
 
-    this.option.dispatchEvent(
+    document.dispatchEvent(
       new CustomEvent('changeOption', {
         bubbles: true,
         detail: this,
@@ -60,14 +60,14 @@ class DropdownOption {
     );
   }
 
-  calcPlus() {
+  handlePlusButtonClick() {
     if (this.value === 0) {
       this.activateMinus(this.minusButton);
     }
     this.value += Number(1);
     this.number.textContent = this.value;
 
-    this.option.dispatchEvent(
+    document.dispatchEvent(
       new CustomEvent('changeOption', {
         bubbles: true,
         detail: this,

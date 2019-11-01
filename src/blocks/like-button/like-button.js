@@ -15,7 +15,7 @@ class LikeButton {
   }
 
   bindEventListeners() {
-    this.button.addEventListener('click', this.changeStage.bind(this));
+    this.button.addEventListener('click', this.handleButtonClick.bind(this));
   }
 
   setStage() {
@@ -26,9 +26,8 @@ class LikeButton {
     }
   }
 
-  changeStage() {
+  handleButtonClick() {
     this.button.classList.toggle('like-button_active');
-
     this.heart.classList.toggle('material-icons_color_light-shade');
     this.heart.classList.toggle('material-icons_color_purple');
     if (this.heart.className.includes('material-icons_color_purple')) {

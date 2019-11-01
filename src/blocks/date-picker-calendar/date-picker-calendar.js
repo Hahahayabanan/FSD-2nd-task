@@ -45,10 +45,10 @@ class DatePickerCalendar {
   }
 
   bindEventListeners() {
-    this.$applyButton.on('click', this.hideDatepicker.bind(this));
+    this.$applyButton.on('click', this.handleApplyButtonClick.bind(this));
   }
 
-  hideDatepicker() {
+  handleApplyButtonClick() {
     this.datepickerPluginInstance.hide();
   }
 
