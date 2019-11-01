@@ -1,4 +1,5 @@
 import DropdownOption from '../dropdown-option/dropdown-option';
+import OptionButton from '../option-button/option-button';
 
 class Dropdown {
   constructor(htmlElem, titleCases) {
@@ -19,29 +20,31 @@ class Dropdown {
 
   getHTMLElements() {
     this.select = this.dropdown.querySelector('.js-dropdown__select');
-    this.clearButton = this.dropdown.querySelector('.js-option-button__clear');
-    this.applyButton = this.dropdown.querySelector('.js-option-button__apply');
+    this.clearButton = new OptionButton('clear', this.dropdown);
+    this.applyButton = new OptionButton('apply', this.dropdown);
+    if (!this.clearButton.getButton()) this.clearButton = undefined;
+    if (!this.applyButton.getButton()) this.applyButton = undefined;
   }
 
   bindEventListeners() {
     this.select.addEventListener('click', this.handleSelectClick.bind(this));
-    if (this.clearButton) this.clearButton.addEventListener('click', this.handleClearButtonClick.bind(this));
-    if (this.applyButton) this.applyButton.addEventListener('click', this.handleApplyButtonClick.bind(this));
     document.addEventListener('changeOption', this.handleDocumentChangeOption.bind(this));
+    if (this.clearButton) this.clearButton.eventListenerBind('click', this.handleClearButtonClick.bind(this));
+    if (this.applyButton) this.applyButton.eventListenerBind('click', this.handleApplyButtonClick.bind(this));
   }
 
   setOptions() {
-    const optionsHTML = this.dropdown.querySelectorAll('.js-dropdown-option');
-    optionsHTML.forEach((val) => {
-      const option = new DropdownOption(val);
-      const optionVal = this.options.find((optionValue) => {
-        if (optionValue.group === option.group) return true;
+    const optionsList = this.dropdown.querySelectorAll('.js-dropdown__option');
+    optionsList.forEach((currentOption) => {
+      const newOption = new DropdownOption(currentOption);
+      const desiredOption = this.options.find((optionIterationItem) => {
+        if (optionIterationItem.group === newOption.group) return true;
         return false;
       });
-      if (optionVal) {
-        optionVal.options.push(option);
+      if (desiredOption) {
+        desiredOption.options.push(newOption);
       } else {
-        this.options.push({ group: option.group, options: [option] });
+        this.options.push({ group: newOption.group, options: [newOption] });
       }
     });
   }
@@ -99,6 +102,7 @@ class Dropdown {
     const dropdown = this.select.parentNode;
     const selectOptions = dropdown.querySelector('.js-dropdown__options');
     selectOptions.classList.add('dropdown__options_active');
+
     this.handleDocumentClick = this.handleDocumentClick.bind(this);
     document.addEventListener('click', this.handleDocumentClick);
   }
@@ -120,11 +124,11 @@ class Dropdown {
   }
 
   activateClear() {
-    if (this.clearButton) this.clearButton.classList.remove('option-button_hidden');
+    if (this.clearButton) this.clearButton.show();
   }
 
   deactivateClear() {
-    if (this.clearButton) this.clearButton.classList.add('option-button_hidden');
+    if (this.clearButton) this.clearButton.hide();
   }
 
   handleClearButtonClick() {

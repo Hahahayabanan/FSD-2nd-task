@@ -40,7 +40,7 @@ class DatePickerCalendar {
     this.$buttonsContainer = this.$datepicker.find('.datepicker--buttons');
     this.$applyButton = $('<span>', {
       text: this.applyButtonText,
-      class: 'datepicker__apply-button',
+      class: 'date-picker-calendar__apply-button',
     }).appendTo(this.$buttonsContainer);
   }
 
@@ -73,14 +73,13 @@ class DatePickerCalendar {
       navTitles: {
         days: 'MM <i>yyyy</i>',
       },
-      classes: 'date-picker-calendar__inner',
     });
   }
 
   replaceNavArrows() {
     this.$calendarInput.datepicker({
-      nextHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_forward</i>',
-      prevHtml: '<i class="datepicker__material-icons datepicker__material-icons_color_purple">arrow_back</i>',
+      nextHtml: '<i class="date-picker-calendar__material-icon date-picker-calendar__material-icon_color_purple">arrow_forward</i>',
+      prevHtml: '<i class="date-picker-calendar__material-icon date-picker-calendar__material-icon_color_purple">arrow_back</i>',
     });
   }
 

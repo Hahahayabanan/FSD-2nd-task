@@ -1,4 +1,5 @@
 import DatePickerCalendar from '../date-picker-calendar/date-picker-calendar';
+import DateTextField from '../date-text-field/date-text-field';
 
 class FilterDate {
   constructor(calendar) {
@@ -9,29 +10,33 @@ class FilterDate {
   }
 
   findDOMElements() {
-    this.$input = this.$calendar.find('.js-date-text-field__input-entire-date > input');
+    this.input = new DateTextField(this.$calendar, 'entire');
+    this.$input = this.input.get$Element();
     this.isRange = false;
 
     if (this.$input.length === 0) {
       this.isRange = true;
-      this.$startInput = this.$calendar.find('.js-date-text-field__input-start-date > input');
-      this.$endInput = this.$calendar.find('.js-date-text-field__input-end-date > input');
+      this.startInput = new DateTextField(this.$calendar, 'start');
+      this.$startInput = this.startInput.get$Element();
+      this.endInput = new DateTextField(this.$calendar, 'end');
+      this.$endInput = this.endInput.get$Element();
       this.datepickerPluginInstance = this.$startInput.datepicker().data('datepicker');
     }
   }
 
   initCalendar() {
     if (this.isRange) {
-      this.$startInput.datepicker({
+      const { $startInput } = this;
+      const { $endInput } = this;
+
+      $startInput.datepicker({
         range: true,
         multipleDatesSeparator: ' - ',
         language: 'ru',
         clearButton: true,
       });
 
-      const { $startInput } = this;
-      const { $endInput } = this;
-      this.$startInput.datepicker({
+      $startInput.datepicker({
         onSelect(formattedDate) {
           $startInput.val(formattedDate.split('-')[0]);
           $endInput.val(formattedDate.split('-')[1]);
@@ -54,7 +59,7 @@ class FilterDate {
   }
 
   initEndInput() {
-    this.$endInput.on('click', this.handleEndInputClick.bind(this));
+    this.endInput.eventListenerBind('click', this.handleEndInputClick.bind(this));
   }
 
   handleEndInputClick() {

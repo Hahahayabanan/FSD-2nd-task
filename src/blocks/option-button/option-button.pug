@@ -1,5 +1,5 @@
 mixin option-button({ type = 'apply', text = 'Click me', isHidden = false } = {})
-  .option-button
+  .option-button.js-option-button
     div(class=`option-button__${type} js-option-button__${type}` class= isHidden ? 'option-button_hidden' : '' )=text
 
 

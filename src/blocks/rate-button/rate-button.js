@@ -1,3 +1,5 @@
+import MaterialIcons from '../material-icons/material-icons';
+
 class RateButton {
   constructor(htmlElem) {
     this.isEnoughFullStars = false;
@@ -20,9 +22,9 @@ class RateButton {
       const input = label.querySelector('.js-rate-button__input');
       const starIcon = 'star';
       const isChecked = input.getAttribute('checked') === 'checked';
-      const materialIcon = label.querySelector('i');
+      const materialIcon = new MaterialIcons(label);
 
-      materialIcon.textContent = starIcon;
+      materialIcon.setTextContent(starIcon);
 
       if (isChecked) {
         this.isEnoughFullStars = true;

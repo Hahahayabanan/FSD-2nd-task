@@ -1,7 +1,6 @@
 class DropdownOption {
-  constructor(elem) {
-    this.option = elem;
-    this.name = '';
+  constructor(container) {
+    this.container = container;
 
     this.getHTMLElements();
     this.getValues();
@@ -13,6 +12,8 @@ class DropdownOption {
       PLUS: '+',
       MINUS: '-',
     };
+
+    this.option = this.container.querySelector('.js-dropdown-option');
     this.option.querySelectorAll('.js-dropdown-option__circle').forEach((val) => {
       if (val.textContent === signs.MINUS) {
         this.minusButton = val;
@@ -29,7 +30,6 @@ class DropdownOption {
     this.value = parseInt(this.number.textContent, 10);
     if (this.value === '') this.value = 0;
     if (this.value > 0) this.activateMinus();
-    this.name = this.option.querySelector('.js-dropdown-option__header > .heading').textContent;
     if (this.option.hasAttribute('data-group')) {
       const { group } = this.option.dataset;
       if (group) {
