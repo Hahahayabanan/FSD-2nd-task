@@ -1,12 +1,12 @@
 include ../heading/heading.pug
 
 
-mixin vertical-menu({ header = 'title', links = [] } = {})
+mixin vertical-menu({ header = 'title', links = [], } = {})
   .vertical-menu
     ul.vertical-menu__list
       li.vertical-menu__item
-        +heading({ type: 'h3', text: header })
+        +heading({ type: 'h3', text: header, })
       each link in links
-        - const { href = '/mock-address/change-me', text = 'click me' } = link
+        - const { href = '/mock-address/change-me', text = 'click me', } = link
         li.vertical-menu__item
           a.vertical-menu__link(href=href)=text 

@@ -1,9 +1,9 @@
 include ../material-icons/material-icons.pug
 
-mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descriptionText = 'вариантов аренды', links = [] } = {})
+mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descriptionText = 'вариантов аренды', links = [], } = {})
   ul.pagination
     each link, i in links
-      - const { href, isActive, number } = link
+      - const { href, isActive, number, } = link
       if i === links.length-1
         li.pagination__item
           .pagination__ellipsis ...
@@ -13,7 +13,7 @@ mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descrip
       a.pagination__pagination__link_next(href='/mock-address/change-me')
         +material-icons({
           type: 'arrow_forward', 
-          color: 'white'
+          color: 'white',
         })
     p.pagination__description 
       span.pagination__start-number=startNumber

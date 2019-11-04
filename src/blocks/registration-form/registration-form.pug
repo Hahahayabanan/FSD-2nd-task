@@ -4,11 +4,11 @@ include ../text-field/text-field.pug
 include ../toggle-button/toggle-button.pug
 include ../button/button.pug
 
-mixin registration-form( { action='/mock-address/change-me', name='registration-form', method='post' } = {} )
+mixin registration-form( { action='/mock-address/change-me', name='registration-form', method='post', } = {} )
   form.registration-form(action=action name=name method=method)
     .registration-form__wrapper
       .registration-form__heading
-        +heading({ type: 'h1', text: 'Регистрация аккаунта' })
+        +heading({ type: 'h1', text: 'Регистрация аккаунта', })
 
       .registration-form__first-name
         +text-field({
@@ -27,21 +27,21 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
 
       .registration-form__radio-buttons
         .registration-form__radio-button
-          +radio-button({ name:'registration-form', value:'man', text:'Мужчина', isChecked:'true' })
+          +radio-button({ name:'registration-form', value:'man', text:'Мужчина', isChecked:'true', })
         .registration-form__radio-button
-          +radio-button({ name:'registration-form', value:'woman', text:'Женщина' })
+          +radio-button({ name:'registration-form', value:'woman', text:'Женщина', })
 
       .registration-form__birthday-heading
-        +heading({ type: 'h3', text: 'Дата рождения' })
+        +heading({ type: 'h3', text: 'Дата рождения', })
       
       .registration-form__birthday
         +text-field({
           placeholder: 'ДД.ММ.ГГГГ',
-          theme: 'masked'
+          theme: 'masked',
         })
 
       .registration-form__login-data-heading
-        +heading({ type: 'h3', text: 'Данные для входа в сервис' })
+        +heading({ type: 'h3', text: 'Данные для входа в сервис', })
 
       .registration-form__email
         +text-field({
@@ -57,7 +57,7 @@ mixin registration-form( { action='/mock-address/change-me', name='registration-
         })
 
       .registration-form__toggle-button
-        +toggle-button({ name: 'toggle', text: 'Получать спецпредложения' })
+        +toggle-button({ name: 'toggle', text: 'Получать спецпредложения', })
 
       .registration-form__button
         +button({

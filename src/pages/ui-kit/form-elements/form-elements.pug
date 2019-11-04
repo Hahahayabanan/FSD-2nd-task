@@ -32,15 +32,15 @@ block content
       article.form-elements__fields
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'text field' })
+            +heading({ type: 'h3', text: 'text field', })
           +text-field({
             type: 'email',
             name: 'input-email',
-            placeholder: 'Email'
+            placeholder: 'Email',
           })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'dropdown' })
+            +heading({ type: 'h3', text: 'dropdown', })
           +dropdown({ 
             text: 'Сколько гостей',
             hasButtons: true,
@@ -52,56 +52,56 @@ block content
           })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'masked text field' })
+            +heading({ type: 'h3', text: 'masked text field', })
           +text-field({
             placeholder: 'ДД.ММ.ГГГГ',
-            theme: 'masked'
+            theme: 'masked',
           })
         .form-elements__wrapper
-          +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown' })
+          +filter-date({ inputFieldType: 'range', firstHeader: 'date Dropdown', secondHeader: 'date Dropdown', })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'filter date dropdown' })
-          +filter-date({ firstHeader: '' })
+            +heading({ type: 'h3', text: 'filter date dropdown', })
+          +filter-date({ firstHeader: '', })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'subscription text field' })
-          +subscription-text-field({ placeholder: 'Email' })
+            +heading({ type: 'h3', text: 'subscription text field', })
+          +subscription-text-field({ placeholder: 'Email', })
 
       article.form-elements__check-buttons
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'checkbox buttons' })
+            +heading({ type: 'h3', text: 'checkbox buttons', })
           .form-elements__checkbox-button
-            +checkbox-button({ name: 'checkbox0', text: 'Можно курить' })
+            +checkbox-button({ name: 'checkbox0', text: 'Можно курить', })
           .form-elements__checkbox-button
-            +checkbox-button({ name: 'checkbox1', text: 'Можно с питомцами' })
+            +checkbox-button({ name: 'checkbox1', text: 'Можно с питомцами', })
           .form-elements__checkbox-button
-            +checkbox-button({ name: 'checkbox2', text: 'Можно пригласить гостей (до 10 человек)' })
+            +checkbox-button({ name: 'checkbox2', text: 'Можно пригласить гостей (до 10 человек)', })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'radio button' })
+            +heading({ type: 'h3', text: 'radio button', })
           .form-elements__radio-buttons
             .form-elements__radio-button
-              +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', isChecked: true })
+              +radio-button({ name: 'contact', value: 'man', text: 'Мужчина', isChecked: true, })
             .form-elements__radio-buttons
-              +radio-button({ name: 'contact', value: 'woman', text: 'Женщина' })
+              +radio-button({ name: 'contact', value: 'woman', text: 'Женщина', })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'toggle button' })
-          +toggle-button({ name: 'toggle', text: 'Получать спецпредложения' })
+            +heading({ type: 'h3', text: 'toggle button', })
+          +toggle-button({ name: 'toggle', text: 'Получать спецпредложения', })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'like button' })
+            +heading({ type: 'h3', text: 'like button', })
           +like-button({ likesNumber: 2 })
           .form-elements__like-button
-            +like-button({ likesNumber: 12, isChecked: true })
+            +like-button({ likesNumber: 12, isChecked: true, })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'rate button' })
-          +rate-button({ name: 'rate01', rating: 4 })
+            +heading({ type: 'h3', text: 'rate button', })
+          +rate-button({ name: 'rate01', rating: 4, })
           .form-elements__rate-button
-            +rate-button({ name: 'rate02', rating: 5 })
+            +rate-button({ name: 'rate02', rating: 5, })
 
       article.form-elements__buttons
         .form-elements__wrapper
@@ -116,7 +116,7 @@ block content
           })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'buttons' })
+            +heading({ type: 'h3', text: 'buttons', })
           .form-elements__button
             +button({
               styleType: 'simple', 
@@ -144,25 +144,25 @@ block content
             })
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'pagination' })
+            +heading({ type: 'h3', text: 'pagination', })
           +pagination({ 
             links: [
               { href: '/mock-address/change-me', number: 1, isActive: true, },
               { href: '/mock-address/change-me', number: 2, },
               { href: '/mock-address/change-me', number: 3, },
               { href: '/mock-address/change-me', number: 15, },
-            ]
+            ],
           })
 
       article.form-elements__left-dropdown
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'dropdown' })
+            +heading({ type: 'h3', text: 'dropdown', })
           +dropdown({ 
             width: 'short',
             options: [
-              { text: 'спальни', number: 2 },
-              { text: 'кровати', number: 2 },
+              { text: 'спальни', number: 2, },
+              { text: 'кровати', number: 2, },
               { text: 'ванные комнаты' },
             ],
           })
@@ -187,41 +187,41 @@ block content
             image: 'insert_emoticon', 
             title: 'Комфорт', 
             description: 'Шумопоглощающие стены', 
-            hasUnderline: true
+            hasUnderline: true,
           })
         .form-elements__wrapper
           +icon-text({
             image: 'location_city', 
             title: 'Удобство', 
             description: 'Окно в каждой из спален', 
-            hasUnderline: true
+            hasUnderline: true,
           })
 
       article.form-elements__middle-dropdown
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'rich-checkbox' })
+            +heading({ type: 'h3', text: 'rich-checkbox', })
           +checkbox-button({ 
             name: 'checkbox13', 
             text: 'Широкий коридор', 
-            description: 'Ширина коридоров в номере не менее 91 см.'
+            description: 'Ширина коридоров в номере не менее 91 см.',
           })
           +checkbox-button({ 
             name: 'checkbox14', 
             text: 'Помощник для инвалидов', 
-            description: 'На 1 этаже вас встретит специалист и проводит до номера.'
+            description: 'На 1 этаже вас встретит специалист и проводит до номера.',
           })
 
       article.form-elements__right-dropdown
         .form-elements__wrapper
           .form-elements__heading
-            +heading({ type: 'h3', text: 'bullet-list' })
+            +heading({ type: 'h3', text: 'bullet-list', })
           +bullet-list({ 
             values: [
               { text: 'Нельзя с питомцами' }, 
               { text: 'Без вечеринок и мероприятий' }, 
               { text: 'Время прибытия — после 13:00, а выезд до 12:00' },
-            ]
+            ],
           })
 
       article.form-elements__comments
@@ -231,7 +231,7 @@ block content
             likesNumber: 11, 
             authorName: 'Мурад Сарафанов', 
             date: '5 дней назад', 
-            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
+            text: 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.',
           })
 
 

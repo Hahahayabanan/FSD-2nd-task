@@ -3,7 +3,7 @@ include ../logotype/logotype.pug
 include ../copyright-bar/copyright-bar.pug
 include ../vertical-menu/vertical-menu.pug
 
-mixin footer-widgets({ description = 'Description', headingOfBlockSubscribe = 'Subscribe', descriptionOfBlockSubscribe = 'Sub descr', emailFieldPlaceholder = 'Email', textOfCopyrightBlock  = 'copyright', verticalMenus = [] } = {} ) 
+mixin footer-widgets({ description = 'Description', headingOfBlockSubscribe = 'Subscribe', descriptionOfBlockSubscribe = 'Sub descr', emailFieldPlaceholder = 'Email', textOfCopyrightBlock  = 'copyright', verticalMenus = [], } = {} ) 
   footer.footer-widgets
     .footer-widgets__container
       .footer-widgets__inner
@@ -16,7 +16,7 @@ mixin footer-widgets({ description = 'Description', headingOfBlockSubscribe = 'S
         
         .footer-widgets__menu
           each menu in verticalMenus
-            - const { heading, links } = menu
+            - const { heading, links, } = menu
             +vertical-menu({ 
               links,
               header: heading, 
@@ -24,11 +24,11 @@ mixin footer-widgets({ description = 'Description', headingOfBlockSubscribe = 'S
 
         ul.footer-widgets__list
           li.footer-widgets__item
-            +heading({ type: 'h3', text: headingOfBlockSubscribe })
+            +heading({ type: 'h3', text: headingOfBlockSubscribe, })
           li.footer-widgets__item
             p.footer-widgets__description=descriptionOfBlockSubscribe
           li.footer-widgets__item
             .footer-widgets__subscription-text-field
-              +subscription-text-field({ placeholder: emailFieldPlaceholder })
+              +subscription-text-field({ placeholder: emailFieldPlaceholder, })
     section.footer-widgets__copyright-bar      
-      +copyright-bar({ text: textOfCopyrightBlock })
+      +copyright-bar({ text: textOfCopyrightBlock, })

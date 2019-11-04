@@ -1,10 +1,10 @@
 include ../material-icons/material-icons.pug
 
-mixin subscription-text-field({ placeholder = 'Email' } = {})
+mixin subscription-text-field({ placeholder = 'Email', } = {})
   section.subscription-text-field
     input(type='email', name='input-email', class='subscription-text-field__field', placeholder=placeholder)
     .subscription-text-field__arrow
       +material-icons({
         type: 'arrow_forward', 
-        color: 'purple-gradient'
+        color: 'purple-gradient',
       })

@@ -4,7 +4,7 @@ include ../dropdown/dropdown.pug
 include ../button/button.pug
 include ../info-table/info-table.pug
 
-mixin order({ name='order', action='/mock-address/change-me', method='get', currency = '₽', inTime = 'в сутки', typeOfRoom = 'люкс', roomPrice = '9 990', roomNumber = '888' } = {})
+mixin order({ name='order', action='/mock-address/change-me', method='get', currency = '₽', inTime = 'в сутки', typeOfRoom = 'люкс', roomPrice = '9 990', roomNumber = '888', } = {})
   form.order(name=name action=action method=method)
     .order__wrapper
       .order__title
@@ -18,9 +18,9 @@ mixin order({ name='order', action='/mock-address/change-me', method='get', curr
           span.order__in-time=inTime
 
       .order__dropdown-date
-        +filter-date({ inputFieldType: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд' })
+        +filter-date({ inputFieldType: 'range', firstHeader: 'Прибытие', secondHeader: 'Выезд', })
       .order__dropdown
-        +heading({ type: 'h3', text: 'Гости' })
+        +heading({ type: 'h3', text: 'Гости', })
         .order__dropdown-container
           +dropdown({ 
             text: 'Сколько гостей',
@@ -29,11 +29,11 @@ mixin order({ name='order', action='/mock-address/change-me', method='get', curr
               { text: 'взрослые', group: 'гости' },
               { text: 'дети', group: 'гости' },
               { text: 'младенцы' },
-            ]
+            ],
           })
 
       .order__info-table
-        +info-table({ currency })
+        +info-table({ currency, })
 
       .order__button
         +button({

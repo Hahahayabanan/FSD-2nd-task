@@ -1,6 +1,6 @@
 include ../heading/heading.pug
 
-mixin dropdown-option({ text = 'Option', number = 0, group = null } = {})
+mixin dropdown-option({ text = 'Option', number = 0, group = null, } = {})
   if number < 0
     - number = 0
   
@@ -9,7 +9,7 @@ mixin dropdown-option({ text = 'Option', number = 0, group = null } = {})
 
   section.dropdown-option.js-dropdown-option(data-group=group)
     .dropdown-option__header.js-dropdown-option__header
-      +heading({ text, type: 'h3' })
+      +heading({ text, type: 'h3', })
     .dropdown-option__container
       .dropdown-option__circle.js-dropdown-option__circle.dropdown-option__circle_inactive -
       .dropdown-option__number.js-dropdown-option__number=number

@@ -2,11 +2,11 @@ include ../heading/heading.pug
 include ../text-field/text-field.pug
 include ../button/button.pug
 
-mixin sign-in-form({ action='/mock-address/change-me', name='registration', method='post' } = {})
+mixin sign-in-form({ action='/mock-address/change-me', name='registration', method='post', } = {})
   form.sign-in-form(action=action name=name method=method)
     .sign-in-form__wrapper
       .sign-in-form__heading
-        +heading({ type: 'h1', text: 'Войти' })
+        +heading({ type: 'h1', text: 'Войти', })
 
       .sign-in-form__email
         +text-field({

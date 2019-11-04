@@ -2,7 +2,7 @@ include ../checkbox-button/checkbox-button.pug
 include ../material-icons/material-icons.pug
 include ../heading/heading.pug
 
-mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']] } = {})
+mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter'], ['cb2','points'], ['cb3','here']], } = {})
   section.dropdown-checkbox.js-dropdown-checkbox
     .dropdown-checkbox__keyboard-arrow.js-dropdown-checkbox__keyboard-arrow
       +material-icons({
@@ -10,9 +10,9 @@ mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter
         color: 'shade',
       })
     .dropdown-checkbox__select.js-dropdown-checkbox__select
-      +heading({ type: 'h3', text: title })
+      +heading({ type: 'h3', text: title, })
     .dropdown-checkbox__option.js-dropdown-checkbox__option.dropdown-checkbox__option_invisible
       each val in values
-        - const [ name, text ] = val
+        - const [ name, text, ] = val
         .dropdown-checkbox__button
-          +checkbox-button({ name, text })
+          +checkbox-button({ name, text, })

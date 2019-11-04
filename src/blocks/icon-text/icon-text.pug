@@ -1,13 +1,13 @@
 include ../material-icons/material-icons.pug
 
-mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', description = 'Шумопоглощающие стены', hasUnderline = false } = {})
+mixin icon-text({ image = 'insert_emoticon', title = 'Комфорт', description = 'Шумопоглощающие стены', hasUnderline = false, } = {})
   section.icon-text
     .icon-text__row
       .icon-text__image
         +material-icons({
           type: image, 
           color: 'purple-gradient',
-          size: 'large'
+          size: 'large',
         })
       .icon-text__text-container            
         p.icon-text__title=title

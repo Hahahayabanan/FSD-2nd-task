@@ -1,9 +1,9 @@
-mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragraphs', type: 'bad' }, { text: 'here', type: 'ok' }], reserveText = 'There are no values' } = {})
+mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragraphs', type: 'bad' }, { text: 'here', type: 'ok' }], reserveText = 'There are no values', } = {})
   - let typeModifier = null
   section.bullet-list
     ul.bullet-list__list
       each value in values
-        - const { type, text } = value
+        - const { type, text, } = value
         case type
           when 'great'
             - typeModifier = 'bullet-list__item_great'
