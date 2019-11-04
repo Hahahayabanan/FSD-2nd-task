@@ -9,7 +9,7 @@ mixin list-of-links({ links = [], indentBetweenElements = '' } = {})
   
   ul.list-of-links(class=indentModifier)
     each link in links
-      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_dropdown' : '')
+      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_with-dropdown' : '')
         if link.href === undefined
           - link.href = '/mock-address/change-me'
         if link.text === undefined

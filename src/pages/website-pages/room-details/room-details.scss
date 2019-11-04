@@ -57,19 +57,19 @@
     display: grid;
     grid-template-columns: 0.92fr 1.08fr 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: 'info diagramm get-it' 'review review get-it' 'rules cancel get-it';
+    grid-template-areas: 'info diagram get-it' 'review review get-it' 'rules cancel get-it';
     grid-column-gap: 10px;
   
     @media (max-width: 876px) {
       grid-template-columns: auto auto;
       grid-template-rows: auto auto auto auto;
-      grid-template-areas: 'info diagramm' 'review review' 'rules cancel' 'get-it get-it';
+      grid-template-areas: 'info diagram' 'review review' 'rules cancel' 'get-it get-it';
     }
 
     @media (max-width: 545px) {
       grid-template-columns: auto;
       grid-template-rows: auto auto auto auto auto auto;
-      grid-template-areas: 'info' 'diagramm' 'review' 'rules' 'cancel' 'get-it';
+      grid-template-areas: 'info' 'diagram' 'review' 'rules' 'cancel' 'get-it';
     }
 
     @media (max-width: 380px) {
@@ -91,8 +91,8 @@
     min-width: 300px;
   }
 
-  &__content-diagramm { 
-    grid-area: diagramm; 
+  &__content-diagram { 
+    grid-area: diagram; 
 
     @media (max-width: 545px) {
       margin-top: 20px;

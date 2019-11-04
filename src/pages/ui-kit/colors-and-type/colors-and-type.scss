@@ -53,7 +53,7 @@
       width: 100%;
     }
   }
-  &__h {
+  &__heading {
     color: $light-shade;
     display: inline-block;
     margin: 0;
@@ -77,7 +77,10 @@
     }
   }
   
-  &__h-body {
+  &__heading-body {
+    color: $light-shade;
+    display: inline-block;
+    margin: 0;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
@@ -87,6 +90,11 @@
   }
 
   &__text-body {
+    display: block;
+    max-width: 336px;
+    width: 100%;
+    padding-left: 30px;
+    margin: 0;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
