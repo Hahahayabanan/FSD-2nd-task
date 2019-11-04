@@ -25,15 +25,3 @@ mixin dropdown({ text = null, options = [], hasButtons = false, width = null } =
         .dropdown__option-button
           +option-button({ type: 'clear', text: 'Очистить', isHidden: true })
           +option-button({ text: 'apply', text: 'Применить' })
-
-
-//- 
-//- +dropdown({ 
-//-   text: 'Сколько гостей',
-//-   hasButtons: true,
-//-   options: [
-//-     { text: 'взрослые', group: 'гости' },
-//-     { text: 'дети', group: 'гости' },
-//-     { text: 'младенцы' },
-//-   ]
-//- })

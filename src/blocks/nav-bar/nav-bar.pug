@@ -33,18 +33,3 @@ mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], logi
         else
           .nav-bar__vertical-line
           .nav-bar__user-name=userName
-
-
-//- ******** EXAMPLE *********
-//- +nav-bar({
-//-   isLoggedIn: false, 
-//-   links: [
-//-     { text: 'О нас' },
-//-     { text: 'Услуги', isDropdown: true },
-//-     { text: 'Вакансии'  },
-//-     { text: 'Новости' },
-//-     { text: 'Соглашения', isDropdown: true },
-//-   ],
-//-   loginButtonText: 'Войти',
-//-   registerButtonText: 'Зарегистрироваться'
-//- })

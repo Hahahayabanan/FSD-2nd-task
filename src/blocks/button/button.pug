@@ -35,18 +35,3 @@ mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'c
           })
     default
       #{tagModifier}(class=`button button_${styleType}` class=sizeModifier type=typeModifier href=isSubmit ? null : href)=text
-
-
-
-
-//- ***************
-//- *** EXAMPLE ***
-//- 
-//- +button({
-    'styleType': 'long', 
-    href: '/mock-address/change-me', 
-    text: 'click me',
-    type: 'submit',
-  })
-//- 
-//- ***************

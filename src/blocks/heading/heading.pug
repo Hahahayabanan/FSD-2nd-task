@@ -11,8 +11,3 @@ mixin heading({ type = 'h3', text = 'Header', color = null, weight = null } = {}
       - weightModifier = 'heading_weight_normal'
 
   #{type}.heading(class = `heading_type_${type} ${colorModifier} ${weightModifier}`)=text
-
-
-
-//- 
-  +heading({ type: 'h3', text: 'hello world' })

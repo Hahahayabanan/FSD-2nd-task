@@ -8,19 +8,3 @@ mixin range-slider({ headerText = null, type = 'double', min = 0, max = 100, ste
       input(type='text' readonly class='range-slider__price js-range-slider__price')
     .range-slider__inner
       input.range-slider__slider.js-range-slider__slider( data-type=`${type}` data-min=`${min}` data-max=`${max}` data-step=`${step}` data-from=`${from}` data-to=`${to}` data-hide-min-max=`${isMinMaxHidden}` data-hide-from-to=`${isFromToHidden}`)
-
-
-//- ***************
-//- *** EXAMPLE ***
-//- 
-//- +range-slider({ 
-      headerText: 'range slider', 
-      type: 'double', 
-      min: 1000, 
-      max: 15000, 
-      step: 1, 
-      from: 5000, 
-      to: 10000, 
-    })
-//- 
-//- ***************
