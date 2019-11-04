@@ -13,8 +13,9 @@ mixin dropdown-checkbox({ title = 'expandable checkbox', values = [['cb1','Enter
       +heading({ type: 'h3', text: title })
     .dropdown-checkbox__option.js-dropdown-checkbox__option.dropdown-checkbox__option_invisible
       each val in values
+        - const [ name, text ] = val
         .dropdown-checkbox__button
-          +checkbox-button({ name: val[0], text: val[1] })
+          +checkbox-button({ name, text })
 
         
 

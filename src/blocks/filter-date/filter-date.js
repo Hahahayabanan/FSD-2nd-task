@@ -26,8 +26,7 @@ class FilterDate {
 
   initCalendar() {
     if (this.isRange) {
-      const { $startInput } = this;
-      const { $endInput } = this;
+      const { $startInput, $endInput } = this;
 
       $startInput.datepicker({
         range: true,
@@ -38,8 +37,10 @@ class FilterDate {
 
       $startInput.datepicker({
         onSelect(formattedDate) {
-          $startInput.val(formattedDate.split('-')[0]);
-          $endInput.val(formattedDate.split('-')[1]);
+          const inputValues = formattedDate.split('-');
+          const [startValue, secondValue] = inputValues;
+          $startInput.val(startValue);
+          $endInput.val(secondValue);
         },
       });
       new DatePickerCalendar(this.$startInput.datepicker().data('datepicker'), this.$calendar);

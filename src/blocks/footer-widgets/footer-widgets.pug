@@ -16,9 +16,10 @@ mixin footer-widgets({ description = 'Description', headingOfBlockSubscribe = 'S
         
         .footer-widgets__menu
           each menu in verticalMenus
+            - const { heading, links } = menu
             +vertical-menu({ 
-              header: menu.heading, 
-              links: menu.links
+              links,
+              header: heading, 
             })
 
         ul.footer-widgets__list

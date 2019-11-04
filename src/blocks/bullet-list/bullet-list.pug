@@ -3,7 +3,8 @@ mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragra
   section.bullet-list
     ul.bullet-list__list
       each value in values
-        case value.type
+        - const { type, text } = value
+        case type
           when 'great'
             - typeModifier = 'bullet-list__item_great'
           when 'good'
@@ -14,7 +15,7 @@ mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragra
             - typeModifier = 'bullet-list__item_bad'
           default
             - typeModifier = null
-        li.bullet-list__item(class=typeModifier)=value.text
+        li.bullet-list__item(class=typeModifier)=text
       else
         li.bullet-list__item=reserveText
 

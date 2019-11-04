@@ -26,11 +26,11 @@ mixin room-preview({ hasArrows = false, src = 'img/rooms/room888.svg', number = 
       .room-preview__row
         .room-preview__paragraph
           .room-preview__rate-button
-            +rate-button({ name: name, rating: rate })
+            +rate-button({ name, rating: rate })
 
         .room-preview__paragraph
-          span.room-preview__reviews-num=reviews
-          span.room-preview__reviews-rev  Отзывов
+          span.room-preview__reviews-num=reviews + ' '
+          span.room-preview__reviews-rev Отзывов
 
 //- ******************
 //- 

@@ -18,8 +18,9 @@ mixin dropdown({ text = null, options = [], hasButtons = false, width = null } =
       span.dropdown__select-text=text
     .dropdown__options.js-dropdown__options
       each option in options
+        - const { text, group, number } = option
         .dropdown__option.js-dropdown__option
-          +dropdown-option({ text: option.text, group: option.group, number: option.number })
+          +dropdown-option({ text, group, number })
       if hasButtons
         .dropdown__option-button
           +option-button({ type: 'clear', text: 'Очистить', isHidden: true })

@@ -9,13 +9,10 @@ mixin list-of-links({ links = [], indentBetweenElements = null } = {})
   
   ul.list-of-links(class=indentModifier)
     each link in links
-      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_with-dropdown' : null)
-        if link.href === null
-          - link.href = '/mock-address/change-me'
-        if link.text === null
-          - link.text = 'click me'
-        a.list-of-links__link(href=link.href class=link.isActive ? 'list-of-links__link_active' : null)=link.text
-        if link.isDropdown
+      - const { isDropdown, isActive, href = '/mock-address/change-me', text = 'click me' } = link
+      li.list-of-links__item(class=isDropdown ? 'list-of-links__item_with-dropdown' : null)
+        a.list-of-links__link(href=href class=isActive ? 'list-of-links__link_active' : null)=text
+        if isDropdown
           .list-of-links__arrow-down
             +material-icons({
               type: 'keyboard_arrow_down', 

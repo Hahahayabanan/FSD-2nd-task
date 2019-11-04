@@ -17,10 +17,12 @@ class RangeSlider {
     const { $amount } = this;
     this.$slider.ionRangeSlider({
       onStart(data) {
-        $amount.val(`${data.from}₽ - ${data.to}₽`);
+        const { from, to } = data;
+        $amount.val(`${from}₽ - ${to}₽`);
       },
       onChange(data) {
-        $amount.val(`${data.from}₽ - ${data.to}₽`);
+        const { from, to } = data;
+        $amount.val(`${from}₽ - ${to}₽`);
       },
     });
   }
