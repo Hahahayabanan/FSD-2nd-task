@@ -1,10 +1,9 @@
 class InfoTable {
-  constructor(table) {
+  constructor(table, values) {
     this.table = table;
-
+    this.values = values;
     this.findHTMLElements();
-    this.getValues();
-    this.setValuesToTable();
+    if (this.values) this.setValuesToTable();
   }
 
   findHTMLElements() {
@@ -15,18 +14,6 @@ class InfoTable {
     this.priceOfService = this.table.querySelector('.js-info-table__price-of-service');
     this.priceOfAdditionalServices = this.table.querySelector('.js-info-table__price-of-additional-services');
     this.finalPrice = this.table.querySelector('.js-info-table__final-price :first-child');
-  }
-
-  getValues() {
-    this.values = {
-      priceOfRoom: '9 990',
-      numberOfDays: 4,
-      summaryPriceOfRooms: '39 960',
-      numberOfDiscount: '2 179',
-      priceOfService: 0,
-      priceOfAdditionalServices: 300,
-      finalPrice: '38 081',
-    };
   }
 
   setValuesToTable() {
