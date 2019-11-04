@@ -64,7 +64,7 @@ class DropdownOption {
     if (this.value === 0) {
       this.activateMinus(this.minusButton);
     }
-    this.value += Number(1);
+    this.value += 1;
     this.number.textContent = this.value;
 
     this.container.dispatchEvent(

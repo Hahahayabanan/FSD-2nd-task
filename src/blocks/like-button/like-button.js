@@ -33,11 +33,11 @@ class LikeButton {
 
     if (this.button.className.includes('like-button_active')) {
       this.setActive();
-      this.likesNumber.textContent = Number(this.likesNumber.textContent) + Number(1);
+      this.likesNumber.textContent = Number(this.likesNumber.textContent) + 1;
     } else {
       this.setUnActive();
       if (this.likesNumber.textContent >= 0) {
-        this.likesNumber.textContent = Number(this.likesNumber.textContent) - Number(1);
+        this.likesNumber.textContent = Number(this.likesNumber.textContent) - 1;
       }
     }
   }
