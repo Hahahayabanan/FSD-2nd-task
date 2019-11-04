@@ -1,6 +1,6 @@
-mixin heading({ type = 'h3', text = 'Header', color = undefined, weight = undefined } = {})
-  - let colorModifier = ''
-  - let weightModifier = ''
+mixin heading({ type = 'h3', text = 'Header', color = null, weight = null } = {})
+  - let colorModifier = null
+  - let weightModifier = null
   
   case color
     when 'light shade'

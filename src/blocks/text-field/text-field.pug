@@ -1,8 +1,8 @@
-mixin text-field({ type = 'text', name = undefined, theme = undefined, placeholder = '', disabled = false, readonly = false, width = undefined, cursor = undefined,} = {})
+mixin text-field({ type = 'text', name = null, theme = null, placeholder = null, disabled = false, readonly = false, width = null, cursor = null,} = {})
 
-  - let themeModifier = ''
-  - let sizeModifier = ''
-  - let cursorTypeModifier = ''
+  - let themeModifier = null
+  - let sizeModifier = null
+  - let cursorTypeModifier = null
 
   case theme
     when 'dark-placeholder'

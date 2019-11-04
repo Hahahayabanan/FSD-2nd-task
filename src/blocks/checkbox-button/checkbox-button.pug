@@ -1,7 +1,7 @@
-mixin checkbox-button({ name = 'checkbox-button', text = 'check box', description = '' } = {})
-  - let typeModifier = ''
+mixin checkbox-button({ name = 'checkbox-button', text = 'check box', description = null } = {})
+  - let typeModifier = null
 
-  if description !== ''
+  if description
     - typeModifier = 'checkbox-button_rich'
 
   section.checkbox-button(class=typeModifier)

@@ -7,7 +7,7 @@ mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descrip
         li.pagination__item
           .pagination__ellipsis ...
       li.pagination__item
-        a.pagination__link(href=link.href, class= link.isActive ? 'pagination__link_active' : '')=link.number      
+        a.pagination__link(href=link.href, class= link.isActive ? 'pagination__link_active' : null)=link.number      
     li.pagination__item.pagination__item_next
       a.pagination__link.pagination__link_next(href='/mock-address/change-me')
         +material-icons({

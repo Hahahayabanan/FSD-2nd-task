@@ -1,7 +1,7 @@
 include ../material-icons/material-icons.pug
 
-mixin list-of-links({ links = [], indentBetweenElements = '' } = {})
-  - let indentModifier = ''
+mixin list-of-links({ links = [], indentBetweenElements = null } = {})
+  - let indentModifier = null
 
   case indentBetweenElements
     when 'large'
@@ -9,12 +9,12 @@ mixin list-of-links({ links = [], indentBetweenElements = '' } = {})
   
   ul.list-of-links(class=indentModifier)
     each link in links
-      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_with-dropdown' : '')
-        if link.href === undefined
+      li.list-of-links__item(class=link.isDropdown ? 'list-of-links__item_with-dropdown' : null)
+        if link.href === null
           - link.href = '/mock-address/change-me'
-        if link.text === undefined
+        if link.text === null
           - link.text = 'click me'
-        a.list-of-links__link(href=link.href class=link.isActive ? 'list-of-links__link_active' : '')=link.text
+        a.list-of-links__link(href=link.href class=link.isActive ? 'list-of-links__link_active' : null)=link.text
         if link.isDropdown
           .list-of-links__arrow-down
             +material-icons({

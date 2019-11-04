@@ -22,8 +22,8 @@ class Dropdown {
     this.select = this.dropdown.querySelector('.js-dropdown__select');
     this.clearButton = new OptionButton('clear', this.dropdown);
     this.applyButton = new OptionButton('apply', this.dropdown);
-    if (!this.clearButton.getButton()) this.clearButton = undefined;
-    if (!this.applyButton.getButton()) this.applyButton = undefined;
+    if (!this.clearButton.getButton()) this.clearButton = null;
+    if (!this.applyButton.getButton()) this.applyButton = null;
   }
 
   bindEventListeners() {

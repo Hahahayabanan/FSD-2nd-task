@@ -8,8 +8,8 @@ mixin vertical-menu({ header = 'title', links = [] } = {})
         +heading({ type: 'h3', text: header })
       each link in links
         li.vertical-menu__item
-          if link.href === undefined
+          if link.href === null
             - link.href = '/mock-address/change-me'
-          if link.text === undefined
+          if link.text === null
             - link.text = 'click me'
           a.vertical-menu__link(href=link.href)=link.text 
