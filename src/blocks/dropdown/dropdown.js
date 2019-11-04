@@ -28,7 +28,7 @@ class Dropdown {
 
   bindEventListeners() {
     this.select.addEventListener('click', this.handleSelectClick.bind(this));
-    document.addEventListener('changeOption', this.handleDocumentChangeOption.bind(this));
+    this.dropdown.addEventListener('changeOption', this.handleDocumentChangeOption.bind(this));
     if (this.clearButton) this.clearButton.eventListenerBind('click', this.handleClearButtonClick.bind(this));
     if (this.applyButton) this.applyButton.eventListenerBind('click', this.handleApplyButtonClick.bind(this));
   }

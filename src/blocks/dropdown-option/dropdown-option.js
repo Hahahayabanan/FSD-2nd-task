@@ -52,7 +52,7 @@ class DropdownOption {
     }
     this.number.textContent = this.value;
 
-    document.dispatchEvent(
+    this.container.dispatchEvent(
       new CustomEvent('changeOption', {
         bubbles: true,
         detail: this,
@@ -67,7 +67,7 @@ class DropdownOption {
     this.value += Number(1);
     this.number.textContent = this.value;
 
-    document.dispatchEvent(
+    this.container.dispatchEvent(
       new CustomEvent('changeOption', {
         bubbles: true,
         detail: this,
