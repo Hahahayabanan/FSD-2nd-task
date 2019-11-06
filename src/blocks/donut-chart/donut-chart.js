@@ -1,9 +1,11 @@
 import * as d3 from 'd3';
+import 'd3-selection-multi';
 
 class DonutChart {
-  constructor(element) {
+  constructor(element, parameters) {
     this.donutChart = element;
 
+    this.parameters = parameters;
     this.init();
   }
 
@@ -25,15 +27,8 @@ class DonutChart {
     };
   }
 
-  getConstants() {
-    const data = [
-      { name: 'голосов', value: 260 },
-      { name: 'голосов', value: 260 },
-      { name: 'голосов', value: 520 },
-    ];
-
-    const width = 120;
-    const height = 120;
+  getConstants(parameters) {
+    const { data, height, width } = parameters;
     const thickness = 5;
     const thicknessWithInner = thickness + 5;
     const radius = Math.min(width, height) / 2;
@@ -45,13 +40,15 @@ class DonutChart {
   initDonutChart() {
     const {
       data, width, height, thickness, thicknessWithInner, radius,
-    } = this.getConstants();
+    } = this.getConstants(this.parameters);
 
     this.d3DonutChart = d3.select(this.donutChart)
       .append('svg')
-      .attr('class', this.styleClass.PIE)
-      .attr('width', width)
-      .attr('height', height);
+      .attrs({
+        width,
+        height,
+        class: this.styleClass.PIE,
+      });
     this.svgObject = this.d3DonutChart.append('g')
       .attr('transform', `translate(${width / 2},${height / 2})`);
     this.arcAttribute = d3.arc()
@@ -85,9 +82,11 @@ class DonutChart {
       .append('g')
       .style('fill', (d, index) => `url(#gradient${index})`)
       .append('path')
-      .attr('d', this.arcAttribute)
-      .attr('fill', (d, index) => `url(#gradient${index})`)
-      .attr('class', this.styleClass.PATH)
+      .attrs({
+        d: this.arcAttribute,
+        fill: (d, index) => `url(#gradient${index})`,
+        class: this.styleClass.PATH,
+      })
       .on('click', this.handlePathsClick.bind(this));
   }
 
@@ -98,16 +97,20 @@ class DonutChart {
   setStartText(valueNumber = 0) {
     this.valueTextField = this.svgObject.append('text')
       .text(`${this.data[valueNumber].value}`)
-      .attr('class', this.styleClass.VALUE)
-      .attr('text-anchor', 'middle')
-      .attr('dy', '-0.1em')
-      .style('fill', `url(#gradient${valueNumber})`);
+      .attrs({
+        class: this.styleClass.VALUE,
+        dy: '-0.1em',
+        fill: `url(#gradient${valueNumber})`,
+        'text-anchor': 'middle',
+      });
     this.descriptionTextField = this.svgObject.append('text')
       .text('голосов')
-      .attr('class', this.styleClass.TEXT)
-      .attr('text-anchor', 'middle')
-      .attr('dy', '1.3em')
-      .style('fill', `url(#gradient${valueNumber})`);
+      .attrs({
+        class: this.styleClass.TEXT,
+        dy: '1.3em',
+        fill: `url(#gradient${valueNumber})`,
+        'text-anchor': 'middle',
+      });
   }
 
   setGradients() {
@@ -120,20 +123,26 @@ class DonutChart {
   createGradient(parameters) {
     const { startColor, endColor, id } = parameters;
     const gradient = this.defs.append('svg:linearGradient')
-      .attr('id', `gradient${id}`)
-      .attr('x1', '0%')
-      .attr('y1', '0%')
-      .attr('x2', '0%')
-      .attr('y2', '100%')
-      .attr('spreadMethod', 'pad');
+      .attrs({
+        id: `gradient${id}`,
+        x1: '0%',
+        y1: '0%',
+        x2: '0%',
+        y2: '100%',
+        spreadMethod: 'pad',
+      });
     gradient.append('svg:stop')
-      .attr('offset', '0%')
-      .attr('stop-color', startColor)
-      .attr('stop-opacity', 1);
+      .attrs({
+        offset: '0%',
+        'stop-color': startColor,
+        'stop-opacity': 1,
+      });
     gradient.append('svg:stop')
-      .attr('offset', '100%')
-      .attr('stop-color', endColor)
-      .attr('stop-opacity', 1);
+      .attrs({
+        offset: '100%',
+        'stop-color': endColor,
+        'stop-opacity': 1,
+      });
     return gradient;
   }
 }
