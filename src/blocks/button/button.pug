@@ -1,9 +1,9 @@
 include ../material-icons/material-icons.pug
 
-mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'click me', buttonType = null, size = null, } = {})
-  - let sizeModifier = null
-  - let tagModifier = null
-  - let typeModifier = null
+mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'click me', buttonType, size, } = {})
+  - let sizeModifier
+  - let tagModifier
+  - let typeModifier
   - let isSubmit = false
 
   case buttonType
@@ -11,6 +11,7 @@ mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'c
       - tagModifier = 'button'
       - typeModifier = 'submit'
       - isSubmit = true
+      - href = null
     when 'button'
       - tagModifier = 'button'
     default
@@ -25,13 +26,13 @@ mixin button({ styleType = 'simple', href = '/mock-address/change-me', text = 'c
   case styleType
     when 'faint'
       .button.button_faint(class=sizeModifier)
-        #{tagModifier}(class='button__key' type=typeModifier href=isSubmit ? null : href)=text
+        #{tagModifier}(class='button__key' type=typeModifier href=href)=text
     when 'long'
-      #{tagModifier}(class='button button_long' class=sizeModifier type=typeModifier href=isSubmit ? null : href)=text
+      #{tagModifier}(class='button button_long' class=sizeModifier type=typeModifier href=href)=text
         .button__arrow
           +material-icons({
             type: 'arrow_forward', 
             color: 'white',
           })
     default
-      #{tagModifier}(class=`button button_${styleType}` class=sizeModifier type=typeModifier href=isSubmit ? null : href)=text
+      #{tagModifier}(class=`button button_${styleType}` class=sizeModifier type=typeModifier href=href)=text

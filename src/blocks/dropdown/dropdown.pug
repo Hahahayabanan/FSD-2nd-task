@@ -2,8 +2,8 @@ include ../dropdown-option/dropdown-option.pug
 include ../option-button/option-button.pug
 include ../material-icons/material-icons.pug
 
-mixin dropdown({ text = null, options = [], hasButtons = false, width = null, } = {})
-  - let widthModifier = null
+mixin dropdown({ text, options = [], hasButtons = false, width, } = {})
+  - let widthModifier
   case width
     when 'short'
       - widthModifier = 'dropdown_width_short'

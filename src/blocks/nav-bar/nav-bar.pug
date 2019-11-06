@@ -3,7 +3,9 @@ include ../button/button.pug
 include ../material-icons/material-icons.pug
 include ../list-of-links/list-of-links.pug
 
-mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register', indentBetweenElements = null, } = {})
+mixin nav-bar({ isLoggedIn = true, userName = 'Cosmin Negoita', links = [], loginButtonText = 'Login', registerButtonText = 'Register', indentBetweenElements, } = {})
+  - let indentModifier
+
   case indentBetweenElements
     when 'large'
       - indentModifier = 'nav-bar__list_indent_large'

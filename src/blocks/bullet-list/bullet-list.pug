@@ -1,5 +1,5 @@
 mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragraphs', type: 'bad' }, { text: 'here', type: 'ok' }], reserveText = 'There are no values', } = {})
-  - let typeModifier = null
+  - let typeModifier
   section.bullet-list
     ul.bullet-list__list
       each value in values

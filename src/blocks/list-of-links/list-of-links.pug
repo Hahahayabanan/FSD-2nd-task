@@ -1,7 +1,7 @@
 include ../material-icons/material-icons.pug
 
-mixin list-of-links({ links = [], indentBetweenElements = null, } = {})
-  - let indentModifier = null
+mixin list-of-links({ links = [], indentBetweenElements, } = {})
+  - let indentModifier
 
   case indentBetweenElements
     when 'large'

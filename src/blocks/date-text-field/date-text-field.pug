@@ -2,8 +2,8 @@ include ../text-field/text-field.pug
 include ../heading/heading.pug
 include ../material-icons/material-icons.pug
 
-mixin date-text-field({ header = 'date dropdown', type = 'start', placeholder = null, width = null, } = {})
-  - let widthModifier = null
+mixin date-text-field({ header = 'date dropdown', type = 'start', placeholder, width, } = {})
+  - let widthModifier
 
   case width
     when 'wide'
@@ -22,5 +22,5 @@ mixin date-text-field({ header = 'date dropdown', type = 'start', placeholder = 
           readonly: 'readonly',
           theme: 'dark-placeholder',
           cursor: 'pointer',
-          placeholder: placeholder,
+          placeholder,
         })

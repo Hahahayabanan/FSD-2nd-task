@@ -1,10 +1,10 @@
 include ../heading/heading.pug
 
-mixin dropdown-option({ text = 'Option', number = 0, group = null, } = {})
+mixin dropdown-option({ text = 'Option', number = 0, group, } = {})
   if number < 0
     - number = 0
   
-  if group === null
+  if group === undefined
     - group = text
 
   section.dropdown-option.js-dropdown-option(data-group=group)

@@ -1,18 +1,18 @@
-mixin material-icons({ type = 'Enter symbol text', color = null, size = null, } = {})
-  - let colorModifier = null
-  - let sizeModifier = null
+mixin material-icons({ type = 'Enter symbol text', color, size, } = {})
+  - let colorModifier = ''
+  - let sizeModifier = ''
 
   case color
     when 'dark-shade'
-      - colorModifier = 'material-icons_color_dark-shade'
+      - colorModifier = ' '+'material-icons_color_dark-shade'
     when 'shade'
-      - colorModifier = 'material-icons_color_shade'
+      - colorModifier = ' '+'material-icons_color_shade'
     when 'light-shade'
-      - colorModifier = 'material-icons_color_light-shade'
+      - colorModifier = ' '+'material-icons_color_light-shade'
     when 'white'
-      - colorModifier = 'material-icons_color_white'
+      - colorModifier = ' '+'material-icons_color_white'
     when 'purple-gradient'
-      - colorModifier = 'material-icons_color_purple-gradient'
+      - colorModifier = ' '+'material-icons_color_purple-gradient'
 
   case size
     when 'large'
@@ -20,4 +20,4 @@ mixin material-icons({ type = 'Enter symbol text', color = null, size = null, } 
     when 'small'
       - sizeModifier = 'material-icons_size_small'
 
-  i.material-icons(class=`${sizeModifier} ${colorModifier}`)=type
+  i.material-icons(class=`${sizeModifier}${colorModifier}`)=type
