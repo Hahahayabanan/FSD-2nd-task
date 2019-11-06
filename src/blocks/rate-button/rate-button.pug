@@ -9,4 +9,4 @@ mixin rate-button({ name = 'rate-button', rating = 5, } = {})
           type: 'star_border', 
           color: 'purple-gradient',
         })
-        input.rate-button__input.js-rate-button__input(type='radio' name=name value=i++ checked= rating===i ? 'checked' : null)
+        input.rate-button__input.js-rate-button__input(type='radio' checked=rating-1===i name=name value=i++)
