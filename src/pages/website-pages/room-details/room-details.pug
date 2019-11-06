@@ -6,13 +6,13 @@ block variables
 
     
 block content
+
   include ../../../blocks/icon-text/icon-text.pug
   include ../../../blocks/comment/comment.pug
   include ../../../blocks/bullet-list/bullet-list.pug
   include ../../../blocks/heading/heading.pug
   include ../../../blocks/donut-chart/donut-chart.pug
   include ../../../blocks/order/order.pug
-
 
   main.room-details
     article.room-details__photos
@@ -21,7 +21,6 @@ block content
       .room-details__photos-column
         img.room-details__second-photo(src="./img/room-det-2.jpg" alt="room photo")
         img.room-details__third-photo(src="./img/room-det-3.jpg" alt="room photo")
-
     article.room-details__content
       .room-details__content-container
         section.room-details__content-info
@@ -46,7 +45,6 @@ block content
               title: 'Уют', 
               description: 'Номер оснащён камином',
             })
-
         section.room-details__content-diagram
           +heading({ type: 'h2', text: 'Впечатления от номера', })
           .room-details__donut-chart
@@ -60,10 +58,8 @@ block content
                   { text: 'Разочарован', type: 'bad', },
                 ],
               })
-
         section.room-details__order
           +order()
-
         section.room-details__reviews
           .room-details__reviews-heading
             +heading({ type: 'h2', text: 'Отзывы посетителей номера', })
@@ -84,8 +80,6 @@ block content
               date: 'неделю назад', 
               text: 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент.',
             })
-          
-
         section.room-details__rules
           .room-details__rules-heading
             +heading({ type: 'h2', text: 'Правила', })

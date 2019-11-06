@@ -5,6 +5,7 @@ block variables
     - var pageTitle = 'Search room'
 
 block content
+
   include ../../../blocks/heading/heading.pug
   include ../../../blocks/order/order.pug
   include ../../../blocks/room-preview/room-preview.pug
@@ -14,7 +15,6 @@ block content
   include ../../../blocks/checkbox-button/checkbox-button.pug
   include ../../../blocks/pagination/pagination.pug
   include ../../../blocks/range-slider/range-slider.pug
-
 
   main.search-room
     .search-room__inner
@@ -86,7 +86,6 @@ block content
                 { text: 'ванные комнаты' },
               ],
             })
-
           section.search-room__rich-dropdown-checkbox
             +dropdown-checkbox({
               title: 'Дополнительные удобства',
@@ -116,8 +115,6 @@ block content
           +room-preview({ number: '666', src: 'img/room666.jpg', price: '5 000', name: 'room666', rate: 5, reviews: '25', })
           +room-preview({ number: '444', src: 'img/room444.jpg', price: '5 000', name: 'room444', rate: 3, reviews: '15', })
           +room-preview({ number: '352', src: 'img/room352.jpg', price: '5 000', name: 'room352', rate: 3, reviews: '55', })
-
-
       section.search-room__pagination
         +pagination({ 
           links: [
