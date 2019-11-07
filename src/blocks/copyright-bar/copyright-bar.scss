@@ -30,6 +30,8 @@
     justify-content: space-between;
     width: 100%;
     max-width: 1160px;
+    margin-right: 10px;
+    margin-left: 10px;
 
     @media (max-width: 476px) {
       flex-direction: column;
