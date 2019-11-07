@@ -26,10 +26,11 @@ class DatePickerCalendar {
   }
 
   replaceCalendarToBlock() {
-    this.$datepickerContainer = this.$containerOfTargetBlock.find('.date-picker-calendar-container');
+    this.$datepickerContainer = this.$containerOfTargetBlock.find('.date-picker-calendar');
     if (this.$datepickerContainer.length > 0) {
       this.$datepickerContainer.append(this.$datepicker);
     }
+    this.$datepicker.css('width', `${this.$containerOfTargetBlock.css('width')}`);
   }
 
   setApplyButtonText(text) {

@@ -79,7 +79,8 @@
     padding: calc(40px - 1px) calc(30px - 1px) calc(30px - 1px) calc(30px - 1px);
   }
 
-  @media (max-width: 415px) {    
-    transform: scale(.795);
+  @media (max-width: 380px) {    
+    min-width: 310px;
+    width: min-content;
   }
 }

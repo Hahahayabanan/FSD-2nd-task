@@ -1,5 +1,7 @@
 .filter-date {
+  position: static;
   max-width: 320px;
+  width: 100%;
   cursor: pointer;
 
   &__inputs {

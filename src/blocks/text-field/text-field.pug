@@ -1,8 +1,7 @@
-mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled = false, readonly = false, width, cursor, } = {})
+mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled = false, readonly = false, cursor, } = {})
 
   - let darkThemeModifier = ''
   - let maskedThemeModifier = ''
-  - let sizeModifier = ''
   - let cursorTypeModifier = ''
 
   case theme
@@ -13,10 +12,6 @@ mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled =
     - maskedThemeModifier = ' '+'text-field_masked'
     - placeholder = 'ДД.ММ.ГГГГ'
 
-  case width
-    when 'full-wide'
-      - sizeModifier = ' '+'text-field_wide'
-
   case cursor
     when 'pointer'
       - cursorTypeModifier = ' '+'text-field_clickable'
@@ -24,7 +19,7 @@ mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled =
   input(
     type=type
     name=name
-    class=`text-field js-text-field${darkThemeModifier}${maskedThemeModifier}${sizeModifier}${cursorTypeModifier}`
+    class=`text-field js-text-field${darkThemeModifier}${maskedThemeModifier}${cursorTypeModifier}`
     placeholder=placeholder
     disabled=disabled
     readonly=readonly

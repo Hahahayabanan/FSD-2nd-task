@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   max-width: 380px;
+  min-width: 280Px;
   width: 100%;
   min-height: 511px;
   background: #FFFFFF;
@@ -85,7 +86,8 @@
     padding: calc(40px - 1px) calc(30px - 1px) calc(30px - 1px) calc(30px - 1px);
   }
 
-  @media (max-width: 415px) {    
-    transform: scale(.795);
+  @media (max-width: 380px) {    
+    min-width: 310px;
+    width: min-content;
   }
 }

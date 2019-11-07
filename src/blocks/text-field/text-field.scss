@@ -53,11 +53,11 @@
     }
   }
 
-  &_wide {
-    width: 100%;
-  }
-
   &_clickable {
     cursor: pointer;
+  }
+
+  @media (max-width: 380px) {    
+    padding-left: 10px;
   }
 }

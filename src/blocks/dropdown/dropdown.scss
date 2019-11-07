@@ -2,7 +2,6 @@
   position: relative;
   display: inline-block;
   width: 100%;
-  min-width: 266px;
   max-width: 320px;
 
   &__arrow {
@@ -33,7 +32,6 @@
     flex-direction: column;
     height: 0;
     width: 100%;
-    min-width: 266px;
     max-width: 320px;
     position: absolute;
     padding-right: 7px;

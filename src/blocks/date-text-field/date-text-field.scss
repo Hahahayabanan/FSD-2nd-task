@@ -25,6 +25,10 @@
     z-index: 1;
     color: $shade;
     pointer-events: none;
+
+    @media (max-width: 380px) {    
+      width: 28px;
+    }
   }
 }
 
