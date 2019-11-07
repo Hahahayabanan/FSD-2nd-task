@@ -4,6 +4,7 @@ class DateTextField {
     this.type = type;
 
     this.setDOMElements();
+    this.setPadding();
   }
 
   setDOMElements() {
@@ -16,6 +17,10 @@ class DateTextField {
 
   eventListenerBind(type, fn) {
     if (this.$dateTextField) this.$dateTextField.on(type, fn);
+  }
+
+  setPadding() {
+    this.$dateTextField.css('padding-right', '38px');
   }
 }
 
