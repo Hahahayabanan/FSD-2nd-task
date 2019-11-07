@@ -1,6 +1,6 @@
 include ../heading/heading.pug
 
-mixin info-table({ priceOfRoom = 'price', sumPriceOfRoom = 'sum price', numberOfDays = 'number days', numberOfDiscount = 'number discount', inTime = 'суток', priceOfService = 'Service price', priceOfAdditionalServices = 'adv serv price', finalPrice = 'final price', currency = '₽', } = {})
+mixin info-table({ priceOfRoom = 'price', totalPriceOfRoom = 'sum price', numberOfDays = 'number days', numberOfDiscount = 'number discount', inTime = 'суток', priceOfService = 'Service price', priceOfAdditionalServices = 'adv serv price', finalPrice = 'final price', currency = '₽', } = {})
   table.info-table.js-info-table
     tr.info-table__row
       td.info-table__service
@@ -9,7 +9,7 @@ mixin info-table({ priceOfRoom = 'price', sumPriceOfRoom = 'sum price', numberOf
         span.js-info-table__number-of-days=numberOfDays
         span.info-table__in-time= ' ' + inTime
       td.info-table__price
-        span.js-info-table__summary-price-of-rooms=sumPriceOfRoom
+        span.js-info-table__total-price-of-rooms=totalPriceOfRoom
         span.info-table__currency=currency
     tr.info-table__row
       td.info-table__service

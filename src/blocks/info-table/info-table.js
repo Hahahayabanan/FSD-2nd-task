@@ -9,7 +9,7 @@ class InfoTable {
   findHTMLElements() {
     this.priceOfRoom = this.table.querySelector('.js-info-table__price-of-room');
     this.numberOfDays = this.table.querySelector('.js-info-table__number-of-days');
-    this.summaryPriceOfRooms = this.table.querySelector('.js-info-table__summary-price-of-rooms');
+    this.totalPriceOfRooms = this.table.querySelector('.js-info-table__total-price-of-rooms');
     this.numberOfDiscount = this.table.querySelector('.js-info-table__number-of-discount');
     this.priceOfService = this.table.querySelector('.js-info-table__price-of-service');
     this.priceOfAdditionalServices = this.table.querySelector('.js-info-table__price-of-additional-services');
@@ -20,7 +20,7 @@ class InfoTable {
     const {
       priceOfRoom,
       numberOfDays,
-      summaryPriceOfRooms,
+      totalPriceOfRooms,
       numberOfDiscount,
       priceOfService,
       priceOfAdditionalServices,
@@ -29,7 +29,7 @@ class InfoTable {
 
     this.priceOfRoom.textContent = priceOfRoom;
     this.numberOfDays.textContent = numberOfDays;
-    this.summaryPriceOfRooms.textContent = summaryPriceOfRooms;
+    this.totalPriceOfRooms.textContent = totalPriceOfRooms;
     this.numberOfDiscount.textContent = numberOfDiscount;
     this.priceOfService.textContent = priceOfService;
     this.priceOfAdditionalServices.textContent = priceOfAdditionalServices;

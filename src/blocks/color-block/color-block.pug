@@ -1,7 +1,7 @@
-mixin color-block({ text = 'Color', description = 'Description', bgColor = 'darkest-shade', } = {})
+mixin color-block({ text = 'Color', description = 'Description', backgroundColor = 'darkest-shade', } = {})
   - let colorModifier = ''
 
-  case bgColor
+  case backgroundColor
     when 'darkest shade'
       - colorModifier = 'color-block_color_darkest-shade'
     when 'dark shade'
