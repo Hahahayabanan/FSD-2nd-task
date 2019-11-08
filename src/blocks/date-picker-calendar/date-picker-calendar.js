@@ -30,7 +30,12 @@ class DatePickerCalendar {
     if (this.$datepickerContainer.length > 0) {
       this.$datepickerContainer.append(this.$datepicker);
     }
-    this.$datepicker.css('width', `${this.$containerOfTargetBlock.css('width')}`);
+    this.handleWindowResize();
+  }
+
+  handleWindowResize() {
+    const containerWidth = this.$containerOfTargetBlock.children(':first').width();
+    this.$datepicker.css('width', containerWidth);
   }
 
   setApplyButtonText(text) {
@@ -47,6 +52,8 @@ class DatePickerCalendar {
 
   bindEventListeners() {
     this.$applyButton.on('click', this.handleApplyButtonClick.bind(this));
+
+    $(window).on('resize', this.handleWindowResize.bind(this));
   }
 
   handleApplyButtonClick() {

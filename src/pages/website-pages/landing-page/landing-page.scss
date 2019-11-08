@@ -5,19 +5,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: bottom;
-  position: relative;
   
   &__filter {
-    position: relative;
     max-width: 380px;
-    left: 140px;
-    top: 70px;
+    margin-left: 140px;
+    padding-top: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
 
     @media (max-width: 760px) {
-      left: auto;
       margin: 0 auto;
     }
   }

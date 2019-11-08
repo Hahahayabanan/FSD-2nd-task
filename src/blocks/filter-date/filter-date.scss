@@ -9,14 +9,6 @@
     justify-content: space-between;
   }
 
-  &__date-picker {
-    position: absolute;
-    margin-top: 5px;
-    transform-origin: 0 0;
-    transform: scale(0.83);
-    z-index: 10;
-  }
-
   &__input {
     max-width: 266px;
     color: $dark-shade;
