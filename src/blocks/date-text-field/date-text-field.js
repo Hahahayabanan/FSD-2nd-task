@@ -15,16 +15,16 @@ class DateTextField {
     this.$dateTextField = this.textField.getElement();
   }
 
-  get$Element() {
+  getElement() {
     return this.$dateTextField;
   }
 
   eventListenerBind(type, fn) {
-    if (this.$dateTextField) this.$dateTextField.on(type, fn);
+    if (this.$dateTextField) this.textField.eventListenerBind(type, fn);
   }
 
   setPadding() {
-    this.$dateTextField.css('padding-right', '38px');
+    this.textField.setPaddingOnRight();
   }
 }
 

@@ -22,6 +22,14 @@ class TextField {
   getElement() {
     return this.$textField;
   }
+
+  eventListenerBind(type, fn) {
+    if (this.$textField) this.$textField.on(type, fn);
+  }
+
+  setPaddingOnRight() {
+    this.$textField.addClass('text-field_with-padding-on-right');
+  }
 }
 
 export default TextField;

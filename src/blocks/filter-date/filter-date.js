@@ -11,15 +11,15 @@ class FilterDate {
 
   findDOMElements() {
     this.input = new DateTextField(this.$calendar, 'entire');
-    this.$input = this.input.get$Element();
+    this.$input = this.input.getElement();
     this.isRange = false;
 
     if (this.$input.length === 0) {
       this.isRange = true;
       this.startInput = new DateTextField(this.$calendar, 'start');
-      this.$startInput = this.startInput.get$Element();
+      this.$startInput = this.startInput.getElement();
       this.endInput = new DateTextField(this.$calendar, 'end');
-      this.$endInput = this.endInput.get$Element();
+      this.$endInput = this.endInput.getElement();
       this.datepickerPluginInstance = this.$startInput.datepicker().data('datepicker');
     }
   }
