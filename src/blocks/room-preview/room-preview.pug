@@ -13,12 +13,12 @@ mixin room-preview({ hasArrows = false, src = 'img/rooms/room888.svg', number = 
         .room-preview__paragraph
           span.room-preview__no № 
           span.room-preview__number=number
-          span.room-preview__type-of-room= ' ' + typeOfRoom
+          span.room-preview__type-of-room=` ${typeOfRoom}`
 
         .room-preview__paragraph
           span.room-preview__price=price
           span.room-preview__price=currency
-          span.room-preview__in-time= ' ' + inTime
+          span.room-preview__in-time=` ${inTime}`
 
       .room-preview__row
         .room-preview__underline
@@ -29,5 +29,5 @@ mixin room-preview({ hasArrows = false, src = 'img/rooms/room888.svg', number = 
             +rate-button({ name, rating: rate, })
 
         .room-preview__paragraph
-          span.room-preview__reviews-number=reviews + ' '
-          span.room-preview__reviews Отзывов
+          span.room-preview__reviews-number=reviews
+          span.room-preview__reviews=' Отзывов'

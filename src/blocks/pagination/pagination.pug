@@ -17,8 +17,8 @@ mixin pagination({ startNumber = 1, endNumber = 12, allNumbers = '100+', descrip
         })
     p.pagination__description 
       span.pagination__start-number=startNumber
-      span  – 
+      span=' – '
       span.pagination__end-number=endNumber
-      span  из 
+      span=' из '
       span.pagination__all-numbers=allNumbers
-      span.pagination__description-text= ' ' + descriptionText
+      span.pagination__description-text=` ${descriptionText}`

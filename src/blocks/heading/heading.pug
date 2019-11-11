@@ -4,10 +4,10 @@ mixin heading({ type = 'h3', text = 'Header', color, weight, } = {})
   
   case color
     when 'light shade'
-      - colorModifier = ' '+'heading_color_light-shade'
+      - colorModifier = ' heading_color_light-shade'
   
   case weight
     when 'normal'
-      - weightModifier = ' '+'heading_weight_normal'
+      - weightModifier = ' heading_weight_normal'
 
   #{type}.heading(class = `heading_type_${type}${colorModifier}${weightModifier}`)=text

@@ -5,9 +5,9 @@ mixin info-table({ priceOfRoom = 'price', totalPriceOfRoom = 'sum price', number
     tr.info-table__row
       td.info-table__service
         span.js-info-table__price-of-room=priceOfRoom
-        span.info-table__currency=currency + ' x '
+        span.info-table__currency=`${currency} x `
         span.js-info-table__number-of-days=numberOfDays
-        span.info-table__in-time= ' ' + inTime
+        span.info-table__in-time=` ${inTime}`
       td.info-table__price
         span.js-info-table__total-price-of-rooms=totalPriceOfRoom
         span.info-table__currency=currency
