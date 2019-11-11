@@ -1,20 +1,20 @@
-mixin bullet-list({ values = [ { text: 'Enter', type: 'good' }, { text: 'paragraphs', type: 'bad' }, { text: 'here', type: 'ok' }], reserveText = 'There are no values', } = {})
-  - let typeModifier
+mixin bullet-list({ values = [ { text: 'Enter', circleColor: 'good' }, { text: 'paragraphs', circleColor: 'bad' }, { text: 'here', circleColor: 'ok' }], reserveText = 'There are no values', } = {})
+  - let circleColorModifier
   section.bullet-list
     ul.bullet-list__list
       each value in values
-        - const { type, text, } = value
-        case type
+        - const { circleColor, text, } = value
+        case circleColor
           when 'great'
-            - typeModifier = 'bullet-list__item_great'
+            - colorModifier = 'bullet-list__item_color_great'
           when 'good'
-            - typeModifier = 'bullet-list__item_good'
+            - colorModifier = 'bullet-list__item_color_good'
           when 'ok'
-            - typeModifier = 'bullet-list__item_ok'
+            - colorModifier = 'bullet-list__item_color_ok'
           when 'bad'
-            - typeModifier = 'bullet-list__item_bad'
+            - colorModifier = 'bullet-list__item_color_bad'
           default
-            - typeModifier = null
-        li.bullet-list__item(class=typeModifier)=text
+            - colorModifier = null
+        li.bullet-list__item(class=colorModifier)=text
       else
         li.bullet-list__item=reserveText

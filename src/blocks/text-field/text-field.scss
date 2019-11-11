@@ -41,16 +41,19 @@
     }
   }
 
-  &_dark {
-    color: $dark-shade;
-  
-    &::placeholder {
+  &_theme {
+
+    &_dark {
       color: $dark-shade;
-    }
-  
-    &:focus, 
-    &:hover {
-      border: 1px solid $light-shade;
+    
+      &::placeholder {
+        color: $dark-shade;
+      }
+    
+      &:focus, 
+      &:hover {
+        border: 1px solid $light-shade;
+      }
     }
   }
 

@@ -30,41 +30,44 @@
       margin-top: 0;
     }
 
-    &_bad {
-      margin-top: 0;
-      padding-left: 15px;
-    
-      &::before {
-        background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+    &_color {
+      
+      &_bad {
+        margin-top: 0;
+        padding-left: 15px;
+      
+        &::before {
+          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
       }
-    }
-  
-    &_good {
-      margin-top: 0;
-      padding-left: 15px;
     
-      &::before {
-        background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+      &_good {
+        margin-top: 0;
+        padding-left: 15px;
+      
+        &::before {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
       }
-    }
-  
-    &_great {
-      margin-top: 0;
-      padding-left: 15px;
     
-      &::before {
-        background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+      &_great {
+        margin-top: 0;
+        padding-left: 15px;
+      
+        &::before {
+          background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+        }
       }
-    }
-  
-    &_ok {
-      margin-top: 0;
-      padding-left: 15px;
     
-      &::before {
-        background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+      &_ok {
+        margin-top: 0;
+        padding-left: 15px;
+      
+        &::before {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
       }
-    }
+    }   
   }
 
   &__list {
