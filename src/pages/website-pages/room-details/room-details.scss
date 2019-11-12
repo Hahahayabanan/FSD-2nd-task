@@ -133,10 +133,14 @@
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-style: normal;
     font-weight: normal;
-    font-size: rem(14px);
+    font-size: 14px;
     line-height: 24px;
     color: $dark-shade;
     margin-top: 17px;
+
+    @media (max-width: 876px) {
+      margin-bottom: 50px;
+    }
   }
   
   &__reviews-amount {
@@ -147,8 +151,10 @@
     top: 50%;
     transform: translateY(-50%);
 
-    @media (max-width: 415px) {
-      top: 35px;
+    @media (max-width: 400px) {
+      top: 45px;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
     }
   }
   
@@ -161,6 +167,10 @@
     margin-top: 33px;
     margin-bottom: 20px;
     position: relative;
+
+    @media (max-width: 400px) {
+      margin-bottom: 40px;
+    }
   }
   
   &__review-list {
@@ -168,7 +178,6 @@
     display: inline-block;
     margin-left: 30px;
     position: relative;
-    top: -4px;
 
     @media (max-width: 400px) {
       margin-left: 10px;

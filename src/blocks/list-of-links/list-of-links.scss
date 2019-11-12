@@ -1,10 +1,12 @@
+$get-column-max-width : 780px;
+
 .list-of-links{
   display: flex;
   margin: 0;
   padding: 0;
   align-items: center;
   
-  @media (max-width: 804px) {
+  @media (max-width: $get-column-max-width) {
     flex-direction: column;
     padding: 10px 0;
   }
@@ -32,14 +34,14 @@
       margin-right: 0;
     }
 
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       display: block;
       margin-top: 5px;
       margin-right: 0;
       text-align: center;
     }
     
-    @media (min-width:804px) and (max-width: 880px) {
+    @media (min-width:$get-column-max-width) and (max-width: 880px) {
       margin-right: 10px;
     }
 
@@ -48,7 +50,7 @@
       align-items: center;
       margin-right: 20px;
     
-      @media (max-width: 804px) {
+      @media (max-width: $get-column-max-width) {
         margin-right: 0;
       }
     }
@@ -68,7 +70,7 @@
       color: $dark-shade;
     }
 
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       line-height: 24px;
     }
   }

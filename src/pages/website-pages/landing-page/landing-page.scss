@@ -22,18 +22,26 @@
   &__quote {
     max-width: 297px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
-    font-size: rem(14px);
+    font-size: 14px;
     line-height: 24px;
     text-align: right;
     color: $dark-shade;
-    bottom: 8px;
-    right: 134px;
-    position: absolute;
+    margin-left: auto;
+    margin-right: 170px;
+    margin-top: 320px;
     
     @media (max-width: 760px) {
-      left: auto;        
-      right: auto;
+      margin-right: auto;
     }
+
+    @media (max-width: 400px) {
+      margin-top: 50px;
+      padding-bottom: 20px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    min-height: 500px;
   }
 }
 

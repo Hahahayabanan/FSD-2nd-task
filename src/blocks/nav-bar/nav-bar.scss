@@ -1,8 +1,10 @@
+$get-column-max-width : 780px;
+
 .nav-bar {
   background: #FFFFFF;
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   
-  @media (max-width: 804px) {
+  @media (max-width: $get-column-max-width) {
     flex-direction: column;
   }
 
@@ -21,7 +23,7 @@
       max-width: 1160px;
     }
     
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       flex-direction: column;
       padding: 10px 0;
     }
@@ -30,7 +32,7 @@
   &__login {
     margin-right: 20px;
   
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       margin-right: 0;
       margin-top: 5px;
     }
@@ -40,7 +42,7 @@
     display: flex;
     align-items: center;
     
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       flex-direction: column;
     }
   }
@@ -55,14 +57,14 @@
       }
     }
 
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       margin-right: 0;
     }
   }
 
   &__register {
   
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       margin-top: 5px;
     }
   }
@@ -73,7 +75,7 @@
     font-size: 14px;
     color: $shade;
     
-    @media (max-width: 804px) {
+    @media (max-width: $get-column-max-width) {
       margin-left: 0;
       margin-top: 10px;
     }
