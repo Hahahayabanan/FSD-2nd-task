@@ -2,7 +2,7 @@ mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled =
 
   - let darkThemeModifier = ''
   - let maskedThemeModifier = ''
-  - let isClickableTypeModifier = ''
+  - let isClickableModifier = ''
 
   case theme
     when 'dark'
@@ -18,7 +18,7 @@ mixin text-field({ type = 'text', name, theme, isMasked, placeholder, disabled =
   input(
     type=type
     name=name
-    class=`text-field js-text-field${darkThemeModifier}${maskedThemeModifier}${isClickableTypeModifier}`
+    class=`text-field js-text-field${darkThemeModifier}${maskedThemeModifier}${isClickableModifier}`
     placeholder=placeholder
     disabled=disabled
     readonly=readonly
