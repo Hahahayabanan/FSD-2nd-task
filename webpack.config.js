@@ -1,5 +1,4 @@
 const path = require('path');
-const fs = require('fs');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
@@ -13,21 +12,6 @@ module.exports = (env, options) => {
 
   const PAGES_DIR = `${PATHS.src}/pages/`;
 
-  function getFiles(dir, files_, folder = '') {
-    const filesArray = files_ || [];
-    let folderPath = folder;
-    fs.readdirSync(dir).forEach((filePath) => {
-      const name = path.join(dir, filePath);
-      if (fs.statSync(name).isDirectory()) {
-        folderPath = path.join(folder, filePath);
-        getFiles(name, filesArray, folderPath);
-      } else if (filePath.endsWith('.pug')) {
-        filesArray.push(path.join(folder, filePath));
-      }
-    });
-    return filesArray;
-  }
-  const PAGES = getFiles(PAGES_DIR);
   const production = options.mode === 'production';
   const publicDir = production ? 'https://hahahayabanan.github.io/FSD-2nd-task/' : '/';
 
@@ -149,11 +133,47 @@ module.exports = (env, options) => {
         'window.jQuery': 'jquery',
       }),
 
-      ...PAGES.map((page) => new HtmlWebpackPlugin({
-        template: `${PAGES_DIR}/${page}`,
-        filename: `./${page.replace(/.*[\\]/, '').replace(/\.pug/, '.html')}`,
-        inject: true,
-      })),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/index.pug`,
+        filename: './index.html',
+      }),
+
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/ui-kit/colors-and-type/colors-and-type.pug`,
+        filename: './colors-and-type.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/ui-kit/cards/cards.pug`,
+        filename: './cards.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/ui-kit/form-elements/form-elements.pug`,
+        filename: './form-elements.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/ui-kit/headers-and-footers/headers-and-footers.pug`,
+        filename: './headers-and-footers.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/website-pages/landing-page/landing-page.pug`,
+        filename: './landing-page.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/website-pages/registration/registration.pug`,
+        filename: './registration.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/website-pages/room-details/room-details.pug`,
+        filename: './room-details.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/website-pages/search-room/search-room.pug`,
+        filename: './search-room.html',
+      }),
+      new HtmlWebpackPlugin({
+        template: `${PAGES_DIR}/website-pages/sign-in/sign-in.pug`,
+        filename: './sign-in.html',
+      }),
 
     ],
   };
