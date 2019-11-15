@@ -4,9 +4,10 @@
   "description": "My template + pug",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server --open --config ./build/webpack.dev.conf.js",
-    "build": "webpack --config ./build/webpack.build.conf.js",
-    "eslint-fix": "eslint --fix \"./src\" \"./build\" --ext .js"
+    "dev": "webpack-dev-server  --mode development --open",
+    "build": "webpack --mode production",
+    "eslint-fix": "eslint --fix \"./src\" --ext .js",
+    "deploy": "gh-pages -d dist"
   },
   "browserslist": [
     "> 1%",
@@ -38,6 +39,7 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "gh-pages": "^2.1.1",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.9.0"
   },
