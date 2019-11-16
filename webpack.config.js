@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
+const Autoprefixer = require('autoprefixer');
 
 
 module.exports = (env, options) => {
@@ -123,6 +124,8 @@ module.exports = (env, options) => {
       },
     },
     plugins: [
+      Autoprefixer,
+
       new MiniCssExtractPlugin({
         filename: './css/[name].[hash].css',
       }),

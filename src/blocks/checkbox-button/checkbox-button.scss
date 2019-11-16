@@ -8,7 +8,7 @@
   &__header-text {
     display: inline-block;
     vertical-align: middle;
-    margin-left: 20px + 10px;
+    margin-left: 10px;
     font-family: 'Montserrat', Arial, Helvetica, sans-serif;
     font-size: 14px;
     line-height: 18px;
@@ -27,34 +27,33 @@
     margin: 0;
   }
 
+  &__flag {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding: 3px 3px 4px 3px;
+    background-color: #FFFFFF;
+    border: 1px solid $light-shade;
+    border-radius: 4px;
+    box-sizing: border-box;
+    vertical-align: top;
+    text-align: center;
+  }
+
   &__input {
     display: inline-block;
     width: 0;
     margin: 0;
     vertical-align: top;
-    cursor: pointer;
+    display: none;
     
     &:checked {
-      
-      &::before {
-        content: url('./img/check-box.svg');
-        text-align: center;
-        border: 1px solid $purple;
-        line-height: 18px;
-      }
-    }
 
-    &::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      padding-top: 1px;
-      background-color: #FFFFFF;
-      border: 1px solid $light-shade;
-      border-radius: 4px;
-      box-sizing: border-box;
-      vertical-align: middle;
+      ~ .checkbox-button__flag {
+        content: url('./img/check-box.svg');
+        border: 1px solid $purple;
+        line-height: 14px;
+      }
     }
   }
 
@@ -75,7 +74,7 @@
 
     &__description {
       margin-top: 5px;
-      margin-left: 20px + 10px;
+      margin-left: 30px;
       font-family: 'Montserrat', Arial, Helvetica, sans-serif;
       font-size: 12px;
       font-weight: normal;
